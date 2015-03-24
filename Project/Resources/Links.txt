@@ -1,0 +1,2 @@
+1. AndroidSVG - https://code.google.com/p/androidsvg/
+2. The Apache™ Batik Project - https://xmlgraphics.apache.org/batik/
