@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 100% 100%">
+<defs>
+<style>
+    @font-face {
+        font-family: "Sloan";
+        src: url(Sloan.otf);
+    }
+</style>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" stroke="red" stroke-width="1.5" fill="white"/>
+
+<!-- 44mm  22mm-->
+<text x="5mm" y="55mm" font-size="44mm" font-family="Sloan">N</text>
+<text x="82mm" y="55mm" font-size="44mm" font-family="Sloan">C</text>
+<text x="159mm" y="55mm" font-size="44mm" font-family="Sloan">K</text>
+<text x="236mm" y="55mm" font-size="44mm" font-family="Sloan">Z</text>
+<text x="313mm" y="55mm" font-size="44mm" font-family="Sloan">O</text>
+
+<!-- 33mm 16.5mm-->
+<text x="50mm" y="111mm" font-size="33mm" font-family="Sloan">R</text>
+<text x="107.75mm" y="111mm" font-size="33mm" font-family="Sloan">H</text>
+<text x="165.5mm" y="111mm" font-size="33mm" font-family="Sloan">S</text>
+<text x="223.25mm" y="111mm" font-size="33mm" font-family="Sloan">D</text>
+<text x="281mm" y="111mm" font-size="33mm" font-family="Sloan">K</text>
+
+<!-- 24.75mm 12.375mm-->
+<text x="83mm" y="151.25mm" font-size="24.75mm" font-family="Sloan">R</text>
+<text x="126.3125mm" y="151.25mm" font-size="24.75mm" font-family="Sloan">H</text>
+<text x="169.625mm" y="151.25mm" font-size="24.75mm" font-family="Sloan">S</text>
+<text x="212.9375mm" y="151.25mm" font-size="24.75mm" font-family="Sloan">D</text>
+<text x="256.25mm" y="151.25mm" font-size="24.75mm" font-family="Sloan">K</text>
+
+<!-- 18.5625 9.28125mm-->
+<text x="108mm" y="182.1875mm" font-size="18.5625mm" font-family="Sloan">D</text>
+<text x="140.484375mm" y="182.1875mm" font-size="18.5625mm" font-family="Sloan">O</text>
+<text x="172.96875mm" y="182.1875mm" font-size="18.5625mm" font-family="Sloan">V</text>
+<text x="205.453125mm" y="182.1875mm" font-size="18.5625mm" font-family="Sloan">H</text>
+<text x="237.9375mm" y="182.1875mm" font-size="18.5625mm" font-family="Sloan">R</text>
+
+<!-- 13.921875 -->
+
+
+</svg>
