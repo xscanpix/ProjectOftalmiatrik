@@ -1,0 +1,81 @@
+%%%%%%%%%%%%%%%%%%%%%%%%  DEL 1: FÖRUTSÄTTNINGAR
+%%%%%%%%%%%%%Område/bakgrund: vilket är området, omgivningen, kontextet, bakgrunden för projektet?
+
+%beskrivning av området (t.ex. ljudbehandling, studieplaner, visualisering, autism...)
+%Inom området oftalmiatrik används idag tavlor med förtryckta rader symboler för att undersöka patienters synfunktion. Denna betäms genom att patienten läser tecken tills den inte längre korrekt kan bestämma vilket tecken det är, och optikern kan därmed läsa ut patientens synskärpa.
+
+In the field of ophthalmology today, charts are used with printed lines of continuously smaller symbols used to measure a patients visual acuity. To make this measurement the patient reads symbols from the chart as far as he or she can, and based on at what letter size the patient failed to tell the correct symbol his or her visual acuity can be determined. 
+
+%För att tavlan ska fungera som grund för dessa standardiserade tester i ögonskärpa måste miljön för testet vara noga beredd. Det finns bland annat krav på att tavlan är sex meter ifrån patienten, och att ljusstyrkan i rummet är exakt. Dessa krav kan inte alltid uppfyllas, vilket leder till avvikelser i testerna.
+
+For such charts to function as a basis for these standardized tests in visual acuity the testing environment must be carefully prepared. Among other things, the chart must be placed at a distance of 6 meters from the patient, and the luminosity in the room must be at a specific level. These conditions cannot always be met, in the event that the room is too small or the lighting insufficient for example, and this can lead to irregularities or faulty measurements in these tests. 
+
+%Det finns även många varianter på dessa tavlor. Flera olika uppsättningar optyper (tecken som visas på tavlorna, oftast bokstäver) har utvecklats för olika typer av patienter, bland annat varianter för patienter som inte kan alfabetet, eller barn. Även layouten av optyper på tavlan har flera varianter, från den klassiska Snellentavlan som utvecklades på 1800-talet, till den modernare LogMAR tavlan.
+
+There are also several different variations on these charts. Different sets of symbols, ranging from different subsets of arabic letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen Chart that was developed in the 19th century, to the modern LogMAR chart.
+
+%%%%%%%%%%%%%beskriv uppdragsgivare, om ni har
+
+%Vår uppdragsgivare är Per Söderberg, professor i oftalmiatrik vid Institutet%(Institutionen?)<---------------------------------- 
+%för Neurovetenskap vid %Hum. Dubbel-vid. Hur skriver man det här egentligen? <---------------------------------------------------
+%Uppsala Universitet. Han tar även patienter vid Akademiska Sjukhuset i Uppsala
+
+Our UPPDRAGSGIVARE %Fan heter det på engelska då? <----------------------------------------------------------
+is Per Söderberg, professor and chair of opthalmology with the Department of Neuroscience at Uppsala University. He also takes patients at the University Hospital, and uses these types of charts on a daily basis. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%Syfte: vart strävar projektet? vad är det övergripande målet, nyttan, effekterna av projektet?
+%%%%%%%%%%%%%t.ex. bättre koll på kosthållning, enklare planering av studier
+
+To solve the problems with this system the Department of Neuroscience has performed tests using a digital screen to present the charts instead of using printed medium. This means the optician can have many more variations on the charts at his or her disposal, the set of symbols to use on the charts can be switched with a menu, and the screen provides an adequately lit surface by itself. The current system is implemented by connecting an android tablet to a screen via HDMI cable, and the charts rendered via a web browser app on the tablet. Testing has proceeded for over a year, and has yielded very good results.
+
+The purpose of this project is to take the system used for these tests and develop a complete implementation with several advantages over the testing system, such as:
+
+* A fully developed app for the tablet with an improved user interface, both aesthetically and mechanically
+* Connecting the digital screen to a computer that can handle higher resolution rendering than the tablets native resolution
+* Controlling that computer over wifi with the tablet, meaning the optician can move around the room easily
+* Altering the scale of the rendered symbols so that the patient can be closer or further away from the screen than the regulation six meters
+* Being able to tailor the testing process to the patient by changing the sets of symbols displayed or removing clutter from the charts.
+
+and other features to make the process easier for the optician and patient.
+
+%%%%%%%%%%%%%%%%%%%%%%%%Mål: vad ska konkret levereras/utföras av projektet, för att ta oss närmare syftet
+
+%Hum. Ta material från ovanstående fråga? Jag är inte säker.
+
+%%%%%%%%%%%%%%%%%%%%%%%%Motivation:
+
+%%%%%%%%%%%%%Varför är projektet viktigt?
+%%%%%%%%%%%%%Hur stort är problemet, vad är följden av att det inte är löst, hur bra vore det att lösa?
+%%%%%%%%%%%%%Vilken "lucka" i området täcker ni?
+%%%%%%%%%%%%%Varför är er lösning bättre/annorlunda än andras?
+
+This project is important because determining visual acuity is a very labor- and equipment-intensive process. As the testing has showed, using a digital chart with a tablet interface is easier and faster, and can be a great help for the optician. The only thing missing is to improve on the design and implement a functional user interface and a better hardware solution to turn the testing shell into a finished product. 
+
+%Borde utökas, trorja.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%Lägesbeskrivning:
+
+%Fan också, det här har jag ju skrivit om redan. 
+%Att upprepa sig, eller inte upprepa sig. Det är frågan.
+
+%%%%%%%%%%%%%vad vet ni om läget när det gäller "problemet" som projektet ska lösa?
+%%%%%%%%%%%%%vilka andra har försökt lösa det, eller gjort relaterade/liknande saker/system? Referera.
+
+%Man kan ju också prata i mer detalj om Snellen och LogMAR... Men det är ju egentligen inte information som är viktig för oss. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%Frågeställningar:
+
+%%%%%%%%%%%%%vilka tekniska problem behöver ni lösa (sj.arb), vad ska ni ta reda på (uppsatsmetodik)?
+
+There are several technical problems that we need to solve. We need to design a small computer system that will store and present the desired images to the screen. Our current plan is using a RaspberryPi, since it is a cheap and compact alternative to PCs that is more than powerful enough for our purposes. 
+
+Networking needs to be added to control the RaspberryPi over wifi from the tablet, and some features like waking the screen as the app is started can be considered.
+
+Designing the android app for the tablet will bring technical problems, both from the limitations of portable computers, and making our software adaptable enough to work on as many brands of tablets as possible. For example, the symbols we are to present are stored in the .svg (Scalable Vector Graphics) format, which is not natively supported on android. As such we must find and work with a licensed software library to render them. 
+
+Finally we should design a way for the database of symbols and chart layouts to be easily updated and synched between devices and some server storage. 
+
+%%%%%%%%%%%%%vilka etiska frågeställningar finns (tänk t.ex. på användningen av resultatet)?
+
+Our ethical obligations with this project is providing a functional and stable product. If our system does not preform to specification, a lot of patients could get erroneous measurements during testing, costing a lot of time and money to correct. We will also have to work with code obfuscation to prevent illegal distribution of our software, since it is intended to be sold to hospitals and clinics worldwide.
