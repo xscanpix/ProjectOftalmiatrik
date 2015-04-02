@@ -1,4 +1,5 @@
-.class
+*.class
 *.log
 *.aux
 *.gz
+local.properties
