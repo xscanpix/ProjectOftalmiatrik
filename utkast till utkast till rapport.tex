@@ -1,11 +1,24 @@
-\documentclass{article}
+\documentclass[12pt,a4paper,notitlepage]{report}
+\usepackage[utf8]{inputenc}
+
 \begin{document}
+\title{Report Draft\\AxAnIvIs}
+\author{Anders Ohlsson\\ Christian Johansson\\ Svante Nilsson}
+\maketitle
+\begin{abstract}
+AxAnIvIs is a project tasked to develop a way to display optician's charts on a digital screen and control that screen via an Android tablet. This solves several problems relating to lighting and distance from the patient to the chart, while also providing more ways for the optician to tailor the examination to the patient. The AxAnIvIs project will be improving upon a proof-of-concept system that has been used to test wether or not digital screens are a viable alternative to physical ones.
+\end{abstract}
+\thispagestyle{empty}
+\clearpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%  DEL 1: FÖRUTSÄTTNINGAR
+\setcounter{page}{1}
+\chapter{Preconditions}
 %%%%%%%%%%%%%Område/bakgrund: vilket är området, omgivningen, kontextet, bakgrunden för projektet?
 
 %beskrivning av området (t.ex. ljudbehandling, studieplaner, visualisering, autism...)
 %Inom området oftalmiatrik används idag tavlor med förtryckta rader symboler för att undersöka patienters synfunktion. Denna betäms genom att patienten läser tecken tills den inte längre korrekt kan bestämma vilket tecken det är, och optikern kan därmed läsa ut patientens synskärpa.
-
+\section{Background}
 In the field of ophthalmology today, charts are used with printed lines of continuously smaller symbols used to measure a patients visual acuity. To make this measurement the patient reads symbols from the chart as far as he or she can, and based on at what letter size the patient failed to tell the correct symbol his or her visual acuity can be determined. 
 
 %För att tavlan ska fungera som grund för dessa standardiserade tester i ögonskärpa måste miljön för testet vara noga beredd. Det finns bland annat krav på att tavlan är sex meter ifrån patienten, och att ljusstyrkan i rummet är exakt. Dessa krav kan inte alltid uppfyllas, vilket leder till avvikelser i testerna.
@@ -16,27 +29,30 @@ For such charts to function as a basis for these standardized tests in visual ac
 
 There are also several different variations on these charts. Different sets of symbols, ranging from different subsets of arabic letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen Chart that was developed in the 19th century, to the modern LogMAR chart.
 
+\section{Employer}
 %%%%%%%%%%%%%beskriv uppdragsgivare, om ni har
 
 %Vår uppdragsgivare är Per Söderberg, professor i oftalmiatrik vid Institutet%(Institutionen?)<---------------------------------- 
 %för Neurovetenskap vid %Hum. Dubbel-vid. Hur skriver man det här egentligen? <---------------------------------------------------
 %Uppsala Universitet. Han tar även patienter vid Akademiska Sjukhuset i Uppsala
 
-Our client is Per Söderberg, professor and chair of opthalmology with the Department of Neuroscience at Uppsala University. He also takes patients at the University Hospital, and uses these types of charts on a daily basis. 
+Our employer is Per Söderberg, professor and chair of opthalmology with the Department of Neuroscience at Uppsala University. He also takes patients at the University Hospital, and uses these types of charts on a daily basis. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%Syfte: vart strävar projektet? vad är det övergripande målet, nyttan, effekterna av projektet?
 %%%%%%%%%%%%%t.ex. bättre koll på kosthållning, enklare planering av studier
-
+\section{Purpouse}
 To solve the problems with this system the Department of Neuroscience has performed tests using a digital screen to present the charts instead of using printed medium. This means the optician can have many more variations on the charts at his or her disposal, the set of symbols to use on the charts can be switched with a menu, and the screen provides an adequately lit surface by itself. The current system is implemented by connecting an android tablet to a screen via HDMI cable, and the charts rendered via a web browser app on the tablet. Testing has proceeded for over a year, and has yielded very good results.
 
-The purpose of this project is to take the system used for these tests and develop a complete implementation with several advantages over the testing system, such as:
+The goal of this project is to take the system used for these tests and develop a complete implementation with several advantages over the testing system, such as:
 
-* A fully developed app for the tablet with an improved user interface, both aesthetically and mechanically
-* Connecting the digital screen to a computer that can handle higher resolution rendering than the tablets native resolution
-* Controlling that computer over wifi with the tablet, meaning the optician can move around the room easily
-* Altering the scale of the rendered symbols so that the patient can be closer or further away from the screen than the regulation six meters
-* Being able to tailor the testing process to the patient by changing the sets of symbols displayed or removing clutter from the charts.
-
+\begin{itemize}
+	\item A fully developed app for the tablet with an improved user interface, both aesthetically and mechanically
+	\item Connecting the digital screen to a computer that can handle higher resolution rendering than the tablets native resolution
+	\item Controlling that computer over wifi with the tablet, meaning the optician can move around the room easily
+	\item Altering the scale of the rendered symbols so that the patient can be closer or further away from the screen than the regulation six meters
+	\item Being able to tailor the testing process to the patient by changing the sets of symbols displayed or removing clutter from the charts.
+\end{itemize}
+	
 and other features to make the process easier for the optician and patient.
 
 %%%%%%%%%%%%%%%%%%%%%%%%Mål: vad ska konkret levereras/utföras av projektet, för att ta oss närmare syftet
@@ -45,6 +61,7 @@ and other features to make the process easier for the optician and patient.
 
 %%%%%%%%%%%%%%%%%%%%%%%%Motivation:
 
+\section{Motivation}
 %%%%%%%%%%%%%Varför är projektet viktigt?
 %%%%%%%%%%%%%Hur stort är problemet, vad är följden av att det inte är löst, hur bra vore det att lösa?
 %%%%%%%%%%%%%Vilken "lucka" i området täcker ni?
@@ -67,6 +84,7 @@ This project is important because determining visual acuity is a very labor- and
 
 %%%%%%%%%%%%%%%%%%%%%%%%Frågeställningar:
 
+\section{Issues}
 %%%%%%%%%%%%%vilka tekniska problem behöver ni lösa (sj.arb), vad ska ni ta reda på (uppsatsmetodik)?
 
 There are several technical problems that we need to solve. We need to design a small computer system that will store and present the desired images to the screen. Our current plan is using a RaspberryPi, since it is a cheap and compact alternative to PCs that is more than powerful enough for our purposes. 
@@ -75,14 +93,17 @@ Networking needs to be added to control the RaspberryPi over wifi from the table
 
 Designing the android app for the tablet will bring technical problems, both from the limitations of portable computers, and making our software adaptable enough to work on as many brands of tablets as possible. For example, the symbols we are to present are stored in the .svg (Scalable Vector Graphics) format, which is not natively supported on android. As such we must find and work with a licensed software library to render them. 
 
-Finally we should design a way for the database of symbols and chart layouts to be easily updated and synched between devices and some server storage. 
+Finally we should design a way for the database of symbols and chart layouts to be easily updated and synchronized between devices and some server storage. 
 
+\section{Ethical considerations}
 %%%%%%%%%%%%%vilka etiska frågeställningar finns (tänk t.ex. på användningen av resultatet)?
 
 Our ethical obligations with this project is providing a functional and stable product. If our system does not preform to specification, a lot of patients could get erroneous measurements during testing, costing a lot of time and money to correct. We will also have to work with code obfuscation to prevent illegal distribution of our software, since it is intended to be sold to hospitals and clinics worldwide.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%DEL 2: GENOMFÖRANDE
+\chapter{Implementation}
+\section{Methods}
 %%%%%%%%%%%%%%%%%%%%%%%%Metoder:
 
 %%%%%%%%%%%%%vilka metoder ska ni konkret använda för att lösa problemet/bygga systemet/arbeta?
@@ -92,17 +113,24 @@ To complete this project we will be using Android Studio to develop the app, wri
 
 %%%%%%%%%%%%%%%%%%%%%%%%Systemstruktur: vilka delar kan ni se att ert system/problem består av? (T.ex. databas, webbinterface, AI-modul, grafik...)
 
+\section{System structure}
+
 The dicrete parts of this project are:
 
-* Tablet App
-	* UI
-	* Backend/Networking
-* Screen controller
-	* Display
-	* Backend/Networking
-* Symbol and layout database
-	* Server for distributing database content and updates
+\begin{itemize}
+	\item Tablet App
+	\begin{itemize}
+		\item UI
+		\item Backend/Networking
+	\end{itemize}
+	\item Screen controller
+	\begin{itemize}
+		\item Display
+		\item Backend/Networking
+	\end{itemize}
+\end{itemize}
 
+\section{Boundaries}
 %%%%%%%%%%%%%%%%%%%%%%%%Avgränsningar:
 
 %%%%%%%%%%%%%vad ska INTE göras, även om man kanske kunde tro det?
@@ -111,16 +139,17 @@ We are not tasked to develop a library to display .svg files, and will be using 
 
 %%%%%%%%%%%%%vad ska bara göras om tid/resurser/omständigheter räcker till?
 
-There are several extensions to the system that can be considered if we have time to spare. We can extend the system to support more types of charts, such as charts for testing colour blindness and stereoscopic vision, which also rely heavily on rooms with appropriate lighting.
+There are however several extensions to the system that can be considered if we have time to spare. We can extend the system to support more types of charts, such as charts for testing colour blindness and stereoscopic vision, which also rely heavily on rooms with appropriate lighting.
 
-While it deviates further from the main part of the project, we were asked by our client to consider implementing the ability to control devices such as lights around the room from inside the app. This could probably be done, and we will look into it if time allows.
+While it deviates further from the main part of the project, we were asked by our employer to consider implementing the ability to control devices such as lights around the room from inside the app. This could probably be done, and we will look into it if time allows.
 
+\section{Demands}
 %%%%%%%%%%%%%%%%%%%%%%%%Krav: vilka krav ställer ni/andra på ert resultat?
 %%%%%%%%%%%%%hur snabbt? hur många användare? hur strömsnålt? eller vad som är relevant
 
 There are a few core demands that our product needs to meet. First and foremost, it needs to work, and do what the current testing system can already do. Second, it needs to be easy to use and have an intuitive interface. Third, it should be very energy efficient, since forcing the user to recharge the tablet often reduces productivity. 
 
-
+\section{Evaluation}
 %%%%%%%%%%%%%%%%%%%%%%%%Utvärdering: hur ska ni utvärdera ert arbete/system, hur vet ni om/hur bra ni lyckats?
 
 The easiest way to see if our product satisfies these demands is putting it into the hands of the opticians at the university hospital and letting them test it, recording bug reports or comments. Testing will also let us determine if the system is as energy efficient as we intended.
