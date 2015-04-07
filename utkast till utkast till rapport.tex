@@ -22,8 +22,7 @@ There are also several different variations on these charts. Different sets of s
 %för Neurovetenskap vid %Hum. Dubbel-vid. Hur skriver man det här egentligen? <---------------------------------------------------
 %Uppsala Universitet. Han tar även patienter vid Akademiska Sjukhuset i Uppsala
 
-Our UPPDRAGSGIVARE %Fan heter det på engelska då? <----------------------------------------------------------
-is Per Söderberg, professor and chair of opthalmology with the Department of Neuroscience at Uppsala University. He also takes patients at the University Hospital, and uses these types of charts on a daily basis. 
+Our client is Per Söderberg, professor and chair of opthalmology with the Department of Neuroscience at Uppsala University. He also takes patients at the University Hospital, and uses these types of charts on a daily basis. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%Syfte: vart strävar projektet? vad är det övergripande målet, nyttan, effekterna av projektet?
 %%%%%%%%%%%%%t.ex. bättre koll på kosthållning, enklare planering av studier
@@ -81,4 +80,48 @@ Finally we should design a way for the database of symbols and chart layouts to 
 %%%%%%%%%%%%%vilka etiska frågeställningar finns (tänk t.ex. på användningen av resultatet)?
 
 Our ethical obligations with this project is providing a functional and stable product. If our system does not preform to specification, a lot of patients could get erroneous measurements during testing, costing a lot of time and money to correct. We will also have to work with code obfuscation to prevent illegal distribution of our software, since it is intended to be sold to hospitals and clinics worldwide.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%DEL 2: GENOMFÖRANDE
+%%%%%%%%%%%%%%%%%%%%%%%%Metoder:
+
+%%%%%%%%%%%%%vilka metoder ska ni konkret använda för att lösa problemet/bygga systemet/arbeta?
+%%%%%%%%%%%%%vilka tekniker/verktyg ska ni använda?
+
+To complete this project we will be using Android Studio to develop the app, writing in Java and using the various Android code libraries and API's at our disposal. The server software used to control the screen will also be written in Java for compatibility. We will try using a RaspberryPI as the screen hardware and see if it is appropriate for this project.
+
+%%%%%%%%%%%%%%%%%%%%%%%%Systemstruktur: vilka delar kan ni se att ert system/problem består av? (T.ex. databas, webbinterface, AI-modul, grafik...)
+
+The dicrete parts of this project are:
+
+* Tablet App
+	* UI
+	* Backend/Networking
+* Screen controller
+	* Display
+	* Backend/Networking
+* Symbol and layout database
+	* Server for distributing database content and updates
+
+%%%%%%%%%%%%%%%%%%%%%%%%Avgränsningar:
+
+%%%%%%%%%%%%%vad ska INTE göras, även om man kanske kunde tro det?
+
+We are not tasked to develop a library to display .svg files, and will be using a licensed one. We are also not tasked to populate the database with symbols and layouts, but instead provide a comprehensive API so that clients can create their own.
+
+%%%%%%%%%%%%%vad ska bara göras om tid/resurser/omständigheter räcker till?
+
+There are several extensions to the system that can be considered if we have time to spare. We can extend the system to support more types of charts, such as charts for testing colour blindness and stereoscopic vision, which also rely heavily on rooms with appropriate lighting.
+
+While it deviates further from the main part of the project, we were asked by our client to consider implementing the ability to control devices such as lights around the room from inside the app. This could probably be done, and we will look into it if time allows.
+
+%%%%%%%%%%%%%%%%%%%%%%%%Krav: vilka krav ställer ni/andra på ert resultat?
+%%%%%%%%%%%%%hur snabbt? hur många användare? hur strömsnålt? eller vad som är relevant
+
+There are a few core demands that our product needs to meet. First and foremost, it needs to work, and do what the current testing system can already do. Second, it needs to be easy to use and have an intuitive interface. Third, it should be very energy efficient, since forcing the user to recharge the tablet often reduces productivity. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%Utvärdering: hur ska ni utvärdera ert arbete/system, hur vet ni om/hur bra ni lyckats?
+
+The easiest way to see if our product satisfies these demands is putting it into the hands of the opticians at the university hospital and letting them test it, recording bug reports or comments. Testing will also let us determine if the system is as energy efficient as we intended.
 \end{document}
