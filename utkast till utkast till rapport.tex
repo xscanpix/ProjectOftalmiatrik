@@ -3,10 +3,11 @@
 
 \begin{document}
 \title{Report Draft\\AxAnIvIs}
-\author{Anders Ohlsson\\ Christian Johansson\\ Svante Nilsson}
+\author{Anders Ohlsson\\Christian Johansson\\Svante Nilsson}
 \maketitle
+
 \begin{abstract}
-AxAnIvIs is a project tasked to develop a way to display optician's charts on a digital screen and control that screen via an Android tablet. This solves several problems relating to lighting and distance from the patient to the chart, while also providing more ways for the optician to tailor the examination to the patient. The AxAnIvIs project will be improving upon a proof-of-concept system that has been used to test wether or not digital screens are a viable alternative to physical ones.
+AxAnIvIs is a project involving development of a method for displaying optician's eye charts. The charts are going to be displayed on a digital screen and controled via an Android tablet. This solves several problems relating to lighting and distance from the patient to the chart, while also providing more ways for the optician to tailor the examination of the patient. The AxAnIvIs project will be improving upon a proof-of-concept system that has been used to test whether or not digital screens are a viable alternative to physical charts.
 \end{abstract}
 \thispagestyle{empty}
 \clearpage
@@ -15,19 +16,19 @@ AxAnIvIs is a project tasked to develop a way to display optician's charts on a 
 \setcounter{page}{1}
 \chapter{Preconditions}
 %%%%%%%%%%%%%Område/bakgrund: vilket är området, omgivningen, kontextet, bakgrunden för projektet?
-
 %beskrivning av området (t.ex. ljudbehandling, studieplaner, visualisering, autism...)
 %Inom området oftalmiatrik används idag tavlor med förtryckta rader symboler för att undersöka patienters synfunktion. Denna betäms genom att patienten läser tecken tills den inte längre korrekt kan bestämma vilket tecken det är, och optikern kan därmed läsa ut patientens synskärpa.
+
 \section{Background}
-In the field of ophthalmology today, charts are used with printed lines of continuously smaller symbols used to measure a patients visual acuity. To make this measurement the patient reads symbols from the chart as far as he or she can, and based on at what letter size the patient failed to tell the correct symbol his or her visual acuity can be determined. 
+In the field of ophthalmology today, charts with printed lines of continuously smaller symbols are used to measure a patients visual acuity. The measurement is made by having the patient read symbols on the chart from a set distance. The person reads down the chart until it is no longer possible to make out the characters. Based on the size of the character the patient failed to tell, a visual acuity can be determined. 
 
 %För att tavlan ska fungera som grund för dessa standardiserade tester i ögonskärpa måste miljön för testet vara noga beredd. Det finns bland annat krav på att tavlan är sex meter ifrån patienten, och att ljusstyrkan i rummet är exakt. Dessa krav kan inte alltid uppfyllas, vilket leder till avvikelser i testerna.
 
-For such charts to function as a basis for these standardized tests in visual acuity the testing environment must be carefully prepared. Among other things, the chart must be placed at a distance of 6 meters from the patient, and the luminosity in the room must be at a specific level. These conditions cannot always be met, in the event that the room is too small or the lighting insufficient for example, and this can lead to irregularities or faulty measurements in these tests. 
+For such charts to function as a basis for these standardized tests of visual acuity the testing environment must be carefully prepared. Among a few things, the chart must be placed at a distance of six meters from the patient, and the luminosity in the room must be at a specific level. These conditions cannot always be met. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests. 
 
 %Det finns även många varianter på dessa tavlor. Flera olika uppsättningar optyper (tecken som visas på tavlorna, oftast bokstäver) har utvecklats för olika typer av patienter, bland annat varianter för patienter som inte kan alfabetet, eller barn. Även layouten av optyper på tavlan har flera varianter, från den klassiska Snellentavlan som utvecklades på 1800-talet, till den modernare LogMAR tavlan.
 
-There are also several different variations on these charts. Different sets of symbols, ranging from different subsets of arabic letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen Chart that was developed in the 19th century, to the modern LogMAR chart.
+There are also several different variations on these charts. Different sets of symbols, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen Chart that was developed in the 19th century, to the more modern LogMAR chart.
 
 \section{Employer}
 %%%%%%%%%%%%%beskriv uppdragsgivare, om ni har
@@ -36,20 +37,20 @@ There are also several different variations on these charts. Different sets of s
 %för Neurovetenskap vid %Hum. Dubbel-vid. Hur skriver man det här egentligen? <---------------------------------------------------
 %Uppsala Universitet. Han tar även patienter vid Akademiska Sjukhuset i Uppsala
 
-Our employer is Per Söderberg, professor and chair of opthalmology with the Department of Neuroscience at Uppsala University. He also takes patients at the University Hospital, and uses these types of charts on a daily basis. 
+Our employer is Per Söderberg, professor and chair of opthalmology with the Department of Neuroscience at Uppsala University. He also takes patients at the university hospital, and uses these types of charts on a daily basis. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%Syfte: vart strävar projektet? vad är det övergripande målet, nyttan, effekterna av projektet?
 %%%%%%%%%%%%%t.ex. bättre koll på kosthållning, enklare planering av studier
 \section{Purpouse}
-To solve the problems with this system the Department of Neuroscience has performed tests using a digital screen to present the charts instead of using printed medium. This means the optician can have many more variations on the charts at his or her disposal, the set of symbols to use on the charts can be switched with a menu, and the screen provides an adequately lit surface by itself. The current system is implemented by connecting an android tablet to a screen via HDMI cable, and the charts rendered via a web browser app on the tablet. Testing has proceeded for over a year, and has yielded very good results.
+To solve the problems with this system the Department of Neuroscience have performed tests using a digital screen to present the charts instead of using printed medium. This means the optician can have many more variations on the charts at disposal. The set of symbols used on the charts can be switched with a menu, and the screen provides an adequately lit surface by itself. The current system is implemented by connecting an android tablet to a screen via an HDMI cable, and the charts are rendered via a web browser on the tablet. Testing has proceeded for over a year, and has yielded very good results.
 
 The goal of this project is to take the system used for these tests and develop a complete implementation with several advantages over the testing system, such as:
 
 \begin{itemize}
-	\item A fully developed app for the tablet with an improved user interface, both aesthetically and mechanically
-	\item Connecting the digital screen to a computer that can handle higher resolution rendering than the tablets native resolution
-	\item Controlling that computer over wifi with the tablet, meaning the optician can move around the room easily
-	\item Altering the scale of the rendered symbols so that the patient can be closer or further away from the screen than the regulation six meters
+	\item A fully developed app for the tablet with an improved user interface, both aesthetically and mechanically.
+	\item Connecting the digital screen to a computer that can handle higher resolution rendering than the tablets native resolution.
+	\item Controlling the computer over WiFi using the tablet, meaning the optician can move around the room more easily.
+	\item Altering the scale of the rendered symbols so that the patient can be closer or further away from the screen than the regular six meters.
 	\item Being able to tailor the testing process to the patient by changing the sets of symbols displayed or removing clutter from the charts.
 \end{itemize}
 	
@@ -70,8 +71,6 @@ and other features to make the process easier for the optician and patient.
 This project is important because determining visual acuity is a very labor- and equipment-intensive process. As the testing has showed, using a digital chart with a tablet interface is easier and faster, and can be a great help for the optician. The only thing missing is to improve on the design and implement a functional user interface and a better hardware solution to turn the testing shell into a finished product. 
 
 %Borde utökas, trorja.
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%Lägesbeskrivning:
 
 %Fan också, det här har jag ju skrivit om redan. 
