@@ -32,6 +32,8 @@ public class Main
 
 	private static Integer lastX = null;
 	private static Integer lastY = null;
+	
+	static float scaling = 1.01f;
 
 	public static void main(String... args)
 	{
@@ -183,8 +185,8 @@ public class Main
 					AffineTransform transform = canvas.getRenderingTransform();
 					if (transform.getScaleX() < 4f)
 					{
-						transform.scale(1.2f, 1.2f);
-						transform.translate((-canvas.getWidth() / 6f) / 2f, 0);
+						transform.scale(scaling, scaling);
+						transform.translate((-canvas.getWidth() / (1f / (1f - (1f / scaling)))) / 2f, 0);
 						canvas.setRenderingTransform(transform);
 					}
 				}
@@ -193,8 +195,8 @@ public class Main
 					AffineTransform transform = canvas.getRenderingTransform();
 					if (transform.getScaleX() > 0.1f)
 					{
-						transform.scale(1f - (1f / 6f), 1f - (1f / 6f));
-						transform.translate((canvas.getWidth() / 5f) / 2f, 0);
+						transform.scale(1f / scaling, 1f / scaling);
+						transform.translate((canvas.getWidth() / (1f / (scaling - 1f))) / 2f, 0);
 						canvas.setRenderingTransform(transform);
 					}
 				}
