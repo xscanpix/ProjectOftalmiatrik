@@ -1,0 +1,7 @@
+package org.anaxivis.core.svg;
+
+public class EyeChartGenerator {
+    private static enum TYPE {LOGMAR_RANDOM};
+    
+    
+}

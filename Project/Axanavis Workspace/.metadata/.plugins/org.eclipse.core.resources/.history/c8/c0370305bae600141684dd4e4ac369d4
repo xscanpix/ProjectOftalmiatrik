@@ -1,0 +1,13 @@
+package com.anaxivis.application.fx.view;
+
+import com.anaxivis.application.fx.MainApp;
+
+public class MainContentController {
+
+    private MainApp mainApp;
+
+    public MainContentController() {
+    }
+    
+    
+}

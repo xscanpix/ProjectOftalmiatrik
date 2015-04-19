@@ -1,0 +1,13 @@
+package com.anaxivis.application;
+
+import javafx.scene.image.Image;
+
+public class SVGImageGenerator {
+
+    public static enum CHART_TYPE {
+	LOGMAR_R, LOGMAR_1, LOGMAR_2
+    };
+
+    public Image generateImage(CHART_TYPE type) {
+    }
+}

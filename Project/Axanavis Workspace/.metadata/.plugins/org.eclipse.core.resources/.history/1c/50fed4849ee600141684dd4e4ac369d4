@@ -1,0 +1,41 @@
+package com.anaxivis.application;
+
+import java.util.concurrent.CountDownLatch;
+
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+public class IAxanivis extends Application {
+    private static final CountDownLatch latch = new CountDownLatch(1);
+
+    private static IAxanivis instance;
+    private static AxanivisApplication app;
+
+    public IAxanivis() {
+	app = new AxanivisApplication();
+	setStartUpTest(this);
+    }
+
+    public void setSVGFile(String fileName) {
+	app.getMainContent().loadSVGFile(fileName);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+	app.startApp(primaryStage);
+    }
+
+    public static IAxanivis waitForStartUpTest() {
+	try {
+	    latch.await();
+	} catch (InterruptedException e) {
+	    e.printStackTrace();
+	}
+	return instance;
+    }
+
+    public static void setStartUpTest(IAxanivis app) {
+	IAxanivis.instance = app;
+	latch.countDown();
+    }
+}

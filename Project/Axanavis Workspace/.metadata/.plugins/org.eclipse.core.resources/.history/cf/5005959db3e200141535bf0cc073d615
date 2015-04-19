@@ -1,0 +1,53 @@
+package org.anaxivis;
+
+import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.swing.JPanel;
+
+import org.anaxivis.core.svg.JSVGCanvasLoader;
+import org.apache.batik.swing.JSVGCanvas;
+
+/**
+ * The main content class
+ * 
+ * @author Svante Nilsson
+ * @version 0.1
+ * @since 2015-04-06
+ */
+@SuppressWarnings("serial")
+public class MainContent extends JPanel {
+
+    private static final Logger logger = Logger.getLogger(MainContent.class.getName());
+
+    private Axanivis parent;
+
+    private int index;
+
+    public MainContent(Axanivis parent) {
+	super();
+
+	this.parent = parent;
+
+	init();
+    }
+
+    private void init() {
+	setFocusable(false);
+    }
+
+    public void setCurrentJSVGCanvas(JSVGCanvas canvas) {
+	add(canvas, index);
+	validate();
+	parent.getFrame().pack();
+    }
+
+    public void setCurrentSvgFile(File file) {
+	logger.log(Level.INFO, "Setting current file to: " + file.getName());
+
+	add(JSVGCanvasLoader.loadFile(file), index);
+	validate();
+	parent.getFrame().pack();
+    }
+}

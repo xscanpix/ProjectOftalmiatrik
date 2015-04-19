@@ -1,0 +1,10 @@
+package com.anaxivis.application;
+
+import java.util.concurrent.ConcurrentLinkedQueue;
+
+public class NetworkTest {
+    public ConcurrentLinkedQueue<String> queue;
+
+    public NetworkTest() {
+    }
+}

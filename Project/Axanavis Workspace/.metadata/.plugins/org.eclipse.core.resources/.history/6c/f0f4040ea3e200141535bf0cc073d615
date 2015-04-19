@@ -1,0 +1,5 @@
+package org.anaxivis;
+
+public interface IAxanivis {
+    public MainContent getMainContent();
+}

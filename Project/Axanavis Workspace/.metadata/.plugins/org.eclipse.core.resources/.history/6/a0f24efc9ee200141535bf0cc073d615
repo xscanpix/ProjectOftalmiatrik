@@ -1,0 +1,28 @@
+package org.anaxivis;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.swing.SwingUtilities;
+
+/**
+ * 
+ * Class containing main method, used to run the application
+ * 
+ * @author Svante
+ *
+ */
+public class Boot {
+
+    private static final Logger logger = Logger.getLogger(Boot.class.getName());
+
+    public static void main(String[] args) {
+	SwingUtilities.invokeLater(new Runnable() {
+	    @Override
+	    public void run() {
+		logger.log(Level.INFO, "Running application...");
+		new Axanivis();
+	    }
+	});
+    }
+}

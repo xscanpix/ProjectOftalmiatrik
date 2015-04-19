@@ -1,0 +1,19 @@
+package com.anaxivis.application;
+
+import java.util.Random;
+
+public class TestLogMAR extends SVGChartGenerator{
+
+    
+
+    
+
+    public TestLogMAR() {
+	super();
+    }
+
+    @Override
+    public String generateChart(int width, int height, float dpi) {
+	
+    }
+}

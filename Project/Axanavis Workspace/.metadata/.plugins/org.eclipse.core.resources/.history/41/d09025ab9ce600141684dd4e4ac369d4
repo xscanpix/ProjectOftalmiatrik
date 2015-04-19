@@ -1,0 +1,27 @@
+package com.anaxivis.application;
+
+import javafx.application.Application;
+import javafx.stage.Stage;
+
+public class IAxanivis extends Application{
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+	
+	
+    }
+    
+    public static AxanivisApplication waitForStartUpTest() {
+	try {
+	    latch.await();
+	} catch (InterruptedException e) {
+	    e.printStackTrace();
+	}
+	return application;
+    }
+
+    public static void setStartUpTest(AxanivisApplication app) {
+	application = app;
+	latch.countDown();
+    }   
+}

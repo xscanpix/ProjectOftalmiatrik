@@ -1,0 +1,18 @@
+package com.anaxivis.application;
+
+import javafx.application.Application;
+
+public class Boot {
+    private static IAxanivis app;
+
+    public static void main(String[] args) {
+	app = new IAxanivis();
+	new Thread() {
+	    @Override
+	    public void run() {
+		Application.launch(IAxanivis.class);
+	    }
+	}.start();
+	
+    }
+}

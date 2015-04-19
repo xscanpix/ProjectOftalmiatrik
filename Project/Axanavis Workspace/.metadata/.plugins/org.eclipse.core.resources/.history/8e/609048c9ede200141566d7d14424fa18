@@ -1,0 +1,27 @@
+package org.anaxivis.network;
+
+import org.anaxivis.IAxanivis;
+
+public class TestWorker implements Runnable {
+
+    private IAxanivis application;
+
+    public TestWorker(IAxanivis application) {
+	this.application = application;
+    }
+
+    @Override
+    public void run() {
+
+	while (true) {
+	    System.out.println("In test runnable");
+	    try {
+		Thread.sleep(10);
+	    } catch (InterruptedException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	    }
+	}
+    }
+
+}

@@ -1,0 +1,217 @@
+package org.anaxivis;
+
+import java.awt.AWTException;
+import java.awt.Dimension;
+import java.awt.Robot;
+import java.awt.event.ActionEvent;
+import java.awt.event.KeyEvent;
+import java.io.File;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
+import javax.swing.AbstractAction;
+import javax.swing.ActionMap;
+import javax.swing.InputMap;
+import javax.swing.JFrame;
+import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
+
+/**
+ * The main frame class
+ * 
+ * @author Svante Nilsson
+ * @version 0.1
+ * @since 2015-04-06
+ */
+@SuppressWarnings("serial")
+public class Axanivis implements IAxanivis {
+    private static final Logger logger = Logger.getLogger(Axanivis.class.getName());
+
+    private static final int FULLSCREEN_TOGGLE = KeyEvent.VK_F1;
+    private static final int MENU_TOGGLE = KeyEvent.VK_F2;
+    private static final int DEBUG_MENU_TOGGLE = KeyEvent.VK_F3;
+    private static final int MINIMUM_FRAME_WIDTH = 800;
+    private static final int MINIMUM_FRAME_HEIGHT = 600;
+    private static final boolean START_IN_FULLSCREEN = false;
+
+    private boolean inFullscreen;
+
+    private JFrame frame;
+    private MainContent mainContent;
+    private MainFrameMenu mainMenuBar;
+
+    /**
+     * Creates the main window frame and calls {@code init()}.
+     * 
+     * @param FRAME_TITLE
+     *            the title that the window initially gets.
+     */
+    public Axanivis() {
+
+	frame = new JFrame("Axanivis");
+
+	init();
+    }
+
+    /**
+     * Configures the window with some basic settings and sets up the component
+     * and listeners.
+     */
+    private void init() {
+	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	frame.setResizable(true);
+	frame.setMinimumSize(new Dimension(MINIMUM_FRAME_WIDTH, MINIMUM_FRAME_HEIGHT));
+	frame.setLocationRelativeTo(null);
+
+	registerKeyStrokes();
+
+	if (START_IN_FULLSCREEN) {
+	    requestToggleFullscreen();
+	    inFullscreen = true;
+	} else {
+	    frame.setSize(frame.getMinimumSize());
+	    inFullscreen = false;
+	}
+
+	initComponents();
+
+	frame.setVisible(true);
+	frame.pack();
+    }
+
+    /**
+     * Registers the key strokes to the window that is used to toggle a
+     * multitude of things.
+     */
+    private void registerKeyStrokes() {
+	InputMap inputMap = frame.getRootPane().getInputMap();
+	ActionMap actionMap = frame.getRootPane().getActionMap();
+
+	KeyStroke FULLSCREEN_TOGGLE_KEY_STROKE = KeyStroke.getKeyStroke(FULLSCREEN_TOGGLE, 0, true);
+	inputMap.put(FULLSCREEN_TOGGLE_KEY_STROKE, FULLSCREEN_TOGGLE);
+	actionMap.put(FULLSCREEN_TOGGLE, new AbstractAction() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		requestToggleFullscreen();
+	    }
+	});
+
+	KeyStroke MENU_TOGGLE_KEY_STROKE = KeyStroke.getKeyStroke(MENU_TOGGLE, 0, true);
+	inputMap.put(MENU_TOGGLE_KEY_STROKE, MENU_TOGGLE);
+	actionMap.put(MENU_TOGGLE, new AbstractAction() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		toggleMenu();
+	    }
+	});
+
+	KeyStroke DEBUG_MENU_TOGGLE_KEY_STROKE = KeyStroke.getKeyStroke(DEBUG_MENU_TOGGLE, 0, true);
+	inputMap.put(DEBUG_MENU_TOGGLE_KEY_STROKE, DEBUG_MENU_TOGGLE);
+	actionMap.put(DEBUG_MENU_TOGGLE, new AbstractAction() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		// TODO: Create debug window
+	    }
+	});
+    }
+
+    /**
+     * Initializes the components and adds them to the window.
+     */
+    private void initComponents() {
+	mainMenuBar = new MainFrameMenu(this);
+	mainContent = new MainContent(this);
+
+	frame.getContentPane().add(mainContent);
+	frame.setJMenuBar(mainMenuBar);
+    }
+
+    /**
+     * Used to request closing the window.
+     * 
+     * @param message
+     *            the message to show when the close is requested.
+     */
+    public void requestClose() {
+	logger.log(Level.INFO, "Close requested");
+	frame.dispose();
+    }
+
+    /**
+     * Used to request setting the window to fullscreen.
+     * 
+     * @param message
+     *            the message to show when fullscreen is requested.
+     */
+    public void requestToggleFullscreen() {
+	logger.log(Level.INFO, "Fullscreen toggle requested");
+
+	frame.setVisible(false);
+
+	if (inFullscreen) {
+	    frame.dispose();
+	    frame.setUndecorated(false);
+	    frame.setLocation(0, 0);
+	    frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+	    mainMenuBar.setVisible(true);
+	    mainMenuBar.validate();
+	    frame.pack();
+	    frame.setLocationRelativeTo(null);
+	    inFullscreen = false;
+	} else {
+	    frame.dispose();
+	    mainMenuBar.setVisible(false);
+	    mainMenuBar.validate();
+	    frame.setUndecorated(true);
+	    frame.setLocation(0, 0);
+	    frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
+	    frame.pack();
+	    inFullscreen = true;
+	}
+
+	frame.setVisible(true);
+	frame.repaint();
+    }
+
+    /**
+     * Toggles the menu's visibility
+     */
+    public void toggleMenu() {
+	if (frame.getJMenuBar().isVisible()) {
+	    frame.getJMenuBar().setVisible(false);
+	} else {
+	    frame.getJMenuBar().setVisible(true);
+	}
+    }
+
+    /**
+     * Returns the main content variable.
+     * 
+     * @return the main content variable
+     */
+    public MainContent getMainContent() {
+	return mainContent;
+    }
+
+    public JFrame getFrame() {
+	return frame;
+    }
+
+    @Override
+    public void setSVGFile(File file) {
+	// TODO setSVGFile
+
+    }
+
+    @Override
+    public void setDPI(int dpi) {
+	// TODO setDPI
+
+    }
+
+    @Override
+    public void setResolution(int width, int height) {
+	// TODO setResolution
+
+    }
+}

@@ -1,0 +1,22 @@
+package com.anaxivis.application;
+
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+
+public class MainScene extends Scene {
+    
+    public MainScene(Parent root) {
+	super(root);
+	MainContent mainContent = new MainContent();
+
+	BorderPane root = new BorderPane();
+
+	root.setTop(ApplicationMenu.instance);
+	
+	
+	root.setCenter(mainContent.getContentPane());
+	
+	
+    }
+}

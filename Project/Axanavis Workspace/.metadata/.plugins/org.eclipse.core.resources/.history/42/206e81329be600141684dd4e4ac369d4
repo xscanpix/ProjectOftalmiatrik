@@ -1,0 +1,27 @@
+package com.anaxivis.application;
+
+import java.util.concurrent.CountDownLatch;
+
+import javafx.application.Application;
+
+public abstract class IAxanivis extends Application {
+    
+    protected static AxanivisApplication application = null;
+    
+    protected static final CountDownLatch latch = new CountDownLatch(1);
+    
+    public static AxanivisApplication waitForStartUpTest() {
+	try {
+	    latch.await();
+	} catch (InterruptedException e) {
+	    e.printStackTrace();
+	}
+	return application;
+    }
+
+    public static void setStartUpTest(AxanivisApplication app) {
+	application = app;
+	latch.countDown();
+    }
+
+}

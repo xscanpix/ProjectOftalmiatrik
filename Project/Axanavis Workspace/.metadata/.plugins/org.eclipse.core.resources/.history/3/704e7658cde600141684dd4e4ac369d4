@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="layout" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.anaxivis.application.fx.view.MainContentController">
+   <children>
+      <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" layoutX="211.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="152.0" AnchorPane.leftAnchor="211.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="98.0" />
+   </children>
+</AnchorPane>

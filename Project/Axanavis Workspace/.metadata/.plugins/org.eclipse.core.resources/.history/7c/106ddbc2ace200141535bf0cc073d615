@@ -1,0 +1,5 @@
+package org.anaxivis.core.svg;
+
+public class LogMAREyeChart extends SVGEyeChart{
+
+}

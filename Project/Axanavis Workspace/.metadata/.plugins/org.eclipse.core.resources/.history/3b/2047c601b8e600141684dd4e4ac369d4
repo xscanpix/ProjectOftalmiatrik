@@ -1,0 +1,18 @@
+package com.anaxivis.application.fx.model;
+
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.ObjectProperty;
+import javafx.scene.image.Image;
+
+public class EyeChart {
+    private final ObjectProperty<Image> image;
+    private final IntegerProperty chartType;
+
+    public EyeChart() {
+	this(null, null);
+    }
+
+    public EyeChart(Image image, int type) {
+	
+    }
+}

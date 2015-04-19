@@ -1,0 +1,17 @@
+package com.anaxivis.application.fx.view;
+
+import javafx.fxml.FXML;
+
+import com.anaxivis.application.fx.MainApp;
+
+public class MainContentController {
+
+    private MainApp mainApp;
+
+    public MainContentController() {
+    }
+
+    @FXML
+    private void initialize() {
+    }
+}

@@ -1,0 +1,9 @@
+package org.anaxivis.core.svg;
+
+public class EyeChartGenerator {
+    public static enum TYPE {LOGMAR_RANDOM};
+    
+    public static String generateEyeChart(TYPE type, String characters){
+	return "";
+    }
+}

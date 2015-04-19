@@ -1,0 +1,7 @@
+package com.anaxivis.application.fx.model;
+
+import javafx.beans.property.ObjectProperty;
+
+public class ChartImage {
+    private final ObjectProperty<Image> image;
+}

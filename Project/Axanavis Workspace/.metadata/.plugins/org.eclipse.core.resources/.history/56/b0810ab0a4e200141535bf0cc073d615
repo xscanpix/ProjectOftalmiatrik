@@ -1,0 +1,8 @@
+package org.anaxivis;
+
+import java.io.File;
+
+public interface IAxanivis {
+    
+    public void setSVGFile(File file);
+}

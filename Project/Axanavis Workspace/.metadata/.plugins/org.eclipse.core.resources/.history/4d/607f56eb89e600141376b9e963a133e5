@@ -1,0 +1,8 @@
+package com.anaxivis.application;
+
+public class SVGChartGenerator {
+    
+    private String lastGenerated;
+    
+    public String generateChart(int width, int height, float dpi);
+}

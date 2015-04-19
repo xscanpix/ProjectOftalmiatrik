@@ -1,0 +1,44 @@
+package com.anaxivis.application;
+
+import java.awt.image.BufferedImage;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.Image;
+
+import org.apache.batik.transcoder.TranscoderException;
+import org.apache.batik.transcoder.TranscoderInput;
+import org.apache.batik.transcoder.TranscoderOutput;
+import org.apache.batik.transcoder.image.ImageTranscoder;
+
+public class SVGImageLoader {
+    public static Image loadFromFile(String fileName) {
+
+	final BufferedImage buffer[] = new BufferedImage[1];
+
+	try {
+	    TranscoderInput in = new TranscoderInput(new FileInputStream(fileName));
+
+	    ImageTranscoder transcoder = new ImageTranscoder() {
+
+		@Override
+		public void writeImage(BufferedImage image, TranscoderOutput out) throws TranscoderException {
+		    buffer[0] = image;
+		}
+
+		@Override
+		public BufferedImage createImage(int w, int h) {
+		    return new BufferedImage(w, h, BufferedImage.TYPE_INT_ARGB);
+		}
+	    };
+
+	    transcoder.transcode(in, null);
+
+	} catch (FileNotFoundException | TranscoderException e) {
+	    e.printStackTrace();
+	}
+
+	return SwingFXUtils.toFXImage(buffer[0], null);
+    }
+}

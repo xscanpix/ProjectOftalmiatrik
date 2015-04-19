@@ -1,0 +1,26 @@
+package com.anaxivis.application;
+
+import javafx.scene.image.Image;
+
+public class SVGImageGenerator {
+
+    public static final int LOGMAR_TEST = -1;
+    public static final int LOGMAR_R = 1;
+    public static final int LOGMAR_1 = 2;
+    public static final int LOGMAR_2 = 3;
+
+    public Image generateImage(int type) {
+
+	Image image = null;
+	
+	switch (type) {
+	case LOGMAR_R:
+	    break;
+	default:
+	    //TODO: Return some default image
+	    break;
+	}
+
+	return image;
+    }
+}

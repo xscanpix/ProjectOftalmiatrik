@@ -1,0 +1,8 @@
+package com.anaxivis.application;
+
+public class SVGChartGenerator {
+    
+    private String lastGenerated;
+    
+    public String generateLogMAR_RChart(int width, int height, float dpi);
+}

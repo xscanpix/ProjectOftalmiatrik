@@ -1,0 +1,48 @@
+package com.anaxivis.application;
+
+import java.io.File;
+
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+
+public class MainContent {
+
+    private StackPane view;
+    private ImageView iView;
+    private int type;
+
+    public MainContent() {
+	view = new StackPane();
+	iView = new ImageView();
+
+	view.getChildren().add(iView);
+    }
+
+    public void switchView() {
+	if (type == SVGImageGenerator.LOGMAR_1 || type == SVGImageGenerator.LOGMAR_2 || type == SVGImageGenerator.LOGMAR_R) {
+	    
+	}
+    }
+
+    public void loadSVGFile(String fileName) {
+	Image image = SVGImageLoader.loadFromFile(fileName);
+	iView.setImage(image);
+	type = SVGImageGenerator.UNKNOWN;
+    }
+
+    public void loadSVGFile(File file) {
+	Image image = SVGImageLoader.loadFromFile(file);
+	iView.setImage(image);
+	type = SVGImageGenerator.UNKNOWN;
+    }
+
+    public void loadImage(Image newImage, int newType) {
+	iView.setImage(newImage);
+	type = newType;
+    }
+
+    public StackPane getView() {
+	return view;
+    }
+}

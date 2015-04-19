@@ -1,0 +1,95 @@
+package com.anaxivis.application;
+
+import java.util.ArrayList;
+
+import javafx.application.Application;
+import javafx.concurrent.ScheduledService;
+import javafx.concurrent.Task;
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+public class AxanivisApplication extends Application {
+    private static final String WINDOW_TITLE = "Axanivis";
+    private static final int MINIMUM_WIDTH = 800;
+    private static final int MINIMUM_HEIGHT = 600;
+    private static final boolean START_IN_FULLSCREEN = false;
+
+    private Stage window;
+    private ApplicationMenu menuBar;
+    private MainContent mainContent;
+
+    public class TestSchedule extends ScheduledService<String> {
+	@Override
+	protected Task<String> createTask() {
+	    // TODO Auto-generated method stub
+	    return null;
+	}
+    }
+
+    public static void main(String[] args) {
+	
+	ArrayList<String> list = new ArrayList<>();
+	list.add("1");
+	list.add("1");
+	list.add("1");
+	list.add("1");
+	list.add("1");
+	list.add("1");
+	
+	launch(args);
+    }
+
+    public void start(Stage primaryStage) {
+	window = primaryStage;
+
+	// Window settings
+	window.setTitle(WINDOW_TITLE);
+	window.setMinWidth(MINIMUM_WIDTH);
+	window.setMinHeight(MINIMUM_HEIGHT);
+	window.setFullScreenExitHint("");
+	window.fullScreenProperty().addListener(e -> toggleMenu());
+	window.setOnCloseRequest(e -> {
+	    e.consume();
+	    close();
+	});
+
+	mainContent = new MainContent();
+	menuBar = new ApplicationMenu(this);
+
+	BorderPane root = new BorderPane();
+
+	root.setTop(menuBar.getView());
+	root.setCenter(mainContent.getView());
+
+	// Set scene and show window
+	Scene mainScene = new Scene(root);
+	window.setScene(mainScene);
+	if (START_IN_FULLSCREEN) {
+	    window.setFullScreen(START_IN_FULLSCREEN);
+	} else {
+	    window.setMaximized(true);
+	}
+	window.show();
+    }
+
+    public void toggleMenu() {
+	if (menuBar.getView().isVisible() && window.isFullScreen()) {
+	    menuBar.getView().setVisible(false);
+	} else {
+	    menuBar.getView().setVisible(true);
+	}
+    }
+
+    public MainContent getMainContent() {
+	return mainContent;
+    }
+
+    public Stage getMainStage() {
+	return window;
+    }
+
+    public void close() {
+	window.close();
+    }
+}
