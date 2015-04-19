@@ -1,5 +1,0 @@
-package org.anaxivis.core.svg;
-
-public class EyeChartGenerator {
-    private static final enum TYPE = {};
-}

@@ -1,5 +1,0 @@
-package com.anaxivis.application;
-
-public interface SVGChartGenerator {
-    
-}

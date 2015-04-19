@@ -1,7 +1,0 @@
-package com.anaxivis.application;
-
-import javafx.application.Application;
-
-public interface IAxanivis extends Application{
-    
-}

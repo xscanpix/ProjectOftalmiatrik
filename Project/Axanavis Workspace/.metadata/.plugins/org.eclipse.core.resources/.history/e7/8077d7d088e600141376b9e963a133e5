@@ -1,8 +1,0 @@
-package com.anaxivis.application;
-
-public abstract class SVGChartGenerator {
-    
-    private String lastGenerated;
-    
-    public abstract String generateChart();
-}

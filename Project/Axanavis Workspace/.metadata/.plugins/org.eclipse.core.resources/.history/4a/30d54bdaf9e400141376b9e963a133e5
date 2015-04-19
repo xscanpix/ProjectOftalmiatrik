@@ -1,8 +1,0 @@
-package com.anaxivis.application;
-
-import javafx.scene.Scene;
-
-public class MainScene extends Scene {
-    public MainScene() {
-    }
-}
