@@ -1,6 +1,21 @@
 \documentclass[12pt,a4paper,notitlepage]{report}
 \usepackage[utf8]{inputenc}
+\usepackage{cite}
+\usepackage{etoolbox}
 
+%%%%%%%% Bibliografi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Ändrar namnet på referens headern
+\renewcommand\bibname{References}
+%% Ser till att referenserna kommer på en egen sida och att titeln inte är numrerad
+\makeatletter
+\patchcmd{\thebibliography}{%
+  \cleardoublepage
+  \chapter*{\bibname}\@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}}{%
+  \section{References}}{}{}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%% Start document %%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \title{Report Draft\\AxAnIvIs}
 \author{Anders Ohlsson\\Christian Johansson\\Svante Nilsson}
@@ -163,4 +178,12 @@ There are a few core demands that our product needs to meet. First and foremost,
 %%%%%%%%%%%%%%%%%%%%%%%%Utvärdering: hur ska ni utvärdera ert arbete/system, hur vet ni om/hur bra ni lyckats?
 
 The easiest way to see if our product satisfies these demands is putting it into the hands of the opticians at the university hospital and letting them test it, recording bug reports or comments. Testing will also let us determine if the system is as energy efficient as we intended.
+
+%% Exempel på citering, referens hamnar automatiskt i referenslistan. Lägg till referens i references.bib och använd IDt i \cite
+\cite{Exempel1}
+%%
+
+\bibliographystyle{plain}
+\bibliography{references}
+
 \end{document}
