@@ -32,9 +32,12 @@ For such charts to function as a basis for these standardized tests of visual ac
 There are also several different variations on these charts. Different sets of symbols, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen Chart that was developed in the 19th century, to the more modern LogMAR chart.
 
 \subsection{Related work}
+Several pieces of software exists that tries to solve the problems of the physical charts.
 %(http://digitaleyechart.com/)
-Several pieces of software exists that tries to solve the problems of the physical charts. Digital Eye Chart is one such program, that attempts to solve the problem of having several charts by using a monitor instead. The user can then, with the help of a computer, change the symbols on the chart and even generate a random chart. 
+\subsubsection{Digital Eye Chart}
+ Digital Eye Chart is a program that attempts to solve the problem of having several charts by using a monitor instead. The user can then, with the help of a computer, change the symbols on the chart and even generate a random chart. 
 %http://ichartplus.com/
+\subsubsection{iChart+}
 iChartPlus is another programs which is similar to Digital Eye Chart but also have an adjustable viewing distance.
 
 
@@ -56,7 +59,7 @@ The goal of this project is to take the system used for these tests and develop 
 
 \begin{itemize}
 	\item A fully developed app for the tablet with an improved user interface, both aesthetically and mechanically.
-	\item Connecting the digital screen to a computer that can handle higher resolution rendering than the tablets native resolution.
+	%\item Connecting the digital screen to a computer that can handle higher resolution rendering than the tablets native resolution.
 	\item Controlling the computer over WiFi using the tablet, meaning the optician can move around the room more easily.
 	\item Altering the scale of the rendered symbols so that the patient can be closer or further away from the screen than the regular six meters.
 	\item Being able to tailor the testing process to the patient by changing the sets of symbols displayed or removing clutter from the charts.
@@ -94,18 +97,18 @@ This project is important because determining visual acuity is a very labor- and
 \section{Issues}
 %%%%%%%%%%%%%vilka tekniska problem behöver ni lösa (sj.arb), vad ska ni ta reda på (uppsatsmetodik)?
 
-There are several technical problems that we need to solve. We need to design a small computer system that will store and present the desired images to the screen. Our current plan is using a RaspberryPi, since it is a cheap and compact alternative to PCs that is more than powerful enough for our purposes. 
+There are several technical problems that we need to solve. We need to design a small computer system that will store and present the desired images to the screen. Our current plan is using a RaspberryPi, since it is a cheap and compact alternative to PCs that is more than powerful enough for our purposes. Though, since the RaspberryPi in running on a ARM CPU there will be a few compatibility problems that we need to solve. For example is the Java graphics library JavaFX, that is going to replace the older Swing library, not very well supported by RaspberryPi. Not being able to use the latest features can create problems in the future when some things get deprecated. If that happens it is probably not very hard to port the GUI to a supported JavaFX version.
 
-Networking needs to be added to control the RaspberryPi over wifi from the tablet, and some features like waking the screen as the app is started can be considered.
+Networking needs to be added to control the RaspberryPi over WiFi from the tablet, and some features like waking the screen as the app is started can be considered. With networking we face a few problems. % How the server is controlled by the tablet? (Direct function calls, network polling, blabla)
 
-Designing the android app for the tablet will bring technical problems, both from the limitations of portable computers, and making our software adaptable enough to work on as many brands of tablets as possible. For example, the symbols we are to present are stored in the .svg (Scalable Vector Graphics) format, which is not natively supported on android. As such we must find and work with a licensed software library to render them. 
+Designing the android app for the tablet will bring technical problems, both from the limitations of portable computers, and making our software adaptable enough to work on as many brands of tablets as possible. For example, the symbols we are to present are stored in the .svg (Scalable Vector Graphics) format, which is not natively supported on android. Because of this we must find and work with a licensed third-party software library to render them. Other than that the android tablet doesn't impose too many big problems. %% Fler problem som kan uppstå med android?
 
-Finally we should design a way for the database of symbols and chart layouts to be easily updated and synchronized between devices and some server storage. 
+Finally we should design a way for the database of symbols and chart layouts to be easily updated and synchronized between devices and some server storage. This will be the least important task for us since it we wan't to focus on having something to work with firstly. Updating and synchronizing can be done by hand locally.
 
 \section{Ethical considerations}
 %%%%%%%%%%%%%vilka etiska frågeställningar finns (tänk t.ex. på användningen av resultatet)?
 
-Our ethical obligations with this project is providing a functional and stable product. If our system does not preform to specification, a lot of patients could get erroneous measurements during testing, costing a lot of time and money to correct. We will also have to work with code obfuscation to prevent illegal distribution of our software, since it is intended to be sold to hospitals and clinics worldwide.
+Our ethical obligations with this project is providing a functional and stable product. If our system does not perform to specification, a lot of patients could get erroneous measurements during testing, costing a lot of time and money to correct. This is very important to think about since we are dealing with treatment of people.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%DEL 2: GENOMFÖRANDE
@@ -116,7 +119,7 @@ Our ethical obligations with this project is providing a functional and stable p
 %%%%%%%%%%%%%vilka metoder ska ni konkret använda för att lösa problemet/bygga systemet/arbeta?
 %%%%%%%%%%%%%vilka tekniker/verktyg ska ni använda?
 
-To complete this project we will be using Android Studio to develop the app, writing in Java and using the various Android code libraries and API's at our disposal. The server software used to control the screen will also be written in Java for compatibility. We will try using a RaspberryPI as the screen hardware and see if it is appropriate for this project.
+To complete this project we will be using Android Studio to develop the app, writing in Java and using the various Android code libraries and API's at our disposal. The server software used to control the screen will also be written in Java for compatibility. We will try to use a RaspberryPi as the screen hardware and see if it is appropriate for this project. The RaspberryPi will run a GUI written in Java's own graphics library Swing. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%Systemstruktur: vilka delar kan ni se att ert system/problem består av? (T.ex. databas, webbinterface, AI-modul, grafik...)
 
