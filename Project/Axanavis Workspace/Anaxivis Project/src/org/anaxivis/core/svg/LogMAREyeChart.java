@@ -3,6 +3,8 @@ package org.anaxivis.core.svg;
 import java.util.Random;
 
 public class LogMAREyeChart extends SVGEyeChart {
+    
+    private static final String fontPath = "./res/Sloan.otf";
 
     public static String getTestSVGString() {
 	int width = 1920;
@@ -20,7 +22,7 @@ public class LogMAREyeChart extends SVGEyeChart {
 	builder.append("<!DOCTYPE svg PUBLIC \"-//W3C//DTD SVG 1.1//EN\" \"http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd\" >");
 	builder.append("<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\" width=\"" + width
 		+ "\" height=\"" + height + "\" >");
-	builder.append("<defs><style>@font-face { font-family: \"Sloan\"; src: url(./Sloan.otf); }</style></defs>");
+	builder.append("<defs><style>@font-face { font-family: \"Sloan\"; src: url(" + fontPath + "); }</style></defs>");
 
 	float charWidth = 58.666666666f * pixelPerMM;
 	float charSpacing = 44 * pixelPerMM;

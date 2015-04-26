@@ -22,10 +22,10 @@ public class MainContent extends JPanel {
 
     private static final Logger logger = Logger.getLogger(MainContent.class.getName());
 
-    private Axanivis parent;
+    private Application parent;
     private JSVGCanvas currentCanvas;
 
-    public MainContent(Axanivis parent) {
+    public MainContent(Application parent) {
 	super();
 
 	this.parent = parent;
@@ -47,8 +47,6 @@ public class MainContent extends JPanel {
 	if (currentCanvas != null) {
 	    currentCanvas.setDocument(doc);
 	}
-	
-	System.out.println();
     }
 
     public void setCurrentSvgFile(File file) {

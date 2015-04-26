@@ -36,10 +36,13 @@ public class MainFrameMenu extends JMenuBar {
     private static final String HELP = "Hjälp";
     private static final String BUG_FIX = "Fix bugs";
     private static final String ABOUT = "Om programmet";
+    private static final String NETWORK = "Nätverk";
+    private static final String START_NETWORK = "Starta nätverk";
+    private static final String STOP_NETWORK = "Stoppa nätverk";
 
-    private Axanivis parent;
+    private Application parent;
 
-    public MainFrameMenu(Axanivis parent) {
+    public MainFrameMenu(Application parent) {
 	super();
 
 	this.parent = parent;
@@ -51,6 +54,7 @@ public class MainFrameMenu extends JMenuBar {
 	add(createFileMenu());
 	add(createChartMenu());
 	add(createHelpMenu());
+	add(createNetworkMenu());
     }
 
     private JMenu createFileMenu() {
@@ -131,5 +135,27 @@ public class MainFrameMenu extends JMenuBar {
 	helpMenu.add(aboutMenuItem);
 
 	return helpMenu;
+    }
+
+    private JMenu createNetworkMenu() {
+	JMenu networkMenu = new JMenu(NETWORK);
+	JMenuItem startNetworkMenuItem = new JMenuItem(START_NETWORK);
+	startNetworkMenuItem.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		parent.getNetwork().start();
+	    }
+	});
+	JMenuItem stopNetworkMenuItem = new JMenuItem(STOP_NETWORK);
+	stopNetworkMenuItem.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		parent.getNetwork().stop();
+	    }
+	});
+	networkMenu.add(startNetworkMenuItem);
+	networkMenu.add(stopNetworkMenuItem);
+
+	return networkMenu;
     }
 }
