@@ -2,7 +2,6 @@
 \usepackage[utf8]{inputenc}
 \usepackage{cite}
 \usepackage{etoolbox}
-\usepackage{comment}
 
 %%%%%%%% Bibliografi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ändrar namnet på referens headern
@@ -34,8 +33,12 @@ Digitalization of Visual Acuity Testing is a project involving development of a 
 %%%%%%%%%%%%%Område/bakgrund: vilket är området, omgivningen, kontextet, bakgrunden för projektet? beskrivning av området (t.ex. ljudbehandling, studieplaner, visualisering, autism...)
 \section{Background}
 \subsection{Visual Acuity}
-In the field of ophthalmology, charts with printed lines of continuously smaller symbols are used to measure a patients visual acuity. The measurement is made by having the patient read symbols on the chart from a set distance. The person reads down the chart until it is no longer possible to make out the characters. Based on the size of the character the patient failed to tell, a visual acuity can be determined. 
+In the field of ophthalmology today, charts with printed lines of continuously smaller symbols are used to measure a patients visual acuity. The measurement is made by having the patient read symbols on the chart from a set distance. The person reads down the chart until it is no longer possible to make out the characters. Based on the size of the character the patient failed to tell, a visual acuity can be determined. 
 
+%För att tavlan ska fungera som grund för dessa standardiserade tester i ögonskärpa måste miljön för testet vara noga beredd. Det finns bland annat krav på att tavlan är sex meter ifrån patienten, och att ljusstyrkan i rummet är exakt. Dessa krav kan inte alltid uppfyllas, vilket leder till avvikelser i testerna.
+
+For such charts to function as a basis for these standardized tests of visual acuity the testing environment must be carefully prepared. Among a few things, the chart must be placed at a distance of six meters from the patient, and the luminosity in the room must be at a specific level. These conditions cannot always be met. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests. 
+=======
 For such charts to function as a basis for standardized tests of visual acuity the testing environments must be carefully prepared. For the measurement to be optimal the chart has to be placed at a distance of six meters from the patient. The specific distance of six meters is derived from how our eyes bend light. From a distance of six meters the rays of light seem to be nearly parallel to eachother. % Borde skriva mer utförligt? Referens behövs.
 It is important that the rays of light that hit the eyes are parallel because then the light focuses on the same spot in the back of the eyes, which in turn makes the measuring a lot easier and accurate. 
 
@@ -44,6 +47,7 @@ The luminosity in the room is also of importance and must be at a specific level
 These conditions cannot always be met. Sometimes the examination room is not sufficiently large for measurements from six meters. % Skriv mer om varför det måste vara tillräckligt mycket ljus. Referens behövs.
 
 To make up for the shift in focus in the eyes a plus glass has to be put in front of the patients eyes. The glass will bend the light in such a way that the rays of light becomes more parallel. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests. 
+>>>>>>> origin/master
 
 There are also several different variations on these charts. Different sets of symbols, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen Chart that was developed in the 19th century, to the more modern LogMAR chart.
 
@@ -66,6 +70,19 @@ AxAnIvIs is a prototype that is currently under testing at Uppsala University Ho
 \subsubsection{!!!Placeholder name!!! (Our project?)} %Kom inte på en bra rubrik, kanske ska vara på ett annat ställe?
 Most of the before mentioned systems have some form of negative side that we try to improve on, mostly problems about high cost and difficulties with extending the software. We are different with that we want to create a system that is cheap, easy to understand and easy to maintain. Creating a system that have all the previously mentioned sides is one of the goals we have. Another important goal is creating a system that really is speacialized on measurements of visual acuity. All these points are important to give the users the best experience.
 
+\section{Purpose}
+The purpose of this project is to remove the constraints of using physical charts for visual acuity tests and instead use a screen or monitor that can change optotypes and sizes with the press of a button.
+
+\subsection{Problem}
+The problem with today's visual acuity tests are that they are very clumsy to work with. The charts are printed and contains only one type of symbol, or optotype. This could be letters for people with the ability to read or an 'E' shape turned in different ways which allows children who are unable to read, or illiterate people, to identify which symbol they see. These charts are also only designed to be viewed from one specific distance, which makes some rooms to small and unusable.
+
+\subsection{Advantages of a digital system}
+The advantages of a digital system is the ability to change the layout, optotypes and size of the chart without having to carry away the old chart and then carrying back a new. This will save both time and space as only one screen and a small android device is necessary. This system will also allow the visual acuity tests to take place in rooms that previously where to small, as the system will display optotypes at a size suitable for the distance the patient is from the monitor.
+
+\subsection{Disadvantages of a digital system}
+A disadvantage with this system is that digital screens become very expensive at large sizes, which limits the maximum distance a patient can sit from the screen. Another disadvantage is that the resolution, or rather pixel density, will limit how close to a screen a patient can sit without the optotypes looking pixelated.
+
+
 
 %\section{Employer}
 %%%%%%%%%%%%%beskriv uppdragsgivare, om ni har
@@ -78,7 +95,7 @@ Most of the before mentioned systems have some form of negative side that we try
 
 %%%%%%%%%%%%%%%%%%%%%%%%Syfte: vart strävar projektet? vad är det övergripande målet, nyttan, effekterna av projektet?
 %%%%%%%%%%%%%t.ex. bättre koll på kosthållning, enklare planering av studier
-\section{Purpose}
+\section{Purpose (Should be removed or changed)}
 To solve the problems with this system the Department of Neuroscience have performed tests using a digital screen to present the charts instead of using printed medium. This means the optician can have many more variations on the charts at disposal. The set of symbols used on the charts can be switched with a menu, and the screen provides an adequately lit surface by itself. The current system is implemented by connecting an android tablet to a screen via an HDMI cable, and the charts are rendered via a web browser on the tablet. Testing has proceeded for over a year, and has yielded very good results.
 
 The goal of this project is to take the system used for these tests and develop a complete implementation with several advantages over the testing system, such as:
@@ -193,6 +210,10 @@ There are a few core demands that our product needs to meet. First and foremost,
 %%%%%%%%%%%%%%%%%%%%%%%%Utvärdering: hur ska ni utvärdera ert arbete/system, hur vet ni om/hur bra ni lyckats?
 
 The easiest way to see if our product satisfies these demands is putting it into the hands of the opticians at the university hospital and letting them test it, recording bug reports or comments. Testing will also let us determine if the system is as energy efficient as we intended.
+
+%% Exempel på citering, referens hamnar automatiskt i referenslistan. Lägg till referens i references.bib och använd IDt i \cite
+\cite{Exempel1}
+%%
 
 \bibliographystyle{plain}
 \bibliography{references}
