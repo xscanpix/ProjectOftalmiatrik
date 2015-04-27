@@ -31,17 +31,12 @@ Digitalization of Visual Acuity Testing is a project involving development of a 
 %%%%%%%%%%%%%%%%%%%%%%%%  DEL 1: FÖRUTSÄTTNINGAR
 \setcounter{page}{1}
 \chapter{Preconditions}
-%%%%%%%%%%%%%Område/bakgrund: vilket är området, omgivningen, kontextet, bakgrunden för projektet?
-%beskrivning av området (t.ex. ljudbehandling, studieplaner, visualisering, autism...)
-%Inom området oftalmiatrik används idag tavlor med förtryckta rader symboler för att undersöka patienters synfunktion. Denna betäms genom att patienten läser tecken tills den inte längre korrekt kan bestämma vilket tecken det är, och optikern kan därmed läsa ut patientens synskärpa.
-
+%%%%%%%%%%%%%Område/bakgrund: vilket är området, omgivningen, kontextet, bakgrunden för projektet? beskrivning av området (t.ex. ljudbehandling, studieplaner, visualisering, autism...)
 \section{Background}
 \subsection{Visual Acuity}
 In the field of ophthalmology, charts with printed lines of continuously smaller symbols are used to measure a patients visual acuity. The measurement is made by having the patient read symbols on the chart from a set distance. The person reads down the chart until it is no longer possible to make out the characters. Based on the size of the character the patient failed to tell, a visual acuity can be determined. 
 
-%För att tavlan ska fungera som grund för dessa standardiserade tester i ögonskärpa måste miljön för testet vara noga beredd. Det finns bland annat krav på att tavlan är sex meter ifrån patienten, och att ljusstyrkan i rummet är exakt. Dessa krav kan inte alltid uppfyllas, vilket leder till avvikelser i testerna.
-
-For such charts to function as a basis for these standardized tests of visual acuity the testing environment must be carefully prepared. For the measurement to be optimal the chart has to be placed at a distance of six meters from the patient. The set distance of six meters comes from how light bends in our eyes. From a distance of six meters the rays of light seem to be nearly parallel to eachother. % Borde skriva mer tekniskt? Referens behövs.
+For such charts to function as a basis for standardized tests of visual acuity the testing environments must be carefully prepared. For the measurement to be optimal the chart has to be placed at a distance of six meters from the patient. The specific distance of six meters is derived from how our eyes bend light. From a distance of six meters the rays of light seem to be nearly parallel to eachother. % Borde skriva mer utförligt? Referens behövs.
 It is important that the rays of light that hit the eyes are parallel because then the light focuses on the same spot in the back of the eyes, which in turn makes the measuring a lot easier and accurate. 
 
 The luminosity in the room is also of importance and must be at a specific level. 
@@ -50,25 +45,23 @@ These conditions cannot always be met. Sometimes the examination room is not suf
 
 To make up for the shift in focus in the eyes a plus glass has to be put in front of the patients eyes. The glass will bend the light in such a way that the rays of light becomes more parallel. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests. 
 
-%Det finns även många varianter på dessa tavlor. Flera olika uppsättningar optyper (tecken som visas på tavlorna, oftast bokstäver) har utvecklats för olika typer av patienter, bland annat varianter för patienter som inte kan alfabetet, eller barn. Även layouten av optyper på tavlan har flera varianter, från den klassiska Snellentavlan som utvecklades på 1800-talet, till den modernare LogMAR tavlan.
-
 There are also several different variations on these charts. Different sets of symbols, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen Chart that was developed in the 19th century, to the more modern LogMAR chart.
 
 \subsection{Related work}
-Several pieces of software exists that tries to solve the problems of displaying information from an android tablet or phone on a larger screen.
+Several pieces of software exists that tries to solve the problems of displaying information from an android tablet or phone on a larger screen. Most of these have some form of negative side that we try to improve on, mostly problems about high cost and difficulties with extending the software.
 
 \subsubsection{Chromecast and Apple TV}
-The Chromecast \cite{chromecast} and Apple TV \cite{appletv} is small devices which is plugged in to a TV and enables mobile phones and tablets to stream media to it. The devices are small and easy to handle and a lot of applications support streaming to it. The Chromecast is specifically made for android devices and Apple TV for iOS device, but they both support each other.
+The Chromecast \cite{chromecast} and Apple TV \cite{appletv} are small devices which are plugged into a TV and enables mobile phones and tablets to stream media to them. The devices are small and easy to handle and a lot of applications support streaming to them. The Chromecast is specifically made for android devices and Apple TV for iOS device, but they both support each other.
 
-%(http://digitaleyechart.com/)
+
 \subsubsection{Digital Eye Chart}
  Digital Eye Chart is a visual acuity testing program that attempts to solve the problem of having several charts by using a monitor instead. The user can then, with the help of a computer, change the symbols on the chart and even generate a random chart. \cite{digitaleyechart}
-%http://ichartplus.com/
+
 \subsubsection{iChart+}
 iChartPlus is another program which is similar to Digital Eye Chart but also have an adjustable viewing distance. \cite{ichartplus}
 
 \subsubsection{AxAnIvIs}
-AxAnIvIs is a prototype that is currently under testing at Uppsala University Hospital. The project attempts to improve the way we perform visual acuity tests by digitalizing it and add other kinds of charts than the standard physical ones that exists today.
+AxAnIvIs is a prototype that is currently under testing at Uppsala University Hospital. The project attempts to improve on how we perform visual acuity tests by digitalizing them. It adds more types of charts than the standard physical ones that exists today.
 
 
 %\section{Employer}
