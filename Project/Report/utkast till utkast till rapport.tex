@@ -2,6 +2,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{cite}
 \usepackage{etoolbox}
+\usepackage{comment}
 
 %%%%%%%% Bibliografi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ändrar namnet på referens headern
@@ -36,11 +37,18 @@ Digitalization of Visual Acuity Testing is a project involving development of a 
 
 \section{Background}
 \subsection{Visual Acuity}
-In the field of ophthalmology today, charts with printed lines of continuously smaller symbols are used to measure a patients visual acuity. The measurement is made by having the patient read symbols on the chart from a set distance. The person reads down the chart until it is no longer possible to make out the characters. Based on the size of the character the patient failed to tell, a visual acuity can be determined. 
+In the field of ophthalmology, charts with printed lines of continuously smaller symbols are used to measure a patients visual acuity. The measurement is made by having the patient read symbols on the chart from a set distance. The person reads down the chart until it is no longer possible to make out the characters. Based on the size of the character the patient failed to tell, a visual acuity can be determined. 
 
 %För att tavlan ska fungera som grund för dessa standardiserade tester i ögonskärpa måste miljön för testet vara noga beredd. Det finns bland annat krav på att tavlan är sex meter ifrån patienten, och att ljusstyrkan i rummet är exakt. Dessa krav kan inte alltid uppfyllas, vilket leder till avvikelser i testerna.
 
-For such charts to function as a basis for these standardized tests of visual acuity the testing environment must be carefully prepared. Among a few things, the chart must be placed at a distance of six meters from the patient, and the luminosity in the room must be at a specific level. These conditions cannot always be met. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests. 
+For such charts to function as a basis for these standardized tests of visual acuity the testing environment must be carefully prepared. For the measurement to be optimal the chart has to be placed at a distance of six meters from the patient. The set distance of six meters comes from how light bends in our eyes. From a distance of six meters the rays of light seem to be nearly parallel to eachother. % Borde skriva mer tekniskt? Referens behövs.
+It is important that the rays of light that hit the eyes are parallel because then the light focuses on the same spot in the back of the eyes, which in turn makes the measuring a lot easier and accurate. 
+
+The luminosity in the room is also of importance and must be at a specific level. 
+
+These conditions cannot always be met. Sometimes the examination room is not sufficiently large for measurements from six meters. % Skriv mer om varför det måste vara tillräckligt mycket ljus. Referens behövs.
+
+To make up for the shift in focus in the eyes a plus glass has to be put in front of the patients eyes. The glass will bend the light in such a way that the rays of light becomes more parallel. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests. 
 
 %Det finns även många varianter på dessa tavlor. Flera olika uppsättningar optyper (tecken som visas på tavlorna, oftast bokstäver) har utvecklats för olika typer av patienter, bland annat varianter för patienter som inte kan alfabetet, eller barn. Även layouten av optyper på tavlan har flera varianter, från den klassiska Snellentavlan som utvecklades på 1800-talet, till den modernare LogMAR tavlan.
 
@@ -189,10 +197,6 @@ There are a few core demands that our product needs to meet. First and foremost,
 %%%%%%%%%%%%%%%%%%%%%%%%Utvärdering: hur ska ni utvärdera ert arbete/system, hur vet ni om/hur bra ni lyckats?
 
 The easiest way to see if our product satisfies these demands is putting it into the hands of the opticians at the university hospital and letting them test it, recording bug reports or comments. Testing will also let us determine if the system is as energy efficient as we intended.
-
-%% Exempel på citering, referens hamnar automatiskt i referenslistan. Lägg till referens i references.bib och använd IDt i \cite
-\cite{Exempel1}
-%%
 
 \bibliographystyle{plain}
 \bibliography{references}
