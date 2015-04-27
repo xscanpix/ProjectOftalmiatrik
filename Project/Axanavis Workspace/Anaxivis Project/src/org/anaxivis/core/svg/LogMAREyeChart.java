@@ -53,5 +53,4 @@ public class LogMAREyeChart extends SVGEyeChart {
 
 	return builder.toString();
     }
-
 }

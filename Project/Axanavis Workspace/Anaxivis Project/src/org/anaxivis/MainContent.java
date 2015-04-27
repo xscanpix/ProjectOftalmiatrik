@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 import javax.swing.JPanel;
 
 import org.anaxivis.core.svg.JSVGCanvasLoader;
+import org.anaxivis.core.svg.SVGCharacter;
 import org.apache.batik.swing.JSVGCanvas;
 import org.w3c.dom.Document;
 
@@ -36,10 +37,13 @@ public class MainContent extends JPanel {
     private void init() {
 	setFocusable(false);
 
-	currentCanvas = new JSVGCanvas();
-	currentCanvas.setDocumentState(JSVGCanvas.ALWAYS_DYNAMIC);
-	currentCanvas.setDoubleBuffered(true);
-	currentCanvas.setFocusable(false);
+	// currentCanvas = new JSVGCanvas();
+	// currentCanvas.setDocumentState(JSVGCanvas.ALWAYS_DYNAMIC);
+	// currentCanvas.setDoubleBuffered(true);
+	// currentCanvas.setFocusable(false);
+
+	currentCanvas = SVGCharacter.getLatinCharacter("C", 850);
+
 	add(currentCanvas);
     }
 

@@ -7,13 +7,6 @@ import javax.swing.SwingUtilities;
 
 import org.anaxivis.network.Network;
 
-/**
- * 
- * Class containing main method, used to run the application
- * 
- * @author Svante
- *
- */
 public class Boot {
 
     private static final Logger logger = Logger.getLogger(Boot.class.getName());
@@ -23,7 +16,7 @@ public class Boot {
 
     public static void main(String[] args) {
 	network = new Network();
-	
+
 	SwingUtilities.invokeLater(new Runnable() {
 	    @Override
 	    public void run() {
@@ -32,7 +25,5 @@ public class Boot {
 		application = new Application(network);
 	    }
 	});
-
-	network.start();
     }
 }

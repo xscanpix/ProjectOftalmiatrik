@@ -37,26 +37,29 @@ public class Application implements IApplication {
     private static final int MINIMUM_FRAME_WIDTH = 800;
     private static final int MINIMUM_FRAME_HEIGHT = 600;
     private static final boolean START_IN_FULLSCREEN = false;
+    private static final boolean START_POLLING_NETWORK = false;
 
     private static final int POLLING_DELAY = 0;
-    private static final int POLLING_PERIOD = 1;
+    private static final int POLLING_PERIOD = 500;
+    private static final TimeUnit POLLING_UNIT = TimeUnit.MILLISECONDS;
 
     private boolean inFullscreen;
+    private volatile boolean isPolling;
+    private boolean isPollingThreadRunning;
+
+    private ScheduledThreadPoolExecutor networkExecutor;
 
     private Network network;
     private JFrame frame;
     private MainContent mainContent;
     private MainFrameMenu mainMenuBar;
 
-    /**
-     * Creates the main window frame and calls {@code init()}.
-     * 
-     * @param FRAME_TITLE
-     *            the title that the window initially gets.
-     */
     public Application(Network network) {
 	this.network = network;
+	networkExecutor = new ScheduledThreadPoolExecutor(1);
 	frame = new JFrame(TITLE);
+
+	isPollingThreadRunning = false;
 
 	init();
     }
@@ -74,7 +77,7 @@ public class Application implements IApplication {
 	registerKeyStrokes();
 
 	if (START_IN_FULLSCREEN) {
-	    requestToggleFullscreen();
+	    toggleFullscreen();
 	    inFullscreen = true;
 	} else {
 	    frame.setSize(frame.getMinimumSize());
@@ -87,7 +90,10 @@ public class Application implements IApplication {
 	frame.setVisible(true);
 	frame.pack();
 
-	startPolling();
+	if (START_POLLING_NETWORK) {
+	    network.start();
+	    startPolling();
+	}
     }
 
     /**
@@ -103,7 +109,7 @@ public class Application implements IApplication {
 	actionMap.put(FULLSCREEN_TOGGLE, new AbstractAction() {
 	    @Override
 	    public void actionPerformed(ActionEvent e) {
-		requestToggleFullscreen();
+		toggleFullscreen();
 	    }
 	});
 
@@ -145,6 +151,7 @@ public class Application implements IApplication {
      */
     public void requestClose() {
 	logger.log(Level.INFO, "Close requested");
+	networkExecutor.shutdown();
 	network.dispose();
 	frame.dispose();
     }
@@ -155,7 +162,7 @@ public class Application implements IApplication {
      * @param message
      *            the message to show when fullscreen is requested.
      */
-    public void requestToggleFullscreen() {
+    public void toggleFullscreen() {
 	logger.log(Level.INFO, "Fullscreen toggle requested");
 
 	frame.setVisible(false);
@@ -198,47 +205,32 @@ public class Application implements IApplication {
 	}
     }
 
-    /**
-     * Returns the main content variable.
-     * 
-     * @return the main content variable
-     */
+    public void startPolling() {
+	isPolling = true;
+
+	if (!isPollingThreadRunning) {
+	    networkExecutor.scheduleAtFixedRate(new Runnable() {
+		@Override
+		public void run() {
+		    if (isPolling) {
+			System.out.println("Application polled from network: " + network.poll());
+		    }
+		}
+	    }, POLLING_DELAY, POLLING_PERIOD, POLLING_UNIT);
+	    isPollingThreadRunning = true;
+	}
+    }
+
+    public void stopPolling() {
+	isPolling = false;
+    }
+
     public MainContent getMainContent() {
 	return mainContent;
     }
 
     public JFrame getFrame() {
 	return frame;
-    }
-
-    @Override
-    public void setSVGFile(File file) {
-	// TODO setSVGFile
-
-    }
-
-    @Override
-    public void setDPI(int dpi) {
-	// TODO setDPI
-
-    }
-
-    @Override
-    public void setResolution(int width, int height) {
-	// TODO setResolution
-
-    }
-
-    public void startPolling() {
-	ScheduledThreadPoolExecutor ex = new ScheduledThreadPoolExecutor(1);
-
-	ex.scheduleAtFixedRate(new Runnable() {
-
-	    @Override
-	    public void run() {
-		System.out.println("Application polled from network: " + network.poll());
-	    }
-	}, POLLING_DELAY, POLLING_PERIOD, TimeUnit.SECONDS);
     }
 
     public Network getNetwork() {

@@ -39,6 +39,8 @@ public class MainFrameMenu extends JMenuBar {
     private static final String NETWORK = "Nätverk";
     private static final String START_NETWORK = "Starta nätverk";
     private static final String STOP_NETWORK = "Stoppa nätverk";
+    private static final String START_POLLING = "Lyssna";
+    private static final String STOP_POLLING = "Sluta lyssna";
 
     private Application parent;
 
@@ -70,7 +72,7 @@ public class MainFrameMenu extends JMenuBar {
 	fullscreenMenuItem.addActionListener(new ActionListener() {
 	    @Override
 	    public void actionPerformed(ActionEvent e) {
-		parent.requestToggleFullscreen();
+		parent.toggleFullscreen();
 	    }
 	});
 
@@ -105,7 +107,7 @@ public class MainFrameMenu extends JMenuBar {
 	    @Override
 	    public void actionPerformed(ActionEvent e) {
 		parent.getMainContent().setCurrentSVGDocument(
-			JSVGCanvasLoader.loadString(EyeChartGenerator.generateEyeChart(EyeChartGenerator.TYPE.LOGMAR, "ABCDEFGKLJAS", new Dimension(
+			JSVGCanvasLoader.loadString(EyeChartGenerator.generateEyeChart(EyeChartGenerator.TYPE.LOGMAR_R_T, "ABCDEFGKLJAS", new Dimension(
 				1920, 1080))));
 	    }
 	});
@@ -153,8 +155,24 @@ public class MainFrameMenu extends JMenuBar {
 		parent.getNetwork().stop();
 	    }
 	});
+	JMenuItem startPollingNetworkMenuItem = new JMenuItem(START_POLLING);
+	startPollingNetworkMenuItem.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		parent.startPolling();
+	    }
+	});
+	JMenuItem stopPollingNetworkMenuItem = new JMenuItem(STOP_POLLING);
+	stopPollingNetworkMenuItem.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		parent.stopPolling();
+	    }
+	});
 	networkMenu.add(startNetworkMenuItem);
 	networkMenu.add(stopNetworkMenuItem);
+	networkMenu.add(startPollingNetworkMenuItem);
+	networkMenu.add(stopPollingNetworkMenuItem);
 
 	return networkMenu;
     }
