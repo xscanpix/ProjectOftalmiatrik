@@ -147,20 +147,24 @@ To complete this project we will be using Android Studio to develop the app, wri
 
 \section{System structure}
 
-The dicrete parts of this project are:
+The system is split up between an Android application and a PC application. These applications will both be structured with the Model-View-Controller design pattern as a base in order to split up user input, graphics and logic. The PC application will act as a server and display an eye chart on a larger screen connected with an HDMI-cable. The android applications purpose is to control the PC-application over a wifi network and make sure the correct chart is displayed on the larger screen. The android application will display the same image shown on the large screen, but with some other extra information that's useful for the optician.
 
-\begin{itemize}
-	\item Tablet App
-	\begin{itemize}
-		\item UI
-		\item Backend/Networking
-	\end{itemize}
-	\item Screen controller
-	\begin{itemize}
-		\item Display
-		\item Backend/Networking
-	\end{itemize}
-\end{itemize}
+\textbf{Image of System structure TBI}
+
+%The dicrete parts of this project are:
+
+%\begin{itemize}
+%	\item Android application
+%	\begin{itemize}
+%		\item User Interface
+%		\item Backend/Network
+%	\end{itemize}
+%	\item Screen controller
+%	\begin{itemize}
+%		\item Display
+%		\item Backend/Networking
+%	\end{itemize}
+%\end{itemize}
 
 \section{Boundaries}
 %%%%%%%%%%%%%%%%%%%%%%%%Avgränsningar:
