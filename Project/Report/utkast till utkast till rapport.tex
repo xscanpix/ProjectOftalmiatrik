@@ -137,9 +137,7 @@ This project is important because determining visual acuity is a very labor- and
 
 %%%%%%%%%%%%%%%%%%%%%%%%Frågeställningar:
 
-\section{Issues}
-%%%%%%%%%%%%%vilka tekniska problem behöver ni lösa (sj.arb), vad ska ni ta reda på (uppsatsmetodik)?
-
+\section{Issues} %vilka tekniska problem behöver ni lösa (sj.arb), vad ska ni ta reda på (uppsatsmetodik)?
 There are several technical problems that we need to solve. We need to design a small computer system that will store and present the desired images to the screen. Our current plan is using a RaspberryPi, since it is a cheap and compact alternative to PCs that is more than powerful enough for our purposes. Though, since the RaspberryPi in running on a ARM CPU there will be a few compatibility problems that we need to solve. For example is the Java graphics library JavaFX, that is going to replace the older Swing library, not very well supported by RaspberryPi. Not being able to use the latest features can create problems in the future when some things get deprecated. If that happens it is probably not very hard to port the GUI to a supported JavaFX version.
 
 Networking needs to be added to control the RaspberryPi over WiFi from the tablet, and some features like waking the screen as the app is started can be considered. With networking we face a few problems. % How the server is controlled by the tablet? (Direct function calls, network polling, blabla)
@@ -148,26 +146,16 @@ Designing the android app for the tablet will bring technical problems, both fro
 
 Finally we should design a way for the database of symbols and chart layouts to be easily updated and synchronized between devices and some server storage. This will be the least important task for us since it we wan't to focus on having something to work with firstly. Updating and synchronizing can be done by hand locally.
 
-\section{Ethical considerations}
-%%%%%%%%%%%%%vilka etiska frågeställningar finns (tänk t.ex. på användningen av resultatet)?
-
+\section{Ethical considerations} %vilka etiska frågeställningar finns (tänk t.ex. på användningen av resultatet)?
 Our ethical obligations with this project is providing a functional and stable product. If our system does not perform to specification, a lot of patients could get erroneous measurements during testing, costing a lot of time and money to correct. This is very important to think about since we are dealing with treatment of people.
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%DEL 2: GENOMFÖRANDE
 \chapter{Implementation}
 \section{Methods}
-%%%%%%%%%%%%%%%%%%%%%%%%Metoder:
-
-%%%%%%%%%%%%%vilka metoder ska ni konkret använda för att lösa problemet/bygga systemet/arbeta?
-%%%%%%%%%%%%%vilka tekniker/verktyg ska ni använda?
-
+%%%%%%%%%%%%%%%%%%%%%%%%Metoder: vilka metoder ska ni konkret använda för att lösa problemet/bygga systemet/arbeta? vilka tekniker/verktyg ska ni använda?
 To complete this project we will be using Android Studio to develop the app, writing in Java and using the various Android code libraries and API's at our disposal. The server software used to control the screen will also be written in Java for compatibility. We will try to use a RaspberryPi as the screen hardware and see if it is appropriate for this project. The RaspberryPi will run a GUI written in Java's own graphics library Swing. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%Systemstruktur: vilka delar kan ni se att ert system/problem består av? (T.ex. databas, webbinterface, AI-modul, grafik...)
-
-\section{System structure}
-
+\section{System structure} %%%%%%%%%%%%%%%%%%%%%%%%Systemstruktur: vilka delar kan ni se att ert system/problem består av? (T.ex. databas, webbinterface, AI-modul, grafik...)
 The system is split up between an Android application and a PC application. These applications will both be structured with the Model-View-Controller design pattern as a base in order to split up user input, graphics and logic. The PC application will act as a server and display an eye chart on a larger screen connected with an HDMI-cable. The android applications purpose is to control the PC-application over a wifi network and make sure the correct chart is displayed on the larger screen. The android application will display the same image shown on the large screen, but with some other extra information that's useful for the optician.
 
 \textbf{Image of System structure TBI}
@@ -188,10 +176,7 @@ The system is split up between an Android application and a PC application. Thes
 %\end{itemize}
 
 \section{Boundaries}
-%%%%%%%%%%%%%%%%%%%%%%%%Avgränsningar:
-
-%%%%%%%%%%%%%vad ska INTE göras, även om man kanske kunde tro det?
-
+%%%%%%%%%%%%%%%%%%%%%%%%Avgränsningar: vad ska INTE göras, även om man kanske kunde tro det?
 We are not tasked to develop a library to display .svg files, and will be using a licensed one. We are also not tasked to populate the database with symbols and layouts, but instead provide a comprehensive API so that clients can create their own.
 
 %%%%%%%%%%%%%vad ska bara göras om tid/resurser/omständigheter räcker till?
@@ -200,20 +185,11 @@ There are however several extensions to the system that can be considered if we 
 
 While it deviates further from the main part of the project, we were asked by our employer to consider implementing the ability to control devices such as lights around the room from inside the app. This could probably be done, and we will look into it if time allows.
 
-\section{Demands}
-%%%%%%%%%%%%%%%%%%%%%%%%Krav: vilka krav ställer ni/andra på ert resultat?
-%%%%%%%%%%%%%hur snabbt? hur många användare? hur strömsnålt? eller vad som är relevant
-
+\section{Demands} %%%%%%%%%%%%%%%%%%%%%%%%Krav: vilka krav ställer ni/andra på ert resultat? hur snabbt? hur många användare? hur strömsnålt? eller vad som är relevant
 There are a few core demands that our product needs to meet. First and foremost, it needs to work, and do what the current testing system can already do. Second, it needs to be easy to use and have an intuitive interface. Third, it should be very energy efficient, since forcing the user to recharge the tablet often reduces productivity. 
 
-\section{Evaluation}
-%%%%%%%%%%%%%%%%%%%%%%%%Utvärdering: hur ska ni utvärdera ert arbete/system, hur vet ni om/hur bra ni lyckats?
-
+\section{Evaluation} %%%%%%%%%%%%%%%%%%%%%%%%Utvärdering: hur ska ni utvärdera ert arbete/system, hur vet ni om/hur bra ni lyckats?
 The easiest way to see if our product satisfies these demands is putting it into the hands of the opticians at the university hospital and letting them test it, recording bug reports or comments. Testing will also let us determine if the system is as energy efficient as we intended.
-
-%% Exempel på citering, referens hamnar automatiskt i referenslistan. Lägg till referens i references.bib och använd IDt i \cite
-\cite{Exempel1}
-%%
 
 \bibliographystyle{plain}
 \bibliography{references}
