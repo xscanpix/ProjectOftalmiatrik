@@ -153,6 +153,11 @@ Our ethical obligations with this project is providing a functional and stable p
 \chapter{Implementation}
 \section{Methods}
 %%%%%%%%%%%%%%%%%%%%%%%%Metoder: vilka metoder ska ni konkret använda för att lösa problemet/bygga systemet/arbeta? vilka tekniker/verktyg ska ni använda?
+\subsection{Screen controller (Vad borde "servern" kallas?)}
+The screen controller will be built using Java and a few third-party libraries. Java has many built-in and well supported packages, and is also mostly platform independent. This suits our needs for future extensions of the system. Since the server mostly handles rendering of images having a good method of displaying images is needed. Thankfully Java offers a few well-known libraries for rendering graphics. For many years the choice has been a now somewhat aged library called Swing. \cite{Java_Swing} Another library, JavaFX, has started to gather people's interests again. This because of the new version released with Java 8, JavaFX 8. \cite{JavaFX_8} Though it is common to use the newer JavaFX instead of Java Swing, JavaFX is not well supported on the machine we are going to use. Using Java Swing is then a better choice for our project, but if JavaFX becomes better supported in the future it will be easy to re-create our system using JavaFX.
+
+\subsection{Client}
+\subsection{Network}
 To complete this project we will be using Android Studio to develop the app, writing in Java and using the various Android code libraries and API's at our disposal. The server software used to control the screen will also be written in Java for compatibility. We will try to use a RaspberryPi as the screen hardware and see if it is appropriate for this project. The RaspberryPi will run a GUI written in Java's own graphics library Swing. 
 
 \section{System structure} %%%%%%%%%%%%%%%%%%%%%%%%Systemstruktur: vilka delar kan ni se att ert system/problem består av? (T.ex. databas, webbinterface, AI-modul, grafik...)
