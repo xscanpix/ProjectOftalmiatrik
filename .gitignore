@@ -3,6 +3,7 @@
 *.bbl
 *.blg
 *.aux
+*.toc
 .metadata
 .recommenders
 
