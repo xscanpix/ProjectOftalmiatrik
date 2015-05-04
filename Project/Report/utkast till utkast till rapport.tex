@@ -5,7 +5,7 @@
 
 %%%%%%%% Bibliografi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ändrar namnet på referens headern
-\renewcommand\bibname{References}
+\renewcommand\bibname{References (Vi har URL och Datum, måste bara ändra LaTeX layouten.)}
 %% Ser till att referenserna kommer på en egen sida och att titeln inte är numrerad
 \makeatletter
 \patchcmd{\thebibliography}{%
@@ -59,10 +59,10 @@ Several pieces of software exists that tries to solve the problems of displaying
 The Chromecast \cite{chromecast} and Apple TV \cite{appletv} are small devices which are plugged into a TV and enables mobile phones and tablets to stream media to them. The devices are small and easy to handle and a lot of applications support streaming to them. The Chromecast is specifically made for android devices and Apple TV for iOS device, but they both support each other.
 
 \subsubsection{Digital Eye Chart}
- Digital Eye Chart is a visual acuity testing program that attempts to solve the problem of having several charts by using a monitor instead. The user can then, with the help of a computer, change the symbols on the chart and even generate a random chart. \cite{digitaleyechart}
+ Digital Eye Chart \cite{digitaleyechart} is a visual acuity testing program that attempts to solve the problem of having several charts by using a monitor instead. The user can then, with the help of a computer, change the symbols on the chart and even generate a random chart. 
 
 \subsubsection{iChart+}
-iChartPlus is another program which is similar to Digital Eye Chart but also have an adjustable viewing distance. \cite{ichartplus}
+iChartPlus \cite{ichartplus} is another program which is similar to Digital Eye Chart but also have an adjustable viewing distance. 
 
 \subsubsection{AxAnIvIs}
 AxAnIvIs is a prototype that is currently under testing at Uppsala University Hospital. The project attempts to improve on how we perform visual acuity tests by digitalizing them. It adds more types of charts than the standard physical ones that exists today. The system uses a webbrowser running on an android tablet that is connected to a screen. A library of vector graphic files are displayed in the webbrowser. These files contains the different charts as well as some other specialized tools. Currently the android tablet has to be held in a fixed position in the examination room, restrained by the cable going to the screen. The charts used are fixed and not very easily changed, which makes it very hard to try out new techniques and methods of measuring.
@@ -157,7 +157,7 @@ Our ethical obligations with this project is providing a functional and stable p
 \subsection{Screen controller (Vad borde "servern" kallas?)}
 The screen controller will be built using Java and a few third-party libraries. Java has many built-in and well supported packages, and is also mostly platform independent. This suits our needs for future extensions of the system. Since the server mostly handles rendering of images having a good method of displaying images is needed. 
 
-Thankfully Java offers a few well-known libraries for rendering graphics. For many years the choice has been a now somewhat aged library called Swing. \cite{Java_Swing} Another library, JavaFX, has started to gather people's interests again. This because of the new version released with Java 8, JavaFX 8. \cite{JavaFX_8} 
+Thankfully Java offers a few well-known libraries for rendering graphics. For many years the choice has been a now somewhat aged library called Swing \cite{Java_Swing}. Another library, JavaFX, has started to gather people's interests again. This because of the new version released with Java 8, JavaFX 8 \cite{JavaFX_8}. 
 
 Though it is common to use the newer JavaFX instead of Java Swing, JavaFX is not well supported on the machine we are going to use. Using Java Swing is then a better choice for our project, but if JavaFX becomes better supported in the future it will be easy to re-create our system using JavaFX.
 
@@ -169,7 +169,7 @@ The android application is written in java, as this is the official language for
 The major part of the applications GUI is designed with the android standard method of using xml files. The actual charts drawn on the screen are added programmatically as the optotypes have to be drawn at a specific size with a specific distance from each other. Had this been done in an xml file there would be no guarantee that these sizes and distances would be correct on a device with another screen resolution or size.
 
 \subsection{Network}
-The communication between the android tablet and the server will be handled using a third-party network library called Kryonet. \cite{Kryonet}
+The communication between the android tablet and the server will be handled using a third-party network library called Kryonet \cite{Kryonet}. 
 
 \section{System structure} %%%%%%%%%%%%%%%%%%%%%%%%Systemstruktur: vilka delar kan ni se att ert system/problem består av? (T.ex. databas, webbinterface, AI-modul, grafik...)
 The system is split up between an Android application and a PC application. These applications will both be structured with the Model-View-Controller design pattern as a base in order to split up user input, graphics and logic. The PC application will act as a server and display an eye chart on a larger screen connected with an HDMI-cable. The android applications purpose is to control the PC-application over a wifi network and make sure the correct chart is displayed on the larger screen. The android application will display the same image shown on the large screen, but with some other extra information that's useful for the optician.
