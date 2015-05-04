@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="850.39368"
+   height="850.39368"
+   id="svg3374"
+   inkscape:version="0.91 r13725"
+   viewBox="0 0 850.39368 850.39368"
+   sodipodi:docname="sloan_k.svg">
+  <metadata
+     id="metadata3382">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3380" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="640"
+     inkscape:window-height="480"
+     id="namedview3378"
+     showgrid="false"
+     inkscape:zoom="0.27751853"
+     inkscape:cx="425.19684"
+     inkscape:cy="425.19684"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3374" />
+  <path
+     d="m 70.3003,65.2581 0,707.7744 141.6731,0.887 0,-279.9003 112.6695,-83.2153 272.6031,360.9474 181.7152,0 -338.5772,-447.4236 336.3146,-258.774 -234.1542,0 L 212.0326,320.3762 211.9734,65.5537 70.3003,65.2581 Z"
+     style="fill:#000000;fill-rule:evenodd"
+     id="path3376"
+     inkscape:connector-curvature="0" />
+</svg>
