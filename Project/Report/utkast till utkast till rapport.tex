@@ -162,6 +162,11 @@ Thankfully Java offers a few well-known libraries for rendering graphics. For ma
 Though it is common to use the newer JavaFX instead of Java Swing, JavaFX is not well supported on the machine we are going to use. Using Java Swing is then a better choice for our project, but if JavaFX becomes better supported in the future it will be easy to re-create our system using JavaFX.
 
 \subsection{Client}
+The android application is written in java, as this is the official language for android. Only \textbf{two}(at the moment)external libraries are used, AndroidSVG (cite) and Kryonet (see next section). AndroidSVG is a library which implements support for svg files on android, which is necessary as our optotype images as they have to be able to scale without becoming distorted. 
+
+(https://code.google.com/p/androidsvg/)
+
+The major part of the applications GUI is designed with the android standard method of using xml files. The actual charts drawn on the screen are added programmatically as the optotypes have to be drawn at a specific size with a specific distance from each other. Had this been done in an xml file there would be no guarantee that these sizes and distances would be correct on a device with another screen resolution or size.
 
 \subsection{Network}
 The communication between the android tablet and the server will be handled using a third-party network library called Kryonet. \cite{Kryonet}
