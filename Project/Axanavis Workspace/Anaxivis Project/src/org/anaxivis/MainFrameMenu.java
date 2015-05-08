@@ -1,6 +1,5 @@
 package org.anaxivis;
 
-import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.logging.Level;
@@ -11,9 +10,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
-import org.anaxivis.core.svg.EyeChartGenerator;
-import org.anaxivis.core.svg.JSVGCanvasLoader;
 
 /**
  * The main frame menu bar class
@@ -106,9 +102,7 @@ public class MainFrameMenu extends JMenuBar {
 	logMARRandomMenuItem.addActionListener(new ActionListener() {
 	    @Override
 	    public void actionPerformed(ActionEvent e) {
-		parent.getMainContent().setCurrentSVGDocument(
-			JSVGCanvasLoader.loadString(EyeChartGenerator.generateEyeChart(EyeChartGenerator.TYPE.LOGMAR_R_T, "ABCDEFGKLJAS", new Dimension(
-				1920, 1080))));
+
 	    }
 	});
 	chartMenu.add(logMARRandomMenuItem);

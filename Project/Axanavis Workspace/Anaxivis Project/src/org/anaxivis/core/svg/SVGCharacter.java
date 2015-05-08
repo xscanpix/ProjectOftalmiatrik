@@ -1,27 +1,28 @@
 package org.anaxivis.core.svg;
 
-import java.awt.geom.AffineTransform;
-
 import org.apache.batik.swing.JSVGCanvas;
 import org.apache.batik.util.SVGConstants;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
 
 public class SVGCharacter {
 
-    private static final String supportedLatinCharacters = "CDHKNORSVXZ";
+    private static final String supportedLatinCharacters = "CDEHKNORSVXZ";
     private static final String PATH_TO_RESOURCES = "./res/";
-    private static final String SLOAN_C = "sloan_c.svg";
-    private static final String SLOAN_D = "sloan_d.svg";
-    private static final String SLOAN_H = "sloan_h.svg";
-    private static final String SLOAN_K = "sloan_k.svg";
-    private static final String SLOAN_N = "sloan_n.svg";
-    private static final String SLOAN_O = "sloan_o.svg";
-    private static final String SLOAN_R = "sloan_r.svg";
-    private static final String SLOAN_S = "sloan_s.svg";
-    private static final String SLOAN_V = "sloan_v.svg";
-    private static final String SLOAN_X = "sloan_x.svg";
-    private static final String SLOAN_Z = "sloan_z.svg";
+    private static final String SLOAN_C = "sloan_c2.svg";
+    private static final String SLOAN_D = "sloan_d2.svg";
+    private static final String SLOAN_H = "sloan_h2.svg";
+    private static final String SLOAN_K = "sloan_k2.svg";
+    private static final String SLOAN_N = "sloan_n2.svg";
+    private static final String SLOAN_O = "sloan_o2.svg";
+    private static final String SLOAN_R = "sloan_r2.svg";
+    private static final String SLOAN_S = "sloan_s2.svg";
+    private static final String SLOAN_V = "sloan_v2.svg";
+    private static final String SLOAN_X = "sloan_x2.svg";
+    private static final String SLOAN_Z = "sloan_z2.svg";
+    private static final String SLOAN_E = "sloan_e2.svg";
 
     public static JSVGCanvas getLatinCharacter(String letter, int sizePixel) {
 	letter = letter.toUpperCase();
@@ -33,6 +34,9 @@ public class SVGCharacter {
 		break;
 	    case "D":
 		path = PATH_TO_RESOURCES + SLOAN_D;
+		break;
+	    case "E":
+		path = PATH_TO_RESOURCES + SLOAN_E;
 		break;
 	    case "H":
 		path = PATH_TO_RESOURCES + SLOAN_H;
@@ -67,12 +71,19 @@ public class SVGCharacter {
 
 	    if (doc != null) {
 		Element root = doc.getDocumentElement();
-		System.out.println(root.getAttribute(SVGConstants.SVG_WIDTH_ATTRIBUTE) + ", " + root.getAttribute(SVGConstants.SVG_HEIGHT_ATTRIBUTE));
+
+		NodeList nodelist = root.getElementsByTagName(SVGConstants.SVG_TEXT_TAG);
+		if (nodelist.getLength() > 0) {
+		    Node node = nodelist.item(0);
+
+		    // Set font-size and offset y
+		    node.getAttributes().getNamedItemNS(null, SVGConstants.SVG_Y_ATTRIBUTE).setNodeValue(Integer.toString(sizePixel));
+		    node.getAttributes().getNamedItemNS(null, SVGConstants.SVG_FONT_SIZE_ATTRIBUTE).setNodeValue(Integer.toString(sizePixel));
+		}
+
 		root.setAttribute(SVGConstants.SVG_WIDTH_ATTRIBUTE, Integer.toString(sizePixel));
 		root.setAttribute(SVGConstants.SVG_HEIGHT_ATTRIBUTE, Integer.toString(sizePixel));
-		System.out.println(root.getAttribute(SVGConstants.SVG_WIDTH_ATTRIBUTE) + ", " + root.getAttribute(SVGConstants.SVG_HEIGHT_ATTRIBUTE));
-		root.setAttribute(SVGConstants.SVG_VIEW_BOX_ATTRIBUTE, "0 0 2000 2000");
-		System.out.println(root.getAttribute(SVGConstants.SVG_VIEW_BOX_ATTRIBUTE));
+		root.setAttribute(SVGConstants.SVG_VIEW_BOX_ATTRIBUTE, "0 0 " + sizePixel + " " + sizePixel);
 
 		JSVGCanvas canvas = new JSVGCanvas();
 		canvas.setDoubleBuffered(true);

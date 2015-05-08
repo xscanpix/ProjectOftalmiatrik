@@ -3,9 +3,6 @@ package org.anaxivis;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
-import java.io.File;
-import java.util.Timer;
-import java.util.TimerTask;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
@@ -44,8 +41,8 @@ public class Application implements IApplication {
     private static final TimeUnit POLLING_UNIT = TimeUnit.MILLISECONDS;
 
     private boolean inFullscreen;
-    private volatile boolean isPolling;
     private boolean isPollingThreadRunning;
+    private volatile boolean isPolling;
 
     private ScheduledThreadPoolExecutor networkExecutor;
 

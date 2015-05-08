@@ -1,13 +1,19 @@
 package org.anaxivis;
 
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
 import javax.swing.JPanel;
 
+import org.anaxivis.core.svg.EyeChartGenerator;
 import org.anaxivis.core.svg.JSVGCanvasLoader;
-import org.anaxivis.core.svg.SVGCharacter;
 import org.apache.batik.swing.JSVGCanvas;
 import org.w3c.dom.Document;
 
@@ -24,38 +30,42 @@ public class MainContent extends JPanel {
     private static final Logger logger = Logger.getLogger(MainContent.class.getName());
 
     private Application parent;
-    private JSVGCanvas currentCanvas;
+    private List<JSVGCanvas> currentCanvases;
+    private GridBagLayout layout;
+    private GridBagConstraints gbc;
 
     public MainContent(Application parent) {
 	super();
 
 	this.parent = parent;
+	currentCanvases = new ArrayList<JSVGCanvas>();
+	gbc = new GridBagConstraints();
+	layout = new GridBagLayout();
 
 	init();
     }
 
     private void init() {
 	setFocusable(false);
+	setLayout(layout);
+	setBackground(Color.WHITE);
 
-	// currentCanvas = new JSVGCanvas();
-	// currentCanvas.setDocumentState(JSVGCanvas.ALWAYS_DYNAMIC);
-	// currentCanvas.setDoubleBuffered(true);
-	// currentCanvas.setFocusable(false);
-
-	currentCanvas = SVGCharacter.getLatinCharacter("C", 850);
-
-	add(currentCanvas);
+	EyeChartGenerator.generateEyeChart(EyeChartGenerator.TYPE.LOGMAR, "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE",
+		new Dimension(1920, 1080), 96, 6, this);
     }
 
-    public void setCurrentSVGDocument(Document doc) {
-	if (currentCanvas != null) {
-	    currentCanvas.setDocument(doc);
+    public void setCurrentSVGDocument(Document doc, int index) {
+	if (currentCanvases.size() < index) {
+	    JSVGCanvas c = currentCanvases.get(index);
+	    if (c != null) {
+		c.setDocument(doc);
+	    }
 	}
     }
 
     public void setCurrentSvgFile(File file) {
 	logger.log(Level.INFO, "Setting current file to: " + file.getName());
 
-	setCurrentSVGDocument(JSVGCanvasLoader.loadFile(file));
+	setCurrentSVGDocument(JSVGCanvasLoader.loadFile(file), 0);
     }
 }
