@@ -1,5 +1,6 @@
 package org.anaxivis;
 
+import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.logging.Level;
@@ -10,6 +11,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.filechooser.FileNameExtensionFilter;
+
+import org.anaxivis.core.svg.EyeChartGenerator;
 
 /**
  * The main frame menu bar class
@@ -29,6 +32,10 @@ public class MainFrameMenu extends JMenuBar {
     private static final String EXIT = "Stäng";
     private static final String CHARTS = "Charts";
     private static final String LOGMAR_RANDOM = "Random LogMAR";
+    private static final String LOGMAR_1_U = "Övre LogMAR 1";
+    private static final String LOGMAR_1_B = "Undre LogMAR 1";
+    private static final String LOGMAR_2_U = "Övre LogMAR 2";
+    private static final String LOGMAR_2_B = "Undre LogMAR 2";
     private static final String HELP = "Hjälp";
     private static final String BUG_FIX = "Fix bugs";
     private static final String ABOUT = "Om programmet";
@@ -97,15 +104,38 @@ public class MainFrameMenu extends JMenuBar {
     }
 
     private JMenu createChartMenu() {
+
+	// TODO: Extract hard-coded strings
+
 	JMenu chartMenu = new JMenu(CHARTS);
 	JMenuItem logMARRandomMenuItem = new JMenuItem(LOGMAR_RANDOM);
-	logMARRandomMenuItem.addActionListener(new ActionListener() {
-	    @Override
-	    public void actionPerformed(ActionEvent e) {
+	logMARRandomMenuItem.addActionListener(e -> {
+	    EyeChartGenerator.generateLogmar("RANDOM", new Dimension(1920, 1080), 96, 6, true, parent.getMainContent());
+	});
+	JMenuItem logMAR1UMenuItem = new JMenuItem(LOGMAR_1_U);
+	logMAR1UMenuItem.addActionListener(e -> {
+	    EyeChartGenerator.generateLogmar("NCKZORHSDKDOVHRCZRHSONHRC", new Dimension(1920, 1080), 96, 6, true, parent.getMainContent());
+	});
+	JMenuItem logMAR1BMenuItem = new JMenuItem(LOGMAR_1_B);
+	logMAR1BMenuItem.addActionListener(e -> {
+	    EyeChartGenerator.generateLogmar("DKSNVZSOKNCKDNRSRZKDHZOVCNVDOKVHCNOSVHCZOZDVK", new Dimension(1920, 1080), 96, 6, false,
+		    parent.getMainContent());
+	});
+	JMenuItem logMAR2UMenuItem = new JMenuItem(LOGMAR_2_U);
+	logMAR2UMenuItem.addActionListener(e -> {
+	    EyeChartGenerator.generateLogmar("DSRKNCKZOHONRKDKZVDCVSHZO", new Dimension(1920, 1080), 96, 6, true, parent.getMainContent());
+	});
+	JMenuItem logMAR2BMenuItem = new JMenuItem(LOGMAR_2_B);
+	logMAR2BMenuItem.addActionListener(e -> {
+	    EyeChartGenerator.generateLogmar("HDKCRCSRHNSVZDKNCVOZRHSDVSNROHODHKRZKCSNCRHDV", new Dimension(1920, 1080), 96, 6, false,
+		    parent.getMainContent());
 
-	    }
 	});
 	chartMenu.add(logMARRandomMenuItem);
+	chartMenu.add(logMAR1UMenuItem);
+	chartMenu.add(logMAR1BMenuItem);
+	chartMenu.add(logMAR2UMenuItem);
+	chartMenu.add(logMAR2BMenuItem);
 
 	return chartMenu;
     }

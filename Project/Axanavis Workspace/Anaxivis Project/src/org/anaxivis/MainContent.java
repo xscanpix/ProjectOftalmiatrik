@@ -1,7 +1,6 @@
 package org.anaxivis;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.io.File;
@@ -12,7 +11,6 @@ import java.util.logging.Logger;
 
 import javax.swing.JPanel;
 
-import org.anaxivis.core.svg.EyeChartGenerator;
 import org.anaxivis.core.svg.JSVGCanvasLoader;
 import org.apache.batik.swing.JSVGCanvas;
 import org.w3c.dom.Document;
@@ -49,9 +47,6 @@ public class MainContent extends JPanel {
 	setFocusable(false);
 	setLayout(layout);
 	setBackground(Color.WHITE);
-
-	EyeChartGenerator.generateEyeChart(EyeChartGenerator.TYPE.LOGMAR, "EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE",
-		new Dimension(1920, 1080), 96, 6, this);
     }
 
     public void setCurrentSVGDocument(Document doc, int index) {
