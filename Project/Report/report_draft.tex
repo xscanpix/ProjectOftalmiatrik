@@ -63,7 +63,7 @@ iChartPlus \cite{ichartplus} is another program which is similar to Digital Eye 
 \subsubsection{AxAnIvIs}
 AxAnIvIs is a prototype that is currently under testing at Uppsala University Hospital. The project attempts to improve on how we perform visual acuity tests by digitalizing them. It adds more types of charts than the standard physical ones that exists today. The system uses a webbrowser running on an android tablet that is connected to a screen. A library of vector graphic files are displayed in the webbrowser. These files contains the different charts as well as some other specialized tools. Currently the android tablet has to be held in a fixed position in the examination room, restrained by the cable going to the screen. The charts used are fixed and not very easily changed, which makes it very hard to try out new techniques and methods of measuring.
 
-\subsubsection{!!!Placeholder name!!! (Our project?)} %Kom inte på en bra rubrik, kanske ska vara på ett annat ställe?
+\subsubsection{Our project}
 Most of the before mentioned systems have some form of negative side that we try to improve on, mostly problems about high cost and difficulties with extending the software. We are different with that we want to create a system that is cheap, easy to understand and easy to maintain. Creating a system that have all the previously mentioned sides is one of the goals we have. Another important goal is creating a system that really is speacialized on measurements of visual acuity. All these points are important to give the users the best experience.
 
 \section{Purpose}
@@ -73,12 +73,10 @@ The purpose of this project is to remove the constraints of using physical chart
 The problem with today's visual acuity tests are that they are very clumsy to work with. The charts are printed and contains only one type of symbol, or optotype. This could be letters for people with the ability to read or an 'E' shape turned in different ways which allows children who are unable to read, or illiterate people, to identify which symbol they see. These charts are also only designed to be viewed from one specific distance, which makes some rooms to small and unusable.
 
 \subsection{Advantages of a digital system}
-The advantages of a digital system is the ability to change the layout, optotypes and size of the chart without having to carry away the old chart and then carrying back a new. This will save both time and space as only one screen and a small android device is necessary. This system will also allow the visual acuity tests to take place in rooms that previously where to small, as the system will display optotypes at a size suitable for the distance the patient is from the monitor.
+The advantages of a digital system is the ability to change the layout, optotypes and size of the chart without having to carry away the old chart and then carrying back a new. This will save both time and space as only one screen and a small Android device is necessary. This system will also allow the visual acuity tests to take place in rooms that previously where too small, as the system will display optotypes at a size suitable for the distance the patient is from the monitor.
 
 \subsection{Disadvantages of a digital system}
-A disadvantage with this system is that digital screens become very expensive at large sizes, which limits the maximum distance a patient can sit from the screen. Another disadvantage is that the resolution, or rather pixel density, will limit how close to a screen a patient can sit without the optotypes looking pixelated.
-
-
+A disadvantage with this system is that digital screens become very expensive at large sizes, which limits the maximum distance a patient can sit from the screen. Another disadvantage is that the resolution, or rather pixel density, will limit how close to a screen a patient can sit without the optotypes looking pixelated. Pixel density is a measurement of how many pixels (dots) can fit in a small section of the screen, usually denoted as Pixels Per Inch (PPI) or Dots Per Inch (DPI). The higher the DPI is the better the quality of small details will be. This is very important when rendering type fonts because the edges should be as smooth as possible.
 
 %\section{Employer}
 %%%%%%%%%%%%%beskriv uppdragsgivare, om ni har
@@ -111,13 +109,7 @@ and other features to make the process easier for the optician and patient.
 %Hum. Ta material från ovanstående fråga? Jag är inte säker.
 
 %%%%%%%%%%%%%%%%%%%%%%%%Motivation:
-
 \section{Motivation}
-%%%%%%%%%%%%%Varför är projektet viktigt?
-%%%%%%%%%%%%%Hur stort är problemet, vad är följden av att det inte är löst, hur bra vore det att lösa?
-%%%%%%%%%%%%%Vilken "lucka" i området täcker ni?
-%%%%%%%%%%%%%Varför är er lösning bättre/annorlunda än andras?
-
 This project is important because determining visual acuity is a very labor- and equipment-intensive process. As the testing has showed, using a digital chart with a tablet interface is easier and faster, and can be a great help for the optician. The only thing missing is to improve on the design and implement a functional user interface and a better hardware solution to turn the testing shell into a finished product. 
 
 %Borde utökas, trorja.
@@ -134,7 +126,7 @@ This project is important because determining visual acuity is a very labor- and
 %%%%%%%%%%%%%%%%%%%%%%%%Frågeställningar:
 
 \section{Issues} %vilka tekniska problem behöver ni lösa (sj.arb), vad ska ni ta reda på (uppsatsmetodik)?
-There are several technical problems that we need to solve. We need to design a small computer system that will store and present the desired images to the screen. Our current plan is using a RaspberryPi, since it is a cheap and compact alternative to PCs that is more than powerful enough for our purposes. Though, since the RaspberryPi in running on a ARM CPU there will be a few compatibility problems that we need to solve. For example is the Java graphics library JavaFX, that is going to replace the older Swing library, not very well supported by RaspberryPi. Not being able to use the latest features can create problems in the future when some things get deprecated. If that happens it is probably not very hard to port the GUI to a supported JavaFX version.
+There are several technical problems that we need to solve. We need to design a small computer system that will store and present the desired images to the screen. Our current plan is using a RaspberryPi, since it is a cheap and compact alternative to PCs that is more than powerful enough for our purposes. Though, since the RaspberryPi in running on a ARM CPU there will be a few compatibility problems that we need to solve. For example is the Java graphics library JavaFX, that is going to replace the older Swing library, not very well supported by RaspberryPi. Not being able to use the latest features can create problems in the future when some things get deprecated. Though if that happens it is probably not very hard to re-write the GUI to a supported JavaFX version.
 
 Networking needs to be added to control the RaspberryPi over WiFi from the tablet, and some features like waking the screen as the app is started can be considered. With networking we face a few problems. % How the server is controlled by the tablet? (Direct function calls, network polling, blabla)
 
