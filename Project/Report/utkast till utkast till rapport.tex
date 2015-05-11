@@ -2,6 +2,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage{cite}
 \usepackage{etoolbox}
+\usepackage{listings}
+\usepackage{graphicx}
+
 
 %%%%%%%% Bibliografi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ändrar namnet på referens headern
@@ -151,30 +154,92 @@ Our ethical obligations with this project is providing a functional and stable p
 
 %%%%%%%%%%%%%%%%%%%%%%%%DEL 2: GENOMFÖRANDE
 \chapter{Implementation}
+
+%\section{Methods}
+
+
+
+%\subsection{Methods}
+%The screen controller will be built using Java and a few third-party libraries. Java has many built-in and well supported packages, and is also mostly platform independent. This suits our needs for future extensions of the system. Since the server mostly handles rendering of images having a good method of displaying images is needed. 
+
+%Thankfully Java offers a few well-known libraries for rendering graphics. For many years the choice has been a now somewhat aged library called Swing \cite{Java_Swing}. Another library, JavaFX, has started to gather people's interests again. This because of the new version released with Java 8, JavaFX 8 \cite{JavaFX_8}. 
+
+%Though it is common to use the newer JavaFX instead of Java Swing, JavaFX is not well supported on the machine we are going to use. Using Java Swing is then a better choice for our project, but if JavaFX becomes better supported in the future it will be easy to re-create our system using JavaFX.
+
+%\subsection{Client application}
+%The Android application is written in java, which is the official language for Android. The static parts of the GUI, which will never change unless an application update is released, is written in xml. This is similar to how html is written and is supported by Android natively.
+
+%The charts are generated at runtime and the code is a slightly modified copy of the code used to draw the charts on the server. If the charts would have been written in xml, there would be no guarantee that they would fit on the screen or keep the correct proportions on different tablets. This also avoids hard to read code as the large chart, for example, would need 70 defined areas for images, all with an unique text string id. As Android does not have support for vector graphics and the chart optotype images are vector images the AndroidSVG \cite{AndroidSVG} library is used to display them.
+
+%The settings associated to each chart are also generated at runtime. If this were not the case, every different version of the chart would need its own xml file, as each version contains a different number of predefined charts.
+
 \section{Methods}
-%%%%%%%%%%%%%%%%%%%%%%%%Metoder: vilka metoder ska ni konkret använda för att lösa problemet/bygga systemet/arbeta? vilka tekniker/verktyg ska ni använda?
 
-\subsection{Screen controller (Vad borde "servern" kallas?)}
-The screen controller will be built using Java and a few third-party libraries. Java has many built-in and well supported packages, and is also mostly platform independent. This suits our needs for future extensions of the system. Since the server mostly handles rendering of images having a good method of displaying images is needed. 
 
-Thankfully Java offers a few well-known libraries for rendering graphics. For many years the choice has been a now somewhat aged library called Swing \cite{Java_Swing}. Another library, JavaFX, has started to gather people's interests again. This because of the new version released with Java 8, JavaFX 8 \cite{JavaFX_8}. 
+%\subsection{Server application}
+%The server application is modeled after after the MVC (Model-View-Controller) pattern, where the Model is the logic and the view is GUI (graphical user interface). The server applications controller would be the networking, but for this project the networking was decided to fall outside of the MVC pattern and be its own structural part instead.
 
-Though it is common to use the newer JavaFX instead of Java Swing, JavaFX is not well supported on the machine we are going to use. Using Java Swing is then a better choice for our project, but if JavaFX becomes better supported in the future it will be easy to re-create our system using JavaFX.
+%The logic part of the server application is responsible for handling all calculations and data. It contains information about the connected screen and provides methods for getting pixel densities and converting physical measurements, like centimeters, to digital measurements like pixels. The most important part is the method for calculating the correct sizes for the optotypes that should be displayed.
 
-\subsection{Client}
-The android application is written in java, as this is the official language for android. Only \textbf{two}(at the moment)external libraries are used, AndroidSVG (cite) and Kryonet (see next section). AndroidSVG is a library which implements support for svg files on android, which is necessary as our optotype images as they have to be able to scale without becoming distorted. 
+%It is also contains methods for calculating the correct sizes of the optotypes and the data about the charts that should be displayed.
 
-(https://code.google.com/p/androidsvg/)
 
-The major part of the applications GUI is designed with the android standard method of using xml files. The actual charts drawn on the screen are added programmatically as the optotypes have to be drawn at a specific size with a specific distance from each other. Had this been done in an xml file there would be no guarantee that these sizes and distances would be correct on a device with another screen resolution or size.
+\subsection{Android application}
+The Android application is written in java, which is the official language for Android. The static parts of the GUI(graphical user interface), which will never change unless an application update is released, is written in xml. This is similar to how html is written and is supported by Android natively.
+
+The charts shown on the Android device are generated at runtime. If the charts would have been written in xml, there would be no guarantee that they would fit on the screen or keep the correct proportions on different tablets. This also avoids hard to read code as the large chart, for example, would need 70 defined areas for images, all with an unique text string id. As Android does not have support for vector graphics and the chart optotype images are vector images the AndroidSVG \cite{AndroidSVG} library is used to display them.
+
+The settings associated to each chart are also generated at runtime. If this were not the case, every different version of the chart would need its own xml file, as each version contains a different number of predefined charts.
+
+In order to control the application, \textit{controllers} where created in order to listen to button clicks and gestures when the user is attempting to to something.
+
+\subsection{Server application}
+The server application is also written in java and uses the built in Swing library for drawing graphics. As most the servers only job is to display charts, almost all code are copied and slightly modified from the Android application. Everything graphical in the server is generated at runtime as the sizes and distances between optotypes depends on which screen that's connected and the distance from the screen to the patient. The PC version of java doesn't support the AndroidSVG library, another vector graphics library called Batik SVG Toolkit \cite{Batik} was used.
 
 \subsection{Network}
-The communication between the android tablet and the server will be handled using a third-party network library called Kryonet \cite{Kryonet}. 
+The communication between the client and the server consists of two parts. The first part is server detection and the second is server communication. All network communications are handled in threads separate from the main thread as the network operations would halt the flow of the program otherwise. Once the operations are complete and the main threads finds it convenient, it will grab the result from the network threads.
 
-\section{System structure} %%%%%%%%%%%%%%%%%%%%%%%%Systemstruktur: vilka delar kan ni se att ert system/problem består av? (T.ex. databas, webbinterface, AI-modul, grafik...)
-The system is split up between an Android application and a PC application. These applications will both be structured with the Model-View-Controller design pattern as a base in order to split up user input, graphics and logic. The PC application will act as a server and display an eye chart on a larger screen connected with an HDMI-cable. The android applications purpose is to control the PC-application over a wifi network and make sure the correct chart is displayed on the larger screen. The android application will display the same image shown on the large screen, but with some other extra information that's useful for the optician.
+\subsubsection{Server detection}
+In order to detect all servers on the network, the Android application sends out a UDP (User Datagram Protocol) broadcast message containing server discovery request. The application will then listen for incoming server responses. Once the application haven't received anything for three seconds from the last server response, it will stop listening and determine that all available servers have responded. The names and addresses of the servers will then be extracted from each response message and stored in a list so the user can choose which one to connect to.
 
-\textbf{Image of System structure TBI}
+The servers themselves are constantly listening for broadcasts containing the server discovery request. Once a request is received, the server will send a response and then keep listening for more requests.
+
+\subsubsection{Server communication}
+The communication between the client and server is handled using simple TCP (Transimission Control Protocol) messages. The TCP messages are used for sending and receiving commands and are structured as three lines of text (Example \ref{tcp_message}). The first line is a \textit{check} word and is the same for every \textit{command}. The second line is a \textit{command} word which tells the receiver what to do and the third line is the \textit{data} required for the \textit{command}. In many cases the simple \textit{command} is enough and the \textit{data} is left empty.
+
+\begin{center}
+\renewcommand{\lstlistingname}{Example}
+  \lstset{%
+    title=Example of TCP message,
+    basicstyle=\ttfamily\footnotesize\bfseries,
+    xleftmargin=.2\textwidth, xrightmargin=.2\textwidth
+  }
+\begin{lstlisting}[caption=TCP Message, label=tcp_message]
+CHECK_WORD
+LARGE_CHART
+NULL
+\end{lstlisting}
+\end{center}
+
+
+\section{System Structure}
+The system is divided into three major parts, an Android application, a server and networking. The Android application and server is modeled after the MVC (Model-View-Controller) pattern, where the model is the logic and the view is the GUI. The controller part is the part on the Android application that listens for button clicks and gestures. Usually the networking would fall under controller in the MVC pattern but was, in this system, chosen to be a separate larger structure.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=120mm]{images/system_structure.png}
+\caption{Overview of the system structure\label{system_structure}}
+\end{figure}
+
+ %where the server is connected to a large screen and is controlled by the Android application over a local network. The server and
+
+
+%The communication between the android tablet and the server will be handled using a third-party network library called Kryonet \cite{Kryonet}. 
+
+%\section{System structure} %%%%%%%%%%%%%%%%%%%%%%%%Systemstruktur: vilka delar kan ni se att ert system/problem består av? (T.ex. databas, webbinterface, AI-modul, grafik...)
+%The system is split up between an Android application and a PC application. These applications will both be structured with the Model-View-Controller design pattern as a base in order to split up user input, graphics and logic. The PC application will act as a server and display an eye chart on a larger screen connected with an HDMI-cable. The android applications purpose is to control the PC-application over a wifi network and make sure the correct chart is displayed on the larger screen. The android application will display the same image shown on the large screen, but with some other extra information that's useful for the optician.
+
+%\textbf{Image of System structure TBI}
 
 %The dicrete parts of this project are:
 
