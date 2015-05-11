@@ -4,6 +4,8 @@
 \usepackage{etoolbox}
 \usepackage{listings}
 \usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsmath}
 
 
 %%%%%%%% Bibliografi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -157,8 +159,42 @@ An optotype is a symbol that is used by a visual acuity chart. The optotypes are
 
 \textit{LEA} are four symbols that look like a house, circle, box and apple. These symbols similar to HVOT since they look the same if you mirror them on the horizontal axis.
 
+\begin{figure}
+\centering
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{images/landholt_c_optotype.png}
+  \caption{Landholt C}
+  \label{fig:landholt_c}
+\end{subfigure}%
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{images/tumbling_e_optotype.png}
+  \caption{Tumbling E}
+  \label{fig:tumbling_e}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{images/lea_optotype.png}
+  \caption{LEA}
+  \label{fig:lea}
+\end{subfigure}
+\caption{Some example optotypes}
+\label{fig:optotypes_example}
+\end{figure}
+
 \subsection{ETDRS Chart}
-The ETDRS chart consists of 14 rows with 5 letters on each row. Each 
+The ETDRS chart consists of 14 rows with 5 optotypes on each row. The size of each optotype is measured in LogMAR (Logarithmic of the Minimum Angle of Resolution) which is the base 10 logarithm of the angle of one fifth of an optotype \cite{Bailey}.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=120mm]{images/logmar_calculation.png}
+\caption{LogMAR\label{fig:logmar_calculation}}
+\end{figure} 
+
+\begin{equation}
+  Formula \ coming!!
+\end{equation}
 
 
 \section{Theory of ofthalmology} %% Nån bra titel här?
