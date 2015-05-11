@@ -141,17 +141,36 @@ Our ethical obligations with this project is providing a functional and stable p
 
 \chapter{Theory}
 
-\section{Choice of distance} %% Nån bra titel här?
+\section{Theory of ofthalmology} %% Nån bra titel här?
 
-The specific distance of six meters is derived from how our eyes bend light. From a distance of six meters the rays of light seem to be nearly parallel to eachother. % Borde skriva mer utförligt? Referens behövs.
-It is important that the rays of light that hit the eyes are parallel because then the light focuses on the same spot in the back of the eyes, which in turn makes the measuring a lot easier and accurate. \cite{PGSoderberg} % Detta kanske ska flyttas till teori delen?
+The specific distance of six meters is derived from how our eyes bend light. From a distance of six meters the rays of light seem to be nearly parallel to eachother.
+It is important that the rays of light that hit the eyes are parallel because then the light focuses on the same spot in the back of the eyes. This happens because of the convex shape of the eye's lens. A convex shaped lens focuses parallel light onto the same focal point. Since a convex lens focuses parallel light to a focal point a concave lens instead spread light coming from a focal point to parallel rays. Combining these two type of lenses we can create a more focused light. 
 
-To make up for the shift in focus in the eyes a plus glass has to be put in front of the patients eyes. The glass will bend the light in such a way that the rays of light becomes more parallel. 
-
+%% Kan använda denna men måste skriva mer förklarande om själva bilden
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=120mm]{images/Angular_magnification.png}
 \caption{Angular magnification\label{theory}}
+\end{figure}
+
+This part is a very short despriction of the combination of lenses!
+
+To make up for the shift in focus in the eyes a suitable lens is put in front of the eye. The type of lens mostly depends on the shape of your eye, any eye disease you might have and the distance from the lens to the eye. A property of the lenses that is important is on what distance the focal point is at. In optician's terms a plus glass is a lens that focuses light coming further away (addition) and a minus glass is a lens that focuses light from nearer (subtraction). 
+
+To make up for any measurements done from a distance shorter than six meters a plus glass is needed. \cite{PGSoderberg}
+
+%% Kan använda denna men måste skriva mer förklarande om själva bilden
+\begin{figure}[ht!]
+\centering
+\begin{tabular}{| l | l | l | l |}
+    \hline
+    Distance to chart (m) & Addition (D) & Magnification (Rel.) & Error (logMar) \\ \hline
+    4                     & 0.25         & 1.5                  & 0.17           \\ \hline
+    2                     & 0.5          & 3.5                  & 0.48           \\ \hline
+    1                     & 1            & 6.0                  & 0.78           \\ 
+    \hline
+    \end{tabular}
+    \caption{Magnification due to addition for closer distance\label{theory}}
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%DEL 2: GENOMFÖRANDE
