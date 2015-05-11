@@ -9,13 +9,6 @@
 %%%%%%%% Bibliografi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ändrar namnet på referens headern
 \renewcommand\bibname{References (Vi har URL och Datum, måste bara ändra LaTeX layouten.)}
-%% Ser till att referenserna kommer på en egen sida och att titeln inte är numrerad
-\makeatletter
-\patchcmd{\thebibliography}{%
-  \cleardoublepage
-  \chapter*{\bibname}\@mkboth{\MakeUppercase\bibname}{\MakeUppercase\bibname}}{%
-  \section{References}}{}{}
-\makeatother
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%% Start document %%%%%%%%%%%%%%%%%%%%%
@@ -37,14 +30,13 @@ Digitalization of Visual Acuity Testing is a project involving development of a 
 %%%%%%%%%%%%%%%%%%%%%%%%  DEL 1: FÖRUTSÄTTNINGAR
 \setcounter{page}{1}
 \chapter{Preconditions}
-%%%%%%%%%%%%%Område/bakgrund: vilket är området, omgivningen, kontextet, bakgrunden för projektet? beskrivning av området (t.ex. ljudbehandling, studieplaner, visualisering, autism...)
 \section{Background}
 \subsection{Visual Acuity}
 To measure a patients visual acuity opticians today use charts with printed lines of continuously smaller symbols. The measurement is made by having the patient read symbols on the chart from a set distance. The person reads down the chart until it is no longer possible to make out the characters. Based on the size of the character the patient failed to recognize, a visual acuity can be determined. 
 
 For such charts to function as a basis for these standardized tests of visual acuity the testing environment must be carefully prepared. Among a few things, for the measurement to be optimal the chart must be placed at a distance of six meters from the patient, and the luminosity in the room must be at a specific level. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests. 
 
-These conditions cannot always be met. Sometimes the examination room is not sufficiently large for measurements from six meters. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests. % Skriv mer om varför det måste vara tillräckligt mycket ljus. Referens behövs.
+These conditions cannot always be met. Sometimes the examination room is not sufficiently large for measurements from six meters. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests.
 
 There are also several different variations on these charts. Different sets of symbols, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen Chart that was developed in the 19th century, to the more modern LogMAR chart.
 
@@ -140,8 +132,6 @@ Our ethical obligations with this project is providing a functional and stable p
 \chapter{Problem Description}
 
 \chapter{Theory}
-
-\section{Choice of distance} %% Nån bra titel här?
 \section{Chart Design}
 The visual acuity charts this project are based on ETDRS (Early Treatment Diabetic Retinopathy Study) chart\cite{Ferris} and a project developed by PG Söderberg (need reference). 
 
@@ -150,7 +140,6 @@ The ETDRS chart consists of 14 rows with 5 letters on each row.
 
 
 \section{Theory of ofthalmology} %% Nån bra titel här?
-
 The specific distance of six meters is derived from how our eyes bend light. From a distance of six meters the rays of light seem to be nearly parallel to eachother.
 It is important that the rays of light that hit the eyes are parallel because then the light focuses on the same spot in the back of the eyes. This happens because of the convex shape of the eye's lens. A convex shaped lens focuses parallel light onto the same focal point. Since a convex lens focuses parallel light to a focal point a concave lens instead spread light coming from a focal point to parallel rays. Combining these two type of lenses we can create a more focused light. 
 
@@ -309,8 +298,7 @@ The easiest way to see if our product satisfies these demands is putting it into
 
 
 
-
-\bibliographystyle{plain}
-\bibliography{references}
+\bibliography{references}{}
+\bibliographystyle{ieeetr}
 
 \end{document}
