@@ -176,18 +176,20 @@ An optotype is a symbol that is used by a visual acuity chart. The optotypes are
 \end{figure}
 
 \subsection{ETDRS Chart}
-The ETDRS chart consists of 14 rows with 5 optotypes on each row. The size of each optotype is measured in LogMAR (Logarithmic of the Minimum Angle of Resolution) which is the base 10 logarithm of the angle of one fifth of an optotype \cite{Bailey}.
+The ETDRS chart consists of 14 rows with 5 optotypes on each row. The size of each optotype is measured in LogMAR (Logarithmic of the Minimum Angle of Resolution) which is the base 10 logarithm of the angle of one fifth of an optotype (eq. \ref{eq:logmar} and fig. \ref{fig:logmar_calculation}) \cite{Bailey}. The angle unit is measured in arcminutes, where one arcminute is $\dfrac{1}{60}$ degrees or $\dfrac{\pi}{10800}$ radians. If the angle v in figure \ref{fig:logmar_calculation} is equal to 8 arcminutes, then the size of the letter would be $log_{10}(8) \approx 0.903 LogMAR$.
+
+\begin{equation}
+	\begin{split}
+  		LogMAR & = log_{10}(angle)
+  	\end{split}
+  	\label{eq:logmar}
+\end{equation}
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=120mm]{images/logmar_calculation.png}
-\caption{LogMAR\label{fig:logmar_calculation}}
+\caption{The angle v is used to calculate the size in LogMAR of the optotype.\label{fig:logmar_calculation}}
 \end{figure} 
-
-\begin{equation}
-  Formula \ coming!!
-\end{equation}
-
 
 \section{Theory of ofthalmology} %% Nån bra titel här?
 The specific distance of six meters is derived from how our eyes bend light. From a distance of six meters the rays of light seem to be nearly parallel to eachother.
