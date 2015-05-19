@@ -27,12 +27,15 @@ import org.anaxivis.network.Network;
 public class Application implements IApplication {
     private static final Logger logger = Logger.getLogger(Application.class.getName());
 
+    public static final int SCREEN_WIDTH = 1366;
+    public static final int SCREEN_HEIGHT = 768;
+    
     private static final String TITLE = "Axanivis";
     private static final int FULLSCREEN_TOGGLE = KeyEvent.VK_F1;
     private static final int MENU_TOGGLE = KeyEvent.VK_F2;
     private static final int DEBUG_MENU_TOGGLE = KeyEvent.VK_F3;
-    private static final int MINIMUM_FRAME_WIDTH = 800;
-    private static final int MINIMUM_FRAME_HEIGHT = 600;
+    private static final int MINIMUM_FRAME_WIDTH = 1200;
+    private static final int MINIMUM_FRAME_HEIGHT = 800;
     private static final boolean START_IN_FULLSCREEN = false;
     private static final boolean START_POLLING_NETWORK = false;
 
@@ -137,7 +140,6 @@ public class Application implements IApplication {
 	mainContent = new MainContent(this);
 
 	frame.setJMenuBar(mainMenuBar);
-	frame.getContentPane().add(mainContent);
     }
 
     /**

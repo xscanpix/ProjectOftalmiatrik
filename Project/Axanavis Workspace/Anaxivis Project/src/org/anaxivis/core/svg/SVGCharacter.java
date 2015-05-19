@@ -24,7 +24,7 @@ public class SVGCharacter {
     private static final String SLOAN_Z = "sloan_z2.svg";
     private static final String SLOAN_E = "sloan_e2.svg";
 
-    public static JSVGCanvas getLatinCharacter(String letter, int sizePixel) {
+    public static JSVGCanvas getLatinCharacter(String letter, int sizePixel, double rotation) {
 
 	String path = "";
 	switch (letter) {
@@ -87,7 +87,12 @@ public class SVGCharacter {
 	    root.setAttribute(SVGConstants.SVG_HEIGHT_ATTRIBUTE, Integer.toString(sizePixel));
 	    root.setAttribute(SVGConstants.SVG_VIEW_BOX_ATTRIBUTE, "0 0 " + sizePixel + " " + sizePixel);
 
-	    JSVGCanvas canvas = new JSVGCanvas();
+	    JSVGCanvas canvas = null;
+	    if (rotation == 0) {
+		canvas = new JSVGCanvas();
+	    } else {
+		canvas = new RotatedJSVGCanvas(rotation, sizePixel, sizePixel);
+	    }
 	    canvas.setDoubleBuffered(true);
 	    canvas.setDocumentState(JSVGCanvas.ALWAYS_DYNAMIC);
 	    canvas.setDocument(doc);
@@ -95,7 +100,6 @@ public class SVGCharacter {
 	    return canvas;
 	}
 
-	
 	// File problem
 	return null;
     }
