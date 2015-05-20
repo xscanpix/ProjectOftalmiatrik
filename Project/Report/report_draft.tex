@@ -194,21 +194,24 @@ The ETDRS chart consists of 14 rows with 5 optotypes on each row. The size of ea
 \end{figure} 
 
 \section{Theory of ofthalmology} %% Nån bra titel här?
-The specific distance of six meters is derived from how our eyes bend light. From a distance of six meters the rays of light seem to be nearly parallel to eachother.
-It is important that the rays of light that hit the eyes are parallel because then the light focuses on the same spot in the back of the eyes. This happens because of the convex shape of the eye's lens. A convex shaped lens focuses parallel light onto the same focal point. Since a convex lens focuses parallel light to a focal point a concave lens instead spread light coming from a focal point to parallel rays. Combining these two type of lenses we can create a more focused light. 
+The measurement of a persons visual accuity has an important constraint that needs to be followed. This constraint is the fact that our eyes works best physiologically from greater distances. On the other hand, at shorter distances our eyes tend to make what we see a bit unfocused. To make up for this shift in focus a minimum testing distance has to be enforced to ensure that the shift in focus stays as small as possible. This distance has been set to be six meters.
+
+The specific distance of six meters is derived from how our eyes bend light. From that distance the rays of light entering our eyes are nearly parallel to eachother. It is important that the rays of light that hit the eyes are parallel because then the light focuses on the same spot in the back of the eyes. This happens because of the convex shape of the eye's lens. A convex shaped lens focuses parallel light onto the same focal point. Since a convex lens focuses parallel light to a focal point a concave lens instead spread light coming from a focal point to parallel rays. Combining these two type of lenses we can create a more focused light. 
+
+To make up for the shift in focus a suitable lens is put in front of the eye at about the distance that you would wear glasses. The type of lens mostly depends on the shape of your eye, any eye disease you might have or the distance from the lens to the eye. An important property of the lenses is at what distance the focal point lays at. The focal point is the point behind a lens where the light is focused if hit by parallel rays of light. So, to create a more focused light, exactly what glasses do, we have to put a lens in front of the eye to create more parallel light. These lenses can either be plus or minus lenses, either spreading or contracting the light.
+
+In optician's terms a plus glass is a lens that focuses light coming further away (addition) and a minus glass is a lens that focuses light from nearer (subtraction). A real world example of this is glasses helping to correct near- and farsightedness.
 
 %% Kan använda denna men måste skriva mer förklarande om själva bilden
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=120mm]{images/Angular_magnification.png}
-\caption{Angular magnification\label{theory}}
+\caption{Angular magnification\label{angular}}
 \end{figure}
 
-This part is a very short despriction of the combination of lenses!
+Though this is a way of corrected for testing at short distances, a few problems arise from this. Figure \ref{angular} shows the problem of angular magnification. 
 
-To make up for the shift in focus in the eyes a suitable lens is put in front of the eye. The type of lens mostly depends on the shape of your eye, any eye disease you might have and the distance from the lens to the eye. A property of the lenses that is important is on what distance the focal point is at. In optician's terms a plus glass is a lens that focuses light coming further away (addition) and a minus glass is a lens that focuses light from nearer (subtraction). 
-
-To make up for any measurements done from a distance shorter than six meters a plus glass is needed. \cite{PGSoderberg}
+The magnification is a problem is visual acuity testing because if the optotypes on the eye chart are enlarged then an error will show up in the results.
 
 %% Kan använda denna men måste skriva mer förklarande om själva bilden
 \begin{figure}[ht!]
@@ -221,8 +224,10 @@ To make up for any measurements done from a distance shorter than six meters a p
     1                     & 1            & 6.0                  & 0.78           \\ 
     \hline
     \end{tabular}
-    \caption{Magnification due to addition for closer distance\label{theory}}
+    \caption{Magnification due to addition for closer distance\label{magtable}}
 \end{figure}
+
+There is need to have a standard to follow on how much addition or subtraction needed for a specific distance. Figure \ref{magtable} shows what values to use when testing visual acuity at shorter distances than six meters. \cite{PGSoderberg}
 
 %%%%%%%%%%%%%%%%%%%%%%%%DEL 2: GENOMFÖRANDE
 \chapter{Implementation}
