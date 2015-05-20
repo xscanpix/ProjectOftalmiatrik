@@ -83,22 +83,9 @@ The goal of this project is to take the system used for these tests and develop 
 and other features to make the process easier for the optician and patient.
 
 \section{Motivation}
-This project is important because determining visual acuity is a very labor- and equipment-intensive process. As the testing has showed, using a digital chart with a tablet interface is easier and faster, and can be a great help for the optician. The only thing missing is to improve on the design and implement a functional user interface and a better hardware solution to turn the testing shell into a finished product. 
+Determining visual acuity is a very labor- and equipment-intensive process and it is not going to stop being so. More and more people are experiencing eye problems. \cite{vision_loss} Handling printed charts is slow and not as accurate as it can be. On the other hand, a digital screen has increased functionality, accuracy and efficiency. A digitalization also gives the user a greater possibility for extending the usage of the system, including adding new charts and optotypes. 
 
-%Borde utökas, trorja.
-%%%%%%%%%%%%%%%%%%%%%%%%Lägesbeskrivning:
-
-%Fan också, det här har jag ju skrivit om redan. 
-%Att upprepa sig, eller inte upprepa sig. Det är frågan.
-
-%%%%%%%%%%%%%vad vet ni om läget när det gäller "problemet" som projektet ska lösa?
-%%%%%%%%%%%%%vilka andra har försökt lösa det, eller gjort relaterade/liknande saker/system? Referera.
-
-%Man kan ju också prata i mer detalj om Snellen och LogMAR... Men det är ju egentligen inte information som är viktig för oss. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%Frågeställningar:
-
-\section{Issues} %vilka tekniska problem behöver ni lösa (sj.arb), vad ska ni ta reda på (uppsatsmetodik)?
+\section{Issues}
 There are several technical problems that we need to solve. We need to design a small computer system that will store and present the desired images to the screen. Our current plan is using a Raspberry Pi, since it is a cheap and compact alternative to PCs that is more than powerful enough for our purposes. Though, since the Raspberry Pi in running on a ARM CPU there will be a few compatibility problems that we need to solve. For example is the Java graphics library JavaFX, that is going to replace the older Swing library, not very well supported by Raspberry Pi. Not being able to use the latest features can create problems in the future when some things get deprecated. Though if that happens it is probably not very hard to re-write the GUI to a supported JavaFX version.
 
 Networking needs to be added to control the Raspberry Pi over WiFi from the tablet, and some features like waking the screen as the app is started can be considered. With networking we face a few problems. % How the server is controlled by the tablet? (Direct function calls, network polling, blabla)
@@ -341,7 +328,7 @@ The easiest way to see if our product satisfies these demands is putting it into
 
 \chapter{Conclusion}
 
-\bibliography{references}{hide}
+\bibliography{references}{}
 \bibliographystyle{ieeetr}
 
 \end{document}
