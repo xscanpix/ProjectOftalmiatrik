@@ -139,15 +139,15 @@ A disadvantage with this system is that digital screens become very expensive at
 \section{Visual Acuity}
 The measurement of a persons visual accuity has an important constraint that needs to be followed. This constraint is the fact that our eyes works best physiologically from greater distances. On the other hand, at shorter distances our eyes tend to make what we see a bit unfocused. To make up for this shift in focus a minimum testing distance has to be enforced to ensure that the shift in focus stays as small as possible. This distance has been set to be six meters.
 
-\subsection{Measurement Distance}
+\subsection{Measurement distance}
 The specific distance of six meters is derived from how our eyes bend light. From that distance or greater the rays of light entering our eyes are nearly parallel to eachother. It is important that the rays of light that hit the eyes are parallel because then the light focuses on a more focused area in the back of the eyes. This happens because of the convex shape of the eye's lens. A convex shaped lens focuses parallel light onto the focal point. Since a convex lens focuses parallel light to a focal point a concave lens instead spreads light coming from a focal point to parallel rays. Combining these two type of lenses we can create a more focused light. 
 
-\subsection{Defocus Correction}
+\subsection{Defocus correction}
 To make up for the shift in focus a suitable lens is put in front of the eye at about the distance that you would wear glasses. The type of lens mostly depends on the shape of your eye, any eye disease you might have or the distance from the lens to the eye. An important property of the lenses is at what distance the focal point lays at. So, to create a more focused light, which is exactly what glasses do, we have to put a lens in front of the eye to create more parallel light. These lenses can either be plus or minus lenses, either spreading or contracting the light.
 
 In optician's terms a plus glass is a lens that focuses light coming further away (addition) and a minus glass is a lens that focuses light from nearer (subtraction). A real world example of this is glasses helping to correct ~near- and farsightedness.
 
-\subsection{Angular Magnification}
+\subsection{Angular magnification}
 % TODO: Explain using formulas how the angular magnification works
 \begin{figure}[h]
 \centering
@@ -261,18 +261,17 @@ The optotypes on the top row of the chart is of the size 1.0 LogMAR and then eac
 
 %It is also contains methods for calculating the correct sizes of the optotypes and the data about the charts that should be displayed.
 
-
 \subsection{Android application}
-The Android application is written in Java, which is the official language for Android. The static parts of the GUI(graphical user interface), which will never change unless an application update is released, is written in xml. This is similar to how html is written and is supported by Android natively.
+The Android application is written in Java, which is the official language for Android. The static parts of the GUI (Graphical User Interface), which will never change unless application updates are released, are written in XML. This is similar to how HTML is written and is supported by Android natively.
 
-The charts shown on the Android device are generated at runtime. If the charts would have been written in xml, there would be no guarantee that they would fit on the screen or keep the correct proportions on different tablets. This also avoids hard to read code as the large chart, for example, would need 70 defined areas for images, all with an unique text string id. As Android does not have support for vector graphics and the chart optotype images are vector images the AndroidSVG \cite{AndroidSVG} library is used to display them.
+The charts shown on the Android device are generated at runtime. If the charts would have been written in XML, there would be no guarantee that they would fit on the screen or keep the correct proportions on tablets with different dimensions. It also avoids hard to read code as the large chart, for example, would need 70 defined areas for images, all with a unique text string id. As Android does not natively have support for vector graphics and the chart optotype images are vector images the AndroidSVG library is used to display them. \cite{AndroidSVG}
 
-The settings associated to each chart are also generated at runtime. If this were not the case, every different version of the chart would need its own xml file, as each version contains a different number of predefined charts.
+The settings associated to each chart are also generated at runtime. If this were not the case, every different version of the chart would need its own XML file, as each version contains a different number of predefined charts.
 
-In order to control the application, \textit{controllers} where created in order to listen to button clicks and gestures when the user is attempting to to something.
+In order to control the application, \textit{controllers} where created in order to listen to button clicks and gestures when the user attempts to do something.
 
 \subsection{Server application}
-The server application is also written in Java and uses the built in Swing library for drawing graphics. As most the servers only job is to display charts, almost all code are copied and slightly modified from the Android application. Everything graphical in the server is generated at runtime as the sizes and distances between optotypes depends on which screen that's connected and the distance from the screen to the patient. The PC version of Java doesn't support the AndroidSVG library, another vector graphics library called Batik SVG Toolkit \cite{Batik} was used.
+The server application is also written in Java and uses the built-in Swing library for drawing the GUI and the images. As most the servers only job is to display charts, almost all code are copied and slightly modified from the Android application. Everything graphical in the server is generated at runtime as the sizes and distances between optotypes depends on which screen that's connected and the distance from the screen to the patient. The PC version of Java doesn't support the AndroidSVG library, another vector graphics library called Batik SVG Toolkit \cite{Batik} was used.
 
 \subsection{Network}
 The communication between the client and the server consists of two parts. The first part is server detection and the second is server communication. All network communications are handled in threads separate from the main thread as the network operations would halt the flow of the program otherwise. Once the operations are complete and the main threads finds it convenient, it will grab the result from the network threads.
