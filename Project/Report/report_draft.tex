@@ -205,34 +205,8 @@ The ETDRS chart consists of 14 rows with 5 optotypes on each row. The size of ea
 
 The optotypes on the top row of the chart is of the size 1.0 LogMAR and then each row below is decremented by 0.1 LogMAR to the last row which is -0.3 LogMAR. This means that each optotype is approximately 1.2589 the height of the optotypes on the row below \cite{Ferris}. The spacing between each optotype is equal to the width of an optotype from the same row and the spacing between each row is equal to the height of an optotype on the lower row.
 
-%%%%%%%%%%%%%%%%%%%%%%%%DEL 2: GENOMFÖRANDE
 \chapter{Implementation}
-
-%\section{Methods}
-%\subsection{Methods}
-%The screen controller will be built using Java and a few third-party libraries. Java has many built-in and well supported packages, and is also mostly platform independent. This suits our needs for future extensions of the system. Since the server mostly handles rendering of images having a good method of displaying images is needed. 
-
-%Thankfully Java offers a few well-known libraries for rendering graphics. For many years the choice has been a now somewhat aged library called Swing \cite{Java_Swing}. Another library, JavaFX, has started to gather people's interests again. This because of the new version released with Java 8, JavaFX 8 \cite{JavaFX_8}. 
-
-%Though it is common to use the newer JavaFX instead of Java Swing, JavaFX is not well supported on the machine we are going to use. Using Java Swing is then a better choice for our project, but if JavaFX becomes better supported in the future it will be easy to re-create our system using JavaFX.
-
-%\subsection{Client application}
-%The Android application is written in Java, which is the official language for Android. The static parts of the GUI, which will never change unless an application update is released, is written in xml. This is similar to how html is written and is supported by Android natively.
-
-%The charts are generated at runtime and the code is a slightly modified copy of the code used to draw the charts on the server. If the charts would have been written in xml, there would be no guarantee that they would fit on the screen or keep the correct proportions on different tablets. This also avoids hard to read code as the large chart, for example, would need 70 defined areas for images, all with an unique text string id. As Android does not have support for vector graphics and the chart optotype images are vector images the AndroidSVG \cite{AndroidSVG} library is used to display them.
-
-%The settings associated to each chart are also generated at runtime. If this were not the case, every different version of the chart would need its own xml file, as each version contains a different number of predefined charts.
-
 \section{Methods}
-
-
-%\subsection{Server application}
-%The server application is modeled after after the MVC (Model-View-Controller) pattern, where the Model is the logic and the view is GUI (graphical user interface). The server applications controller would be the networking, but for this project the networking was decided to fall outside of the MVC pattern and be its own structural part instead.
-
-%The logic part of the server application is responsible for handling all calculations and data. It contains information about the connected screen and provides methods for getting pixel densities and converting physical measurements, like centimeters, to digital measurements like pixels. The most important part is the method for calculating the correct sizes for the optotypes that should be displayed.
-
-%It is also contains methods for calculating the correct sizes of the optotypes and the data about the charts that should be displayed.
-
 \subsection{System structure}
 The system is divided into three major parts, an Android application, a server and networking. The Android application and server is modeled after the MVC (Model-View-Controller) pattern, where the model is the logic and the view is the GUI. The controller part is the part on the Android application that listens for button clicks and gestures. Usually the networking would fall under controller in the MVC pattern but was, in this system, chosen to be a separate larger structure. Figure \ref{system_structure} shows how the different parts are connected.
 
@@ -252,7 +226,12 @@ The settings associated to each chart are also generated at runtime. If this wer
 In order to control the application, \textit{controllers} where created in order to listen to button clicks and gestures when the user attempts to do something.
 
 \subsection{Server application}
-The server application is also written in Java and uses the built-in \textit{Swing} library for drawing the GUI and the images. The server will also handle the networking on its side, connecting wirelessly to the Android tablet. As the SVG vector graphic files are scalable by definition some of the code used on the Android tablet can be copied and used on the server. This includes at least the code generating the vector graphic files. Everything graphical in the server is generated at runtime as the sizes and distances between optotypes depends on which screen is connected and the distance from the screen to the patient. Instead of using the Android-only vector graphics library \textit{AndroidSVG} we are using a well supported library \textit{Apache Batik}. \cite{Batik}
+The server application is written in Java and uses the built-in \textit{Swing} library for drawing the GUI and the images. Swing is a very flexible and easy-to-use library with a lot of great tools for creating a good looking GUI. In our case
+we won't be needing a very advanced GUI since the main purpose of the server is to render a fullscreen image at all times. This greatly simplifies the implementation of the GUI. Other than the rendering of images, the GUI will consist of a small network controller where the user can specify a number of settings. These settings will be needed to configure for example what name the server will have on the network. It's also neccessary to have settings for the location of the server.  
+
+The rendering of images, specifically SVG vector graphic images, will be handled by an \textit{~Apache} library called \textit{Batik}. It is well supported and extensive library for rendering a multitude of different file formats. The SVG files contain information about the optotypes used on the charts. Using procedural positioning of the SVG images, we can easily create a well structured image to render to the screen.
+
+The server will also handle the networking on its side, connecting to the Android tablet over a TCP connection. This will be done using a third-party library \textit{Kryonet}. \cite{kryonet} Kryonet is a library that wraps Java's own networking functionality and improves upon it. The library's strong-point is the way it implements serialization of Java objects. Using Kryonet we can without a lot of effort serialize objects, send the object over the network and then deserialize is, getting back the original object with all of its internal structure.
 
 \subsection{Network}
 The network communication between the client and the server consists of two parts. The first part is server detection and the second is server communication. All network communications are handled in threads separate from the main thread as the network operations would halt the flow of the program otherwise. Once the operations are complete and the main threads finds it convenient, it will grab the result from the network threads.
