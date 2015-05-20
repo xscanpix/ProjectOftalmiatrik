@@ -6,12 +6,16 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{amsmath}
+\usepackage{titlesec}
 \usepackage[nottoc, notlof]{tocbibind}
 
 %%%%%%%% Bibliografi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ändrar namnet på referens headern
-\renewcommand\bibname{References (Vi har URL och Datum, måste bara ändra LaTeX layouten.)}
+\renewcommand\bibname{References)}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{}{0pt}{\Large}
 
 %%%%%%%%%%%%%%%%% Start document %%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -62,41 +66,22 @@ AxAnIvIs is a prototype that is currently under testing at Uppsala University Ho
 Most of the before mentioned systems have some form of negative side that we try to improve on, mostly problems about high cost and difficulties with extending the software. We are different with that we want to create a system that is cheap, easy to understand and easy to maintain. Creating a system that have all the previously mentioned sides is one of the goals we have. Another important goal is creating a system that really is speacialized on measurements of visual acuity. All these points are important to give the users the best experience.
 
 \section{Purpose}
-The purpose of this project is to remove the constraints of using physical charts for visual acuity tests and instead use a screen or monitor that can change optotypes and sizes with the press of a button.
+Having an efficient and accurate system for testing is important in any kind of environment. Especially in one that handles visual testing where an unaccurate test can result in possible injuries of some sorts. Therefore it is important to have a well-built background and accurate information. With the help of Professor %Här kan vi skriva om Per. 
+X as our expert in the field we will try to create this system and on the way there talk about different problems that can arise. 
 
+To solve the problems with this system the Department of Neuroscience have performed tests using a digital screen to present the charts instead of using a printed medium. This means the optician can have many more variations on the charts at disposal. %The set of symbols used on the charts can be switched within a menu, and the screen provides an more than adequately lit surface by itself. The current system is implemented by connecting an Android tablet to a screen via an HDMI cable, and the charts are rendered via a web browser on the tablet. Testing has proceeded for over a year, and has yielded very good results.
 
-
-%\section{Employer}
-%%%%%%%%%%%%%beskriv uppdragsgivare, om ni har
-
-%Vår uppdragsgivare är Per Söderberg, professor i oftalmiatrik vid Institutet%(Institutionen?)<---------------------------------- 
-%för Neurovetenskap vid %Hum. Dubbel-vid. Hur skriver man det här egentligen? <---------------------------------------------------
-%Uppsala Universitet. Han tar även patienter vid Akademiska Sjukhuset i Uppsala
-
-%Our employer is Per Söderberg, professor and chair of opthalmology with the Department of Neuroscience at Uppsala University. He also takes patients at the university hospital, and uses these types of charts on a daily basis. 
-
-%%%%%%%%%%%%%%%%%%%%%%%%Syfte: vart strävar projektet? vad är det övergripande målet, nyttan, effekterna av projektet?
-%%%%%%%%%%%%%t.ex. bättre koll på kosthållning, enklare planering av studier
-\section{Purpose (Should be removed or changed)}
-To solve the problems with this system the Department of Neuroscience have performed tests using a digital screen to present the charts instead of using printed medium. This means the optician can have many more variations on the charts at disposal. The set of symbols used on the charts can be switched with a menu, and the screen provides an adequately lit surface by itself. The current system is implemented by connecting an Android tablet to a screen via an HDMI cable, and the charts are rendered via a web browser on the tablet. Testing has proceeded for over a year, and has yielded very good results.
-
-The goal of this project is to take the system used for these tests and develop a complete implementation with several advantages over the testing system, such as:
+The goal of this project is to take the system used for these tests and develop an implementation of said system with several advantages over the testing system, such as:
 
 \begin{itemize}
-	\item A fully developed app for the tablet with an improved user interface, both aesthetically and mechanically.
-	%\item Connecting the digital screen to a computer that can handle higher resolution rendering than the tablets native resolution.
-	\item Controlling the computer over WiFi using the tablet, meaning the optician can move around the room more easily.
-	\item Altering the scale of the rendered symbols so that the patient can be closer or further away from the screen than the regular six meters.
+	\item An application for the tablet with an improved user interface, both aesthetically and functionally.
+	\item Controlling the server over WiFi using the tablet, meaning the optician can move around the room more easily.
+	\item Altering the scale of the rendered symbols so that the patient can be closer or further away from the.
 	\item Being able to tailor the testing process to the patient by changing the sets of symbols displayed or removing clutter from the charts.
 \end{itemize}
 	
 and other features to make the process easier for the optician and patient.
 
-%%%%%%%%%%%%%%%%%%%%%%%%Mål: vad ska konkret levereras/utföras av projektet, för att ta oss närmare syftet
-
-%Hum. Ta material från ovanstående fråga? Jag är inte säker.
-
-%%%%%%%%%%%%%%%%%%%%%%%%Motivation:
 \section{Motivation}
 This project is important because determining visual acuity is a very labor- and equipment-intensive process. As the testing has showed, using a digital chart with a tablet interface is easier and faster, and can be a great help for the optician. The only thing missing is to improve on the design and implement a functional user interface and a better hardware solution to turn the testing shell into a finished product. 
 
@@ -261,6 +246,15 @@ The optotypes on the top row of the chart is of the size 1.0 LogMAR and then eac
 
 %It is also contains methods for calculating the correct sizes of the optotypes and the data about the charts that should be displayed.
 
+\subsection{System structure}
+The system is divided into three major parts, an Android application, a server and networking. The Android application and server is modeled after the MVC (Model-View-Controller) pattern, where the model is the logic and the view is the GUI. The controller part is the part on the Android application that listens for button clicks and gestures. Usually the networking would fall under controller in the MVC pattern but was, in this system, chosen to be a separate larger structure. Figure \ref{system_structure} shows how the different parts are connected.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=120mm]{images/system_structure.png}
+\caption{Overview of the system structure\label{system_structure}}
+\end{figure}
+
 \subsection{Android application}
 The Android application is written in Java, which is the official language for Android. The static parts of the GUI (Graphical User Interface), which will never change unless application updates are released, are written in XML. This is similar to how HTML is written and is supported by Android natively.
 
@@ -271,10 +265,10 @@ The settings associated to each chart are also generated at runtime. If this wer
 In order to control the application, \textit{controllers} where created in order to listen to button clicks and gestures when the user attempts to do something.
 
 \subsection{Server application}
-The server application is also written in Java and uses the built-in Swing library for drawing the GUI and the images. As most the servers only job is to display charts, almost all code are copied and slightly modified from the Android application. Everything graphical in the server is generated at runtime as the sizes and distances between optotypes depends on which screen that's connected and the distance from the screen to the patient. The PC version of Java doesn't support the AndroidSVG library, another vector graphics library called Batik SVG Toolkit \cite{Batik} was used.
+The server application is also written in Java and uses the built-in \textit{Swing} library for drawing the GUI and the images. The server will also handle the networking on its side, connecting wirelessly to the Android tablet. As the SVG vector graphic files are scalable by definition some of the code used on the Android tablet can be copied and used on the server. This includes at least the code generating the vector graphic files. Everything graphical in the server is generated at runtime as the sizes and distances between optotypes depends on which screen is connected and the distance from the screen to the patient. Instead of using the Android-only vector graphics library \textit{AndroidSVG} we are using a well supported library \textit{Apache Batik}. \cite{Batik}
 
 \subsection{Network}
-The communication between the client and the server consists of two parts. The first part is server detection and the second is server communication. All network communications are handled in threads separate from the main thread as the network operations would halt the flow of the program otherwise. Once the operations are complete and the main threads finds it convenient, it will grab the result from the network threads.
+The network communication between the client and the server consists of two parts. The first part is server detection and the second is server communication. All network communications are handled in threads separate from the main thread as the network operations would halt the flow of the program otherwise. Once the operations are complete and the main threads finds it convenient, it will grab the result from the network threads.
 
 \subsubsection{Server detection}
 In order to detect all servers on the network, the Android application sends out a UDP (User Datagram Protocol) broadcast message containing server discovery request. The application will then listen for incoming server responses. Once the application haven't received anything for three seconds from the last server response, it will stop listening and determine that all available servers have responded. The names and addresses of the servers will then be extracted from each response message and stored in a list so the user can choose which one to connect to.
@@ -299,14 +293,8 @@ NULL
 \end{center}
 
 
-\section{System Structure}
-The system is divided into three major parts, an Android application, a server and networking. The Android application and server is modeled after the MVC (Model-View-Controller) pattern, where the model is the logic and the view is the GUI. The controller part is the part on the Android application that listens for button clicks and gestures. Usually the networking would fall under controller in the MVC pattern but was, in this system, chosen to be a separate larger structure.
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=120mm]{images/system_structure.png}
-\caption{Overview of the system structure\label{system_structure}}
-\end{figure}
+
 
  %where the server is connected to a large screen and is controlled by the Android application over a local network. The server and
 
