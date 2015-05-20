@@ -6,7 +6,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{amsmath}
-
+\usepackage[nottoc, notlof]{tocbibind}
 
 %%%%%%%% Bibliografi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ändrar namnet på referens headern
@@ -15,6 +15,8 @@
 
 %%%%%%%%%%%%%%%%% Start document %%%%%%%%%%%%%%%%%%%%%
 \begin{document}
+\pagenumbering{roman}
+
 \title{Report Draft\\Digitalization of Visual Acuity Testing\\
 Fokusera gärna på implementation och theory}
 \author{Anders Ohlsson\\Christian Johansson\\Svante Nilsson}
@@ -23,14 +25,13 @@ Fokusera gärna på implementation och theory}
 \begin{abstract}
 Digitalization of Visual Acuity Testing is a project involving development of a method for displaying optician's eye charts. The charts are going to be displayed on a digital screen and controled via an Android tablet. This solves several problems relating to lighting and distance from the patient to the chart, while also providing more ways for the optician to tailor the examination of the patient. The Digitalization of Visual Acuity Testing project will be improving upon a proof-of-concept system that has been used to test whether or not digital screens are a viable alternative to physical charts.
 \end{abstract}
-\thispagestyle{empty}
-\clearpage
 
 \tableofcontents
-\thispagestyle{empty}
+\listoffigures
 \clearpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%  DEL 1: FÖRUTSÄTTNINGAR
+\pagenumbering{arabic}
 \setcounter{page}{1}
 \chapter{Introduction}
 \section{Background}
@@ -43,10 +44,10 @@ These conditions cannot always be met. Sometimes the examination room is not suf
 There are also several different variations on these charts. Different sets of symbols, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen Chart that was developed in the 19th century, to the more modern LogMAR chart.
 
 \section{Related work}
-Several pieces of software exists that tries to solve the problems of displaying information from an android tablet or phone on a larger screen. 
+Several pieces of software exists that tries to solve the problems of displaying information from an Android tablet or phone on a larger screen. 
 
 \subsubsection{Chromecast and Apple TV}
-The Chromecast \cite{chromecast} and Apple TV \cite{appletv} are small devices which are plugged into a TV and enables mobile phones and tablets to stream media to them. The devices are small and easy to handle and a lot of applications support streaming to them. The Chromecast is specifically made for android devices and Apple TV for iOS device, but they both support each other.
+The Chromecast \cite{chromecast} and Apple TV \cite{appletv} are small devices which are plugged into a TV and enables mobile phones and tablets to stream media to them. The devices are small and easy to handle and a lot of applications support streaming to them. The Chromecast is specifically made for Android devices and Apple TV for iOS device, but they both support each other.
 
 \subsubsection{Digital Eye Chart}
  Digital Eye Chart \cite{digitaleyechart} is a visual acuity testing program that attempts to solve the problem of having several charts by using a monitor instead. The user can then, with the help of a computer, change the symbols on the chart and even generate a random chart. 
@@ -55,7 +56,7 @@ The Chromecast \cite{chromecast} and Apple TV \cite{appletv} are small devices w
 iChartPlus \cite{ichartplus} is another program which is similar to Digital Eye Chart but also have an adjustable viewing distance. 
 
 \subsubsection{AxAnIvIs}
-AxAnIvIs is a prototype that is currently under testing at Uppsala University Hospital. The project attempts to improve on how we perform visual acuity tests by digitalizing them. It adds more types of charts than the standard physical ones that exists today. The system uses a webbrowser running on an android tablet that is connected to a screen. A library of vector graphic files are displayed in the webbrowser. These files contains the different charts as well as some other specialized tools. Currently the android tablet has to be held in a fixed position in the examination room, restrained by the cable going to the screen. The charts used are fixed and not very easily changed, which makes it very hard to try out new techniques and methods of measuring.
+AxAnIvIs is a prototype that is currently under testing at Uppsala University Hospital. The project attempts to improve on how we perform visual acuity tests by digitalizing them. It adds more types of charts than the standard physical ones that exists today. The system uses a webbrowser running on an Android tablet that is connected to a screen. A library of vector graphic files are displayed in the webbrowser. These files contains the different charts as well as some other specialized tools. Currently the Android tablet has to be held in a fixed position in the examination room, restrained by the cable going to the screen. The charts used are fixed and not very easily changed, which makes it very hard to try out new techniques and methods of measuring.
 
 \subsubsection{Our project}
 Most of the before mentioned systems have some form of negative side that we try to improve on, mostly problems about high cost and difficulties with extending the software. We are different with that we want to create a system that is cheap, easy to understand and easy to maintain. Creating a system that have all the previously mentioned sides is one of the goals we have. Another important goal is creating a system that really is speacialized on measurements of visual acuity. All these points are important to give the users the best experience.
@@ -77,7 +78,7 @@ The purpose of this project is to remove the constraints of using physical chart
 %%%%%%%%%%%%%%%%%%%%%%%%Syfte: vart strävar projektet? vad är det övergripande målet, nyttan, effekterna av projektet?
 %%%%%%%%%%%%%t.ex. bättre koll på kosthållning, enklare planering av studier
 \section{Purpose (Should be removed or changed)}
-To solve the problems with this system the Department of Neuroscience have performed tests using a digital screen to present the charts instead of using printed medium. This means the optician can have many more variations on the charts at disposal. The set of symbols used on the charts can be switched with a menu, and the screen provides an adequately lit surface by itself. The current system is implemented by connecting an android tablet to a screen via an HDMI cable, and the charts are rendered via a web browser on the tablet. Testing has proceeded for over a year, and has yielded very good results.
+To solve the problems with this system the Department of Neuroscience have performed tests using a digital screen to present the charts instead of using printed medium. This means the optician can have many more variations on the charts at disposal. The set of symbols used on the charts can be switched with a menu, and the screen provides an adequately lit surface by itself. The current system is implemented by connecting an Android tablet to a screen via an HDMI cable, and the charts are rendered via a web browser on the tablet. Testing has proceeded for over a year, and has yielded very good results.
 
 The goal of this project is to take the system used for these tests and develop a complete implementation with several advantages over the testing system, such as:
 
@@ -113,11 +114,11 @@ This project is important because determining visual acuity is a very labor- and
 %%%%%%%%%%%%%%%%%%%%%%%%Frågeställningar:
 
 \section{Issues} %vilka tekniska problem behöver ni lösa (sj.arb), vad ska ni ta reda på (uppsatsmetodik)?
-There are several technical problems that we need to solve. We need to design a small computer system that will store and present the desired images to the screen. Our current plan is using a RaspberryPi, since it is a cheap and compact alternative to PCs that is more than powerful enough for our purposes. Though, since the RaspberryPi in running on a ARM CPU there will be a few compatibility problems that we need to solve. For example is the Java graphics library JavaFX, that is going to replace the older Swing library, not very well supported by RaspberryPi. Not being able to use the latest features can create problems in the future when some things get deprecated. Though if that happens it is probably not very hard to re-write the GUI to a supported JavaFX version.
+There are several technical problems that we need to solve. We need to design a small computer system that will store and present the desired images to the screen. Our current plan is using a Raspberry Pi, since it is a cheap and compact alternative to PCs that is more than powerful enough for our purposes. Though, since the Raspberry Pi in running on a ARM CPU there will be a few compatibility problems that we need to solve. For example is the Java graphics library JavaFX, that is going to replace the older Swing library, not very well supported by Raspberry Pi. Not being able to use the latest features can create problems in the future when some things get deprecated. Though if that happens it is probably not very hard to re-write the GUI to a supported JavaFX version.
 
-Networking needs to be added to control the RaspberryPi over WiFi from the tablet, and some features like waking the screen as the app is started can be considered. With networking we face a few problems. % How the server is controlled by the tablet? (Direct function calls, network polling, blabla)
+Networking needs to be added to control the Raspberry Pi over WiFi from the tablet, and some features like waking the screen as the app is started can be considered. With networking we face a few problems. % How the server is controlled by the tablet? (Direct function calls, network polling, blabla)
 
-Designing the android app for the tablet will bring technical problems, both from the limitations of portable computers, and making our software adaptable enough to work on as many brands of tablets as possible. For example, the symbols we are to present are stored in the .svg (Scalable Vector Graphics) format, which is not natively supported on android. Because of this we must find and work with a licensed third-party software library to render them. Other than that the android tablet doesn't impose too many big problems. %% Fler problem som kan uppstå med android?
+Designing the Android app for the tablet will bring technical problems, both from the limitations of portable computers, and making our software adaptable enough to work on as many brands of tablets as possible. For example, the symbols we are to present are stored in the .svg (Scalable Vector Graphics) format, which is not natively supported on Android. Because of this we must find and work with a licensed third-party software library to render them. Other than that the Android tablet doesn't impose too many big problems. %% Fler problem som kan uppstå med Android?
 
 Finally we should design a way for the database of symbols and chart layouts to be easily updated and synchronized between devices and some server storage. This will be the least important task for us since it we wan't to focus on having something to work with firstly. Updating and synchronizing can be done by hand locally.
 
@@ -139,26 +140,26 @@ A disadvantage with this system is that digital screens become very expensive at
 The measurement of a persons visual accuity has an important constraint that needs to be followed. This constraint is the fact that our eyes works best physiologically from greater distances. On the other hand, at shorter distances our eyes tend to make what we see a bit unfocused. To make up for this shift in focus a minimum testing distance has to be enforced to ensure that the shift in focus stays as small as possible. This distance has been set to be six meters.
 
 \subsection{Measurement Distance}
-The specific distance of six meters is derived from how our eyes bend light. From that distance the rays of light entering our eyes are nearly parallel to eachother. It is important that the rays of light that hit the eyes are parallel because then the light focuses on the same spot in the back of the eyes. This happens because of the convex shape of the eye's lens. A convex shaped lens focuses parallel light onto the same focal point. Since a convex lens focuses parallel light to a focal point a concave lens instead spread light coming from a focal point to parallel rays. Combining these two type of lenses we can create a more focused light. 
+The specific distance of six meters is derived from how our eyes bend light. From that distance or greater the rays of light entering our eyes are nearly parallel to eachother. It is important that the rays of light that hit the eyes are parallel because then the light focuses on a more focused area in the back of the eyes. This happens because of the convex shape of the eye's lens. A convex shaped lens focuses parallel light onto the focal point. Since a convex lens focuses parallel light to a focal point a concave lens instead spreads light coming from a focal point to parallel rays. Combining these two type of lenses we can create a more focused light. 
 
 \subsection{Defocus Correction}
-To make up for the shift in focus a suitable lens is put in front of the eye at about the distance that you would wear glasses. The type of lens mostly depends on the shape of your eye, any eye disease you might have or the distance from the lens to the eye. An important property of the lenses is at what distance the focal point lays at. The focal point is the point behind a lens where the light is focused if hit by parallel rays of light. So, to create a more focused light, exactly what glasses do, we have to put a lens in front of the eye to create more parallel light. These lenses can either be plus or minus lenses, either spreading or contracting the light.
+To make up for the shift in focus a suitable lens is put in front of the eye at about the distance that you would wear glasses. The type of lens mostly depends on the shape of your eye, any eye disease you might have or the distance from the lens to the eye. An important property of the lenses is at what distance the focal point lays at. So, to create a more focused light, which is exactly what glasses do, we have to put a lens in front of the eye to create more parallel light. These lenses can either be plus or minus lenses, either spreading or contracting the light.
 
-In optician's terms a plus glass is a lens that focuses light coming further away (addition) and a minus glass is a lens that focuses light from nearer (subtraction). A real world example of this is glasses helping to correct near- and farsightedness.
+In optician's terms a plus glass is a lens that focuses light coming further away (addition) and a minus glass is a lens that focuses light from nearer (subtraction). A real world example of this is glasses helping to correct ~near- and farsightedness.
 
 \subsection{Angular Magnification}
-%% Kan använda denna men måste skriva mer förklarande om själva bilden
+% TODO: Explain using formulas how the angular magnification works
 \begin{figure}[h]
 \centering
 \includegraphics[width=120mm]{images/Angular_magnification.png}
 \caption{Angular magnification\label{angular}}
 \end{figure}
 
-Though this is a way of corrected for testing at short distances, a few problems arise from this. Figure \ref{angular} shows the problem of angular magnification. 
+Though using lenses is a way of corrected for testing at short distances, a few problems arise from this. Figure \ref{angular} shows the problem of angular magnification. 
 
 The magnification is a problem is visual acuity testing because if the optotypes on the eye chart are enlarged then an error will show up in the results.
 
-%% Kan använda denna men måste skriva mer förklarande om själva bilden
+\newpage
 \begin{figure}[h]
 \centering
 \begin{tabular}{| l | l | l | l |}
@@ -244,7 +245,7 @@ The optotypes on the top row of the chart is of the size 1.0 LogMAR and then eac
 %Though it is common to use the newer JavaFX instead of Java Swing, JavaFX is not well supported on the machine we are going to use. Using Java Swing is then a better choice for our project, but if JavaFX becomes better supported in the future it will be easy to re-create our system using JavaFX.
 
 %\subsection{Client application}
-%The Android application is written in java, which is the official language for Android. The static parts of the GUI, which will never change unless an application update is released, is written in xml. This is similar to how html is written and is supported by Android natively.
+%The Android application is written in Java, which is the official language for Android. The static parts of the GUI, which will never change unless an application update is released, is written in xml. This is similar to how html is written and is supported by Android natively.
 
 %The charts are generated at runtime and the code is a slightly modified copy of the code used to draw the charts on the server. If the charts would have been written in xml, there would be no guarantee that they would fit on the screen or keep the correct proportions on different tablets. This also avoids hard to read code as the large chart, for example, would need 70 defined areas for images, all with an unique text string id. As Android does not have support for vector graphics and the chart optotype images are vector images the AndroidSVG \cite{AndroidSVG} library is used to display them.
 
@@ -262,7 +263,7 @@ The optotypes on the top row of the chart is of the size 1.0 LogMAR and then eac
 
 
 \subsection{Android application}
-The Android application is written in java, which is the official language for Android. The static parts of the GUI(graphical user interface), which will never change unless an application update is released, is written in xml. This is similar to how html is written and is supported by Android natively.
+The Android application is written in Java, which is the official language for Android. The static parts of the GUI(graphical user interface), which will never change unless an application update is released, is written in xml. This is similar to how html is written and is supported by Android natively.
 
 The charts shown on the Android device are generated at runtime. If the charts would have been written in xml, there would be no guarantee that they would fit on the screen or keep the correct proportions on different tablets. This also avoids hard to read code as the large chart, for example, would need 70 defined areas for images, all with an unique text string id. As Android does not have support for vector graphics and the chart optotype images are vector images the AndroidSVG \cite{AndroidSVG} library is used to display them.
 
@@ -271,7 +272,7 @@ The settings associated to each chart are also generated at runtime. If this wer
 In order to control the application, \textit{controllers} where created in order to listen to button clicks and gestures when the user is attempting to to something.
 
 \subsection{Server application}
-The server application is also written in java and uses the built in Swing library for drawing graphics. As most the servers only job is to display charts, almost all code are copied and slightly modified from the Android application. Everything graphical in the server is generated at runtime as the sizes and distances between optotypes depends on which screen that's connected and the distance from the screen to the patient. The PC version of java doesn't support the AndroidSVG library, another vector graphics library called Batik SVG Toolkit \cite{Batik} was used.
+The server application is also written in Java and uses the built in Swing library for drawing graphics. As most the servers only job is to display charts, almost all code are copied and slightly modified from the Android application. Everything graphical in the server is generated at runtime as the sizes and distances between optotypes depends on which screen that's connected and the distance from the screen to the patient. The PC version of Java doesn't support the AndroidSVG library, another vector graphics library called Batik SVG Toolkit \cite{Batik} was used.
 
 \subsection{Network}
 The communication between the client and the server consists of two parts. The first part is server detection and the second is server communication. All network communications are handled in threads separate from the main thread as the network operations would halt the flow of the program otherwise. Once the operations are complete and the main threads finds it convenient, it will grab the result from the network threads.
@@ -311,10 +312,10 @@ The system is divided into three major parts, an Android application, a server a
  %where the server is connected to a large screen and is controlled by the Android application over a local network. The server and
 
 
-%The communication between the android tablet and the server will be handled using a third-party network library called Kryonet \cite{Kryonet}. 
+%The communication between the Android tablet and the server will be handled using a third-party network library called Kryonet \cite{Kryonet}. 
 
 %\section{System structure} %%%%%%%%%%%%%%%%%%%%%%%%Systemstruktur: vilka delar kan ni se att ert system/problem består av? (T.ex. databas, webbinterface, AI-modul, grafik...)
-%The system is split up between an Android application and a PC application. These applications will both be structured with the Model-View-Controller design pattern as a base in order to split up user input, graphics and logic. The PC application will act as a server and display an eye chart on a larger screen connected with an HDMI-cable. The android applications purpose is to control the PC-application over a wifi network and make sure the correct chart is displayed on the larger screen. The android application will display the same image shown on the large screen, but with some other extra information that's useful for the optician.
+%The system is split up between an Android application and a PC application. These applications will both be structured with the Model-View-Controller design pattern as a base in order to split up user input, graphics and logic. The PC application will act as a server and display an eye chart on a larger screen connected with an HDMI-cable. The Android applications purpose is to control the PC-application over a WiFi network and make sure the correct chart is displayed on the larger screen. The Android application will display the same image shown on the large screen, but with some other extra information that's useful for the optician.
 
 %\textbf{Image of System structure TBI}
 
@@ -349,15 +350,11 @@ There are a few core demands that our product needs to meet. First and foremost,
 \section{Evaluation} %%%%%%%%%%%%%%%%%%%%%%%%Utvärdering: hur ska ni utvärdera ert arbete/system, hur vet ni om/hur bra ni lyckats?
 The easiest way to see if our product satisfies these demands is putting it into the hands of the opticians at the university hospital and letting them test it, recording bug reports or comments. Testing will also let us determine if the system is as energy efficient as we intended.
 
-
 \chapter{Results}
 
 \chapter{Conclusion}
 
-
-
-
-\bibliography{references}{}
+\bibliography{references}{hide}
 \bibliographystyle{ieeetr}
 
 \end{document}
