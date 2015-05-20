@@ -32,7 +32,7 @@ Digitalization of Visual Acuity Testing is a project involving development of a 
 
 %%%%%%%%%%%%%%%%%%%%%%%%  DEL 1: FÖRUTSÄTTNINGAR
 \setcounter{page}{1}
-\chapter{Preconditions}
+\chapter{Introduction}
 \section{Background}
 \subsection{Visual Acuity}
 To measure a patients visual acuity opticians today use charts with printed lines of continuously smaller symbols. The measurement is made by having the patient read symbols on the chart from a set distance. The person reads down the chart until it is no longer possible to make out the characters. Based on the size of the character the patient failed to recognize, a visual acuity can be determined. 
@@ -192,6 +192,8 @@ The ETDRS chart consists of 14 rows with 5 optotypes on each row. The size of ea
 \includegraphics[width=120mm]{images/logmar_calculation.png}
 \caption{The angle v is used to calculate the size in LogMAR of the optotype.\label{fig:logmar_calculation}}
 \end{figure} 
+
+The optotypes on the top row of the chart is of the size 1.0 LogMAR and then each row below is decremented by 0.1 LogMAR to the last row which is -0.3 LogMAR. This means that each optotype is approximately 1.2589 the height of the optotypes on the row below \cite{Ferris}. The spacing between each optotype is equal to the width of an optotype from the same row and the spacing between each row is equal to the height of an optotype on the lower row.
 
 \section{Theory of ofthalmology} %% Nån bra titel här?
 The specific distance of six meters is derived from how our eyes bend light. From a distance of six meters the rays of light seem to be nearly parallel to eachother.
