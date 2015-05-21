@@ -12,10 +12,12 @@
 %\usepackage{tikz}
 %\usetikzlibrary{arrows,shadows}
 %\usepackage{pgf-umlsd}
+\usepackage{pgfplots}
+\usepackage{siunitx}
 
 %%%%%%%% Bibliografi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ändrar namnet på referens headern
-\renewcommand\bibname{References)}
+\renewcommand\bibname{References}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \titleformat{\chapter}[display]
@@ -25,8 +27,7 @@
 \begin{document}
 \pagenumbering{roman}
 
-\title{Report Draft\\Digitalization of Visual Acuity Testing\\
-Fokusera gärna på implementation och theory}
+\title{Report Draft\\Digitalization of Visual Acuity Testing}
 \author{Anders Ohlsson\\Christian Johansson\\Svante Nilsson}
 \maketitle
 
@@ -216,6 +217,22 @@ The optotypes on the top row of the chart is of the size 1.0 LogMAR and then eac
 %\caption{The gray squares represents optotypes that on the upper row has a width and height of $x_n$ and on the lower row $x_{n+1}$.  \label{fig:etdrs_chart_sizes}}
 \end{figure} 
 
+\begin{figure}[ht!]
+\begin{tikzpicture}
+    \begin{axis}[
+      xmin=1,xmax=14,
+      ymin=0,ymax=180,
+      xlabel={row},
+      xlabel near ticks,
+      ylabel={pixels},
+      ylabel near ticks
+    ]
+      \addplot[color=blue, mark=*, only marks] plot coordinates{(1,162)(2,128)(3,102)(4,81)(5,64)(6,51)(7,41)(8,32)(9,26)(10,20)(11,16)(12,13)(13,10)(14,8)};
+    \end{axis}
+\end{tikzpicture}
+\caption{The height of optotypes on different rows when watching a 15.6 inch screen with a resolution of 1920x1080 pixels from 2 meters.}
+\end{figure}
+
 \subsection{Axanivis Charts}
 Description of the axanivis charts!!! need some document or reference for this.
 
@@ -325,10 +342,39 @@ DISTANCE
 %\end{itemize}
 
 \section{Delimitations}
+en lista bara för att lista upp avgränsningar (ska bli flytande text)
+\begin{itemize}
+\item inte utveckla sätt att visa svg
+\item inte implementera något om syn, ögat, etc förutom hur tavlorna är gjorda
+\item inte skapa egna tavlor
+\item inte analysera hur ögat påverkas av en display istället för tavla
+\item inte en helt färdig produkt
+\end{itemize}
+
 
 \section{Requirements}
+ska tas bort senare:
+\begin{itemize}
+\item visa chart på skärm
+\item styra charten ifrån android över wifi (ETDRS, HVOT, etc...)
+\item kunna ställa in avstånd ifrån skärm
+\item visa rätt storlek, avstånd, etc på optotype enl. teori
+\item automatiskt hitta en server
+\item användarvänligt
+\item prototyp som kan utvärdera både axanivis projekt och digitala syntavlor
+\item android appens design ska följa androids designprinciper
+\item systemet ska vara lätt att bygga vidare på
+\item visa upp rätt logmar
+\end{itemize}
 
 \section{Evaluation}
+hur ska den utvärderas
+\begin{itemize}
+\item storlek på optotyper ska beräknas och jämföras med systemets resultat
+\item optotyper mäts i verkligheten, med linjal el. liknandes
+\item skall hitta server X ggr av Y försök på stadigt nätverk
+
+\end{itemize}
 
 
 
@@ -351,6 +397,10 @@ The easiest way to see if our product satisfies these demands is putting it into
 \chapter{Results}
 
 \chapter{Conclusion}
+
+\section{Discussion}
+
+\section{Future Work}
 
 \bibliography{references}{}
 \bibliographystyle{ieeetr}
