@@ -6,8 +6,9 @@
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Some example optotypes\relax }}{10}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces The angle v is used to calculate the size in LogMAR of the optotype.\relax }}{10}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces The sizes and positions of the first three optotypes of row $n$ and $n+1$ where $x_n \approx 1.2589 x_{n+1}$. \relax }}{11}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces The height of optotypes on different rows when watching a 15.6 inch screen with a resolution of 1920x1080 pixels\relax }}{11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Overview of the system structure\relax }}{12}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces A message with the check word \textit {AXANIVIS}, the command \unhbox \voidb@x \hbox {\textit {DISTANCE}} and the data \textit {500}. This message would make the server to resize the currently active chart to be suitable for a user watching from 500 centimeters. \relax }}{15}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Overview of the system structure\relax }}{13}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces A message with the check word \textit {AXANIVIS}, the command \unhbox \voidb@x \hbox {\textit {DISTANCE}} and the data \textit {500}. This message would make the server to resize the currently active chart to be suitable for a user watching from 500 centimeters. \relax }}{16}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
