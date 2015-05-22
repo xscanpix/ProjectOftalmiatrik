@@ -153,7 +153,13 @@ The magnification is a problem is visual acuity testing because if the optotypes
 There is need to have a standard to follow on how much addition or subtraction needed for a specific distance. Figure \ref{magtable} shows what values to use when testing visual acuity at shorter distances than six meters. \cite{PGSoderberg}
 
 \section{Chart Design}
-The visual acuity charts this project are based on ETDRS (Early Treatment Diabetic Retinopathy Study) chart\cite{Ferris} and a project developed by PG Söderberg (need reference) at Uppsala University Hospital. 
+The visual acuity charts this project are based on ETDRS (Early Treatment Diabetic Retinopathy Study) chart (fig. \ref{fig:etdrs_chart}) \cite{Ferris} and a project developed by PG Söderberg \cite{PGSoderbergOral} at Uppsala University Hospital. 
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=100mm]{images/etdrs_chart.jpg}
+\caption{Example of a ETDRS chart \\ (Source: http://precision-vision.com/)\label{fig:etdrs_chart}}
+\end{figure} 
 
 \subsection{Optotypes}
 An optotype is a symbol that is used by a visual acuity chart. The optotypes are all the same width and height and designed on five by five grid and the most common type of symbol to use are letters but can be different depending on the patient\cite{Colenbrander}.
@@ -195,6 +201,12 @@ An optotype is a symbol that is used by a visual acuity chart. The optotypes are
 \subsection{ETDRS Chart}
 The ETDRS chart consists of 14 rows with 5 optotypes on each row. The size of each optotype is measured in LogMAR (Logarithmic of the Minimum Angle of Resolution) which is the base 10 logarithm of the angle of one fifth of an optotype (eq. \ref{eq:logmar} and fig. \ref{fig:logmar_calculation}) \cite{Bailey}. The angle unit is measured in arcminutes, where one arcminute is $\dfrac{1}{60}$ degrees or $\dfrac{\pi}{10800}$ radians. If the angle v in figure \ref{fig:logmar_calculation} is equal to 8 arcminutes, then the size of the letter would be $log_{10}(8) \approx 0.903\ LogMAR$.
 
+%\begin{figure}[h]
+%\centering
+%\includegraphics[width=100mm]{images/etdrs_chart.jpg}
+%\caption{Example of a ETDRS chart \\ (Source: http://precision-vision.com/)%\label{fig:etdrs_chart}}
+%\end{figure} 
+
 \begin{equation}
 	\begin{split}
   		LogMAR & = log_{10}(angle)
@@ -204,15 +216,15 @@ The ETDRS chart consists of 14 rows with 5 optotypes on each row. The size of ea
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=120mm]{images/logmar_calculation.png}
+\includegraphics[width=100mm]{images/logmar_calculation.png}
 \caption{The angle v is used to calculate the size in LogMAR of the optotype.\label{fig:logmar_calculation}}
 \end{figure} 
 
-The optotypes on the top row of the chart is of the size 1.0 LogMAR and then each row below is decremented by 0.1 LogMAR to the last row which is -0.3 LogMAR. This means that each optotype is approximately 1.2589 the height of the optotypes on the row below \cite{Ferris}. The spacing between each optotype is equal to the width of an optotype from the same row and the spacing between each row is equal to the height of an optotype on the lower row (see fig. \ref{fig:etdrs_chart_sizes}).
+The optotypes on the top row of the chart is of the size 1.0 LogMAR and then each row below is decremented by 0.1 LogMAR to the last row which is -0.3 LogMAR. This means that each optotype is approximately 1.2589 the height of the optotypes on the row below (fig. \ref{fig:chart_size_plot}) \cite{Ferris}. The spacing between each optotype is equal to the width of an optotype from the same row and the spacing between each row is equal to the height of an optotype on the lower row (fig. \ref{fig:etdrs_chart_sizes}).
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=120mm]{images/etdrs_chart_sizes.png}
+\includegraphics[width=110mm]{images/etdrs_chart_sizes.png}
 \caption{The sizes and positions of the first three optotypes of row $n$ and $n+1$ where $x_n \approx 1.2589 x_{n+1}$. \label{fig:etdrs_chart_sizes}}
 %\caption{The gray squares represents optotypes that on the upper row has a width and height of $x_n$ and on the lower row $x_{n+1}$.  \label{fig:etdrs_chart_sizes}}
 \end{figure} 
@@ -230,11 +242,53 @@ The optotypes on the top row of the chart is of the size 1.0 LogMAR and then eac
       \addplot[color=blue, mark=*, only marks] plot coordinates{(1,162)(2,128)(3,102)(4,81)(5,64)(6,51)(7,41)(8,32)(9,26)(10,20)(11,16)(12,13)(13,10)(14,8)};
     \end{axis}
 \end{tikzpicture}
-\caption{The height of optotypes on different rows when watching a 15.6 inch screen with a resolution of 1920x1080 pixels from 2 meters.}
+\caption{The height of optotypes on different rows when watching a 15.6 inch screen with a resolution of 1920x1080 pixels from 2 meters. \label{fig:chart_size_plot}}
 \end{figure}
 
+
+%\newpage
 \subsection{Axanivis Charts}
-Description of the axanivis charts!!! need some document or reference for this.
+The Axanivis charts are an extension to the ETDRS chart that adds two new chart layouts and digitalizes them so they can be displayed on a screen. Since the original ETDRS chart is made for a physical chart, it doesn't have an aspect ratio \cite{Ferris} that is close to a common monitor. To solve this, the original chart is split into an upper (fig. \ref{fig:etdrs_upper}) and a lower chart (fig. \ref{fig:etdrs_lower}). The upper chart display the 5 first rows and the lower chart display the remaining 9.
+
+\begin{figure}[h]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  %\includegraphics[width=.5\linewidth]{images/etdrs_top.png}
+  \includegraphics[width=50mm]{images/etdrs_top.png}
+  \caption{Upper Chart}
+  \label{fig:etdrs_upper}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=50mm]{images/etdrs_bottom.png}
+  \caption{Lower Chart}
+  \label{fig:etdrs_lower}
+\end{subfigure}
+\caption{The upper and lower ETDRS charts}
+\label{fig:etdrs_upper_lower}
+\end{figure}
+
+The two new chart layouts uses is constructed using the same principles, like height and spacing of optotypes, as the original ETDRS chart. But instead of having 14 rows of 5 optotypes each, the first new layout takes a single column of the ETDRS chart and rotates it 90 degrees (fig. \ref{fig:etdrs_one_line}) so it's all on one line. This makes it wider than it's high which suits a monitor better. This also allows the patient to read from left to right, instead of from top to bottom, which is the common way to read in Europe and America. Since the patient only have to read one letter of each size, this layout gives a quicker but more inaccurate result. This is useful to get a quick estimate on the visual acuity of the patient.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=100mm]{images/etdrs_one_line.png}
+\caption{The one line layout}
+\label{fig:etdrs_one_line}
+\end{figure}
+
+Once an estimate visual acuity have been achieved from the one line chart, the user can select an optotype and display the second new layout, which only display one optotype at a time (fig. \ref{fig:etdrs_single}). This layout removes all clutter and allow the patient to easily focus on only a single optotype at a time. The user can then page between the different optotype sizes in order to determine the visual acuity.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=90mm]{images/etdrs_single.png}
+\caption{The single optotype layout}
+\label{fig:etdrs_single}
+\end{figure}
+
+
+
 
 \chapter{Implementation}
 \section{Methods}
@@ -250,7 +304,7 @@ The system is divided into three major parts, an Android application, a server a
 \subsection{Android application}
 The Android application is written in Java, which is the official language for Android. The static parts of the GUI (Graphical User Interface), which will never change unless application updates are released, are written in XML. This is similar to how HTML is written and is supported by Android natively.
 
-The charts shown on the Android device are generated at runtime. If the charts would have been written in XML, there would be no guarantee that they would fit on the screen or keep the correct proportions on tablets with different dimensions. It also avoids hard to read code as the large chart, for example, would need 70 defined areas for images, all with a unique text string id. As Android does not natively have support for vector graphics and the chart optotype images are vector images the AndroidSVG library is used to display them. \cite{AndroidSVG}
+The charts shown on the Android device are generated at runtime. If the charts would have been written in XML, there would be no guarantee that they would fit on the screen or keep the correct proportions on tablets with different dimensions. It also avoids hard to read code as the large chart, for example, would need 70 defined areas for images, all with a unique text string id. The chart layouts are all drawn at the same time and in the same place, but sets the active chart visible and the rest invisible. As Android does not natively have support for vector graphics and the chart optotype images are vector images the AndroidSVG library is used to display them. \cite{AndroidSVG}
 
 The settings associated to each chart are also generated at runtime. If this were not the case, every different version of the chart would need its own XML file, as each version contains a different number of predefined charts.
 

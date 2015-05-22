@@ -3,12 +3,16 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Angular magnification\relax }}{8}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Magnification due to addition for closer distance\relax }}{9}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Some example optotypes\relax }}{10}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces The angle v is used to calculate the size in LogMAR of the optotype.\relax }}{10}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces The sizes and positions of the first three optotypes of row $n$ and $n+1$ where $x_n \approx 1.2589 x_{n+1}$. \relax }}{11}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces The height of optotypes on different rows when watching a 15.6 inch screen with a resolution of 1920x1080 pixels from 2 meters.\relax }}{11}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Example of a ETDRS chart (Source: http://precision-vision.com/)\relax }}{9}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Some example optotypes\relax }}{10}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces The angle v is used to calculate the size in LogMAR of the optotype.\relax }}{11}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces The sizes and positions of the first three optotypes of row $n$ and $n+1$ where $x_n \approx 1.2589 x_{n+1}$. \relax }}{11}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces The height of optotypes on different rows when watching a 15.6 inch screen with a resolution of 1920x1080 pixels from 2 meters. \relax }}{12}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces The upper and lower ETDRS charts\relax }}{12}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces The one line layout\relax }}{13}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces The single optotype layout\relax }}{13}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Overview of the system structure\relax }}{13}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces A message with the check word \textit {AXANIVIS}, the command \unhbox \voidb@x \hbox {\textit {DISTANCE}} and the data \textit {500}. This message would make the server to resize the currently active chart to be suitable for a user watching from 500 centimeters. \relax }}{16}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Overview of the system structure\relax }}{14}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces A message with the check word \textit {AXANIVIS}, the command \unhbox \voidb@x \hbox {\textit {DISTANCE}} and the data \textit {500}. This message would make the server to resize the currently active chart to be suitable for a user watching from 500 centimeters. \relax }}{17}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
