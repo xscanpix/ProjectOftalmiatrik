@@ -304,7 +304,17 @@ The system is divided into three major parts, an Android application, a server a
 \subsection{Android application}
 The Android application is written in Java, which is the official language for Android. The static parts of the GUI (Graphical User Interface), which will never change unless application updates are released, are written in XML. This is similar to how HTML is written and is supported by Android natively.
 
-The charts shown on the Android device are generated at runtime. If the charts would have been written in XML, there would be no guarantee that they would fit on the screen or keep the correct proportions on tablets with different dimensions. It also avoids hard to read code as the large chart, for example, would need 70 defined areas for images, all with a unique text string id. The chart layouts are all drawn at the same time and in the same place, but sets the active chart visible and the rest invisible. As Android does not natively have support for vector graphics and the chart optotype images are vector images the AndroidSVG library is used to display them. \cite{AndroidSVG}
+The charts shown on the Android device are generated at runtime. If the charts would have been written in XML, there would be no guarantee that they would fit on the screen or keep the correct proportions on tablets with different dimensions. It also avoids hard to read code as the large chart, for example, would need 70 defined areas for images, all with a unique text string id. The chart layouts are all drawn at the same time and in the same place, but sets the active chart visible and the rest invisible. As Android does not natively have support for vector graphics and the chart optotype images are vector images the AndroidSVG library is used to display them \cite{AndroidSVG}.
+
+The size of the optotypes is calculated using equation \ref{eq:optotype_size}, where $d$ is the distance in centimeters, $v$ is the angle in radians and $h$ is the height of the optotype in centimeters.
+
+
+\begin{equation}
+	\begin{split}
+  		2d\ tan(\frac{v}{2}) & = h
+  	\end{split}
+  	\label{eq:optotype_size}
+\end{equation}
 
 The settings associated to each chart are also generated at runtime. If this were not the case, every different version of the chart would need its own XML file, as each version contains a different number of predefined charts.
 
