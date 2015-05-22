@@ -320,6 +320,8 @@ The settings associated to each chart are also generated at runtime. If this wer
 
 In order to control the application, \textit{controllers} where created in order to listen to button clicks and gestures when the user attempts to do something.
 
+The design of the application follows the Android design principles by using Androids built in navigation drawer and the built in views i.e. buttons, radio buttons, lists etc. \cite{android_design}.
+
 \subsection{Server application}
 The server application is written in Java and uses the built-in \textit{Swing} library for drawing the GUI and the images. Swing is a very flexible and easy-to-use library with a lot of great tools for creating a good looking GUI. In our case
 we won't be needing a very advanced GUI since the main purpose of the server is to render a fullscreen image at all times. This greatly simplifies the implementation of the GUI. Other than the rendering of images, the GUI will consist of a small network controller where the user can specify a number of settings. These settings will be needed to configure for example what name the server will have on the network. It's also neccessary to have settings for the location of the server.
@@ -406,14 +408,33 @@ DISTANCE
 %\end{itemize}
 
 \section{Delimitations}
-en lista bara för att lista upp avgränsningar (ska bli flytande text)
+Due to limits in time and manpower, this project is not intended to be a complete working system to be sold, but rather a working prototype that can be used to evaluate digital visual acuity charts. In order to achieve this, as much as possible of Java's and Android's built in libraries will be used. As neither support svg files, external libraries will be used for this.
+
+The project will neither evaluate a digital screens effect on the eye in contrast to a physical chart nor analyze why a ETDRS or Axanivis chart should have the layouts they have. As both charts are made after a very strict specification, no new chart layouts will be made. Not only could such charts be useless, but they could also be misleading and misused by future users that in the end, could result in patients getting an inaccurate result.
+
+
+\subsection{en lista bara för att lista upp avgränsningar (ska bli flytande text)}
+att göra:
 \begin{itemize}
+\item inga uppdateringar i detta projekt
+\item ingen hänsyn till säkerhet (användare får se till att LANet är säkert)
+\end{itemize}
+skriver om:
+\begin{itemize}
+\item inte en helt färdig produkt
 \item inte utveckla sätt att visa svg
+\item inte analysera hur ögat påverkas av en display istället för tavla
 \item inte implementera något om syn, ögat, etc förutom hur tavlorna är gjorda
 \item inte skapa egna tavlor
-\item inte analysera hur ögat påverkas av en display istället för tavla
-\item inte en helt färdig produkt
 \end{itemize}
+möjliga saker att göra om tid finns
+\begin{itemize}
+\item Att ingen annan kan ansluta till servern som används atm
+\item Kod till servern
+\item grating
+\item det konstiga stjärngrejen i pers grejjer
+\end{itemize}
+
 
 
 \section{Requirements}
@@ -459,10 +480,23 @@ There are a few core demands that our product needs to meet. First and foremost,
 The easiest way to see if our product satisfies these demands is putting it into the hands of the opticians at the university hospital and letting them test it, recording bug reports or comments. Testing will also let us determine if the system is as energy efficient as we intended.
 
 \chapter{Results}
+suggestions for sections
+\section{Result or some other title (might squish subsections into one)}
+\subsection{Android application}
+
+\subsection{Server}
+\subsection{Network}
+
+\section{Bugs and Limitations}
+
 
 \chapter{Conclusion}
+suggestions for sections
 
 \section{Discussion}
+\subsection{Advantages of our system}
+\subsection{Disadvantages of our system}
+\subsection{Alternate solutions}
 
 \section{Future Work}
 
