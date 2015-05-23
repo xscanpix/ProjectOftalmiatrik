@@ -521,6 +521,28 @@ suggestions for sections
 \subsection{Optotype Sizes}
 \subsection{User-friendliness}
 \subsection{Server Detection}
+The server detection test was done 3 times on a stable WiFi network.
+
+\begin{figure}[ht!]
+\begin{tikzpicture}
+    \begin{axis}[
+      xmin=1,xmax=100,
+      ymin=-0.5,ymax=1.5,
+      xlabel={row},
+      xlabel near ticks,
+      ylabel={pixels},
+      ylabel near ticks,
+      width=120mm,
+      height=60mm
+    ]
+    %\addplot[color=blue, mark=*, only marks]
+      \addplot[color=blue, only marks] plot coordinates{(1,1)(2,1)(3,1)(4,1)(5,1)(6,1)(7,1)(8,1)(9,1)(10,0)(11,1)(12,1)(13,1)(14,1)(15,1)(16,1)(17,1)(18,1)(19,1)(20,1)(21,1)(22,1)(23,1)(24,1)(25,1)(26,1)(27,1)(28,1)(29,1)(30,1)(31,1)(32,1)(33,1)(34,1)(35,1)(36,1)(37,1)(38,1)(39,1)(40,1)(41,1)(42,1)(43,1)(44,1)(45,1)(46,1)(47,1)(48,1)(49,1)(50,1)(51,1)(52,1)(53,1)(54,0)(55,1)(56,1)(57,1)(58,1)(59,1)(60,1)(61,1)(62,1)(63,1)(64,0)(65,0)(66,1)(67,1)(68,1)(69,1)(70,1)(71,1)(72,1)(73,1)(74,1)(75,1)(76,1)(77,1)(78,0)(79,1)(80,1)(81,1)(82,1)(83,1)(84,1)(85,1)(86,1)(87,1)(88,1)(89,1)(90,1)(91,1)(92,0)(93,0)(94,1)(95,1)(96,1)(97,1)(98,1)(99,1)(100,0)};
+	\addplot[color=red, only marks] plot coordinates{(1,1)(2,1)(3,1)(4,1)(5,1)(6,1)(7,1)(8,1)(9,1)(10,1)(11,1)(12,1)(13,1)(14,1)(15,1)(16,1)(17,1)(18,1)(19,1)(20,1)(21,1)(22,1)(23,1)(24,1)(25,1)(26,1)(27,1)(28,1)(29,1)(30,1)(31,1)(32,1)(33,1)(34,1)(35,1)(36,1)(37,1)(38,1)(39,1)(40,1)(41,1)(42,1)(43,1)(44,1)(45,1)(46,1)(47,1)(48,1)(49,1)(50,1)(51,1)(52,1)(53,1)(54,1)(55,1)(56,1)(57,1)(58,1)(59,1)(60,1)(61,1)(62,1)(63,1)(64,1)(65,1)(66,1)(67,1)(68,1)(69,1)(70,1)(71,1)(72,1)(73,1)(74,0)(75,1)(76,1)(77,1)(78,1)(79,1)(80,1)(81,1)(82,1)(83,1)(84,1)(85,1)(86,1)(87,1)(88,1)(89,1)(90,1)(91,1)(92,1)(93,1)(94,1)(95,1)(96,1)(97,1)(98,1)(99,1)(100,0)};
+	\addplot[color=green, only marks] plot coordinates{(1,1)(2,1)(3,1)(4,1)(5,1)(6,1)(7,1)(8,1)(9,1)(10,1)(11,1)(12,1)(13,1)(14,1)(15,1)(16,1)(17,1)(18,0)(19,1)(20,1)(21,1)(22,1)(23,1)(24,1)(25,1)(26,1)(27,1)(28,1)(29,1)(30,1)(31,1)(32,1)(33,1)(34,1)(35,1)(36,1)(37,1)(38,1)(39,1)(40,1)(41,0)(42,1)(43,0)(44,1)(45,1)(46,1)(47,1)(48,1)(49,1)(50,1)(51,1)(52,1)(53,1)(54,1)(55,1)(56,1)(57,1)(58,1)(59,1)(60,1)(61,1)(62,1)(63,1)(64,1)(65,1)(66,1)(67,1)(68,1)(69,1)(70,1)(71,1)(72,1)(73,1)(74,1)(75,1)(76,1)(77,1)(78,1)(79,1)(80,1)(81,1)(82,1)(83,1)(84,1)(85,1)(86,1)(87,1)(88,1)(89,1)(90,1)(91,1)(92,1)(93,1)(94,1)(95,1)(96,1)(97,1)(98,1)(99,1)(100,0)};
+    \end{axis}
+\end{tikzpicture}
+\caption{The height of optotypes on different rows when watching a 15.6 inch screen with a resolution of 1920x1080 pixels from 2 meters. \label{fig:server_detection_test}}
+\end{figure}
 
 \section{Bugs and Limitations}
 
@@ -551,17 +573,17 @@ A disadvantage with this system is that digital screens become very expensive at
 
 \item Connect to server
 
-\item Display ETDRS 1 Large upper chart from a distance 2 meters
+\item Display ETDRS 1 Large upper chart with a distance of 2 meters
 
-\item Display ETDRS 1 Large lower chart from a distance 2 meters
+\item Display ETDRS 1 Large lower chart with a distance of 2 meters
 
-\item Display HVOT Random chart medium from a distance 1.7 meters
+\item Display HVOT Random chart medium with a distance of 1.7 meters
 
 \item Generate a new HVOT chart
 
-\item Display Icons 1 small chart from
+\item Display Icons 1 small chart with a distance of 1.5 meters
 
-\item Page through Icons 1 small chart
+\item Page through Icons 1 small chart with a distance of 1.5 meters
 
 \item Reconnect to server
 
