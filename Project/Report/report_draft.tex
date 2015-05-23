@@ -444,23 +444,37 @@ möjliga saker att göra om tid finns
 
 
 \section{Requirements}
-For this project to be considered successful, the system must be able to display the visual acuity charts on a monitor properly. This means that the optotypes should be, depending on the distance the patient is from the screen, drawn with the correct size and position. The user have to be able to control which chart to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also have to be able to decide which type of optotype the charts should use from the Sloan letters, Tumbling E, HVOT and LEA.
+For this project to be considered successful, the system must be able to display the visual acuity chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also have to be able to choose if the current chart should use the Sloan letters, Tumbling E, HVOT or LEA optotypes.
+
+It is very important that the chart on the monitor displays all optotypes with the correct sizes and positions. In order to do this, the user must to be able control the distance the patient is watching the monitor from. It is also very important that the correct sizes, in LogMAR, is displayed on the Android device.
+
+The intended user for this system should not need any specific background knowledge about technology more than the basic use of Android device, i.e. be able to start the device, start an application and how to perform simple Android gestures etc. This does not mean that, though it's a goal, it has to be easy to install and set up. 
+
+The Android application should be very user friendly and follow the Android design principles set up by Google \cite{android_design}. This makes the application behave similar to other Android applications which will result in users already familiar with Android, to get the expected result from their actions. 
+
+The system should also allow for automatic server detection so that users don't have to manually connect by entering IP addresses. This allows a quick and easy way to connect to a server.
+
+As this project only aims for a working prototype of the system, it is very important that it is easy to continue the development and add more features without rewriting large parts of the code.
+
+%As this project only aims for a working prototype, there are no requirements on how easy it will be to install or set up, but it requires that already set up system is very user friendly.
+
 
 \subsection{ska tas bort senare:}
 \begin{itemize}
-\item kunna ställa in avstånd ifrån skärm
-\item automatiskt hitta en server
-\item användarvänligt
-\item prototyp som kan utvärdera både axanivis projekt och digitala syntavlor
-\item android appens design ska följa androids designprinciper
-\item systemet ska vara lätt att bygga vidare på
-\item visa upp rätt logmar
+%\item prototyp som kan utvärdera både axanivis projekt och digitala syntavlor
+\item 
 \end{itemize}
 klart:
 \begin{itemize}
+\item systemet ska vara lätt att bygga vidare på
+\item kunna ställa in avstånd ifrån skärm
 \item visa chart på skärm
 \item visa rätt storlek, avstånd, etc på optotype enl. teori
 \item styra charten ifrån android över wifi (ETDRS, HVOT, etc...)
+\item automatiskt hitta en server
+\item användarvänligt
+\item android appens design ska följa androids designprinciper
+\item visa upp rätt logmar
 \end{itemize}
 
 \section{Evaluation}
