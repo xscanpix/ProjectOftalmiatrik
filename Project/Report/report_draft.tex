@@ -412,12 +412,16 @@ Due to limits in time and manpower, this project is not intended to be a complet
 
 The project will neither evaluate a digital screens effect on the eye in contrast to a physical chart nor analyze why a ETDRS or Axanivis chart should have the layouts they have. As both charts are made after a very strict specification, no new chart layouts will be made. Not only could such charts be useless, but they could also be misleading and misused by future users that in the end, could result in patients getting an inaccurate result.
 
+No security features, such as encrypted network traffic or protection against several users connecting to the same server at the same time, will be implemented. Instead, this is left to the user to make sure that a secure network is used.
+
+No automatic update system will be included, but instead, the user have to manually update both the android application and the server.
+
+
 
 \subsection{en lista bara för att lista upp avgränsningar (ska bli flytande text)}
 att göra:
 \begin{itemize}
-\item inga uppdateringar i detta projekt
-\item ingen hänsyn till säkerhet (användare får se till att LANet är säkert)
+\item
 \end{itemize}
 skriver om:
 \begin{itemize}
@@ -426,6 +430,8 @@ skriver om:
 \item inte analysera hur ögat påverkas av en display istället för tavla
 \item inte implementera något om syn, ögat, etc förutom hur tavlorna är gjorda
 \item inte skapa egna tavlor
+\item ingen hänsyn till säkerhet (användare får se till att LANet är säkert)
+\item inga uppdateringar i detta projekt
 \end{itemize}
 möjliga saker att göra om tid finns
 \begin{itemize}
@@ -438,18 +444,23 @@ möjliga saker att göra om tid finns
 
 
 \section{Requirements}
-ska tas bort senare:
+For this project to be considered successful, the system must be able to display the visual acuity charts on a monitor properly. This means that the optotypes should be, depending on the distance the patient is from the screen, drawn with the correct size and position. The user have to be able to control which chart to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also have to be able to decide which type of optotype the charts should use from the Sloan letters, Tumbling E, HVOT and LEA.
+
+\subsection{ska tas bort senare:}
 \begin{itemize}
-\item visa chart på skärm
-\item styra charten ifrån android över wifi (ETDRS, HVOT, etc...)
 \item kunna ställa in avstånd ifrån skärm
-\item visa rätt storlek, avstånd, etc på optotype enl. teori
 \item automatiskt hitta en server
 \item användarvänligt
 \item prototyp som kan utvärdera både axanivis projekt och digitala syntavlor
 \item android appens design ska följa androids designprinciper
 \item systemet ska vara lätt att bygga vidare på
 \item visa upp rätt logmar
+\end{itemize}
+klart:
+\begin{itemize}
+\item visa chart på skärm
+\item visa rätt storlek, avstånd, etc på optotype enl. teori
+\item styra charten ifrån android över wifi (ETDRS, HVOT, etc...)
 \end{itemize}
 
 \section{Evaluation}
