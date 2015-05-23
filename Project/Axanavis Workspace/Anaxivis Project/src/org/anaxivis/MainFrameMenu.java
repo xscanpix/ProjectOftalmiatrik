@@ -9,6 +9,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 
+import org.anaxivis.core.svg.EyeChart;
 import org.anaxivis.core.svg.EyeChartGenerator;
 
 /**
@@ -23,7 +24,7 @@ public class MainFrameMenu extends JMenuBar {
     private static final Logger logger = Logger.getLogger(MainFrameMenu.class.getName());
 
     private static final int distance = 2;
-    
+
     // String constants
     private static final String FILE = "Arkiv";
     private static final String FULLSCREEN = "Fullskärm";
@@ -35,6 +36,7 @@ public class MainFrameMenu extends JMenuBar {
     private static final String LOGMAR_2_U = "Övre LogMAR 2";
     private static final String LOGMAR_2_B = "Undre LogMAR 2";
     private static final String TUMBLING_U = "Övre Tumbling";
+    private static final String TUMBLING_B = "Nedre Tumbling";
     private static final String HELP = "Hjälp";
     private static final String BUG_FIX = "Fix bugs";
     private static final String ABOUT = "Om programmet";
@@ -63,6 +65,26 @@ public class MainFrameMenu extends JMenuBar {
 
     private JMenu createFileMenu() {
 	JMenu fileMenu = new JMenu(FILE);
+	JMenuItem increaseDistanceMenuItem = new JMenuItem("Increase Distance");
+	increaseDistanceMenuItem.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		if (parent.getMainContent().getEyeChart() != null) {
+		    parent.getMainContent().updateEyeChart(1);
+		    ;
+		}
+	    }
+	});
+	JMenuItem decreaseDistanceMenuItem = new JMenuItem("Decrease Distance");
+	decreaseDistanceMenuItem.addActionListener(new ActionListener() {
+	    @Override
+	    public void actionPerformed(ActionEvent e) {
+		if (parent.getMainContent().getEyeChart() != null) {
+		    parent.getMainContent().updateEyeChart(-1);
+		    ;
+		}
+	    }
+	});
 	JMenuItem exitMenuItem = new JMenuItem(EXIT);
 	exitMenuItem.addActionListener(new ActionListener() {
 	    @Override
@@ -78,6 +100,8 @@ public class MainFrameMenu extends JMenuBar {
 	    }
 	});
 
+	fileMenu.add(decreaseDistanceMenuItem);
+	fileMenu.add(increaseDistanceMenuItem);
 	fileMenu.add(fullscreenMenuItem);
 	fileMenu.add(exitMenuItem);
 
@@ -92,43 +116,42 @@ public class MainFrameMenu extends JMenuBar {
 	JMenuItem logMARRandomMenuItem = new JMenuItem(LOGMAR_RANDOM);
 	logMARRandomMenuItem.addActionListener(e -> {
 	    MainContent mc = parent.getMainContent();
-	    mc.updateEyeChart(EyeChartGenerator.generateLogmar("RANDOM", new Dimension(Application.SCREEN_WIDTH, Application.SCREEN_HEIGHT), 96, distance, true), distance);
-
+	    mc.updateEyeChart(EyeChart.LOGMAR_R_U, distance, "RANDOM", null);
 	});
 	JMenuItem logMAR1UMenuItem = new JMenuItem(LOGMAR_1_U);
-	logMAR1UMenuItem
-		.addActionListener(e -> {
-		    MainContent mc = parent.getMainContent();
-		    mc.updateEyeChart(EyeChartGenerator.generateLogmar("NCKZORHSDKDOVHRCZRHSONHRC", new Dimension(Application.SCREEN_WIDTH, Application.SCREEN_HEIGHT), 96, distance, true),
-			    distance);
-		});
+	logMAR1UMenuItem.addActionListener(e -> {
+	    MainContent mc = parent.getMainContent();
+	    mc.updateEyeChart(EyeChart.LOGMAR_1_U, distance, "NCKZORHSDKDOVHRCZRHSONHRC", null);
+	});
 	JMenuItem logMAR1BMenuItem = new JMenuItem(LOGMAR_1_B);
-	logMAR1BMenuItem
-		.addActionListener(e -> {
-		    MainContent mc = parent.getMainContent();
-		    mc.updateEyeChart(EyeChartGenerator.generateLogmar("DKSNVZSOKNCKDNRSRZKDHZOVCNVDOKVHCNOSVHCZOZDVK", new Dimension(Application.SCREEN_WIDTH, Application.SCREEN_HEIGHT),
-			    96, distance, false), distance);
-		});
+	logMAR1BMenuItem.addActionListener(e -> {
+	    MainContent mc = parent.getMainContent();
+	    mc.updateEyeChart(EyeChart.LOGMAR_1_B, distance, "DKSNVZSOKNCKDNRSRZKDHZOVCNVDOKVHCNOSVHCZOZDVK", null);
+	});
 	JMenuItem logMAR2UMenuItem = new JMenuItem(LOGMAR_2_U);
-	logMAR2UMenuItem
-		.addActionListener(e -> {
-		    MainContent mc = parent.getMainContent();
-		    mc.updateEyeChart(EyeChartGenerator.generateLogmar("DSRKNCKZOHONRKDKZVDCVSHZO", new Dimension(Application.SCREEN_WIDTH, Application.SCREEN_HEIGHT), 96, distance, true),
-			    distance);
-		});
+	logMAR2UMenuItem.addActionListener(e -> {
+	    MainContent mc = parent.getMainContent();
+	    mc.updateEyeChart(EyeChart.LOGMAR_2_U, distance, "DSRKNCKZOHONRKDKZVDCVSHZO", null);
+	});
 	JMenuItem logMAR2BMenuItem = new JMenuItem(LOGMAR_2_B);
-	logMAR2BMenuItem
-		.addActionListener(e -> {
-		    MainContent mc = parent.getMainContent();
-		    mc.updateEyeChart(EyeChartGenerator.generateLogmar("HDKCRCSRHNSVZDKNCVOZRHSDVSNROHODHKRZKCSNCRHDV", new Dimension(Application.SCREEN_WIDTH, Application.SCREEN_HEIGHT),
-			    96, distance, false), distance);
-		});
+	logMAR2BMenuItem.addActionListener(e -> {
+	    MainContent mc = parent.getMainContent();
+	    mc.updateEyeChart(EyeChart.LOGMAR_2_B, distance, "HDKCRCSRHNSVZDKNCVOZRHSDVSNROHODHKRZKCSNCRHDV", null);
+	});
 	JMenuItem tumblingUMenuItem = new JMenuItem(TUMBLING_U);
 	tumblingUMenuItem.addActionListener(e -> {
 	    int[] rotations = { 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90 };
 	    MainContent mc = parent.getMainContent();
-	    mc.updateEyeChart(EyeChartGenerator.generateTumbling(rotations, new Dimension(Application.SCREEN_WIDTH, Application.SCREEN_HEIGHT), 96, distance, true), distance);
+	    mc.updateEyeChart(EyeChart.TUMBLING_U, distance, null, rotations);
 	});
+	JMenuItem tumblingBMenuItem = new JMenuItem(TUMBLING_B);
+	tumblingBMenuItem.addActionListener(e -> {
+	    int[] rotations = { 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90,
+		    90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90, 90 };
+	    MainContent mc = parent.getMainContent();
+	    mc.updateEyeChart(EyeChart.TUMBLING_B, distance, null, rotations);
+	});
+
 	chartMenu.add(logMARRandomMenuItem);
 	chartMenu.add(logMAR1UMenuItem);
 	chartMenu.add(logMAR1BMenuItem);
@@ -136,6 +159,7 @@ public class MainFrameMenu extends JMenuBar {
 	chartMenu.add(logMAR2BMenuItem);
 	chartMenu.addSeparator();
 	chartMenu.add(tumblingUMenuItem);
+	chartMenu.add(tumblingBMenuItem);
 
 	return chartMenu;
     }

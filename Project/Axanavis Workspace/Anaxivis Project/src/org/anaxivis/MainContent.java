@@ -2,8 +2,6 @@ package org.anaxivis;
 
 import java.util.logging.Logger;
 
-import javax.swing.JPanel;
-
 import org.anaxivis.core.svg.EyeChart;
 
 public class MainContent {
@@ -15,15 +13,22 @@ public class MainContent {
 
     public MainContent(Application parent) {
 	this.parent = parent;
-	eyeChart = new EyeChart();
     }
 
-    public void updateEyeChart(JPanel panel, int distanceFromScreen) {
-	eyeChart.updatePanel(panel, distanceFromScreen);
+    public void updateEyeChart(int type, float distance, String characters, int[] rotations) {
+	if (eyeChart == null) {
+	    eyeChart = new EyeChart(type, distance, characters, rotations);
+	} else {
+	    eyeChart.updatePanel(type, distance, characters, rotations);
+	}
 	parent.getFrame().setVisible(false);
 	parent.getFrame().getContentPane().removeAll();
 	parent.getFrame().getContentPane().add(eyeChart.getPanel());
 	parent.getFrame().setVisible(true);
+    }
+
+    public void updateEyeChart(int distance) {
+	updateEyeChart(eyeChart.getType(), eyeChart.getDistanceFromScreen() + distance, eyeChart.getCharacters(), eyeChart.getRotations());
     }
 
     public EyeChart getEyeChart() {
