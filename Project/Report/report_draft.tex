@@ -106,11 +106,92 @@ Our ethical obligations with this project is providing a functional and stable p
 \section{Problem}
 The problem with today's visual acuity tests are that they are very clumsy to work with. The charts are printed and contains only one type of symbol, or optotype. This could be letters for people with the ability to read or an 'E' shape turned in different ways which allows children who are unable to read, or illiterate people, to identify which symbol they see. These charts are also only designed to be viewed from one specific distance, which makes some rooms to small and unusable.
 
-\section{Advantages of a digital system}
-The advantages of a digital system is the ability to change the layout, optotypes and size of the chart without having to carry away the old chart and then carrying back a new. This will save both time and space as only one screen and a small Android device is necessary. This system will also allow the visual acuity tests to take place in rooms that previously where too small, as the system will display optotypes at a size suitable for the distance the patient is from the monitor.
+\section{Delimitations}
+Due to limits in time and manpower, this project is not intended to be a complete working system to be sold, but rather a working prototype that can be used to evaluate digital visual acuity charts. In order to achieve this, as much as possible of Java's and Android's built in libraries will be used. As neither support svg files, external libraries will be used for this.
 
-\section{Disadvantages of a digital system}
-A disadvantage with this system is that digital screens become very expensive at large sizes, which limits the maximum distance a patient can sit from the screen. Another disadvantage is that the resolution, or rather pixel density, will limit how close to a screen a patient can sit without the optotypes looking pixelated. Pixel density is a measurement of how many pixels (dots) can fit in a small section of the screen, usually denoted as Pixels Per Inch (PPI) or Dots Per Inch (DPI). The higher the DPI is the better the quality of small details will be. This is very important when rendering type fonts because the edges should be as smooth as possible.
+The project will neither evaluate a digital screens effect on the eye in contrast to a physical chart nor analyze why a ETDRS or Axanivis chart should have the layouts they have. As both charts are made after a very strict specification, no new chart layouts will be made. Not only could such charts be useless, but they could also be misleading and misused by future users that in the end, could result in patients getting an inaccurate result.
+
+No security features, such as encrypted network traffic or protection against several users connecting to the same server at the same time, will be implemented. Instead, this is left to the user to make sure that a secure network is used.
+
+No automatic update system will be included, but instead, the user have to manually update both the android application and the server.
+
+
+
+%\subsection{en lista bara för att lista upp avgränsningar (ska bli flytande text)}
+%att göra:
+%\begin{itemize}
+%\item
+%\end{itemize}
+%skriver om:
+%\begin{itemize}
+%\item inte en helt färdig produkt
+%\item inte utveckla sätt att visa svg
+%\item inte analysera hur ögat påverkas av en display istället för tavla
+%\item inte implementera något om syn, ögat, etc förutom hur tavlorna är gjorda
+%\item inte skapa egna tavlor
+%\item ingen hänsyn till säkerhet (användare får se till att LANet är säkert)
+%\item inga uppdateringar i detta projekt
+%\end{itemize}
+%möjliga saker att göra om tid finns
+%\begin{itemize}
+%\item Att ingen annan kan ansluta till servern som används atm
+%\item Kod till servern
+%\item grating
+%\item det konstiga stjärngrejen i pers grejjer
+%\end{itemize}
+
+
+
+\section{Requirements}
+For this project to be considered successful, the system must be able to display the visual acuity chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also have to be able to choose if the current chart should use the Sloan letters, Tumbling E, HVOT or LEA optotypes.
+
+It is very important that the chart on the monitor displays all optotypes with the correct sizes and positions. In order to do this, the user must to be able control the distance the patient is watching the monitor from. It is also very important that the correct sizes, in LogMAR, is displayed on the Android device.
+
+The intended user for this system should not need any specific background knowledge about technology more than the basic use of Android device, i.e. be able to start the device, start an application and how to perform simple Android gestures etc. This does not mean that, though it's a goal, it has to be easy to install and set up. 
+
+The Android application should be very user friendly and follow the Android design principles set up by Google \cite{android_design}. This makes the application behave similar to other Android applications which will result in users already familiar with Android, to get the expected result from their actions. 
+
+The system should also allow for automatic server detection so that users don't have to manually connect by entering IP addresses. This allows a quick and easy way to connect to a server. In order for the server detection to be considered working properly, it should detect a server on a stable network atleast 95\% of the time.
+
+As this project only aims for a working prototype of the system, it is very important that it is easy to continue the development and add more features without rewriting large parts of the code.
+
+%As this project only aims for a working prototype, there are no requirements on how easy it will be to install or set up, but it requires that already set up system is very user friendly.
+
+%
+%\subsection{ska tas bort senare:}
+%\begin{itemize}
+%%\item prototyp som kan utvärdera både axanivis projekt och digitala syntavlor
+%\item 
+%\end{itemize}
+%klart:
+%\begin{itemize}
+%\item systemet ska vara lätt att bygga vidare på
+%\item kunna ställa in avstånd ifrån skärm
+%\item visa chart på skärm
+%\item visa rätt storlek, avstånd, etc på optotype enl. teori
+%\item styra charten ifrån android över wifi (ETDRS, HVOT, etc...)
+%\item automatiskt hitta en server
+%\item användarvänligt
+%\item android appens design ska följa androids designprinciper
+%\item visa upp rätt logmar
+%\end{itemize}
+
+\section{Evaluation}
+In order to evaluate if all requirements have been met, the system will undergo a few tests. The first tests goal is to make sure that the user actually can choose a specific chart with specific optotypes. This is done by the developers going through all charts, with all types of optotypes.
+
+The second test is to make sure that the optotypes have the correct sizes on the monitor. This test will done by calculating, outside of the system, the expected size of the optotypes, in both pixels and centimeters. Once this is done, the calculated number of pixels will be compared to the number of pixels calculated by the system. If this is a match, the size of the optotypes on the screen will be measured with a physical measurement tool, like a ruler, and compared to the calculated amount of centimeters.
+
+The third test will determine how user friendly the system is. This will be done by letting a user with no previous knowledge of the system, attempt to connect to a server and perform some basic tasks like setting a specific chart with a specific optotype or setting a specific distance. If the user testing has no previous knowledge of visual acuity charts, a brief explanation will be given so that the test doesn't fail because the user, for example, doesn't know what "HVOT" is.
+
+The last test is a quantitative test to see how well the server detection performs. The test involves the Android application trying to detect a server on a stable WiFi a 100 times and see how many times the server was detected. This test can be done several times and the average number of detection's in a 100 tries will determine its success rate.
+
+%\subsection{hur ska den utvärderas}
+%\begin{itemize}
+%\item storlek på optotyper ska beräknas och jämföras med systemets resultat
+%\item optotyper mäts i verkligheten, med linjal el. liknandes
+%\item skall hitta server X ggr av Y försök på stadigt nätverk
+%
+%\end{itemize}
 
 \chapter{Theory}
 \section{Visual Acuity}
@@ -407,102 +488,25 @@ DISTANCE
 %	\end{itemize}
 %\end{itemize}
 
-\section{Delimitations}
-Due to limits in time and manpower, this project is not intended to be a complete working system to be sold, but rather a working prototype that can be used to evaluate digital visual acuity charts. In order to achieve this, as much as possible of Java's and Android's built in libraries will be used. As neither support svg files, external libraries will be used for this.
-
-The project will neither evaluate a digital screens effect on the eye in contrast to a physical chart nor analyze why a ETDRS or Axanivis chart should have the layouts they have. As both charts are made after a very strict specification, no new chart layouts will be made. Not only could such charts be useless, but they could also be misleading and misused by future users that in the end, could result in patients getting an inaccurate result.
-
-No security features, such as encrypted network traffic or protection against several users connecting to the same server at the same time, will be implemented. Instead, this is left to the user to make sure that a secure network is used.
-
-No automatic update system will be included, but instead, the user have to manually update both the android application and the server.
 
 
 
-\subsection{en lista bara för att lista upp avgränsningar (ska bli flytande text)}
-att göra:
-\begin{itemize}
-\item
-\end{itemize}
-skriver om:
-\begin{itemize}
-\item inte en helt färdig produkt
-\item inte utveckla sätt att visa svg
-\item inte analysera hur ögat påverkas av en display istället för tavla
-\item inte implementera något om syn, ögat, etc förutom hur tavlorna är gjorda
-\item inte skapa egna tavlor
-\item ingen hänsyn till säkerhet (användare får se till att LANet är säkert)
-\item inga uppdateringar i detta projekt
-\end{itemize}
-möjliga saker att göra om tid finns
-\begin{itemize}
-\item Att ingen annan kan ansluta till servern som används atm
-\item Kod till servern
-\item grating
-\item det konstiga stjärngrejen i pers grejjer
-\end{itemize}
 
-
-
-\section{Requirements}
-For this project to be considered successful, the system must be able to display the visual acuity chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also have to be able to choose if the current chart should use the Sloan letters, Tumbling E, HVOT or LEA optotypes.
-
-It is very important that the chart on the monitor displays all optotypes with the correct sizes and positions. In order to do this, the user must to be able control the distance the patient is watching the monitor from. It is also very important that the correct sizes, in LogMAR, is displayed on the Android device.
-
-The intended user for this system should not need any specific background knowledge about technology more than the basic use of Android device, i.e. be able to start the device, start an application and how to perform simple Android gestures etc. This does not mean that, though it's a goal, it has to be easy to install and set up. 
-
-The Android application should be very user friendly and follow the Android design principles set up by Google \cite{android_design}. This makes the application behave similar to other Android applications which will result in users already familiar with Android, to get the expected result from their actions. 
-
-The system should also allow for automatic server detection so that users don't have to manually connect by entering IP addresses. This allows a quick and easy way to connect to a server.
-
-As this project only aims for a working prototype of the system, it is very important that it is easy to continue the development and add more features without rewriting large parts of the code.
-
-%As this project only aims for a working prototype, there are no requirements on how easy it will be to install or set up, but it requires that already set up system is very user friendly.
-
-
-\subsection{ska tas bort senare:}
-\begin{itemize}
-%\item prototyp som kan utvärdera både axanivis projekt och digitala syntavlor
-\item 
-\end{itemize}
-klart:
-\begin{itemize}
-\item systemet ska vara lätt att bygga vidare på
-\item kunna ställa in avstånd ifrån skärm
-\item visa chart på skärm
-\item visa rätt storlek, avstånd, etc på optotype enl. teori
-\item styra charten ifrån android över wifi (ETDRS, HVOT, etc...)
-\item automatiskt hitta en server
-\item användarvänligt
-\item android appens design ska följa androids designprinciper
-\item visa upp rätt logmar
-\end{itemize}
-
-\section{Evaluation}
-hur ska den utvärderas
-\begin{itemize}
-\item storlek på optotyper ska beräknas och jämföras med systemets resultat
-\item optotyper mäts i verkligheten, med linjal el. liknandes
-\item skall hitta server X ggr av Y försök på stadigt nätverk
-
-\end{itemize}
-
-
-
-\section{Boundaries (OLD!)} 
-%%%%%%%%%%%%%%%%%%%%%%%%Avgränsningar: vad ska INTE göras, även om man kanske kunde tro det?
-We are not tasked to develop a library to display .svg files, and will be using a licensed one. We are also not tasked to populate the database with symbols and layouts, but instead provide a comprehensive API so that clients can create their own.
-
-%%%%%%%%%%%%%vad ska bara göras om tid/resurser/omständigheter räcker till?
-
-There are however several extensions to the system that can be considered if we have time to spare. We can extend the system to support more types of charts, such as charts for testing colour blindness and stereoscopic vision, which also rely heavily on rooms with appropriate lighting.
-
-While it deviates further from the main part of the project, we were asked by our employer to consider implementing the ability to control devices such as lights around the room from inside the app. This could probably be done, and we will look into it if time allows.
-
-\section{Demands (OLD!)} %%%%%%%%%%%%%%%%%%%%%%%%Krav: vilka krav ställer ni/andra på ert resultat? hur snabbt? hur många användare? hur strömsnålt? eller vad som är relevant
-There are a few core demands that our product needs to meet. First and foremost, it needs to work, and do what the current testing system can already do. Second, it needs to be easy to use and have an intuitive interface. Third, it should be very energy efficient, since forcing the user to recharge the tablet often reduces productivity. 
-
-\section{Evaluation (OLD!)} %%%%%%%%%%%%%%%%%%%%%%%%Utvärdering: hur ska ni utvärdera ert arbete/system, hur vet ni om/hur bra ni lyckats?
-The easiest way to see if our product satisfies these demands is putting it into the hands of the opticians at the university hospital and letting them test it, recording bug reports or comments. Testing will also let us determine if the system is as energy efficient as we intended.
+%\section{Boundaries (OLD!)} 
+%%%%%%%%%%%%%%%%%%%%%%%%%Avgränsningar: vad ska INTE göras, även om man kanske kunde tro det?
+%We are not tasked to develop a library to display .svg files, and will be using a licensed one. We are also not tasked to populate the database with symbols and layouts, but instead provide a comprehensive API so that clients can create their own.
+%
+%%%%%%%%%%%%%%vad ska bara göras om tid/resurser/omständigheter räcker till?
+%
+%There are however several extensions to the system that can be considered if we have time to spare. We can extend the system to support more types of charts, such as charts for testing colour blindness and stereoscopic vision, which also rely heavily on rooms with appropriate lighting.
+%
+%While it deviates further from the main part of the project, we were asked by our employer to consider implementing the ability to control devices such as lights around the room from inside the app. This could probably be done, and we will look into it if time allows.
+%
+%\section{Demands (OLD!)} %%%%%%%%%%%%%%%%%%%%%%%%Krav: vilka krav ställer ni/andra på ert resultat? hur snabbt? hur många användare? hur strömsnålt? eller vad som är relevant
+%There are a few core demands that our product needs to meet. First and foremost, it needs to work, and do what the current testing system can already do. Second, it needs to be easy to use and have an intuitive interface. Third, it should be very energy efficient, since forcing the user to recharge the tablet often reduces productivity. 
+%
+%\section{Evaluation (OLD!)} %%%%%%%%%%%%%%%%%%%%%%%%Utvärdering: hur ska ni utvärdera ert arbete/system, hur vet ni om/hur bra ni lyckats?
+%The easiest way to see if our product satisfies these demands is putting it into the hands of the opticians at the university hospital and letting them test it, recording bug reports or comments. Testing will also let us determine if the system is as energy efficient as we intended.
 
 \chapter{Results}
 suggestions for sections
@@ -512,20 +516,54 @@ suggestions for sections
 \subsection{Server}
 \subsection{Network}
 
+\section{Test Results}
+\subsection{Developer walkthrough}
+\subsection{Optotype Sizes}
+\subsection{User-friendliness}
+\subsection{Server Detection}
+
 \section{Bugs and Limitations}
 
 
 \chapter{Conclusion}
-suggestions for sections
 
 \section{Discussion}
-\subsection{Advantages of our system}
-\subsection{Disadvantages of our system}
-\subsection{Alternate solutions}
+
+\section{Advantages of a digital system}
+The advantages of a digital system is the ability to change the layout, optotypes and size of the chart without having to carry away the old chart and then carrying back a new. This will save both time and space as only one screen and a small Android device is necessary. This system will also allow the visual acuity tests to take place in rooms that previously where too small, as the system will display optotypes at a size suitable for the distance the patient is from the monitor.
+
+\subsection{Disadvantages of a digital system}
+A disadvantage with this system is that digital screens become very expensive at large sizes, which limits the maximum distance a patient can sit from the screen. Another disadvantage is that the resolution, or rather pixel density, will limit how close to a screen a patient can sit without the optotypes looking pixelated. Pixel density is a measurement of how many pixels (dots) can fit in a small section of the screen, usually denoted as Pixels Per Inch (PPI) or Dots Per Inch (DPI). The higher the DPI is the better the quality of small details will be. This is very important when rendering type fonts because the edges should be as smooth as possible.
+\subsubsection{Alternate solutions}
 
 \section{Future Work}
 
 \bibliography{references}{}
 \bibliographystyle{ieeetr}
 
+\newpage
+\appendix
+\chapter{Appendix A} \label{App:AppendixA}
+\section{User 1}
+\begin{enumerate}\bfseries
+
+\item Start application
+
+\item Connect to server
+
+\item Display ETDRS 1 Large upper chart from a distance 2 meters
+
+\item Display ETDRS 1 Large lower chart from a distance 2 meters
+
+\item Display HVOT Random chart medium from a distance 1.7 meters
+
+\item Generate a new HVOT chart
+
+\item Display Icons 1 small chart from
+
+\item Page through Icons 1 small chart
+
+\item Reconnect to server
+
+\end{enumerate}
 \end{document}
