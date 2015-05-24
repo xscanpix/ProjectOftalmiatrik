@@ -357,7 +357,7 @@ The two new chart layouts uses is constructed using the same principles, like he
 \begin{figure}[h]
 \centering
 \includegraphics[width=100mm]{images/etdrs_one_line.png}
-\caption{The one line layout}
+\caption{The one line chart}
 \label{fig:etdrs_one_line}
 \end{figure}
 
@@ -366,7 +366,7 @@ Once an estimate visual acuity have been achieved from the one line chart, the u
 \begin{figure}[h]
 \centering
 \includegraphics[width=90mm]{images/etdrs_single.png}
-\caption{The single optotype layout}
+\caption{The single optotype chart}
 \label{fig:etdrs_single}
 \end{figure}
 
@@ -513,41 +513,75 @@ DISTANCE
 \chapter{Results}
 \section{User Interface}
 \subsection{Android application}
-The finished Android application turned out as intended and uses Androids standard GUI elements. To navigate between the connection settings and different type of charts, Androids built in navigation drawer is used (fig. \ref{fig:app_nav_drawer}). In order to connect to a server, the user must click the name of the connected server, in the case that no server is connected it will, instead of the name of a server, say \textit{Click to connect}.
+The finished Android application turned out as intended and uses Androids standard GUI elements. To navigate between the connection settings and different type of charts, Androids built in navigation drawer is used (fig. \ref{fig:app_nav_drawer}). In order to reach the connection settings, the user must click the name of the connected server, in the case that no server is connected, it will, instead of the name of a server, say \textit{Click to connect}.
 
-\begin{figure}[h]
+\begin{figure}[ht!]
 \centering
-\includegraphics[width=60mm]{images/appgui/nav_drawer.png}
+\includegraphics[width=56mm]{images/appgui/nav_drawer.png}
 \caption{The Android application navigation drawer used for navigating the application. a) Name of the application b) The currently connected server c) Available optotypes d) Grating, not yet implemented e) Test, used for testing new functions}
 \label{fig:app_nav_drawer}
 \end{figure}
 
-\begin{figure}[h]
+Once the connection settings page have been reached, the user will be shown the connection status and a \textit{scan network} button (fig. \ref{fig:scan1}) which can be used to scan the network for servers. Once the button is pressed, the button will be disabled and found servers will appear in a list below (fig. \ref{fig:scan2}). When the desired server have been found, the user can click on it to connect to it and once the entire scan is complete, the \textit{scan network} button will be enabled again.
+
+\begin{figure}[ht!]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
   %\includegraphics[width=.5\linewidth]{images/etdrs_top.png}
   \includegraphics[width=50mm]{images/appgui/scan1.png}
-  \caption{Upper Chart}
+  \caption{No connection}
   \label{fig:scan1}
 \end{subfigure}%
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=50mm]{images/appgui/scan2.png}
-  \caption{Lower Chart}
+  \caption{Scan button pressed}
   \label{fig:scan2}
 \end{subfigure}
 \begin{subfigure}{.5\textwidth}
   \centering
   \includegraphics[width=50mm]{images/appgui/scan3.png}
-  \caption{Lower Chart}
+  \caption{Connected to server}
   \label{fig:scan3}
 \end{subfigure}
-\caption{The upper and lower ETDRS charts}
+\caption{Server connection steps}
 \label{fig:scan}
 \end{figure}
 
+Once the application has connected to a server, the user can navigate to the chart that should be viewed on the screen. This is done by opening the navigation drawer, either by swiping from the left edge of the screen to the right, or by pressing the navigation drawer icon in the top left corner. When the navigation drawer is open, the user can choose between the \textit{ETDRS} (Sloan letters), \textit{Tumbling E}, \textit{HVOT} or \textit{Icons} (LEA) to display that chart (fig. \ref{fig:etdrs_large}). 
 
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=120mm]{images/appgui/etdrs_large.png}
+\caption{The upper large ETDRS 1 chart displayed with each rows LogMAR values to the far left.}
+\label{fig:etdrs_large}
+\end{figure}
+
+The user can now choose which chart version, size and distance to use. The chart version decides which optotype to use at which position. The ETDRS chart have 3 premade versions\cite{Ferris} and the rest of the charts have 1. There is also an option to use a randomly generated version which is generated when the application start. If this option is selected, the generate button below enables, so that the user can generate a new version if necessary. The random version is generated with no restrictions and should be used with caution.
+
+The user can also choose which chart size, \textit{Large}, \textit{Medium} or \textit{Small}, to use. The large chart is the same chart as the \textit{upper} and \textit{lower ETDRS} charts (fig. \ref{fig:etdrs_large}), the medium chart is the same as the \textit{one line chart} (fig. \ref{fig:icons_medium}) and the small chart is the same as the \textit{single optotype chart} (fig. \ref{fig:tumbling_e_small}). To navigate between the upper and lower chart, the user must swipe the screen up or down and to page between the optotypes on the small chart, the user must swipe left or right.
+
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  %\includegraphics[width=.5\linewidth]{images/etdrs_top.png}
+  \includegraphics[width=60mm]{images/appgui/icons_medium.png}
+  \caption{The medium Icons 1 chart}
+  \label{fig:icons_medium}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=60mm]{images/appgui/tumbling_e_small.png}
+  \caption{The small Tumbling E 1 chart}
+  \label{fig:tumbling_e_small}
+\end{subfigure}
+\caption{A medium and small chart}
+\label{fig:chart_medium_small}
+\end{figure}
+
+The last setting the user can choose is the distance setting. Here the user can enter the distance a patient is from the screen, in centimeters, and then press \textit{Apply Distance}. This has no visible effect on the application but is used to set the optotype sizes on the monitor.
 
 \subsection{Server}
 \subsection{Network}
@@ -607,6 +641,7 @@ Bugs:
 \begin{itemize}
 \item Apply button changes to down
 \item Logmar duplicate values appear in top left corner of medium chart
+\item Distance resets when changing chart types
 \end{itemize}
 
 
@@ -622,6 +657,12 @@ A disadvantage with this system is that digital screens become very expensive at
 \subsubsection{Alternate solutions}
 
 \section{Future Work}
+\begin{itemize}
+\item grating
+\item color blind tests
+\item change logmar
+\item constraints to random function
+\end{itemize}
 
 \bibliography{references}{}
 \bibliographystyle{ieeetr}
