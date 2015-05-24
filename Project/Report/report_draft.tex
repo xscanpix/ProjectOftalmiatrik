@@ -14,6 +14,7 @@
 %\usepackage{pgf-umlsd}
 \usepackage{pgfplots}
 \usepackage{siunitx}
+\usepackage{multirow}
 
 \def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
 
@@ -617,6 +618,32 @@ Connection			&	\checkmark	&	\checkmark	&	\checkmark	&	\\
 \end{table}
 
 \subsection{Optotype Sizes}
+\begin{table}[ht!]
+\centering
+\begin{tabular}{p{3cm} | m{1cm}m{1cm}m{1cm}m{1cm}m{1cm} }
+	& &	\multicolumn{2}{c}{Screen}	& 	\multicolumn{2}{c}{Calculated}	\\
+\hline
+	& row & px & cm & px & cm \\
+\hline\hline
+\multirow{14}{*}{\parbox{3cm}{\centering Size: 15.6" Resolution: 1920x1080 Distance: 2m}}				
+										&	1	&	162	&	2.91	&	c	&	d\\	
+										&	2	&	128 & 	2.31	& 	c	&	d\\
+		 								&	3	&	102 & 	1.84	& 	c	&	d\\
+										&	4	&	81 	& 	1.46	& 	c	&	d\\
+										&	5	&	64 	& 	1.16	& 	c	&	d\\
+										&	6	&	51 	& 	0.92	& 	c	&	d\\
+										&	7	&	41 	& 	0.73	& 	c	&	d\\
+										&	8	&	32 	& 	0.58	& 	c	&	d\\
+										&	9	&	26 	& 	0.46	& 	c	&	d\\
+										&	10	&	20 	& 	0.37	& 	c	&	d\\
+										&	11	&	16 	& 	0.29	& 	c	&	d\\
+										&	12	&	13 	& 	0.23	& 	c	&	d\\
+										&	13	&	10 	& 	0.18	& 	c	&	d\\
+										&	14	&	8 	& 	0.15	& 	c	&	d\\
+\end{tabular}
+\caption{The number of failures and successes during the server detection tests.} \label{tab:optotype_test}
+\end{table}
+
 \subsection{Usability}
 \subsection{Server Detection}
 The server detection test was done 3 times on a stable WiFi network. According to the results (Table. \ref{tab:server_detection_test}), every single one of the tests performed was successful in finding a server over 90\% of the time. The average success rate of the 3 tests was about 96.3\% which means that the server detection requirements are met.
