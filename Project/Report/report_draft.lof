@@ -15,9 +15,9 @@
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Overview of the system structure\relax }}{15}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces A message with the check word \textit {AXANIVIS}, the command \unhbox \voidb@x \hbox {\textit {DISTANCE}} and the data \textit {500}. This message would make the server to resize the currently active chart to be suitable for a user watching from 500 centimeters. \relax }}{18}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The Android application navigation drawer used for navigating the application. a) Name of the application b) The currently connected server c) Available optotypes d) Grating, not yet implemented e) Test, used for testing new functions\relax }}{19}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Server connection steps\relax }}{20}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The Android application navigation drawer used for navigating the application. a) Name of the application b) The currently connected server c) Available optotypes d) Grating, not yet implemented e) Test, used for testing new functions\relax }}{20}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Server connection steps\relax }}{21}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces The upper large ETDRS 1 chart displayed with each rows LogMAR values to the far left.\relax }}{21}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces A medium and small chart\relax }}{21}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces A medium and small chart\relax }}{22}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
