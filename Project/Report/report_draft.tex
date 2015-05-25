@@ -99,7 +99,7 @@ There are several technical problems that we need to solve. We need to design a 
 
 Networking needs to be added to control the Raspberry Pi over WiFi from the tablet, and some features like waking the screen as the app is started can be considered. 
 
-Designing the Android app for the tablet will bring technical problems, both from the limitations of portable computers, and making our software adaptable enough to work on as many brands of tablets as possible. For example, the symbols we are to present are stored in the .svg (Scalable Vector Graphics) format, which is not natively supported on Android. Because of this we must find and work with a licensed third-party software library to render them. Other than that the Android tablet doesn't impose too many big problems. %% Fler problem som kan uppstå med Android?
+Designing the Android app for the tablet will bring technical problems, both from the limitations of portable computers, and making our software adaptable enough to work on as many brands of tablets as possible. For example, the symbols we are to present are stored in the .SVG (Scalable Vector Graphics) format, which is not natively supported on Android. Because of this we must find and work with a licensed third-party software library to render them. Other than that the Android tablet doesn't impose too many big problems. %% Fler problem som kan uppstå med Android?
 
 Finally we should design a way for the database of symbols and chart layouts to be easily updated and synchronized between devices and some server storage. This will be the least important task for us since it we wan't to focus on having something to work with firstly. Updating and synchronizing can be done by hand locally.
 
@@ -111,15 +111,13 @@ Our ethical obligations with this project is providing a functional and stable p
 The problem with today's visual acuity testing charts are that they are very clumsy to work with. The charts are printed and contains only one static selection of symbols, also called optotypes. This could be optotypes for people with the ability to read or an 'E' shape rotated in different directions which allows children who are unable to read, or illiterate people, to identify which symbol they see. These static charts are also designed to be viewed from one specific distance. This causes problems when dealing with environments that are too small, for example erroneous measurements. 
 
 \section{Delimitations}
-Due to limits in time and manpower, this project is not intended to be a complete working system to be sold, but rather a working prototype that can be used to evaluate digital visual acuity charts. In order to achieve this, as much as possible of Java's and Android's built in libraries will be used. As neither support svg files, external libraries will be used for this.
+Due to limits in time and manpower, this project is not intended to be a complete working system to be used clinically, but rather a working prototype that can be used to evaluate digital visual acuity charts. In order to achieve this, as much as possible of Java's and Android's built-in libraries will be used. Though as SVG-files are going to be used for the rendering of optotypes and neither Java or Android supports it natively third-party libraries will be used.
 
-The project will neither evaluate a digital screens effect on the eye in contrast to a physical chart nor analyze why a ETDRS or Axanivis chart should have the layouts they have. As both charts are made after a very strict specification, no new chart layouts will be made. Not only could such charts be useless, but they could also be misleading and misused by future users that in the end, could result in patients getting an inaccurate result.
+We will not evaluate a digital screen's effect on the eye compared to a physical chart nor analyze why an ETDRS or Axanivis chart should have the layouts they have. As both charts are made after a very strict specification, no new chart layouts will be made. Because any new charts we create would be considered useless without backing research they could also be misleading and misused by future users that in the end, could result in patients getting an inaccurate result.
 
 No security features, such as encrypted network traffic or protection against several users connecting to the same server at the same time, will be implemented. Instead, this is left to the user to make sure that a secure network is used.
 
-No automatic update system will be included, but instead, the user have to manually update both the android application and the server.
-
-
+No automatic update system will be included, but instead, the user have to manually update both the Android application and the server.
 
 %\subsection{en lista bara för att lista upp avgränsningar (ska bli flytande text)}
 %att göra:
@@ -129,7 +127,7 @@ No automatic update system will be included, but instead, the user have to manua
 %skriver om:
 %\begin{itemize}
 %\item inte en helt färdig produkt
-%\item inte utveckla sätt att visa svg
+%\item inte utveckla sätt att visa SVG
 %\item inte analysera hur ögat påverkas av en display istället för tavla
 %\item inte implementera något om syn, ögat, etc förutom hur tavlorna är gjorda
 %\item inte skapa egna tavlor
@@ -144,14 +142,12 @@ No automatic update system will be included, but instead, the user have to manua
 %\item det konstiga stjärngrejen i pers grejjer
 %\end{itemize}
 
-
-
 \section{Requirements}
-For this project to be considered successful, the system must be able to display the visual acuity chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also have to be able to choose if the current chart should use the Sloan letters, Tumbling E, HVOT or LEA optotypes.
+For this project to be considered successful, the system must be able to display the chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also has to be able to choose if the current chart should use the Sloan, Tumbling E, HVOT or LEA optotypes.
 
-It is very important that the chart on the monitor displays all optotypes with the correct sizes and positions. In order to do this, the user must to be able control the distance the patient is watching the monitor from. It is also very important that the correct sizes, in LogMAR, is displayed on the Android device.
+It is very important that the chart on the monitor displays all optotypes with the correct sizes and positions. In order to do this, the user must to be able control the distance from which the patient is watching the monitor. It is also very important that the correct sizes, in LogMAR, is displayed on the Android device.
 
-The intended user for this system should not need any specific background knowledge about technology more than the basic use of Android device, i.e. be able to start the device, start an application and how to perform simple Android gestures etc. This does not mean that, though it's a goal, it has to be easy to install and set up. 
+The intended user for this system should not need any specific background knowledge about technology more than the basic use of Android device, for example being able to start the device, start an application and how to perform simple Android gestures. This does not mean that, though it is a goal, it has to be easy to install and set up. 
 
 The Android application should be very user friendly and follow the Android design principles set up by Google \cite{android_design}. This makes the application behave similar to other Android applications which will result in users already familiar with Android, to get the expected result from their actions. 
 
@@ -159,29 +155,8 @@ The system should also allow for automatic server detection so that users don't 
 
 As this project only aims for a working prototype of the system, it is very important that it is easy to continue the development and add more features without rewriting large parts of the code.
 
-%As this project only aims for a working prototype, there are no requirements on how easy it will be to install or set up, but it requires that already set up system is very user friendly.
-
-%
-%\subsection{ska tas bort senare:}
-%\begin{itemize}
-%%\item prototyp som kan utvärdera både axanivis projekt och digitala syntavlor
-%\item 
-%\end{itemize}
-%klart:
-%\begin{itemize}
-%\item systemet ska vara lätt att bygga vidare på
-%\item kunna ställa in avstånd ifrån skärm
-%\item visa chart på skärm
-%\item visa rätt storlek, avstånd, etc på optotype enl. teori
-%\item styra charten ifrån android över wifi (ETDRS, HVOT, etc...)
-%\item automatiskt hitta en server
-%\item användarvänligt
-%\item android appens design ska följa androids designprinciper
-%\item visa upp rätt logmar
-%\end{itemize}
-
 \section{Evaluation}
-In order to evaluate if all requirements have been met, the system will undergo a few tests. The first tests goal is to make sure that the user actually can choose a specific chart with specific optotypes to be viewed from a specific distance. This is done by the developers going through all charts, with all types of optotypes and setting the distance for each one of them. To achieve this, table \ref{tab:test1_empty} is used to systematically walk through every setting.
+In order to evaluate if all requirements have been met, the system will undergo a few tests. The goal of the first test is to make sure that the user actually can choose a specific chart with specific optotypes to be viewed from a specific distance. This is done by the developers going through all charts, with all types of optotypes and setting the distance for each one of them. To achieve this, table \ref{tab:test1_empty} is used to systematically walk through every setting.
 
 The second test is to make sure that the optotypes have the correct sizes on the monitor. This test will done by, outside of the system, calculating the expected sizes of the optotypes in centimeters. The calculated sizes will then be compared to the sizes output by the system and see if they match. If this is a match, the optotypes will be measured by a physical measurement tool in order to double check the result.
 
@@ -189,25 +164,17 @@ The third test will determine how user friendly the system is. This will be done
 
 The last test is a quantitative test to see how well the server detection performs. The test involves the Android application trying to detect a server on a stable WiFi a 100 times and see how many times the server was detected. This test can be done several times and the average number of detection's in a 100 tries will determine its success rate. In order for the server detection to be considered to have met the requirements, atleast 90\% of the attempts should have found the server.
 
-%\subsection{hur ska den utvärderas}
-%\begin{itemize}
-%\item storlek på optotyper ska beräknas och jämföras med systemets resultat
-%\item optotyper mäts i verkligheten, med linjal el. liknandes
-%\item skall hitta server X ggr av Y försök på stadigt nätverk
-%
-%\end{itemize}
-
 \chapter{Theory}
 \section{Visual Acuity}
-The measurement of a persons visual accuity has an important constraint that needs to be followed. This constraint is the fact that our eyes works best physiologically from greater distances. On the other hand, at shorter distances our eyes tend to make what we see a bit unfocused. To make up for this shift in focus a minimum testing distance has to be enforced to ensure that the shift in focus stays as small as possible. This distance has been set to be six meters.
+The measurement of a persons visual accuity has an important constraint that needs to be followed. This constraint is the fact that our eyes works best physiologically from greater distances. On the other hand, at shorter distances our eyes tend to make what we see look unfocused. To make up for this shift in focus a minimum testing distance has to be enforced to ensure that the shift in focus stays as small as possible. This distance has by scientific research been set to be six meters.
 
 \subsection{Measurement distance}
-The specific distance of six meters is derived from how our eyes bend light. From that distance or greater the rays of light entering our eyes are nearly parallel to eachother. It is important that the rays of light that hit the eyes are parallel because then the light focuses on a more focused area in the back of the eyes. This happens because of the convex shape of the eye's lens. A convex shaped lens focuses parallel light onto the focal point. Since a convex lens focuses parallel light to a focal point a concave lens instead spreads light coming from a focal point to parallel rays. Combining these two type of lenses we can create a more focused light. 
+The specific distance of six meters is derived from how our eyes bend light. From that distance or greater the rays of light entering our eyes are nearly parallel to eachother, parallel enough to make it unnoticable. It is important that the rays of light that hit the eyes are parallel because then the light hits a more focused area in the back of the eyes. This happens because of the convex shape of the eye's lens. A convex shaped lens focuses parallel light onto the focal point. Since a convex lens focuses parallel light to a focal point a concave lens instead spreads light coming from a focal point to parallel rays. Combining these two type of lenses we can create a more focused light. 
 
 \subsection{Defocus correction}
 To make up for the shift in focus a suitable lens is put in front of the eye at about the distance that you would wear glasses. The type of lens mostly depends on the shape of your eye, any eye disease you might have or the distance from the lens to the eye. An important property of the lenses is at what distance the focal point lays at. So, to create a more focused light, which is exactly what glasses do, we have to put a lens in front of the eye to create more parallel light. These lenses can either be plus or minus lenses, either spreading or contracting the light.
 
-In optician's terms a plus glass is a lens that focuses light coming further away (addition) and a minus glass is a lens that focuses light from nearer (subtraction). A real world example of this is glasses helping to correct ~near- and farsightedness.
+In optician's terms a minus glass is a lens that focuses light coming further away (subtraction) and a plus glass is a lens that focuses light from nearer (addition). A real world example of this is glasses correcting ~near- and farsightedness.
 
 \subsection{Angular magnification}
 % TODO: Explain using formulas how the angular magnification works
@@ -494,7 +461,7 @@ DISTANCE
 
 %\section{Boundaries (OLD!)} 
 %%%%%%%%%%%%%%%%%%%%%%%%%Avgränsningar: vad ska INTE göras, även om man kanske kunde tro det?
-%We are not tasked to develop a library to display .svg files, and will be using a licensed one. We are also not tasked to populate the database with symbols and layouts, but instead provide a comprehensive API so that clients can create their own.
+%We are not tasked to develop a library to display .SVG files, and will be using a licensed one. We are also not tasked to populate the database with symbols and layouts, but instead provide a comprehensive API so that clients can create their own.
 %
 %%%%%%%%%%%%%%vad ska bara göras om tid/resurser/omständigheter räcker till?
 %
