@@ -35,7 +35,7 @@
 \maketitle
 
 \begin{abstract}
-Digitalization of Visual Acuity Testing is a project involving development of a method for displaying optician's eye charts. The charts are going to be displayed on a digital screen and controled via an Android tablet. This solves several problems relating to lighting and distance from the patient to the chart, while also providing more ways for the optician to tailor the examination of the patient. The Digitalization of Visual Acuity Testing project will be improving upon a proof-of-concept system that has been used to test whether or not digital screens are a viable alternative to physical charts.
+Digitalization of Visual Acuity Testing is a project involving development of a method for digitalization the displaying of optician's eye charts. The charts are going to be displayed on a digital screen and controled via an Android tablet. This solves several problems relating to lighting and distance from the patient to the chart, while also providing more ways for the optician to tailor the examination of the patient. The Digitalization of Visual Acuity Testing project will be improving upon a proof-of-concept system that has been used to test whether or not digital screens are a viable alternative to physical charts.
 \end{abstract}
 
 \tableofcontents
@@ -46,17 +46,18 @@ Digitalization of Visual Acuity Testing is a project involving development of a 
 \setcounter{page}{1}
 \chapter{Introduction}
 \section{Background}
-To measure a patients visual acuity opticians today use charts with printed lines of continuously smaller symbols. The measurement is made by having the patient read symbols on the chart from a set distance. The person reads down the chart until it is no longer possible to make out the characters. Based on the size of the character the patient failed to recognize, a visual acuity can be determined. 
+To measure a persons visual acuity today opticians use charts with printed lines of continuously smaller symbols. These so called eye charts can be quite expensive and big. The measurement is made by having the person read symbols on the chart from a set distance. The person reads down the chart until it is no longer possible to make out the characters. Based on the size of the character the patient failed to recognize, a visual acuity can be determined. 
 
-For such charts to function as a basis for these standardized tests of visual acuity the testing environment must be carefully prepared. Among a few things, for the measurement to be optimal the chart must be placed at a distance of six meters from the patient, and the luminosity in the room must be at a specific level. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests. 
+For such charts to function as a basis for these standardized tests of visual acuity the testing environment must be carefully prepared. Among a few things, for the measurement to be optimal the chart must be placed at a set distance from the patient, and the luminosity in the room must be at a specific level. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests. 
 
 These conditions cannot always be met. Sometimes the examination room is not sufficiently large for measurements from six meters. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests.
 
 There are also several different variations on these charts. Different sets of symbols, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen Chart that was developed in the 19th century, to the more modern LogMAR chart.
 
-\newpage
+Taking these things in consideration one can see that there are great possibilites for extensions and improvements. It is generally good to try and use as much of the modern technology available. An especially sought after improvement is digitalization. Digitalization means creating an environment using some kind of computer system. 
+
 \section{Related work}
-Several pieces of software exists that tries to solve the problems of displaying information from an Android tablet or phone on a larger screen. 
+There exists today several companies that have taken on the task of digitalizing the usage of eye charts.
 
 \subsubsection{Chromecast and Apple TV}
 The Chromecast \cite{chromecast} and Apple TV \cite{appletv} are small devices which are plugged into a TV and enables mobile phones and tablets to stream media to them. The devices are small and easy to handle and a lot of applications support streaming to them. The Chromecast is specifically made for Android devices and Apple TV for iOS device, but they both support each other.
@@ -205,7 +206,7 @@ There is need to have a standard to follow on how much addition or subtraction n
 \section{Chart Design}
 The visual acuity charts used in this project are based on ETDRS (Early Treatment Diabetic Retinopathy Study) charts (fig. \ref{fig:etdrs_chart}) \cite{Ferris} and a project developed by P.G. Söderberg \cite{PGSoderbergOral} at Uppsala University Hospital. 
 
-\begin{figure}[h]
+\begin{figure}[ht!]
 \centering
 \includegraphics[width=100mm]{images/etdrs_chart.jpg}
 \caption{Example of a ETDRS chart \\ (Source: http://precision-vision.com/)\label{fig:etdrs_chart}}
@@ -224,7 +225,7 @@ An optotype is a symbol that is used on a visual acuity chart. The optotypes are
 
 \textit{LEA} are four symbols that look like a house, circle, box and apple. These symbols similar to HVOT since they look the same if you mirror them on the horizontal axis.
 
-\begin{figure}[h]
+\begin{figure}[ht!]
 \centering
 \begin{subfigure}{.3\textwidth}
   \centering
@@ -264,7 +265,7 @@ The ETDRS chart consists of fourteen rows with five optotypes on each row. The s
   	\label{eq:logmar}
 \end{equation}
 
-\begin{figure}[h]
+\begin{figure}[ht!]
 \centering
 \includegraphics[width=100mm]{images/logmar_calculation.png}
 \caption{The angle v is used to calculate the size in LogMAR of the optotype.\label{fig:logmar_calculation}}
@@ -272,7 +273,7 @@ The ETDRS chart consists of fourteen rows with five optotypes on each row. The s
 
 The optotypes on the top row of the chart is of the size 1.0 LogMAR and then each row below is decremented by 0.1 LogMAR to the last row which is -0.3 LogMAR. This means that each optotype is approximately 1.2589 the height of the optotypes on the row below (fig. \ref{fig:chart_size_plot}) \cite{Ferris}. The spacing between each optotype is equal to the width of an optotype from the same row and the spacing between each row is equal to the height of an optotype on the lower row (fig. \ref{fig:etdrs_chart_sizes}).
 
-\begin{figure}[h]
+\begin{figure}[ht!]
 \centering
 \includegraphics[width=110mm]{images/etdrs_chart_sizes.png}
 \caption{The sizes and positions of the first three optotypes of row $n$ and $n+1$ where $x_n \approx 1.2589 x_{n+1}$. \label{fig:etdrs_chart_sizes}}
@@ -299,7 +300,7 @@ The optotypes on the top row of the chart is of the size 1.0 LogMAR and then eac
 \subsection{Axanivis Charts}
 The Axanivis charts are an extension to the ETDRS chart that adds two new chart layouts and digitalizes them so they can be displayed on a screen. Since the original ETDRS chart is made for a physical chart, it doesn't have an aspect ratio \cite{Ferris} that is close to a common monitor. To solve this, the original chart is split into an upper (fig. \ref{fig:etdrs_upper}) and a lower chart (fig. \ref{fig:etdrs_lower}). The upper chart display the five first rows and the lower chart display the remaining nine.
 
-\begin{figure}[h]
+\begin{figure}[ht!]
 \centering
 \begin{subfigure}{.5\textwidth}
   \centering
@@ -320,7 +321,7 @@ The Axanivis charts are an extension to the ETDRS chart that adds two new chart 
 
 The two new chart layouts used is constructed using the same principles, like height and spacing of optotypes, as the original ETDRS chart. But instead of having 14 rows of 5 optotypes each, the first new layout takes a single column of the ETDRS chart and rotates it 90 degrees (fig. \ref{fig:etdrs_one_line}) so it's all on one line. This makes it wider than it's high which suits a monitor better. This also allows the patient to read from left to right, instead of from top to bottom, which is the common way to read in Europe and America. Since the patient only have to read one letter of each size, this layout gives a quicker but more inaccurate result. This is useful to get a quick estimate on the visual acuity of the patient.
 
-\begin{figure}[h]
+\begin{figure}[ht!]
 \centering
 \includegraphics[width=100mm]{images/etdrs_one_line.png}
 \caption{The one line chart}
@@ -329,7 +330,7 @@ The two new chart layouts used is constructed using the same principles, like he
 
 Once an estimate visual acuity have been achieved from the one line chart, the user can select an optotype and display the second new layout, which only display one optotype at a time (fig. \ref{fig:etdrs_single}). This layout removes all clutter and allow the patient to easily focus on only a single optotype at a time. The user can then page between the different optotype sizes in order to determine the visual acuity.
 
-\begin{figure}[h]
+\begin{figure}[ht!  ]
 \centering
 \includegraphics[width=90mm]{images/etdrs_single.png}
 \caption{The single optotype chart}
@@ -444,8 +445,6 @@ DISTANCE
 The system fulfills all specified requirements and allow the user to quickly set up a chart on the monitor. No system crashes have occurred during testing, and no bugs that causes the system to not work properly have been encountered. With a stable WiFi connection, the system runs smoothly without any lag and the server detection finds a server in under a second. 
 
 \subsection{Android application}
-
-%\subsection{Android application}
 The Android application uses Androids standard GUI elements. To navigate between the connection settings and different type of charts, Androids built in navigation drawer is used (fig. \ref{fig:app_nav_drawer}). In order to reach the connection settings, the user must click the name of the connected server, in the case that no server is connected, it will, instead of the name of a server, say \textit{Click to connect}.
 
 \begin{figure}[ht!]
@@ -516,8 +515,7 @@ The user can also choose which chart size, \textit{Large}, \textit{Medium} or \t
 
 The last setting the user can choose is the distance setting. Here the user can enter the distance a patient is from the screen, in centimeters, and then press \textit{Apply Distance}. This has no visible effect on the application but is used to set the optotype sizes on the monitor.
 
-\subsection{Server}
-
+%\subsection{Server}
 
 \subsection{Known bugs and issues}
 Even though the system fulfills the requirements, it doesn't mean it's bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause a user to repeat an action which will, in the end, result in the server acting on on both actions. In the case that the connection gets broken, all actions performed will be ignored by the server, even after reconnecting. In this case, the user can change to another chart size or version and then back again and the issue is resolved.
