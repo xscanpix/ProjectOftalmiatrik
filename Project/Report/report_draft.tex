@@ -55,6 +55,7 @@ These conditions cannot always be met. Sometimes the examination room is not suf
 
 There are also several different variations on these charts. Different sets of symbols, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen Chart that was developed in the 19th century, to the more modern LogMAR chart.
 
+\newpage
 \section{Related work}
 Several pieces of software exists that tries to solve the problems of displaying information from an Android tablet or phone on a larger screen. 
 
@@ -75,9 +76,9 @@ Most of the before mentioned systems have some form of negative side that we try
 
 \section{Purpose}
 Having an efficient and accurate system for testing is important in any kind of environment. Especially in one that handles visual testing where an unaccurate test can result in possible injuries of some sorts. Therefore it is important to have a well-built background and accurate information. With the help of Professor %Här kan vi skriva om Per. 
-X as our expert in the field we will try to create this system and on the way there talk about different problems that can arise. 
+Per Söderberg as our expert in the field we will try to create this system and on the way there talk about different problems that can arise. 
 
-To solve the problems with this system the Department of Neuroscience have performed tests using a digital screen to present the charts instead of using a printed medium. This means the optician can have many more variations on the charts at disposal. %The set of symbols used on the charts can be switched within a menu, and the screen provides an more than adequately lit surface by itself. The current system is implemented by connecting an Android tablet to a screen via an HDMI cable, and the charts are rendered via a web browser on the tablet. Testing has proceeded for over a year, and has yielded very good results.
+To solve the problems with this system the Department of Neuroscience have performed tests using a digital screen to present the charts instead of using a printed medium. This means the optician can have many more variations on the charts at disposal. 
 
 The goal of this project is to take the system used for these tests and develop an implementation of said system with several advantages over the testing system, such as:
 
@@ -91,23 +92,23 @@ The goal of this project is to take the system used for these tests and develop 
 and other features to make the process easier for the optician and patient.
 
 \section{Motivation}
-Determining visual acuity is a very labor- and equipment-intensive process and it is not going to stop being so. More and more people are experiencing eye problems. \cite{vision_loss} Handling printed charts is slow and not as accurate as it can be. On the other hand, a digital screen has increased functionality, accuracy and efficiency. A digitalization also gives the user a greater possibility for extending the usage of the system, including adding new charts and optotypes. 
+Determining visual acuity is a very labor- and equipment-intensive process and it is not going to stop being so. More and more people are experiencing eye problems. \cite{vision_loss} Handling printed charts is slow and not as accurate as is needed. On the other hand, a digital screen has increased functionality, accuracy and efficiency. A digitalization also gives the user a greater possibility for extending the usage of the system, including adding new charts and optotypes. 
 
 \section{Issues}
 There are several technical problems that we need to solve. We need to design a small computer system that will store and present the desired images to the screen. Our current plan is using a Raspberry Pi, since it is a cheap and compact alternative to PCs that is more than powerful enough for our purposes. Though, since the Raspberry Pi in running on a ARM CPU there will be a few compatibility problems that we need to solve. For example is the Java graphics library JavaFX, that is going to replace the older Swing library, not very well supported by Raspberry Pi. Not being able to use the latest features can create problems in the future when some things get deprecated. Though if that happens it is probably not very hard to re-write the GUI to a supported JavaFX version.
 
-Networking needs to be added to control the Raspberry Pi over WiFi from the tablet, and some features like waking the screen as the app is started can be considered. With networking we face a few problems. % How the server is controlled by the tablet? (Direct function calls, network polling, blabla)
+Networking needs to be added to control the Raspberry Pi over WiFi from the tablet, and some features like waking the screen as the app is started can be considered. 
 
 Designing the Android app for the tablet will bring technical problems, both from the limitations of portable computers, and making our software adaptable enough to work on as many brands of tablets as possible. For example, the symbols we are to present are stored in the .svg (Scalable Vector Graphics) format, which is not natively supported on Android. Because of this we must find and work with a licensed third-party software library to render them. Other than that the Android tablet doesn't impose too many big problems. %% Fler problem som kan uppstå med Android?
 
 Finally we should design a way for the database of symbols and chart layouts to be easily updated and synchronized between devices and some server storage. This will be the least important task for us since it we wan't to focus on having something to work with firstly. Updating and synchronizing can be done by hand locally.
 
-\section{Ethical considerations} %vilka etiska frågeställningar finns (tänk t.ex. på användningen av resultatet)?
-Our ethical obligations with this project is providing a functional and stable product. If our system does not perform to specification, a lot of patients could get erroneous measurements during testing, costing a lot of time and money to correct. This is very important to think about since we are dealing with treatment of people.
+\section{Ethical considerations}
+Our ethical obligations with this project is providing a functional and stable product. If our system does not perform to specification, a lot of patients could get erroneous measurements during testing, costing a lot of time and money to correct. This is very important to think about since we are dealing with treatment of people. All of this has to be considered even if the final results will not be used clinically.
 
 \chapter{Problem Description}
 \section{Problem}
-The problem with today's visual acuity tests are that they are very clumsy to work with. The charts are printed and contains only one type of symbol, or optotype. This could be letters for people with the ability to read or an 'E' shape turned in different ways which allows children who are unable to read, or illiterate people, to identify which symbol they see. These charts are also only designed to be viewed from one specific distance, which makes some rooms to small and unusable.
+The problem with today's visual acuity testing charts are that they are very clumsy to work with. The charts are printed and contains only one static selection of symbols, also called optotypes. This could be optotypes for people with the ability to read or an 'E' shape rotated in different directions which allows children who are unable to read, or illiterate people, to identify which symbol they see. These static charts are also designed to be viewed from one specific distance. This causes problems when dealing with environments that are too small, for example erroneous measurements. 
 
 \section{Delimitations}
 Due to limits in time and manpower, this project is not intended to be a complete working system to be sold, but rather a working prototype that can be used to evaluate digital visual acuity charts. In order to achieve this, as much as possible of Java's and Android's built in libraries will be used. As neither support svg files, external libraries will be used for this.
@@ -371,9 +372,6 @@ Once an estimate visual acuity have been achieved from the one line chart, the u
 \label{fig:etdrs_single}
 \end{figure}
 
-
-
-
 \chapter{Implementation}
 \section{Methods}
 \subsection{System structure}
@@ -391,7 +389,6 @@ The Android application is written in Java, which is the official language for A
 The charts shown on the Android device are generated at runtime. If the charts would have been written in XML, there would be no guarantee that they would fit on the screen or keep the correct proportions on tablets with different dimensions. It also avoids hard to read code as the large chart, for example, would need 70 defined areas for images, all with a unique text string id. The chart layouts are all drawn at the same time and in the same place, but sets the active chart visible and the rest invisible. As Android does not natively have support for vector graphics and the chart optotype images are vector images the AndroidSVG library is used to display them \cite{AndroidSVG}.
 
 The size of the optotypes is calculated using equation \ref{eq:optotype_size}, where $d$ is the distance in centimeters, $v$ is the angle in radians and $h$ is the height of the optotype in centimeters.
-
 
 \begin{equation}
 	\begin{split}
@@ -677,16 +674,14 @@ Bugs:
 \end{itemize}
 
 
-\chapter{Conclusion}
-
-\section{Discussion}
-
-\subsection{Advantages of a digital system}
+\chapter{Discussion}
+\section{Advantages of a digital system}
 The advantages of a digital system is the ability to change the layout, optotypes and size of the chart without having to carry away the old chart and then carrying back a new. This will save both time and space as only one screen and a small Android device is necessary. This system will also allow the visual acuity tests to take place in rooms that previously where too small, as the system will display optotypes at a size suitable for the distance the patient is from the monitor.
 
-\subsection{Disadvantages of a digital system}
+\section{Disadvantages of a digital system}
 A disadvantage with this system is that digital screens become very expensive at large sizes, which limits the maximum distance a patient can sit from the screen. Another disadvantage is that the resolution, or rather pixel density, will limit how close to a screen a patient can sit without the optotypes looking pixelated. Pixel density is a measurement of how many pixels (dots) can fit in a small section of the screen, usually denoted as Pixels Per Inch (PPI) or Dots Per Inch (DPI). The higher the DPI is the better the quality of small details will be. This is very important when rendering type fonts because the edges should be as smooth as possible.
-\subsubsection{Alternate solutions}
+
+\subsection{Alternate solutions}
 
 \section{Future Work}
 \begin{itemize}
