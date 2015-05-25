@@ -182,7 +182,7 @@ As this project only aims for a working prototype of the system, it is very impo
 \section{Evaluation}
 In order to evaluate if all requirements have been met, the system will undergo a few tests. The first tests goal is to make sure that the user actually can choose a specific chart with specific optotypes to be viewed from a specific distance. This is done by the developers going through all charts, with all types of optotypes and setting the distance for each one of them. To achieve this, table \ref{tab:test1_empty} is used to systematically walk through every setting.
 
-The second test is to make sure that the optotypes have the correct sizes on the monitor. This test will done by calculating, outside of the system, the expected size of the optotypes, in both pixels and centimeters. Once this is done, the calculated number of pixels will be compared to the number of pixels calculated by the system. If this is a match, the size of the optotypes on the screen will be measured with a physical measurement tool, like a ruler, and compared to the calculated amount of centimeters.
+The second test is to make sure that the optotypes have the correct sizes on the monitor. This test will done by, outside of the system, calculating the expected sizes of the optotypes in centimeters. The calculated sizes will then be compared to the sizes output by the system and see if they match. If this is a match, the optotypes will be measured by a physical measurement tool in order to double check the result.
 
 The third test will determine how user friendly the system is. This will be done by letting a user with no previous knowledge of the system, attempt to connect to a server and perform some basic tasks like setting a specific chart with a specific optotype or setting a specific distance. If the user testing has no previous knowledge of visual acuity charts, a brief explanation will be given so that the test doesn't fail because the user, for example, doesn't know what "HVOT" is.
 
@@ -617,32 +617,37 @@ Connection			&	\checkmark	&	\checkmark	&	\checkmark	&	\\
 \caption{Result of the developer walkthrough. \label{tab:test1}}
 \end{table}
 
+
 \subsection{Optotype Sizes}
+The optotype sizes were calculated for and measured on a 15.6 inch computer screen and a 37 inch TV, both with 1920x1080 resolution. As the TV is larger than the computer screen, and have the same resolution, each pixel is bigger and thus, the calculated size in pixels is smaller (table. \ref{tab:optotype_test}). The height in centimeters, rounded to two decimals, are both equal to the expected height and the test is considered successful.
+
+
 \begin{table}[ht!]
 \centering
-\begin{tabular}{p{3cm} | m{1cm}m{1cm}m{1cm}m{1cm}m{1cm} }
-	& &	\multicolumn{2}{c}{Screen}	& 	\multicolumn{2}{c}{Calculated}	\\
+\begin{tabular}{ p{1cm}|p{1cm}p{1cm}|p{1cm}p{1cm}|p{1cm} }
+	 &	\multicolumn{2}{c}{\parbox{2cm}{\centering 15.6", 1920x1080}} & \multicolumn{2}{c}{\parbox{2cm}{\centering 37", 1920x1080}}	& 	Expected	\\
 \hline
-	& row & px & cm & px & cm \\
-\hline\hline
-\multirow{14}{*}{\parbox{3cm}{\centering Size: 15.6" Resolution: 1920x1080 Distance: 2m}}				
-										&	1	&	162	&	2.91	&	c	&	d\\	
-										&	2	&	128 & 	2.31	& 	c	&	d\\
-		 								&	3	&	102 & 	1.84	& 	c	&	d\\
-										&	4	&	81 	& 	1.46	& 	c	&	d\\
-										&	5	&	64 	& 	1.16	& 	c	&	d\\
-										&	6	&	51 	& 	0.92	& 	c	&	d\\
-										&	7	&	41 	& 	0.73	& 	c	&	d\\
-										&	8	&	32 	& 	0.58	& 	c	&	d\\
-										&	9	&	26 	& 	0.46	& 	c	&	d\\
-										&	10	&	20 	& 	0.37	& 	c	&	d\\
-										&	11	&	16 	& 	0.29	& 	c	&	d\\
-										&	12	&	13 	& 	0.23	& 	c	&	d\\
-										&	13	&	10 	& 	0.18	& 	c	&	d\\
-										&	14	&	8 	& 	0.15	& 	c	&	d\\
+	 row  & px & cm & px & cm & cm \\
+\hline\hline				
+								1	&	162	&	2.91	&	68	&	2.91	&	2.91\\	
+								2	&	128 & 	2.31	& 	54	&	2.31	&	2.31\\
+		 						3	&	102 & 	1.84	& 	43	&	1.84	&	1.84\\
+								4	&	81 	& 	1.46	& 	34	&	1.46	&	1.46\\
+								5	&	64 	& 	1.16	& 	27	&	1.16	&	1.16\\
+								6	&	51 	& 	0.92	& 	22	&	0.92	&	0.92\\
+								7	&	41 	& 	0.73	& 	17	&	0.73	&	0.73\\
+								8	&	32 	& 	0.58	& 	14	&	0.58	&	0.58\\
+								9	&	26 	& 	0.46	& 	11	&	0.46	&	0.46\\
+								10	&	20 	& 	0.37	& 	9	&	0.37	&	0.37\\
+								11	&	16 	& 	0.29	& 	7	&	0.29	&	0.29\\
+								12	&	13 	& 	0.23	& 	5	&	0.23	&	0.23\\
+								13	&	10 	& 	0.18	& 	4	&	0.18	&	0.18\\
+								14	&	8 	& 	0.15	& 	3	&	0.15	&	0.15\\
+										\hline
 \end{tabular}
-\caption{The number of failures and successes during the server detection tests.} \label{tab:optotype_test}
+\caption{Height of optotypes for a 15.6 and 37 inch screen, both with a 1920x1080 resolution. The rightmost column displays the expected height of the optotypes in cm} \label{tab:optotype_test}
 \end{table}
+
 
 \subsection{Usability}
 \subsection{Server Detection}
