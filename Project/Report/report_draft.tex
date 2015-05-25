@@ -154,7 +154,7 @@ The intended user for this system should not need any specific background knowle
 
 The Android application should be very user friendly and follow the Android design principles set up by Google \cite{android_design}. This makes the application behave similar to other Android applications which will result in users already familiar with Android, to get the expected result from their actions. 
 
-The system should also allow for automatic server detection so that users don't have to manually connect by entering IP addresses. This allows a quick and easy way to connect to a server. In order for the server detection to be considered working properly, it should detect a server on a stable network atleast 95\% of the time.
+The system should also allow for automatic server detection so that users don't have to manually connect by entering IP addresses. This allows a quick and easy way to connect to a server. In order for the server detection to be considered working properly, it should detect a server on a stable network atleast 90\% of the time.
 
 As this project only aims for a working prototype of the system, it is very important that it is easy to continue the development and add more features without rewriting large parts of the code.
 
@@ -186,7 +186,7 @@ The second test is to make sure that the optotypes have the correct sizes on the
 
 The third test will determine how user friendly the system is. This will be done by letting a user with no previous knowledge of the system, attempt to connect to a server and perform some basic tasks like setting a specific chart with a specific optotype or setting a specific distance. If the user testing has no previous knowledge of visual acuity charts, a brief explanation will be given so that the test doesn't fail because the user, for example, doesn't know what "HVOT" is.
 
-The last test is a quantitative test to see how well the server detection performs. The test involves the Android application trying to detect a server on a stable WiFi a 100 times and see how many times the server was detected. This test can be done several times and the average number of detection's in a 100 tries will determine its success rate. In order for the server detection to be considered to have met the requirements, atleast 90\% of the attempts should have found the server.
+The last test is a quantitative test to see how well the server detection performs. The test involves the Android application trying to detect a server on a stable WiFi a 100 times and see how many times the server was detected. This test can be done several times and the average number of detection's in a 100 tries will determine its success rate.
 
 %\subsection{hur ska den utvärderas}
 %\begin{itemize}
@@ -512,9 +512,13 @@ DISTANCE
 %The easiest way to see if our product satisfies these demands is putting it into the hands of the opticians at the university hospital and letting them test it, recording bug reports or comments. Testing will also let us determine if the system is as energy efficient as we intended.
 
 \chapter{Results}
-\section{User Interface}
+\section{System functionality} 
+The system fulfills all specified requirements and allow the user to quickly set up a chart on the monitor. No system crashes have occurred during testing, and no bugs that causes the system to not work properly have been encountered. With a stable WiFi connection, the system runs smoothly without any lag and the server detection finds a server in under a second. 
+
 \subsection{Android application}
-The finished Android application turned out as intended and uses Androids standard GUI elements. To navigate between the connection settings and different type of charts, Androids built in navigation drawer is used (fig. \ref{fig:app_nav_drawer}). In order to reach the connection settings, the user must click the name of the connected server, in the case that no server is connected, it will, instead of the name of a server, say \textit{Click to connect}.
+
+%\subsection{Android application}
+The Android application uses Androids standard GUI elements. To navigate between the connection settings and different type of charts, Androids built in navigation drawer is used (fig. \ref{fig:app_nav_drawer}). In order to reach the connection settings, the user must click the name of the connected server, in the case that no server is connected, it will, instead of the name of a server, say \textit{Click to connect}.
 
 \begin{figure}[ht!]
 \centering
@@ -585,7 +589,10 @@ The user can also choose which chart size, \textit{Large}, \textit{Medium} or \t
 The last setting the user can choose is the distance setting. Here the user can enter the distance a patient is from the screen, in centimeters, and then press \textit{Apply Distance}. This has no visible effect on the application but is used to set the optotype sizes on the monitor.
 
 \subsection{Server}
-\subsection{Network}
+\subsection{Known bugs and issues}
+Even though the system fulfills the requirements, it doesn't mean it's bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause a user to repeat an action which will, in the end, result in the server acting on on both actions. In the case that the connection gets broken, all actions performed will be ignored by the server, even after reconnecting. In this case, the user can change to another chart size or version and then back again and the issue is resolved.
+
+
 
 \section{Tests}
 \subsection{Developer walkthrough}
@@ -668,14 +675,6 @@ Attempt	&	failures	&	succeses	\\
 %\begin{figure}[ht!]
 %\end{figure}
 
-\section{Bugs and Limitations}
-Bugs:
-\begin{itemize}
-\item Apply button changes to down
-\item Logmar duplicate values appear in top left corner of medium chart
-\item Distance resets when changing chart types
-\end{itemize}
-
 
 \chapter{Conclusion}
 
@@ -686,7 +685,7 @@ The advantages of a digital system is the ability to change the layout, optotype
 
 \subsection{Disadvantages of a digital system}
 A disadvantage with this system is that digital screens become very expensive at large sizes, which limits the maximum distance a patient can sit from the screen. Another disadvantage is that the resolution, or rather pixel density, will limit how close to a screen a patient can sit without the optotypes looking pixelated. Pixel density is a measurement of how many pixels (dots) can fit in a small section of the screen, usually denoted as Pixels Per Inch (PPI) or Dots Per Inch (DPI). The higher the DPI is the better the quality of small details will be. This is very important when rendering type fonts because the edges should be as smooth as possible.
-\subsubsection{Alternate solutions}
+\subsection{Alternate solutions}
 
 \section{Future Work}
 \begin{itemize}
