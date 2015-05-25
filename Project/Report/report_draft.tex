@@ -42,7 +42,6 @@ Digitalization of Visual Acuity Testing is a project involving development of a 
 \listoffigures
 \clearpage
 
-%%%%%%%%%%%%%%%%%%%%%%%%  DEL 1: FÖRUTSÄTTNINGAR
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \chapter{Introduction}
@@ -75,8 +74,7 @@ AxAnIvIs is a prototype that is currently under testing at Uppsala University Ho
 Most of the before mentioned systems have some form of negative side that we try to improve on, mostly problems about high cost and difficulties with extending the software. We are different with that we want to create a system that is cheap, easy to understand and easy to maintain. Creating a system that have all the previously mentioned sides is one of the goals we have. Another important goal is creating a system that really is speacialized on measurements of visual acuity. All these points are important to give the users the best experience.
 
 \section{Purpose}
-Having an efficient and accurate system for testing is important in any kind of environment. Especially in one that handles visual testing where an unaccurate test can result in possible injuries of some sorts. Therefore it is important to have a well-built background and accurate information. With the help of Professor %Här kan vi skriva om Per. 
-Per Söderberg as our expert in the field we will try to create this system and on the way there talk about different problems that can arise. 
+Having an efficient and accurate system for testing is important in any kind of environment. Especially in one that handles visual testing where an unaccurate test can result in possible injuries of some sorts. Therefore it is important to have a well-built background and accurate information. With the help of Professor Per Söderberg as our expert in the field we will try to create this system and on the way there talk about different problems that can arise. 
 
 To solve the problems with this system the Department of Neuroscience have performed tests using a digital screen to present the charts instead of using a printed medium. This means the optician can have many more variations on the charts at disposal. 
 
@@ -99,7 +97,7 @@ There are several technical problems that we need to solve. We need to design a 
 
 Networking needs to be added to control the Raspberry Pi over WiFi from the tablet, and some features like waking the screen as the app is started can be considered. 
 
-Designing the Android app for the tablet will bring technical problems, both from the limitations of portable computers, and making our software adaptable enough to work on as many brands of tablets as possible. For example, the symbols we are to present are stored in the .SVG (Scalable Vector Graphics) format, which is not natively supported on Android. Because of this we must find and work with a licensed third-party software library to render them. Other than that the Android tablet doesn't impose too many big problems. %% Fler problem som kan uppstå med Android?
+Designing the Android app for the tablet will bring technical problems, both from the limitations of portable computers, and making our software adaptable enough to work on as many brands of tablets as possible. For example, the symbols we are to present are stored in the .SVG (Scalable Vector Graphics) format, which is not natively supported on Android. Because of this we must find and work with a licensed third-party software library to render them. Other than that the Android tablet doesn't impose too many big problems.
 
 Finally we should design a way for the database of symbols and chart layouts to be easily updated and synchronized between devices and some server storage. This will be the least important task for us since it we wan't to focus on having something to work with firstly. Updating and synchronizing can be done by hand locally.
 
@@ -205,7 +203,7 @@ The magnification is a problem is visual acuity testing because if the optotypes
 There is need to have a standard to follow on how much addition or subtraction needed for a specific distance. Figure \ref{magtable} shows what values to use when testing visual acuity at shorter distances than six meters. \cite{PGSoderberg}
 
 \section{Chart Design}
-The visual acuity charts this project are based on ETDRS (Early Treatment Diabetic Retinopathy Study) chart (fig. \ref{fig:etdrs_chart}) \cite{Ferris} and a project developed by PG Söderberg \cite{PGSoderbergOral} at Uppsala University Hospital. 
+The visual acuity charts used in this project are based on ETDRS (Early Treatment Diabetic Retinopathy Study) charts (fig. \ref{fig:etdrs_chart}) \cite{Ferris} and a project developed by P.G. Söderberg \cite{PGSoderbergOral} at Uppsala University Hospital. 
 
 \begin{figure}[h]
 \centering
@@ -214,15 +212,15 @@ The visual acuity charts this project are based on ETDRS (Early Treatment Diabet
 \end{figure} 
 
 \subsection{Optotypes}
-An optotype is a symbol that is used by a visual acuity chart. The optotypes are all the same width and height and designed on five by five grid and the most common type of symbol to use are letters but can be different depending on the patient\cite{Colenbrander}.
+An optotype is a symbol that is used on a visual acuity chart. The optotypes are all of the same width and height and placed on a five by five grid. The most common type of symbol to use are letters from the latin alphabet but can be different depending on the patient's needs\cite{Colenbrander}.
 
-\textit{Sloan letters} are ten optotypes that have been chosen because they are similarly difficult to read\cite{Ferris} and are used by most visual acuity charts\cite{Colenbrander}.
+\textit{Sloan letters} are defined to be the ten optotypes \textit{C, D, H, K, N, O, R, S, V and Z}. They have been chosen because they are easily differentiated from eachother \cite{Ferris} and are used by most visual acuity charts\cite{Colenbrander}.
 
-\textit{Landholt C} is a sloan \textit{C} that is rotated by 0, 90, 180 or 270 degrees and is usually used in a more scientific setting. The Landholt C is used as reference when deciding the how difficult it is to read a specific optotype\cite{Colenbrander}.
+\textit{Landholt C} is a sloan \textit{C} that is rotated by 0, 90, 180 or 270 degrees and is usually used in a more scientific environment. The Landholt C is used as reference when deciding the how difficult it is to read a specific optotype\cite{Colenbrander}.
 
-\textit{Tumbling E} is like the Landholt C, but with the letter \textit{E} instead of \textit{C}. This optotype can be used instead of the Sloan letters if the patient doesn't know how to read. The patient can instead show or tell the optician how the \textit{E} is rotated\cite{Colenbrander}.
+\textit{Tumbling E} is like the Landholt C, but with the optotype \textit{E} instead of \textit{C}. This optotype can be used instead of the Sloan collection of optotypes if the patient doesn't know how to read. The patient can instead show or tell the optician in what direction the \textit{E} is rotated\cite{Colenbrander}.
 
-\textit{HVOT} are the letters \textit{H},\textit{V},\textit{O} and \textit{T}. These letters are chosen because they look the same if they are mirrored on the horizontally.
+\textit{HVOT} are the letters \textit{H},\textit{V},\textit{O} and \textit{T}. These letters are chosen because they look the same if they are mirrored on the horizontal axis.
 
 \textit{LEA} are four symbols that look like a house, circle, box and apple. These symbols similar to HVOT since they look the same if you mirror them on the horizontal axis.
 
@@ -251,7 +249,7 @@ An optotype is a symbol that is used by a visual acuity chart. The optotypes are
 \end{figure}
 
 \subsection{ETDRS Chart}
-The ETDRS chart consists of 14 rows with 5 optotypes on each row. The size of each optotype is measured in LogMAR (Logarithmic of the Minimum Angle of Resolution) which is the base 10 logarithm of the angle of one fifth of an optotype (eq. \ref{eq:logmar} and fig. \ref{fig:logmar_calculation}) \cite{Bailey}. The angle unit is measured in arcminutes, where one arcminute is $\dfrac{1}{60}$ degrees or $\dfrac{\pi}{10800}$ radians. If the angle v in figure \ref{fig:logmar_calculation} is equal to 8 arcminutes, then the size of the letter would be $log_{10}(8) \approx 0.903\ LogMAR$.
+The ETDRS chart consists of fourteen rows with five optotypes on each row. The size of each optotype is measured in LogMAR (Logarithmic of the Minimum Angle of Resolution) which is the base 10 logarithm of the angle of one fifth of an optotype (eq. \ref{eq:logmar} and fig. \ref{fig:logmar_calculation}) \cite{Bailey}. The angle unit is measured in arcminutes, where one arcminute is $\dfrac{1}{60}$ degrees or $\dfrac{\pi}{10800}$ radians. If the angle v in figure \ref{fig:logmar_calculation} is equal to 8 arcminutes, then the size of the letter would be $log_{10}(8) \approx 0.903\ LogMAR$.
 
 %\begin{figure}[h]
 %\centering
@@ -297,10 +295,9 @@ The optotypes on the top row of the chart is of the size 1.0 LogMAR and then eac
 \caption{The height of optotypes on different rows when watching a 15.6 inch screen with a resolution of 1920x1080 pixels from 2 meters. \label{fig:chart_size_plot}}
 \end{figure}
 
-
 %\newpage
 \subsection{Axanivis Charts}
-The Axanivis charts are an extension to the ETDRS chart that adds two new chart layouts and digitalizes them so they can be displayed on a screen. Since the original ETDRS chart is made for a physical chart, it doesn't have an aspect ratio \cite{Ferris} that is close to a common monitor. To solve this, the original chart is split into an upper (fig. \ref{fig:etdrs_upper}) and a lower chart (fig. \ref{fig:etdrs_lower}). The upper chart display the 5 first rows and the lower chart display the remaining 9.
+The Axanivis charts are an extension to the ETDRS chart that adds two new chart layouts and digitalizes them so they can be displayed on a screen. Since the original ETDRS chart is made for a physical chart, it doesn't have an aspect ratio \cite{Ferris} that is close to a common monitor. To solve this, the original chart is split into an upper (fig. \ref{fig:etdrs_upper}) and a lower chart (fig. \ref{fig:etdrs_lower}). The upper chart display the five first rows and the lower chart display the remaining nine.
 
 \begin{figure}[h]
 \centering
@@ -321,7 +318,7 @@ The Axanivis charts are an extension to the ETDRS chart that adds two new chart 
 \label{fig:etdrs_upper_lower}
 \end{figure}
 
-The two new chart layouts uses is constructed using the same principles, like height and spacing of optotypes, as the original ETDRS chart. But instead of having 14 rows of 5 optotypes each, the first new layout takes a single column of the ETDRS chart and rotates it 90 degrees (fig. \ref{fig:etdrs_one_line}) so it's all on one line. This makes it wider than it's high which suits a monitor better. This also allows the patient to read from left to right, instead of from top to bottom, which is the common way to read in Europe and America. Since the patient only have to read one letter of each size, this layout gives a quicker but more inaccurate result. This is useful to get a quick estimate on the visual acuity of the patient.
+The two new chart layouts used is constructed using the same principles, like height and spacing of optotypes, as the original ETDRS chart. But instead of having 14 rows of 5 optotypes each, the first new layout takes a single column of the ETDRS chart and rotates it 90 degrees (fig. \ref{fig:etdrs_one_line}) so it's all on one line. This makes it wider than it's high which suits a monitor better. This also allows the patient to read from left to right, instead of from top to bottom, which is the common way to read in Europe and America. Since the patient only have to read one letter of each size, this layout gives a quicker but more inaccurate result. This is useful to get a quick estimate on the visual acuity of the patient.
 
 \begin{figure}[h]
 \centering
@@ -426,39 +423,6 @@ DISTANCE
 \caption{A message with the check word \textit{AXANIVIS}, the command \mbox{\textit{DISTANCE}} and the data \textit{500}. This message would make the server to resize the currently active chart to be suitable for a user watching from 500 centimeters. \label{fig:example_message}}
 \end{figure}
 
-%\label{system_structure}
-
-
-
- %where the server is connected to a large screen and is controlled by the Android application over a local network. The server and
-
-
-%The communication between the Android tablet and the server will be handled using a third-party network library called Kryonet \cite{Kryonet}. 
-
-%\section{System structure} %%%%%%%%%%%%%%%%%%%%%%%%Systemstruktur: vilka delar kan ni se att ert system/problem består av? (T.ex. databas, webbinterface, AI-modul, grafik...)
-%The system is split up between an Android application and a PC application. These applications will both be structured with the Model-View-Controller design pattern as a base in order to split up user input, graphics and logic. The PC application will act as a server and display an eye chart on a larger screen connected with an HDMI-cable. The Android applications purpose is to control the PC-application over a WiFi network and make sure the correct chart is displayed on the larger screen. The Android application will display the same image shown on the large screen, but with some other extra information that's useful for the optician.
-
-%\textbf{Image of System structure TBI}
-
-%The dicrete parts of this project are:
-
-%\begin{itemize}
-%	\item Android application
-%	\begin{itemize}
-%		\item User Interface
-%		\item Backend/Network
-%	\end{itemize}
-%	\item Screen controller
-%	\begin{itemize}
-%		\item Display
-%		\item Backend/Networking
-%	\end{itemize}
-%\end{itemize}
-
-
-
-
-
 %\section{Boundaries (OLD!)} 
 %%%%%%%%%%%%%%%%%%%%%%%%%Avgränsningar: vad ska INTE göras, även om man kanske kunde tro det?
 %We are not tasked to develop a library to display .SVG files, and will be using a licensed one. We are also not tasked to populate the database with symbols and layouts, but instead provide a comprehensive API so that clients can create their own.
@@ -553,10 +517,10 @@ The user can also choose which chart size, \textit{Large}, \textit{Medium} or \t
 The last setting the user can choose is the distance setting. Here the user can enter the distance a patient is from the screen, in centimeters, and then press \textit{Apply Distance}. This has no visible effect on the application but is used to set the optotype sizes on the monitor.
 
 \subsection{Server}
+
+
 \subsection{Known bugs and issues}
 Even though the system fulfills the requirements, it doesn't mean it's bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause a user to repeat an action which will, in the end, result in the server acting on on both actions. In the case that the connection gets broken, all actions performed will be ignored by the server, even after reconnecting. In this case, the user can change to another chart size or version and then back again and the issue is resolved.
-
-
 
 \section{Tests}
 \subsection{Developer walkthrough}
