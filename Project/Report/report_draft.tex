@@ -154,12 +154,12 @@ The system should also allow for automatic server detection so that users don't 
 
 As this project only aims for a working prototype of the system, it is very important that it is easy to continue the development and add more features without rewriting large parts of the code.
 
-\section{Evaluation}
+\section{Evaluation \label{sec:evaluation}}
 In order to evaluate if all requirements have been met, the system will undergo a few tests. The goal of the first test is to make sure that the user actually can choose a specific chart with specific optotypes to be viewed from a specific distance. This is done by the developers going through all charts, with all types of optotypes and setting the distance for each one of them. To achieve this, table \ref{tab:test1_empty} is used to systematically walk through every setting.
 
 The second test is to make sure that the optotypes have the correct sizes on the monitor. This test will done by, outside of the system, calculating the expected sizes of the optotypes in centimeters. The calculated sizes will then be compared to the sizes output by the system and see if they match. If this is a match, the optotypes will be measured by a physical measurement tool in order to double check the result.
 
-The third test will determine how user friendly the system is. This will be done by letting a user with no previous knowledge of the system, attempt to connect to a server and perform some basic tasks like setting a specific chart with a specific optotype or setting a specific distance. If the user testing has no previous knowledge of visual acuity charts, a brief explanation will be given so that the test doesn't fail because the user, for example, doesn't know what "HVOT" is.
+The third test will determine how user friendly the system is. This will be done by letting a user with no previous knowledge of the system, attempt to connect to a server and perform some basic tasks like setting a specific chart with a specific optotype or setting a specific distance (App. \ref{app:usability}). If the user testing has no previous knowledge of visual acuity charts, a brief explanation will be given so that the test doesn't fail because the user, for example, doesn't know what "HVOT" is.
 
 The last test is a quantitative test to see how well the server detection performs. The test involves the Android application trying to detect a server on a stable WiFi a 100 times and see how many times the server was detected. This test can be done several times and the average number of detection's in a 100 tries will determine its success rate.
 
@@ -521,6 +521,8 @@ The last setting the user can choose is the distance setting. Here the user can 
 Even though the system fulfills the requirements, it doesn't mean it's bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause a user to repeat an action which will, in the end, result in the server acting on on both actions. In the case that the connection gets broken, all actions performed will be ignored by the server, even after reconnecting. In this case, the user can change to another chart size or version and then back again and the issue is resolved.
 
 \section{Tests}
+Four tests, according to section \ref{sec:evaluation} where performed in order to find major faults with the system. All tests is considered to have met the requirements, though the usability could still use some improvements.
+
 \subsection{Developer walkthrough}
 During the developer walkthrough of the system, all charts versions where found and all settings where usable on every chart by using table \ref{tab:test1}. The connection settings where also reachable from everywhere in the application and both connecting and reconnecting was working properly.
 
@@ -583,6 +585,8 @@ The optotype sizes were calculated for and measured on a 15.6 inch computer scre
 
 
 \subsection{Usability}
+The systems usability was tested with the help of two persons with no previous background related to visual acuity charts or eye examinations. After a brief explanation to the different types of charts they where asked to follow the procedures in \ref{app:usability}. Both persons had no problem performing any of the tasks with the exception of one of them didn't realize that you had to swipe the screen in order to switch between the upper and lower charts in the application.
+
 \subsection{Server Detection}
 The server detection test was done 3 times on a stable WiFi network. According to the results (Table. \ref{tab:server_detection_test}), every single one of the tests performed was successful in finding a server over 90\% of the time. The average success rate of the 3 tests was about 96.3\% which means that the server detection requirements are met.
 
@@ -653,8 +657,8 @@ Connection	&	&	&	& \\
 \caption{\label{tab:test1_empty}}
 \end{table}
 
-
-\section{Usability test procedure}
+\newpage
+\section{Usability test procedure \label{app:usability}}
 \begin{enumerate}\bfseries
 
 \item Start application
@@ -674,12 +678,6 @@ Connection	&	&	&	& \\
 \item Page through Icons 1 small chart with a distance of 1.5 meters
 
 \item Reconnect to server
-
-Best thing with GUI\\
-bra att meny är framme hela tiden
-
-Needs improvement\\
-click to connect not obvious
 
 \end{enumerate}
 \end{document}
