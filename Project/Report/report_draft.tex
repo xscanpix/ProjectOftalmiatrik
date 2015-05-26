@@ -57,22 +57,39 @@ There are also several different variations on these charts. Different sets of s
 Taking these things in consideration one can see that there are great possibilites for extensions and improvements. It is generally good to try and use as much of the modern technology available. An especially sought after improvement is digitalization. Digitalization means creating an environment using some kind of computer system. 
 
 \section{Related work}
-There exists today several companies that have taken on the task of digitalizing the usage of eye charts.
 
-\subsubsection{Chromecast and Apple TV}
-The Chromecast \cite{chromecast} and Apple TV \cite{appletv} are small devices which are plugged into a TV and enables mobile phones and tablets to stream media to them. The devices are small and easy to handle and a lot of applications support streaming to them. The Chromecast is specifically made for Android devices and Apple TV for iOS device, but they both support each other.
 
-\subsubsection{Digital Eye Chart}
- Digital Eye Chart \cite{digitaleyechart} is a visual acuity testing program that attempts to solve the problem of having several charts by using a monitor instead. The user can then, with the help of a computer, change the symbols on the chart and even generate a random chart. 
+\subsection{Visual acuity charts}
+Several different versions of visual acuity chart exist today. The ETDRS (Early Treatment Diabetic Retinopathy Study) chart is the most commonly used today and is an improvement to the older \textit{Snellen chart}(fig. \ref{fig:snellen_chart}). The ETDRS chart was designed and developed by Ferris et al \cite{Ferris}, based on the work of Bailey and Lovie \cite{Bailey}. 
 
-\subsubsection{iChart+}
-iChartPlus \cite{ichartplus} is another program which is similar to Digital Eye Chart but also have an adjustable viewing distance. 
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{images/snellen_chart.png}
+\caption{The Snellen chart \\ (Source: http://en.wikipedia.org/wiki/Snellen\_chart).} \label{fig:snellen_chart}
+\end{figure} 
 
-\subsubsection{AxAnIvIs}
-AxAnIvIs is a prototype that is currently under testing at Uppsala University Hospital. The project attempts to improve on how we perform visual acuity tests by digitalizing them. It adds more types of charts than the standard physical ones that exists today. The system uses a webbrowser running on an Android tablet that is connected to a screen. A library of vector graphic files are displayed in the webbrowser. These files contains the different charts as well as some other specialized tools. Currently the Android tablet has to be held in a fixed position in the examination room, restrained by the cable going to the screen. The charts used are fixed and not very easily changed, which makes it very hard to try out new techniques and methods of measuring.
+\subsection{Digitial visual acuity charts}
 
-\subsubsection{Our project}
-Most of the before mentioned systems have some form of negative side that we try to improve on, mostly problems about high cost and difficulties with extending the software. We are different with that we want to create a system that is cheap, easy to understand and easy to maintain. Creating a system that have all the previously mentioned sides is one of the goals we have. Another important goal is creating a system that really is speacialized on measurements of visual acuity. All these points are important to give the users the best experience.
+\subsection{Media streaming devices}
+
+\subsection{Axanivis}
+
+%There exists today several companies that have taken on the task of digitalizing the usage of eye charts.
+%
+%\subsubsection{Chromecast and Apple TV}
+%The Chromecast \cite{chromecast} and Apple TV \cite{appletv} are small devices which are plugged into a TV and enables mobile phones and tablets to stream media to them. The devices are small and easy to handle and a lot of applications support streaming to them. The Chromecast is specifically made for Android devices and Apple TV for iOS device, but they both support each other.
+%
+%\subsubsection{Digital Eye Chart}
+% Digital Eye Chart \cite{digitaleyechart} is a visual acuity testing program that attempts to solve the problem of having several charts by using a monitor instead. The user can then, with the help of a computer, change the symbols on the chart and even generate a random chart. 
+%
+%\subsubsection{iChart+}
+%iChartPlus \cite{ichartplus} is another program which is similar to Digital Eye Chart but also have an adjustable viewing distance. 
+%
+%\subsubsection{AxAnIvIs}
+%AxAnIvIs is a prototype that is currently under testing at Uppsala University Hospital. The project attempts to improve on how we perform visual acuity tests by digitalizing them. It adds more types of charts than the standard physical ones that exists today. The system uses a webbrowser running on an Android tablet that is connected to a screen. A library of vector graphic files are displayed in the webbrowser. These files contains the different charts as well as some other specialized tools. Currently the Android tablet has to be held in a fixed position in the examination room, restrained by the cable going to the screen. The charts used are fixed and not very easily changed, which makes it very hard to try out new techniques and methods of measuring.
+%
+%\subsubsection{Our project}
+%Most of the before mentioned systems have some form of negative side that we try to improve on, mostly problems about high cost and difficulties with extending the software. We are different with that we want to create a system that is cheap, easy to understand and easy to maintain. Creating a system that have all the previously mentioned sides is one of the goals we have. Another important goal is creating a system that really is speacialized on measurements of visual acuity. All these points are important to give the users the best experience.
 
 \section{Purpose}
 Having an efficient and accurate system for testing is important in any kind of environment. Especially in one that handles visual testing where an unaccurate test can result in possible injuries of some sorts. Therefore it is important to have a well-built background and accurate information. With the help of Professor Per Söderberg as our expert in the field we will try to create this system and on the way there talk about different problems that can arise. 
@@ -552,7 +569,7 @@ Connection			&	\checkmark	&	\checkmark	&	\checkmark	&	\\
 \caption{Result of the developer walkthrough. \label{tab:test1}}
 \end{table}
 
-
+\newpage
 \subsection{Optotype Sizes}
 The optotype sizes were calculated for and measured on a 15.6 inch computer screen and a 37 inch TV, both with 1920x1080 resolution. As the TV is larger than the computer screen, and have the same resolution, each pixel is bigger and thus, the calculated size in pixels is smaller (table. \ref{tab:optotype_test}). The height in centimeters, rounded to two decimals, are both equal to the expected height and the test is considered successful.
 
