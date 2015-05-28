@@ -35,7 +35,7 @@
 \maketitle
 
 \begin{abstract}
-Digitalization of Visual Acuity Testing is a project involving development of a method for digitalization the displaying of optician's eye charts. The charts are going to be displayed on a digital screen and controled via an Android tablet. This solves several problems relating to lighting and distance from the patient to the chart, while also providing more ways for the optician to tailor the examination of the patient. The Digitalization of Visual Acuity Testing project will be improving upon a proof-of-concept system that has been used to test whether or not digital screens are a viable alternative to physical charts.
+Digitalization of Visual Acuity Testing is a project about digitally displaying and manipulating optician's eye charts. The charts are displayed on a digital screen with a lightweight server running on a Raspberry Pi and controlled over wireless network via an Android tablet. This solves several problems relating to lighting and distance from the patient to the chart, while also providing more ways for the optician to tailor the examination to the patient. The Digitalization of Visual Acuity Testing project has improved upon a proof-of-concept system that has been used at the Uppsala University Hospital to test whether or not digital screens are a viable alternative to physical charts. The project fulfils our goals and has performed well under testing by us, but more testing is needed to make sure it meets the demands of practising Ophthalmologists. 
 \end{abstract}
 
 \tableofcontents
@@ -552,7 +552,7 @@ The user can also choose which chart size, \textit{Large}, \textit{Medium} or \t
 The last setting the user can choose is the distance setting. Here the user can enter the distance a patient is from the screen, in centimeters, and then press \textit{Apply Distance}. This has no visible effect on the application but is used to set the optotype sizes on the monitor.
 
 \subsection{Server}
-The server application is in many cases very similar to the Android application. Both uses the same methods for the calculations, such as the optotype sizes. The charts are built using the same logic as the Android application with minor changes due to the fact that Java's Swing components, and not Androids components, have to be drawn. The monitor connected to the server only displays the currently chosen chart (fig. \ref{fig:server_charts}) and nothing else, such as LogMAR values or settings shown on the Android device.
+The server application is in many cases very similar to the Android application. Both use the same methods for the calculations, such as the optotype sizes. The charts are built using the same logic as the Android application with minor changes due to the fact that Java's Swing components have to be drawn rather than Android components. The monitor connected to the server only displays the currently chosen chart (fig. \ref{fig:server_charts}) and nothing else, such as LogMAR values or settings shown on the Android device.
 
 \begin{figure}[ht!]
 \centering
@@ -574,7 +574,7 @@ The server application is in many cases very similar to the Android application.
 \end{figure}
 
 \subsection{Known bugs and issues}
-Even though the system fulfills the requirements, it doesn't mean it's bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause a user to repeat an action which will, in the end, result in the server acting on on both actions. In the case that the connection gets broken, all actions performed will be ignored by the server, even after reconnecting. In this case, the user can change to another chart size or version and then back again to resolve the issue.
+Even though the system fulfils the requirements, it doesn't mean it's bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause a user to repeat an action which will, in the end, result in the server acting on on both actions. In the case that the connection gets broken, all actions performed will be ignored by the server, even after reconnecting. In this case, the user can change to another chart size or version and then back again to resolve the issue.
 
 \section{Tests}
 Four tests, according to section \ref{sec:evaluation} where performed in order to find major faults with the system. All tests is considered to have met the requirements, though the usability could still use some improvements.
@@ -664,7 +664,7 @@ Attempt	&	failures	&	succeses	\\
 \chapter{Conclusion}
 
 \section{Discussion}
-Even though the system turned out as intended, there is a lot left to do until it can be used clinically. First of all, the system must be tested for more bugs and unintended behavior. This should preferably be done by other users than the developers since the developers know how the system works and can't safely predict what another user will attempt to do. Then, after all found bugs have been removed, the system must be tested by experts in the field of ophthalmology in order to make sure that the built system actually is a valid solution. This will also give credibility to the system.
+Even though the system turned out as intended, there is a lot left to do until it can be used clinically. First of all, the system must be tested for more bugs and unintended behaviour. This should preferably be done by users other than the developers since the developers know how the system works and can't safely predict what another user will attempt to do. Then, after all found bugs have been removed, the system must be tested by experts in the field of ophthalmology in order to make sure that the built system actually is a valid solution. This will also give credibility to the system.
 
 \section{Advantages of a digital system}
 The advantages of a digital system is the ability to change the layout, optotypes and size of the chart without having to manually exchange charts. This will save both time and space as only one screen and a small Android device is necessary, while also providing easier access to specialized charts that will help patients with different needs. This system will also allow the visual acuity tests to take place in rooms that previously where too small, as the system will display optotypes at a size suitable for the distance the patient is from the monitor.
