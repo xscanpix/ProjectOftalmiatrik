@@ -46,18 +46,25 @@ Digitalization of Visual Acuity Testing is a project involving development of a 
 \setcounter{page}{1}
 \chapter{Introduction}
 \section{Background}
-To measure a persons visual acuity today opticians use charts with printed lines of continuously smaller symbols. These so called eye charts can be quite expensive and big. The measurement is made by having the person read symbols on the chart from a set distance. The person reads down the chart until it is no longer possible to make out the characters. Based on the size of the character the patient failed to recognize, a visual acuity can be determined. 
+%To measure a persons visual acuity today opticians use charts with printed lines of continuously smaller symbols. These so called eye charts can be quite expensive and big. The measurement is made by having the person read symbols on the chart from a set distance. The person reads down the chart until it is no longer possible to make out the characters. Based on the size of the character the patient failed to recognize, a visual acuity can be determined. 
 
-For such charts to function as a basis for these standardized tests of visual acuity the testing environment must be carefully prepared. Among a few things, for the measurement to be optimal the chart must be placed at a set distance from the patient, and the luminosity in the room must be at a specific level. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests. 
+The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols. The patient reads the symbols on the chart in order until he or she can no longer correctly identify the characters. Each row on the chart has a pre-calculated number printed beside it, which will help the optician determine which lenses the patient should try next.
 
-These conditions cannot always be met. Sometimes the examination room is not sufficiently large for measurements from six meters. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests.
+%For such charts to function as a basis for these standardized tests of visual acuity the testing environment must be carefully prepared. Among a few things, for the measurement to be optimal the chart must be placed at a set distance from the patient, and the luminosity in the room must be at a specific level. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests.
 
-There are also several different variations on these charts. Different sets of symbols, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen Chart that was developed in the 19th century, to the more modern LogMAR chart.
+These numbers have been calculated from a set of standardized conditions. For example there must be adequate lighting in the room so the patient can read the letters, but more importantly the charts are meant to be placed a fixed distance from the patient. For most charts, this distance is about six meters. %At that distance, rays of light travelling from the chart to the patient are approximately parallel, 
 
-Taking these things in consideration one can see that there are great possibilites for extensions and improvements. It is generally good to try and use as much of the modern technology available. An especially sought after improvement is digitalization. Digitalization means creating an environment using some kind of computer system. 
+These conditions cannot always be met. Examination rooms are not always large enough to take measurements from six meters away for example. In those cases, the reference numbers on the sheet are no longer accurate and the optician has to compensate manually. If the standardized conditions cannot be met it can lead to irregularities or faulty measurements in some tests.
+
+%These conditions cannot always be met. Sometimes the examination room is not sufficiently large for measurements from six meters. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests.
+
+There are also several different variations on these eye charts. Different sets of symbols, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen chart~(fig. \ref{fig:snellen_chart}) that was developed in the 19th century, to the more modern ETDRS chart~(fig. \ref{fig:etdrs_chart}).
+
+%Taking these things in consideration one can see that there are great possibilities for extensions and improvements. It is generally good to try and use as much of the modern technology available. An especially sought after improvement is digitalization. Digitalization means creating an environment using some kind of computer system. 
+
+In a field so dependent on visual aids and equipment, it's easy to see that there are several possibilities for improvement and expansion. Modern technology can be used to improve these tests, and digitalization can simplify the way opticians work with diagrams.
 
 \section{Related work}
-
 
 \subsection{Visual acuity charts}
 Several different versions of visual acuity chart exist today. The ETDRS (Early Treatment Diabetic Retinopathy Study) chart is the most commonly used today and is an improvement to the older \textit{Snellen chart}(fig. \ref{fig:snellen_chart}). The ETDRS chart was designed and developed by Ferris et al \cite{Ferris}, based on the work of Bailey and Lovie \cite{Bailey}. 
@@ -534,6 +541,26 @@ The user can also choose which chart size, \textit{Large}, \textit{Medium} or \t
 The last setting the user can choose is the distance setting. Here the user can enter the distance a patient is from the screen, in centimeters, and then press \textit{Apply Distance}. This has no visible effect on the application but is used to set the optotype sizes on the monitor.
 
 \subsection{Server}
+The server application is in many cases very similar to the Android application. Both uses the same methods for the calculations, such as the optotype sizes. The charts are built using the same logic as the Android application with minor changes due to the fact that Java's Swing components, and not Androids components, have to be drawn. The monitor connected to the server only displays the currently chosen chart (fig. \ref{fig:server_charts}) and nothing else, such as LogMAR values or settings shown on the Android device.
+
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  %\includegraphics[width=.5\linewidth]{images/etdrs_top.png}
+  \includegraphics[width=60mm]{images/servergui/etdrs_chart.png}
+  \caption{The large ETDRS chart}
+  \label{fig:server_large}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=60mm]{images/servergui/etdrs_single_row.png}
+  \caption{The medium ETDRS chart}
+  \label{fig:server_medium}
+\end{subfigure}
+\caption{Example of charts as shown on the monitor connected to the server}
+\label{fig:server_charts}
+\end{figure}
 
 \subsection{Known bugs and issues}
 Even though the system fulfills the requirements, it doesn't mean it's bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause a user to repeat an action which will, in the end, result in the server acting on on both actions. In the case that the connection gets broken, all actions performed will be ignored by the server, even after reconnecting. In this case, the user can change to another chart size or version and then back again to resolve the issue.
@@ -634,13 +661,14 @@ The advantages of a digital system is the ability to change the layout, optotype
 \section{Disadvantages of a digital system}
 A disadvantage with this system is that digital screens become very expensive at large sizes, which limits the maximum distance a patient can sit from the screen. Another disadvantage is that the resolution, or rather pixel density, will limit how close to a screen a patient can sit without the optotypes looking pixelated. Pixel density is a measurement of how many pixels (dots) can fit in a small section of the screen, usually denoted as Pixels Per Inch (PPI) or Dots Per Inch (DPI). The higher the DPI is the better the quality of small details will be. This is very important when rendering type fonts because the edges should be as smooth as possible.
 
-\subsection{Alternate solutions}
-Skriva om att använda typ chromecast istället
+\subsection{Alternative solutions}
+A possible alternative solution to a custom server running on a Raspberry Pi or other computer use a Chromecast instead. This could simplify the system for the user as this would make the Android application work similar to the many media streaming applications that exists today. Using a Chromecast would also make sure the user only have to worry about the Android application as the Chromecast is just a plug and play unit maintained by Google. The disadvantages to this is, as mentioned earlier, that an agreement with Google have to be signed. The application would also require an internet connection, opposed the the current system which only need a local network.
 
 \section{Future Work}
 Future work will include more charts and features for the system. One such feature is the grating acuity test, which allows testing of visual acuity on very young children or people with difficulties communicating \cite{PGSoderbergOral}. Another feature is to include the option to, instead of changing the size of the optotypes, change the LogMAR, so the top row doesn't necessarily start at 1.0 LogMAR. This will allow the chart to use the entire monitors screen no matter the distance from the patient to the screen.
 
 Other charts to be included could be, for example, charts using the Landholt C, charts for testing color blindness or charts used for testing astigmatism. The random function for the charts should be improved, as it currently have no constraints whatsoever. These constraints would make sure that the same optotype, or to similar optotypes like \textit{C} and \textit{O}, won't be repeated to many times in a row.
+
 
 %\bibliography{references}{}
 \bibliography{IEEEabrv,references}
