@@ -30,7 +30,7 @@
 \begin{document}
 \pagenumbering{roman}
 
-\title{Report Draft\\Digitalization of Visual Acuity Testing}
+\title{Digitalization of Visual Acuity Testing}
 \author{Anders Ohlsson\\Christian Johansson\\Svante Nilsson}
 \maketitle
 
@@ -77,7 +77,7 @@ Building upon what is said in the last section we need to find a clear motivatio
 
 Another fact is that physical eye charts are not as accurate as they should be for accurate measurements. They are also big in size and static, static in this context because they are fixed and cannot be changed. Because the handling of printed charts is slow and not as accurate as needed there exists a need for improvement. 
 
-A digital eye chart has increased functionality, accuracy and efficiency which are all important aspects to aprove upon. A digitalization also gives the user a greater possibility for extending the usage of the system, including adding new charts and optotypes. 
+A digital eye chart has increased functionality, accuracy and efficiency which are all important aspects to aprove upon. A digitalization also gives the user a greater possibility for extending the usage of the system.
 
 \section{Issues}
 There are several technical problems that we need to solve. We need to find a suitable computer system that will act as the server, its job being storing and presenting the desired images to the screen. Our current plan is to use a Raspberry Pi, since it is a cheap and compact alternative to a full-size computer that is more than powerful enough for our purposes. Though, since the Raspberry Pi's CPU is running on an ARM-architecture there will be a few compatibility problems. For example, the newly redesigned Java graphics library JavaFX, that is going to replace the older Swing library, has very bad support for ARM. Not being able to use the latest features can create problems in the future when some things get deprecated. If Java Swing would happen to become deprecated it should not be too difficult to transfer the code to a hopefully compatible Java FX version.  
