@@ -48,17 +48,17 @@ Digitalization of Visual Acuity Testing is a project involving development of a 
 \section{Background}
 %To measure a persons visual acuity today opticians use charts with printed lines of continuously smaller symbols. These so called eye charts can be quite expensive and big. The measurement is made by having the person read symbols on the chart from a set distance. The person reads down the chart until it is no longer possible to make out the characters. Based on the size of the character the patient failed to recognize, a visual acuity can be determined. 
 
-The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols. The patient reads the symbols on the chart in order until he or she can no longer correctly identify the characters. Each row on the chart has a pre-calculated number printed beside it, which will help the optician determine which lenses the patient should try next.
+The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols called optotypes~(see~\ref{Optotypes}), most often normal latin letters. The patient reads the symbols on the chart in order until he or she can no longer correctly identify them. Each row on the chart has a pre-calculated number printed beside it, which will help the optician determine which lenses the patient should try next.
 
 %For such charts to function as a basis for these standardized tests of visual acuity the testing environment must be carefully prepared. Among a few things, for the measurement to be optimal the chart must be placed at a set distance from the patient, and the luminosity in the room must be at a specific level. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests.
 
-These numbers have been calculated from a set of standardized conditions. For example there must be adequate lighting in the room so the patient can read the letters, but more importantly the charts are meant to be placed a fixed distance from the patient. For most charts, this distance is about six meters. %At that distance, rays of light travelling from the chart to the patient are approximately parallel, 
+These numbers have been calculated from a set of standardized conditions~\ref{Bailey}. For example there must be adequate lighting in the room so the patient can read the letters, but more importantly the charts are meant to be placed a fixed distance from the patient. For most charts, this distance is about six meters. %At that distance, rays of light travelling from the chart to the patient are approximately parallel, 
 
-These conditions cannot always be met. Examination rooms are not always large enough to take measurements from six meters away for example. In those cases, the reference numbers on the sheet are no longer accurate and the optician has to compensate manually. If the standardized conditions cannot be met it can lead to irregularities or faulty measurements in some tests.
+These conditions cannot always be met. Examination rooms are not always large enough to take measurements from six meters away for example. In those cases, the reference numbers on the sheet are no longer accurate and the optician has to compensate manually~\ref{PGSoderberg}. If the standardized conditions cannot be met it can lead to irregularities or faulty measurements in some tests.
 
 %These conditions cannot always be met. Sometimes the examination room is not sufficiently large for measurements from six meters. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests.
 
-There are also several different variations on these eye charts. Different sets of symbols, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen chart~(fig. \ref{fig:snellen_chart}) that was developed in the 19th century, to the more modern ETDRS chart~(fig. \ref{fig:etdrs_chart}).
+There are also several different variations on these eye charts. Different sets of optotypes, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen chart~(fig.~\ref{fig:snellen_chart}) that was developed in the 19th century, to the more modern ETDRS chart~(fig.~\ref{fig:etdrs_chart}).
 
 %Taking these things in consideration one can see that there are great possibilities for extensions and improvements. It is generally good to try and use as much of the modern technology available. An especially sought after improvement is digitalization. Digitalization means creating an environment using some kind of computer system. 
 
@@ -131,8 +131,13 @@ Finally we should design a way for the database of symbols and chart layouts to 
 Our ethical obligations with this project is providing a functional and stable product. If our system does not perform to specification, a lot of patients could get erroneous measurements during testing, costing a lot of time and money to correct. This is very important to think about since we are dealing with treatment of people. All of this has to be considered even if the final results will not be used clinically.
 
 \chapter{Problem Description}
-\section{Problem}
-The problem with today's visual acuity testing charts are that they are very clumsy to work with. The charts are printed and contains only one static selection of symbols, also called optotypes. This could be optotypes for people with the ability to read or an 'E' shape rotated in different directions which allows children who are unable to read, or illiterate people, to identify which symbol they see. These static charts are also designed to be viewed from one specific distance. This causes problems when dealing with environments that are too small, for example erroneous measurements. 
+%\section{Problem}
+%The problem with today's visual acuity testing charts are that they are very clumsy to work with. The charts are printed and contains only one static selection of symbols, also called optotypes. This could be optotypes for people with the ability to read or an 'E' shape rotated in different directions which allows children who are unable to read, or illiterate people, to identify which symbol they see. These static charts are also designed to be viewed from one specific distance. This causes problems when dealing with environments that are too small, for example erroneous measurements. 
+There are several weaknesses with visual acuity testing today that we have worked on improving. Physical charts are often large and cumbersome to switch if the patient needs a chart with another type of optotypes. Since they are also designed for standardized distances and testing conditions, an optician needs to manually compensate for any deviations from the standard. 
+
+There are also other problems with using standardized charts, such as older patients getting lost among the columns and rows, and other patients memorizing the rows of letters to cheat. Giving the optician the option of using randomly generated charts and easily switching between specialized chart layouts can greatly increase the speed and accuracy of testing.
+
+Another problem we faced is designing a user interface that can give the optician easy access to these specialized charts and layouts. An intuitive design so that it is easy to learn, and a user friendly design so that users don't accidentally make unintentional or irreversible changes.
 
 \section{Delimitations}
 Due to limits in time and manpower, this project is not intended to be a complete working system to be used clinically, but rather a working prototype that can be used to evaluate digital visual acuity charts. In order to achieve this, as much as possible of Java's and Android's built-in libraries will be used. Though as SVG-files are going to be used for the rendering of optotypes and neither Java or Android supports it natively third-party libraries will be used.
@@ -171,7 +176,7 @@ For this project to be considered successful, the system must be able to display
 
 It is very important that the chart on the monitor displays all optotypes with the correct sizes and positions. In order to do this, the user must to be able control the distance from which the patient is watching the monitor. It is also very important that the correct sizes, in LogMAR, is displayed on the Android device.
 
-The intended user for this system should not need any specific background knowledge about technology more than the basic use of Android device, for example being able to start the device, start an application and how to perform simple Android gestures. This does not mean that, though it is a goal, it has to be easy to install and set up. 
+The intended user for this system should not need any specific background knowledge about technology more than the basic use of Android device, for example being able to start the device, start an application and how to perform simple Android gestures. This does not mean that it has to be easy to install and set up, though it is a goal for future expansion. 
 
 The Android application should be very user friendly and follow the Android design principles set up by Google \cite{android_design}. This makes the application behave similar to other Android applications which will result in users already familiar with Android, to get the expected result from their actions. 
 
@@ -237,7 +242,7 @@ The visual acuity charts used in this project are based on ETDRS (Early Treatmen
 \caption{Example of a ETDRS chart \\ (Source: http://precision-vision.com/)\label{fig:etdrs_chart}}
 \end{figure} 
 
-\subsection{Optotypes}
+\subsection{Optotypes} \label{Optotypes}
 An optotype is a symbol that is used on a visual acuity chart. The optotypes are all of the same width and height and placed on a five by five grid. The most common type of symbol to use are letters from the latin alphabet but can be different depending on the patient's needs\cite{Colenbrander}.
 
 \textit{Sloan letters} are defined to be the ten optotypes \textit{C, D, H, K, N, O, R, S, V and Z}. They have been chosen because they are easily differentiated from eachother \cite{Ferris} and are used by most visual acuity charts\cite{Colenbrander}.
