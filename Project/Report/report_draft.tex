@@ -214,7 +214,7 @@ In optician's terms a minus glass is a lens that focuses light coming further aw
 \begin{figure}[h]
 \centering
 \includegraphics[width=120mm]{images/Angular_magnification.png}
-\caption{Angular magnification\label{angular}}
+\caption{Angular magnification at short distances\label{angular}}
 \end{figure}
 
 Though using lenses is a way of corrected for testing at short distances, a few problems arise from this. Figure \ref{angular} shows the problem of angular magnification. 
@@ -327,7 +327,7 @@ The optotypes on the top row of the chart is of the size 1.0 LogMAR and then eac
       \addplot[color=blue, mark=*, only marks] plot coordinates{(1,162)(2,128)(3,102)(4,81)(5,64)(6,51)(7,41)(8,32)(9,26)(10,20)(11,16)(12,13)(13,10)(14,8)};
     \end{axis}
 \end{tikzpicture}
-\caption{The height of optotypes on different rows when watching a 15.6 inch screen with a resolution of 1920x1080 pixels from 2 meters. \label{fig:chart_size_plot}}
+\caption{The height of optotype from 2 meters on a 15.6" screen with a resolution of 1920x1080 pixels. \label{fig:chart_size_plot}}
 \end{figure}
 
 %\newpage
@@ -455,7 +455,9 @@ AXANIVIS
 DISTANCE
 500
 \end{lstlisting}
-\caption{A message with the check word \textit{AXANIVIS}, the command \mbox{\textit{DISTANCE}} and the data \textit{500}. This message would make the server to resize the currently active chart to be suitable for a user watching from 500 centimeters. \label{fig:example_message}}
+\caption{An example of how a network message would look like.
+%A message with the check word \textit{AXANIVIS}, the command \mbox{\textit{DISTANCE}} and the data \textit{500}. This message would make the server to resize the currently active chart to be suitable for a user watching from 500 centimeters. 
+\label{fig:example_message}}
 \end{figure}
 
 %\section{Boundaries (OLD!)} 
