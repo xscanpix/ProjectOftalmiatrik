@@ -35,7 +35,7 @@
 \maketitle
 
 \begin{abstract}
-Digitalization of Visual Acuity Testing is a project about digitally displaying and manipulating optician's eye charts. The charts are displayed on a digital screen with a lightweight server running on a Raspberry Pi and controlled over wireless network via an Android tablet. This solves several problems relating to lighting and distance from the patient to the chart, while also providing more ways for the optician to tailor the examination to the patient. The Digitalization of Visual Acuity Testing project has improved upon a proof-of-concept system that has been used at the Uppsala University Hospital to test whether or not digital screens are a viable alternative to physical charts. The project fulfils our goals and has performed well under testing by us, but more testing is needed to make sure it meets the demands of practising Ophthalmologists. 
+Digitalization of Visual Acuity Testing is a project about digitally displaying and manipulating optician's eye charts. The charts are displayed on a digital screen with a lightweight server running on a Raspberry Pi and controlled over wireless network via an Android tablet. This solves several problems relating to lighting and distance from the patient to the chart, while also providing more ways for the optician to tailor the examination to the patient. The Digitalization of Visual Acuity Testing project has improved upon a proof-of-concept system that has been used at the Uppsala University Hospital to test whether or not digital screens are a viable alternative to physical charts. The project fulfills our goals and has performed well under testing by us, but more testing is needed to make sure it meets the demands of practicing Ophthalmologists. 
 \end{abstract}
 
 \tableofcontents
@@ -46,13 +46,13 @@ Digitalization of Visual Acuity Testing is a project about digitally displaying 
 \setcounter{page}{1}
 \chapter{Introduction}
 \section{Background}
-The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols called optotypes~(see~\ref{Optotypes}), most often normal latin letters. The patient reads the symbols on the chart in order until he or she can no longer correctly identify them. Each row on the chart has a pre-calculated number printed beside it, which will help the optician determine which lenses the patient should try next.
+The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols called optotypes~(see~\ref{Optotypes}), most often normal Latin letters. The patient reads the symbols on the chart in order until he or she can no longer correctly identify them. Each row on the chart has a pre-calculated number printed beside it, which will help the optician determine which lenses the patient should try next.
 
 These numbers have been calculated from a set of standardized conditions~\cite{Bailey}. For example there must be adequate lighting in the room so the patient can read the letters, but more importantly the charts are meant to be placed a fixed distance from the patient. For most charts, this distance is six meters. 
 
 These conditions cannot always be met. Examination rooms are not always large enough to take measurements from six meters away for example. In those cases, the reference numbers on the sheet are no longer accurate and the optician has to compensate manually~\cite{PGSoderberg}. If the standardized conditions cannot be met it can lead to irregularities or faulty measurements in some tests.
 
-There are also several different variations on these eye charts. Different sets of optotypes, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen chart~(fig.~\ref{fig:snellen_chart}) that was developed in the 19th century, to the more modern ETDRS chart~(fig.~\ref{fig:etdrs_chart}).
+There are also several different variations on these eye charts. Different sets of optotypes, ranging from different subsets of Latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen chart~(fig.~\ref{fig:snellen_chart}) that was developed in the 19th century, to the more modern ETDRS chart~(fig.~\ref{fig:etdrs_chart}).
 
 In a field so dependent on visual aids and equipment, it's easy to see that there are several possibilities for improvement and expansion. Modern technology can be used to improve these tests, and digitalization can simplify the way opticians work with diagrams.
 
@@ -66,25 +66,25 @@ These are a few of the aspects that we will to build a system around. A simple s
 Using this other system as a basis for our own we build a system that:
 
 \begin{itemize}
-	\item Has an application for the Android tablet with an improved user interface, both esthetically and functionally.
+	\item Has an application for the Android tablet with an improved user interface, both aesthetically and functionally.
 	\item Controls a server that renders the eye charts on a screen over WiFi using the Android tablet.
 	\item Can alter the scale of the rendered symbols so that the patient can be closer or further away from the screen.
 	\item Has functionality to tailor the testing process by, among other things, changing the sets of symbols displayed or removing clutter from the charts.
 \end{itemize}
 
 \section{Motivation}
-Building upon what is said in the last section we need to find a clear motivation on why this should be done. A few things can be found in the wokring environment of the optician. Determining visual acuity is a very labor- and equipment-intensive process. It is a lot of manual labor with much time wasted when setting up and changing the equipment used. This work-load is also increasing drastically with time. More and more people are experiencing eye problems, at all ages and in many cultures. \cite{vision_loss} With more people needing to test their visual acuity, faster and more efficient methods needs to be used. 
+Building upon what is said in the last section we need to find a clear motivation on why this should be done. A few things can be found in the working environment of the optician. Determining visual acuity is a very labor- and equipment-intensive process. It is a lot of manual labor with much time wasted when setting up and changing the equipment used. This work-load is also increasing drastically with time. More and more people are experiencing eye problems, at all ages and in many cultures. \cite{vision_loss} With more people needing to test their visual acuity, faster and more efficient methods needs to be used. 
 
 Another fact is that physical eye charts are not as accurate as they should be for accurate measurements. They are also big in size and static, static in this context because they are fixed and cannot be changed. Because the handling of printed charts is slow and not as accurate as needed there exists a need for improvement. 
 
-A digital eye chart has increased functionality, accuracy and efficiency which are all important aspects to aprove upon. A digitalization also gives the user a greater possibility for extending the usage of the system.
+A digital eye chart has increased functionality, accuracy and efficiency which are all important aspects to approve upon. A digitalization also gives the user a greater possibility for extending the usage of the system, including adding new charts and optotypes. 
 
 \section{Issues}
 There are several technical problems that we need to solve. We need to find a suitable computer system that will act as the server, its job being storing and presenting the desired images to the screen. Our current plan is to use a Raspberry Pi, since it is a cheap and compact alternative to a full-size computer that is more than powerful enough for our purposes. Though, since the Raspberry Pi's CPU is running on an ARM-architecture there will be a few compatibility problems. For example, the newly redesigned Java graphics library JavaFX, that is going to replace the older Swing library, has very bad support for ARM. Not being able to use the latest features can create problems in the future when some things get deprecated. If Java Swing would happen to become deprecated it should not be too difficult to transfer the code to a hopefully compatible Java FX version.  
 
 Designing the Android app for the tablet will also bring technical problems, both from the limitations of portable computers, and making our software adaptable enough to work on as many brands of tablets as possible. For example, the symbols we are to present are stored in the .SVG (Scalable Vector Graphics) format, which is not natively supported on Android. Because of this we must find and work with a licensed third-party software library to render them. 
 
-Finally, we have the issue of networking. A lot can go wrong when trying to control a program over a network and also trying to have the response be fast and accurate. Any problems between the controller and the server will make actions seem slow and unconsistent. It can be even worse when working on a wireless network as in our case. This is an equally important problem as the other ones, but there exists several great technologies helping to prevent these kind of issues that will be a great help to us. 
+Finally, we have the issue of networking. A lot can go wrong when trying to control a program over a network and also trying to have the response be fast and accurate. Any problems between the controller and the server will make actions seem slow and inconsistent. It can be even worse when working on a wireless network as in our case. This is an equally important problem as the other ones, but there exists several great technologies helping to prevent these kind of issues that will be a great help to us. 
 
 %\section{Ethical considerations}
 %Our ethical obligations with this project is providing a functional and stable product. If our system does not perform to specification, a lot of patients could get erroneous measurements during testing, costing a lot of time and money to correct. This is very important to think about since we are dealing with treatment of people. All of this has to be considered even if the final results will not be used clinically.
@@ -105,7 +105,7 @@ We will not evaluate a digital screen's effect on the eye compared to a physical
 
 No security features, such as encrypted network traffic or protection against several users connecting to the same server at the same time, will be implemented. Instead, this is left to the user to make sure that a secure network is used. Since there is no patient data or other private information being transmitted or stored we don't see the need for secure connections in this project.
 
-No automatic update system will be included, instead the user will have to manually update both the Android application and the server. We reasoned that automatic updating was not a core feature, and could therfore be saved for future work.
+No automatic update system will be included, instead the user will have to manually update both the Android application and the server. We reasoned that automatic updating was not a core feature, and could therefore be saved for future work.
 
 \section{Requirements}
 For this project to be considered successful, the system must be able to display the chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also has to be able to choose if the current chart should use the Sloan, Tumbling E, HVOT or LEA optotypes.
@@ -174,7 +174,7 @@ The specific distance of six meters is derived from how our eyes bend light. Fro
 \subsection{Defocus correction}
 To make up for the shift in focus a suitable lens is put in front of the eye at about the distance that you would wear glasses. The type of lens mostly depends on the shape of your eye, any eye disease you might have or the distance from the lens to the eye. An important property of the lenses is at what distance the focal point lays at. So, to create a more focused light, which is exactly what glasses do, we have to put a lens in front of the eye to create more parallel light. These lenses can either be plus or minus lenses, either spreading or contracting the light.
 
-In optician's terms a minus glass is a lens that focuses light coming further away (subtraction) and a plus glass is a lens that focuses light from nearer (addition). A real world example of this is glasses correcting ~near- and far-sightedness.
+In optician's terms a minus glass is a lens that focuses light coming further away (subtraction) and a plus glass is a lens that focuses light from nearer (addition). A real world example of this is glasses correcting ~near- and farsightedness.
 
 \subsection{Angular magnification}
 % TODO: Explain using formulas how the angular magnification works
@@ -214,9 +214,9 @@ The visual acuity charts used in this project are based on ETDRS (Early Treatmen
 \end{figure} 
 
 \subsection{Optotypes} \label{Optotypes}
-An optotype is a symbol that is used on a visual acuity chart. The optotypes are all of the same width and height and placed on a five by five grid. The most common type of symbol to use are letters from the latin alphabet but can be different depending on the patient's needs\cite{Colenbrander}.
+An optotype is a symbol that is used on a visual acuity chart. The optotypes are all of the same width and height and placed on a five by five grid. The most common type of symbol to use are letters from the Latin alphabet but can be different depending on the patient's needs\cite{Colenbrander}.
 
-\textit{Sloan letters} are defined to be the ten optotypes \textit{C, D, H, K, N, O, R, S, V and Z}. They have been chosen because they are easily differentiated from eachother \cite{Ferris} and are used by most visual acuity charts\cite{Colenbrander}.
+\textit{Sloan letters} are defined to be the ten optotypes \textit{C, D, H, K, N, O, R, S, V and Z}. They have been chosen because they are easily differentiated from each other \cite{Ferris} and are used by most visual acuity charts\cite{Colenbrander}.
 
 \textit{Landholt C} is a sloan \textit{C} that is rotated by 0, 90, 180 or 270 degrees and is usually used in a more scientific environment. The Landholt C is used as reference when deciding the how difficult it is to read a specific optotype\cite{Colenbrander}.
 
@@ -341,7 +341,7 @@ Once an estimated visual acuity have been achieved from the one line chart, the 
 \chapter{Implementation}
 \section{Methods}
 \subsection{System structure}
-The system is divided into three major parts, an Android application, a server and networking. The Android application and server is modelled after the MVC (Model-View-Controller) pattern, where the model is the logic and the view is the GUI (Graphical User Interface). The controller part is the part on the Android application that listens for button clicks and gestures. Usually the networking would fall under controller in the MVC pattern but was, in this system, chosen to be a separate larger structure. Figure \ref{system_structure} shows how the different parts are connected.
+The system is divided into three major parts, an Android application, a server and networking. The Android application and server is modeled after the MVC (Model-View-Controller) pattern, where the model is the logic and the view is the GUI (Graphical User Interface). The controller part is the part on the Android application that listens for button clicks and gestures. Usually the networking would fall under controller in the MVC pattern but was, in this system, chosen to be a separate larger structure. Figure \ref{system_structure} shows how the different parts are connected.
 
 \begin{figure}[ht!]
 \centering
@@ -445,7 +445,7 @@ DISTANCE
 
 \chapter{Results}
 \section{System functionality} 
-The system fulfils all specified requirements and allow the user to quickly set up a chart on the monitor. No system crashes have occurred during testing, and no bugs that causes the system to not work properly have been encountered. With a stable WiFi connection, the system runs smoothly without any lag and the server detection finds a server in under a second. 
+The system fulfills all specified requirements and allow the user to quickly set up a chart on the monitor. No system crashes have occurred during testing, and no bugs that causes the system to not work properly have been encountered. With a stable WiFi connection, the system runs smoothly without any lag and the server detection finds a server in under a second. 
 
 \subsection{Android application}
 The Android application uses Android's standard GUI elements. To navigate between the connection settings and different type of charts, Android's built in navigation drawer is used (fig. \ref{fig:app_nav_drawer}). In order to reach the connection settings, the user must click the name of the connected server, in the case that no server is connected, it will, instead of the name of a server, say \textit{Click to connect}.
@@ -516,7 +516,7 @@ The user can also choose which chart size, \textit{Large}, \textit{Medium} or \t
 \label{fig:chart_medium_small}
 \end{figure}
 
-The last setting the user can choose is the distance setting. Here the user can enter the distance a patient is from the screen, in centimetres, and then press \textit{Apply Distance}. This has no visible effect on the application but is used to set the optotype sizes on the monitor.
+The last setting the user can choose is the distance setting. Here the user can enter the distance a patient is from the screen, in centimeters, and then press \textit{Apply Distance}. This has no visible effect on the application but is used to set the optotype sizes on the monitor.
 
 \subsection{Server}
 The server application is in many cases very similar to the Android application. Both use the same methods for the calculations, such as the optotype sizes. The charts are built using the same logic as the Android application with minor changes due to the fact that Java's Swing components have to be drawn rather than Android components. The monitor connected to the server only displays the currently chosen chart (fig. \ref{fig:server_charts}) and nothing else, such as LogMAR values or settings shown on the Android device.
@@ -541,7 +541,7 @@ The server application is in many cases very similar to the Android application.
 \end{figure}
 
 \subsection{Known bugs and issues}
-Even though the system fulfils the requirements, it doesn't mean it's bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause a user to repeat an action which will, in the end, result in the server acting on on both actions. In the case that the connection gets broken, all actions performed will be ignored by the server, even after reconnecting. In this case, the user can change to another chart size or version and then back again to resolve the issue.
+Even though the system fulfills the requirements, it doesn't mean it's bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause a user to repeat an action which will, in the end, result in the server acting on on both actions. In the case that the connection gets broken, all actions performed will be ignored by the server, even after reconnecting. In this case, the user can change to another chart size or version and then back again to resolve the issue.
 
 \section{Tests}
 The four tests presented in section \ref{sec:evaluation} where performed in order to find major faults with the system. All tests is considered to have met the requirements, though the usability could still use some improvements.
@@ -631,7 +631,7 @@ Attempt	&	failures	&	succeses	\\
 \chapter{Conclusion}
 
 \section{Discussion}
-Even though the system turned out as intended, there is a lot left to do until it can be used clinically. First of all, the system must be tested for more bugs and unintended behaviour. This should preferably be done by users other than the developers since the developers know how the system works and can't safely predict what another user will attempt to do. Then, after all found bugs have been removed, the system must be tested by experts in the field of ophthalmology in order to make sure that the built system actually is a valid solution. This will also give credibility to the system.
+Even though the system turned out as intended, there is a lot left to do until it can be used clinically. First of all, the system must be tested for more bugs and unintended behavior. This should preferably be done by users other than the developers since the developers know how the system works and can't safely predict what another user will attempt to do. Then, after all found bugs have been removed, the system must be tested by experts in the field of ophthalmology in order to make sure that the built system actually is a valid solution. This will also give credibility to the system.
 
 \section{Advantages of a digital system}
 The advantages of a digital system is the ability to change the layout, optotypes and size of the chart without having to manually exchange charts. This will save both time and space as only one screen and a small Android device is necessary, while also providing easier access to specialized charts that will help patients with different needs. This system will also allow the visual acuity tests to take place in rooms that previously where too small, as the system will display optotypes at a size suitable for the distance the patient is from the monitor.
