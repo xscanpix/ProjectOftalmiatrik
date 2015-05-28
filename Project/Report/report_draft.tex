@@ -48,56 +48,23 @@ Digitalization of Visual Acuity Testing is a project involving development of a 
 \section{Background}
 %To measure a persons visual acuity today opticians use charts with printed lines of continuously smaller symbols. These so called eye charts can be quite expensive and big. The measurement is made by having the person read symbols on the chart from a set distance. The person reads down the chart until it is no longer possible to make out the characters. Based on the size of the character the patient failed to recognize, a visual acuity can be determined. 
 
-The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols. The patient reads the symbols on the chart in order until he or she can no longer correctly identify the characters. Each row on the chart has a pre-calculated number printed beside it, which will help the optician determine which lenses the patient should try next.
+The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols called optotypes~(see~\ref{Optotypes}), most often normal latin letters. The patient reads the symbols on the chart in order until he or she can no longer correctly identify them. Each row on the chart has a pre-calculated number printed beside it, which will help the optician determine which lenses the patient should try next.
 
 %For such charts to function as a basis for these standardized tests of visual acuity the testing environment must be carefully prepared. Among a few things, for the measurement to be optimal the chart must be placed at a set distance from the patient, and the luminosity in the room must be at a specific level. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests.
 
-These numbers have been calculated from a set of standardized conditions. For example there must be adequate lighting in the room so the patient can read the letters, but more importantly the charts are meant to be placed a fixed distance from the patient. For most charts, this distance is about six meters. %At that distance, rays of light travelling from the chart to the patient are approximately parallel, 
+These numbers have been calculated from a set of standardized conditions~\cite{Bailey}. For example there must be adequate lighting in the room so the patient can read the letters, but more importantly the charts are meant to be placed a fixed distance from the patient. For most charts, this distance is about six meters. %At that distance, rays of light travelling from the chart to the patient are approximately parallel, 
 
-These conditions cannot always be met. Examination rooms are not always large enough to take measurements from six meters away for example. In those cases, the reference numbers on the sheet are no longer accurate and the optician has to compensate manually. If the standardized conditions cannot be met it can lead to irregularities or faulty measurements in some tests.
+These conditions cannot always be met. Examination rooms are not always large enough to take measurements from six meters away for example. In those cases, the reference numbers on the sheet are no longer accurate and the optician has to compensate manually~\cite{PGSoderberg}. If the standardized conditions cannot be met it can lead to irregularities or faulty measurements in some tests.
 
 %These conditions cannot always be met. Sometimes the examination room is not sufficiently large for measurements from six meters. In the event that the room is too small or the lighting insufficient, this can lead to irregularities or faulty measurements in some tests.
 
-There are also several different variations on these eye charts. Different sets of symbols, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen chart~(fig. \ref{fig:snellen_chart}) that was developed in the 19th century, to the more modern ETDRS chart~(fig. \ref{fig:etdrs_chart}).
+There are also several different variations on these eye charts. Different sets of optotypes, ranging from different subsets of latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen chart~(fig.~\ref{fig:snellen_chart}) that was developed in the 19th century, to the more modern ETDRS chart~(fig.~\ref{fig:etdrs_chart}).
 
 %Taking these things in consideration one can see that there are great possibilities for extensions and improvements. It is generally good to try and use as much of the modern technology available. An especially sought after improvement is digitalization. Digitalization means creating an environment using some kind of computer system. 
 
 In a field so dependent on visual aids and equipment, it's easy to see that there are several possibilities for improvement and expansion. Modern technology can be used to improve these tests, and digitalization can simplify the way opticians work with diagrams.
 
-\section{Related work}
 
-\subsection{Visual acuity charts}
-Several different versions of visual acuity chart exist today. The ETDRS (Early Treatment Diabetic Retinopathy Study) chart is the most commonly used today and is an improvement to the older \textit{Snellen chart}(fig. \ref{fig:snellen_chart}). The ETDRS chart was designed and developed by Ferris et al \cite{Ferris}, based on the work of Bailey and Lovie \cite{Bailey}. 
-
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=60mm]{images/snellen_chart.png}
-\caption{The Snellen chart \\ (Source: http://en.wikipedia.org/wiki/Snellen\_chart).} \label{fig:snellen_chart}
-\end{figure} 
-
-\subsection{Digital visual acuity charts}
-Digital Eye Chart \cite{digitaleyechart} and iChartPlus \cite{ichartplus} are two applications supposed to display a visual acuity chart on a digital screen. Both applications are computer applications, which requires the computer to be connected to the screen. The companies behind the products provide very little information and the exact specifications of the charts are not available.
-
-\subsection{Media streaming devices}
-Several media streaming devices exists that allow digital content to be received and displayed on a connected screen. Examples of such devices are Chromecast \cite{chromecast} and Apple TV \cite{appletv} which you can plug into a TV and allows you to view images or watch movies that are stored on your phone or computer. Both applications also allows developers to develop their own applications to display custom content but requires the developer to enter an agreement with respective company.
-
-
-%There exists today several companies that have taken on the task of digitalizing the usage of eye charts.
-%
-%\subsubsection{Chromecast and Apple TV}
-%The Chromecast \cite{chromecast} and Apple TV \cite{appletv} are small devices which are plugged into a TV and enables mobile phones and tablets to stream media to them. The devices are small and easy to handle and a lot of applications support streaming to them. The Chromecast is specifically made for Android devices and Apple TV for iOS device, but they both support each other.
-%
-%\subsubsection{Digital Eye Chart}
-% Digital Eye Chart \cite{digitaleyechart} is a visual acuity testing program that attempts to solve the problem of having several charts by using a monitor instead. The user can then, with the help of a computer, change the symbols on the chart and even generate a random chart. 
-%
-%\subsubsection{iChart+}
-%iChartPlus \cite{ichartplus} is another program which is similar to Digital Eye Chart but also have an adjustable viewing distance. 
-%
-%\subsubsection{AxAnIvIs}
-%AxAnIvIs is a prototype that is currently under testing at Uppsala University Hospital. The project attempts to improve on how we perform visual acuity tests by digitalizing them. It adds more types of charts than the standard physical ones that exists today. The system uses a webbrowser running on an Android tablet that is connected to a screen. A library of vector graphic files are displayed in the webbrowser. These files contains the different charts as well as some other specialized tools. Currently the Android tablet has to be held in a fixed position in the examination room, restrained by the cable going to the screen. The charts used are fixed and not very easily changed, which makes it very hard to try out new techniques and methods of measuring.
-%
-%\subsubsection{Our project}
-%Most of the before mentioned systems have some form of negative side that we try to improve on, mostly problems about high cost and difficulties with extending the software. We are different with that we want to create a system that is cheap, easy to understand and easy to maintain. Creating a system that have all the previously mentioned sides is one of the goals we have. Another important goal is creating a system that really is speacialized on measurements of visual acuity. All these points are important to give the users the best experience.
 
 \section{Purpose}
 Having efficient and accurate systems is important in a medical environment. Especially in a medical environment that handles tests where unaccurate our false results in some cases can cause accidents. Therefore it is important to have a well-built system that mitigates these problems. With the help of Professor Per Söderberg as our expert in the field of ophthalmology we will try to create a system that will act as a prototype for further future work. 
@@ -136,7 +103,12 @@ Our ethical obligations with this project is providing a functional and stable p
 
 \chapter{Problem Description}
 \section{Problem}
-The problem with today's visual acuity testing charts are that they are very clumsy to work with. The charts are printed and contains only one static selection of symbols, also called optotypes. This could be optotypes for people with the ability to read or an 'E' shape rotated in different directions which allows children who are unable to read, or illiterate people, to identify which symbol they see. These static charts are also designed to be viewed from one specific distance. This causes problems when dealing with environments that are too small, for example erroneous measurements. 
+%The problem with today's visual acuity testing charts are that they are very clumsy to work with. The charts are printed and contains only one static selection of symbols, also called optotypes. This could be optotypes for people with the ability to read or an 'E' shape rotated in different directions which allows children who are unable to read, or illiterate people, to identify which symbol they see. These static charts are also designed to be viewed from one specific distance. This causes problems when dealing with environments that are too small, for example erroneous measurements. 
+There are several weaknesses with visual acuity testing today that we have worked on improving. Physical charts are often large and cumbersome to switch if the patient needs a chart with another type of optotypes. Since they are also designed for standardized distances and testing conditions, an optician needs to manually compensate for any deviations from the standard. 
+
+There are also other problems with using standardized charts, such as older patients getting lost among the columns and rows, and other patients memorizing the rows of letters to cheat. Giving the optician the option of using randomly generated charts and easily switching between specialized chart layouts can greatly increase the speed and accuracy of testing.
+
+Another problem we faced is designing a user interface that can give the optician easy access to these specialized charts and layouts. An intuitive design so that it is easy to learn, and a user friendly design so that users don't accidentally make unintentional or irreversible changes.
 
 \section{Delimitations}
 Due to limits in time and manpower, this project is not intended to be a complete working system to be used clinically, but rather a working prototype that can be used to evaluate digital visual acuity charts. In order to achieve this, as much as possible of Java's and Android's built-in libraries will be used. Though as SVG-files are going to be used for the rendering of optotypes and neither Java or Android supports it natively third-party libraries will be used.
@@ -175,7 +147,7 @@ For this project to be considered successful, the system must be able to display
 
 It is very important that the chart on the monitor displays all optotypes with the correct sizes and positions. In order to do this, the user must to be able control the distance from which the patient is watching the monitor. It is also very important that the correct sizes, in LogMAR, is displayed on the Android device.
 
-The intended user for this system should not need any specific background knowledge about technology more than the basic use of Android device, for example being able to start the device, start an application and how to perform simple Android gestures. This does not mean that, though it is a goal, it has to be easy to install and set up. 
+The intended user for this system should not need any specific background knowledge about technology more than the basic use of Android device, for example being able to start the device, start an application and how to perform simple Android gestures. This does not mean that it has to be easy to install and set up, though it is a goal for future expansion. 
 
 The Android application should be very user friendly and follow the Android design principles set up by Google \cite{android_design}. This makes the application behave similar to other Android applications which will result in users already familiar with Android, to get the expected result from their actions. 
 
@@ -191,6 +163,41 @@ The second test is to make sure that the optotypes have the correct sizes on the
 The third test will determine how user friendly the system is. This will be done by letting a user with no previous knowledge of the system, attempt to connect to a server and perform some basic tasks like setting a specific chart with a specific optotype or setting a specific distance (App. \ref{app:usability}). If the user testing has no previous knowledge of visual acuity charts, a brief explanation will be given so that the test doesn't fail because the user, for example, doesn't know what "HVOT" is.
 
 The last test is a quantitative test to see how well the server detection performs. The test involves the Android application trying to detect a server on a stable WiFi a 100 times and see how many times the server was detected. This test can be done several times and the average number of detection's in a 100 tries will determine its success rate.
+
+\section{Related work}
+
+\subsection{Visual acuity charts}
+Several different versions of visual acuity chart exist today. The ETDRS (Early Treatment Diabetic Retinopathy Study) chart is the most commonly used today and is an improvement to the older \textit{Snellen chart}(fig. \ref{fig:snellen_chart}). The ETDRS chart was designed and developed by Ferris et al \cite{Ferris}, based on the work of Bailey and Lovie \cite{Bailey}. 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=60mm]{images/snellen_chart.png}
+\caption{The Snellen chart \\ (Source: http://en.wikipedia.org/wiki/Snellen\_chart).} \label{fig:snellen_chart}
+\end{figure} 
+
+\subsection{Digital visual acuity charts}
+Digital Eye Chart \cite{digitaleyechart} and iChartPlus \cite{ichartplus} are two applications supposed to display a visual acuity chart on a digital screen. Both applications are computer applications, which requires the computer to be connected to the screen. The companies behind the products provide very little information and the exact specifications of the charts are not available.
+
+\subsection{Media streaming devices}
+Several media streaming devices exists that allow digital content to be received and displayed on a connected screen. Examples of such devices are Chromecast \cite{chromecast} and Apple TV \cite{appletv} which you can plug into a TV and allows you to view images or watch movies that are stored on your phone or computer. Both applications also allows developers to develop their own applications to display custom content but requires the developer to enter an agreement with respective company.
+
+
+%There exists today several companies that have taken on the task of digitalizing the usage of eye charts.
+%
+%\subsubsection{Chromecast and Apple TV}
+%The Chromecast \cite{chromecast} and Apple TV \cite{appletv} are small devices which are plugged into a TV and enables mobile phones and tablets to stream media to them. The devices are small and easy to handle and a lot of applications support streaming to them. The Chromecast is specifically made for Android devices and Apple TV for iOS device, but they both support each other.
+%
+%\subsubsection{Digital Eye Chart}
+% Digital Eye Chart \cite{digitaleyechart} is a visual acuity testing program that attempts to solve the problem of having several charts by using a monitor instead. The user can then, with the help of a computer, change the symbols on the chart and even generate a random chart. 
+%
+%\subsubsection{iChart+}
+%iChartPlus \cite{ichartplus} is another program which is similar to Digital Eye Chart but also have an adjustable viewing distance. 
+%
+%\subsubsection{AxAnIvIs}
+%AxAnIvIs is a prototype that is currently under testing at Uppsala University Hospital. The project attempts to improve on how we perform visual acuity tests by digitalizing them. It adds more types of charts than the standard physical ones that exists today. The system uses a webbrowser running on an Android tablet that is connected to a screen. A library of vector graphic files are displayed in the webbrowser. These files contains the different charts as well as some other specialized tools. Currently the Android tablet has to be held in a fixed position in the examination room, restrained by the cable going to the screen. The charts used are fixed and not very easily changed, which makes it very hard to try out new techniques and methods of measuring.
+%
+%\subsubsection{Our project}
+%Most of the before mentioned systems have some form of negative side that we try to improve on, mostly problems about high cost and difficulties with extending the software. We are different with that we want to create a system that is cheap, easy to understand and easy to maintain. Creating a system that have all the previously mentioned sides is one of the goals we have. Another important goal is creating a system that really is speacialized on measurements of visual acuity. All these points are important to give the users the best experience.
 
 \chapter{Theory}
 \section{Visual Acuity}
@@ -241,7 +248,7 @@ The visual acuity charts used in this project are based on ETDRS (Early Treatmen
 \caption{Example of a ETDRS chart \\ (Source: http://precision-vision.com/)\label{fig:etdrs_chart}}
 \end{figure} 
 
-\subsection{Optotypes}
+\subsection{Optotypes} \label{Optotypes}
 An optotype is a symbol that is used on a visual acuity chart. The optotypes are all of the same width and height and placed on a five by five grid. The most common type of symbol to use are letters from the latin alphabet but can be different depending on the patient's needs\cite{Colenbrander}.
 
 \textit{Sloan letters} are defined to be the ten optotypes \textit{C, D, H, K, N, O, R, S, V and Z}. They have been chosen because they are easily differentiated from eachother \cite{Ferris} and are used by most visual acuity charts\cite{Colenbrander}.
@@ -660,7 +667,7 @@ Attempt	&	failures	&	succeses	\\
 Even though the system turned out as intended, there is a lot left to do until it can be used clinically. First of all, the system must be tested for more bugs and unintended behavior. This should preferably be done by other users than the developers since the developers know how the system works and can't safely predict what another user will attempt to do. Then, after all found bugs have been removed, the system must be tested by experts in the field of ophthalmology in order to make sure that the built system actually is a valid solution. This will also give credibility to the system.
 
 \section{Advantages of a digital system}
-The advantages of a digital system is the ability to change the layout, optotypes and size of the chart without having to carry away the old chart and then carrying back a new. This will save both time and space as only one screen and a small Android device is necessary. This system will also allow the visual acuity tests to take place in rooms that previously where too small, as the system will display optotypes at a size suitable for the distance the patient is from the monitor.
+The advantages of a digital system is the ability to change the layout, optotypes and size of the chart without having to manually exchange charts. This will save both time and space as only one screen and a small Android device is necessary, while also providing easier access to specialized charts that will help patients with different needs. This system will also allow the visual acuity tests to take place in rooms that previously where too small, as the system will display optotypes at a size suitable for the distance the patient is from the monitor.
 
 \section{Disadvantages of a digital system}
 A disadvantage with this system is that digital screens become very expensive at large sizes, which limits the maximum distance a patient can sit from the screen. Another disadvantage is that the resolution, or rather pixel density, will limit how close to a screen a patient can sit without the optotypes looking pixelated. Pixel density is a measurement of how many pixels (dots) can fit in a small section of the screen, usually denoted as Pixels Per Inch (PPI) or Dots Per Inch (DPI). The higher the DPI is the better the quality of small details will be. This is very important when rendering type fonts because the edges should be as smooth as possible.
