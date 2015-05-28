@@ -634,13 +634,14 @@ The advantages of a digital system is the ability to change the layout, optotype
 \section{Disadvantages of a digital system}
 A disadvantage with this system is that digital screens become very expensive at large sizes, which limits the maximum distance a patient can sit from the screen. Another disadvantage is that the resolution, or rather pixel density, will limit how close to a screen a patient can sit without the optotypes looking pixelated. Pixel density is a measurement of how many pixels (dots) can fit in a small section of the screen, usually denoted as Pixels Per Inch (PPI) or Dots Per Inch (DPI). The higher the DPI is the better the quality of small details will be. This is very important when rendering type fonts because the edges should be as smooth as possible.
 
-\subsection{Alternate solutions}
-Skriva om att använda typ chromecast istället
+\subsection{Alternative solutions}
+A possible alternative solution to a custom server running on a Raspberry Pi or other computer use a Chromecast instead. This could simplify the system for the user as this would make the Android application work similar to the many media streaming applications that exists today. Using a Chromecast would also make sure the user only have to worry about the Android application as the Chromecast is just a plug and play unit maintained by Google. The disadvantages to this is, as mentioned earlier, that an agreement with Google have to be signed. The application would also require an internet connection, opposed the the current system which only need a local network.
 
 \section{Future Work}
 Future work will include more charts and features for the system. One such feature is the grating acuity test, which allows testing of visual acuity on very young children or people with difficulties communicating \cite{PGSoderbergOral}. Another feature is to include the option to, instead of changing the size of the optotypes, change the LogMAR, so the top row doesn't necessarily start at 1.0 LogMAR. This will allow the chart to use the entire monitors screen no matter the distance from the patient to the screen.
 
 Other charts to be included could be, for example, charts using the Landholt C, charts for testing color blindness or charts used for testing astigmatism. The random function for the charts should be improved, as it currently have no constraints whatsoever. These constraints would make sure that the same optotype, or to similar optotypes like \textit{C} and \textit{O}, won't be repeated to many times in a row.
+
 
 %\bibliography{references}{}
 \bibliography{IEEEabrv,references}
