@@ -50,15 +50,49 @@ Digitalization of Visual Acuity Testing is a project about digitally displaying 
 \setcounter{page}{1}
 \chapter{ Introduction}
 \section{Background}
-The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols called optotypes~(see~\ref{Optotypes}), most often normal Latin letters. The patient reads the symbols on the chart in order until he or she can no longer correctly identify them. Each row on the chart has a pre-calculated number printed beside it, which will help the optician determine which lenses the patient should try next.
+The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols called optotypes~(fig.~\ref{fig:optotypes_example1}), most often normal Latin letters. The patient reads the symbols on the chart in order until he or she can no longer correctly identify them. Each row on the chart has a pre-calculated number printed beside it, which will help the optician determine which lenses the patient should try next.
+
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{images/landholt_c_optotype.png}
+  \caption{Landholt C}
+\end{subfigure}%
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{images/tumbling_e_optotype.png}
+  \caption{Tumbling E}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{images/lea_optotype.png}
+  \caption{LEA}
+\end{subfigure}
+\caption{Some example optotypes}
+\label{fig:optotypes_example1}
+\end{figure}
 
 These numbers have been calculated from a set of standardized conditions~\cite{Bailey}. For example there must be adequate lighting in the room so the patient can read the letters, but more importantly the charts are meant to be placed a fixed distance from the patient. For most charts, this distance is six meters. 
 
 These conditions cannot always be met. Examination rooms are not always large enough to take measurements from six meters away for example. In those cases, the reference numbers on the sheet are no longer accurate and the optician has to compensate manually~\cite{PGSoderberg}. If the standardized conditions cannot be met it can lead to irregularities or faulty measurements in some tests.
 
-There are also several different variations on these eye charts. Different sets of optotypes, ranging from different subsets of Latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen chart~(fig.~\ref{fig:snellen_chart}) that was developed in the 19th century, to the more modern ETDRS chart~(fig.~\ref{fig:etdrs_chart}).
+There are also several different variations on these eye charts. Different sets of optotypes, ranging from different subsets of Latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen chart~(fig.~\ref{fig:snellen_chart1}) that was developed in the 19th century, to the more modern ETDRS chart~(fig.~\ref{fig:etdrs_chart1}).
+
 
 In a field so dependent on visual aids and equipment, it's easy to see that there are several possibilities for improvement and expansion. Modern technology can be used to improve these tests, and digitalization can simplify the way opticians work with diagrams.
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=110mm]{images/Snellen_chart.png}
+\caption{The Snellen chart (Source: http://en.wikipedia.org/wiki/Snellen chart\cite{img_snellen}).} \label{fig:snellen_chart1}
+\end{figure} 
+
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=120mm]{images/etdrs_chart.jpg}
+\caption{The ETDRS chart, used with permission from Precision Vision \\ (Source: http://precision-vision.com/)\label{fig:etdrs_chart1}}
+\end{figure} 
 
 \section{Purpose}
 Having efficient and accurate systems is important in a medical environment, especially in a medical environment that handles tests where inaccurate our false results in some cases can cause accidents. Therefore it is important to have a well-built system that mitigates these problems. With the help of Professor Per Söderberg as our expert in the field of ophthalmology we will try to create a system that will act as a prototype for further future work. 
@@ -136,13 +170,14 @@ The last test is a quantitative test to see how well the server detection perfor
 \section{Related work}
 
 \subsection{Visual acuity charts}
-Several different versions of visual acuity chart exist today. The ETDRS (Early Treatment Diabetic Retinopathy Study) chart is the most commonly used today and is an improvement to the older \textit{Snellen chart}(fig. \ref{fig:snellen_chart}). The ETDRS chart was designed and developed by Ferris et al \cite{Ferris}, based on the work of Bailey and Lovie \cite{Bailey}. 
+Several different versions of visual acuity chart exist today. The ETDRS (Early Treatment Diabetic Retinopathy Study) chart is the most commonly used today and is an improvement to the older \textit{Snellen chart}(fig. \ref{fig:snellen_chart1}, page \pageref{fig:snellen_chart1}). The ETDRS chart was designed and developed by Ferris et al \cite{Ferris}, based on the work of Bailey and Lovie \cite{Bailey}. 
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=60mm]{images/Snellen_chart.png}
-\caption{The Snellen chart \cite{img_snellen}} \label{fig:snellen_chart}
-\end{figure} 
+%\begin{figure}[ht!]
+%\centering
+%\includegraphics[width=60mm]{images/Snellen_chart.png}
+%\caption{The Snellen chart (Source: http://en.wikipedia.org/wiki/Snellen chart\cite{img_snellen}).} \label{fig:snellen_chart}
+%\end{figure} 
+
 
 \subsection{Digital visual acuity charts}
 Digital Eye Chart \cite{digitaleyechart} and iChartPlus \cite{ichartplus} are two applications supposed to display a visual acuity chart on a digital screen. Both applications are computer applications, which requires the computer to be connected to the screen. The companies behind the products provide very little information and the exact specifications of the charts are not available.
@@ -209,13 +244,13 @@ The magnification is a problem is visual acuity testing because if the optotypes
 There is need to have a standard to follow on how much addition or subtraction needed for a specific distance. Figure \ref{magtable} shows what values to use when testing visual acuity at shorter distances than six meters. \cite{PGSoderberg}
 
 \section{Chart Design}
-The visual acuity charts used in this project are based on ETDRS (Early Treatment Diabetic Retinopathy Study) charts (fig. \ref{fig:etdrs_chart}) \cite{Ferris} and a project developed by P.G. Söderberg \cite{PGSoderbergOral} at Uppsala University Hospital. 
+The visual acuity charts used in this project are based on ETDRS (Early Treatment Diabetic Retinopathy Study) charts (fig. \ref{fig:etdrs_chart1}, page \pageref{fig:etdrs_chart1}) \cite{Ferris} and a project developed by P.G. Söderberg \cite{PGSoderbergOral} at Uppsala University Hospital. 
 
-\begin{figure}[ht!]
-\centering
-\includegraphics[width=100mm]{images/etdrs_chart.jpg}
-\caption{Example of a ETDRS chart used with permission from Precision Vision \\ (Source: http://precision-vision.com/)\label{fig:etdrs_chart}}
-\end{figure} 
+%\begin{figure}[ht!]
+%\centering
+%\includegraphics[width=100mm]{images/etdrs_chart.jpg}
+%\caption{Example of a ETDRS chart used with permission from Precision Vision \\ (Source: http://precision-vision.com/)\label{fig:etdrs_chart}}
+%\end{figure} 
 
 \subsection{Optotypes} \label{Optotypes}
 An optotype is a symbol that is used on a visual acuity chart. The optotypes are all of the same width and height and placed on a five by five grid. The most common type of symbol to use are letters from the Latin alphabet but can be different depending on the patient's needs\cite{Colenbrander}.

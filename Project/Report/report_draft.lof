@@ -1,25 +1,26 @@
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Some example optotypes\relax }}{1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces The Snellen chart (Source: http://en.wikipedia.org/wiki/Snellen chart\cite {img_snellen}).\relax }}{2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces The ETDRS chart, used with permission from Precision Vision (Source: http://precision-vision.com/)\relax }}{3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces The Snellen chart \cite {img_snellen}\relax }}{7}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Angular magnification at short distances\relax }}{9}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Magnification due to addition for closer distance\relax }}{10}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Example of a ETDRS chart. Used with permission from Precision Vision (Source: http://precision-vision.com/)\relax }}{10}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Some example optotypes\relax }}{11}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces The angle v is used to calculate the size in LogMAR of the optotype.\relax }}{12}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces The sizes and positions of the first three optotypes of row $n$ and $n+1$ where $x_n \approx 1.2589 x_{n+1}$. \relax }}{13}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces The height of optotype from 2 meters on a 15.6" screen with a resolution of 1920x1080 pixels. \relax }}{13}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces The upper and lower ETDRS charts\relax }}{14}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces The one line chart\relax }}{14}
-\contentsline {figure}{\numberline {3.10}{\ignorespaces The single optotype chart\relax }}{15}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Angular magnification at short distances\relax }}{11}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Magnification due to addition for closer distance\relax }}{12}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Some example optotypes\relax }}{13}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces The angle v is used to calculate the size in LogMAR of the optotype.\relax }}{13}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces The sizes and positions of the first three optotypes of row $n$ and $n+1$ where $x_n \approx 1.2589 x_{n+1}$. \relax }}{14}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces The height of optotype from 2 meters on a 15.6" screen with a resolution of 1920x1080 pixels. \relax }}{14}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces The upper and lower ETDRS charts\relax }}{15}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces The one line chart\relax }}{16}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces The single optotype chart\relax }}{16}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Overview of the system structure\relax }}{16}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces An example of how a network message would look like. \relax }}{19}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Overview of the system structure\relax }}{17}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces An example of how a network message would look like. \relax }}{20}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces The Android application navigation drawer used for navigating the application. a) Name of the application b) The currently connected server c) Available optotypes d) Grating, not yet implemented e) Test, used for testing new functions\relax }}{21}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Server connection steps\relax }}{22}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces The upper large ETDRS 1 chart displayed with each rows LogMAR values to the far left.\relax }}{22}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces A medium and small chart\relax }}{23}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Example of charts as shown on the monitor connected to the server\relax }}{23}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces The Android application navigation drawer used for navigating the application. a) Name of the application b) The currently connected server c) Available optotypes d) Grating, not yet implemented e) Test, used for testing new functions\relax }}{22}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Server connection steps\relax }}{23}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces The upper large ETDRS 1 chart displayed with each rows LogMAR values to the far left.\relax }}{23}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces A medium and small chart\relax }}{24}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Example of charts as shown on the monitor connected to the server\relax }}{24}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
