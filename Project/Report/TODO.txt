@@ -1,4 +1,4 @@
-2.4 De identifierade frågeställningarna är utvärderingsbara.
+﻿2.4 De identifierade frågeställningarna är utvärderingsbara.
 
 3.2 Metoden är tydlgt beskriven och motiverad.
 
@@ -36,6 +36,9 @@
 
 - Designalternativ behöver beskrivas/utredas. 
 
+
+
+Se till att AXANIVIS charts förklaras där det först nämns
 
 
 

@@ -138,18 +138,19 @@ There are also other problems with using standardized charts, such as older pati
 Another problem we faced is designing a user interface that can give the optician easy access to these specialized charts and layouts. An intuitive design so that it is easy to learn, and a user friendly design so that users don't accidentally make unintentional or irreversible changes.
 
 \subsection{Nytt, behålls, bara denna rubrik tas bort när det gamla är fixat \\ se över den här texten så det inte blir nya problem}
-We want to create a system that allows opticians to quickly prepare and perform an eye examination using a digital chart displayed on a monitor controlled by an Android device.
+We want to create a system that allows opticians to quickly prepare and perform an eye examination using a chart displayed on a monitor controlled by an Android device. 
+----------------SKRIV MER HÄR!!!!!!!!!----------- (ELLER SKRIV OM!!!!)
 
 \section{Delimitations}
 Due to limits in time and manpower, this project is not intended to result in a complete working system to be used clinically, but rather a working prototype that can be used to evaluate digital visual acuity charts. To complete the project on time, as much as possible of Java's and Android's built-in libraries will be used in order to avoid recreating code that already exists, thus saving time. Neither Java nor Android include libraries for rendering SVG-files and third party libraries will be used instead.
 
 %Though as SVG-files are going to be used for the rendering of optotypes and neither Java or Android supports it natively third-party libraries will be used.
 
-We will not evaluate a digital screen's effect on the eye compared to a physical chart nor analyze why an ETDRS or Axanivis chart should have the layouts they have. As both charts are made after a very strict specification, no new chart layouts will be made. Because any new charts we create would be considered useless without backing research they could also be misleading and misused by future users that in the end, could result in patients getting an inaccurate result.
+We will not evaluate a digital screen's effect on the eye compared to a physical chart nor analyze why a chart should have the layouts it has. As the visual acuity charts are made after a very strict specification, no new chart layouts will be made. Any new chart we would create would be considered useless without backing research and they could be misleading and misused by future users that in the end, could result in patients getting an inaccurate result.
 
 No security features, such as encrypted network traffic or protection against several users connecting to the same server at the same time, will be implemented. Instead, this is left to the user to make sure that a secure network is used. Since there is no patient data or other private information being transmitted or stored we don't see the need for secure connections in this project.
 
-No automatic update system will be included, instead the user will have to manually update both the Android application and the server. We reasoned that automatic updating was not a core feature, and could therefore be saved for future work.
+No automatic update system will be included, instead the user will have to manually update both the Android application and the server. Automatic updating was not a core feature, and could therefore be saved for future work.
 
 \section{Requirements}
 For this project to be considered successful, the system must be able to display the chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also has to be able to choose if the current chart should use the Sloan, Tumbling E, HVOT or LEA optotypes.
@@ -315,7 +316,7 @@ The ETDRS chart consists of fourteen rows with five optotypes on each row. The s
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=110mm]{images/logmar_calculation.png}
-\caption{The angle v is used to calculate the size in LogMAR of the optotype.\label{fig:logmar_calculation}}
+\caption{The angle v is used to calculate the size in LogMAR of the optotype.(Source: Christian Johansson)\label{fig:logmar_calculation}}
 \end{figure} 
 
 The optotypes on the top row of the chart is of the size 1.0 LogMAR and then each row below is decremented by 0.1 LogMAR to the last row which is -0.3 LogMAR. This means that each optotype is approximately 1.2589 the height of the optotypes on the row below (fig. \ref{fig:chart_size_plot}) \cite{Ferris}. The spacing between each optotype is equal to the width of an optotype from the same row and the spacing between each row is equal to the height of an optotype on the lower row (fig. \ref{fig:etdrs_chart_sizes}).
@@ -340,7 +341,7 @@ The optotypes on the top row of the chart is of the size 1.0 LogMAR and then eac
       \addplot[color=blue, mark=*, only marks] plot coordinates{(1,162)(2,128)(3,102)(4,81)(5,64)(6,51)(7,41)(8,32)(9,26)(10,20)(11,16)(12,13)(13,10)(14,8)};
     \end{axis}
 \end{tikzpicture}
-\caption{The height of optotype from 2 meters on a 15.6" screen with a resolution of 1920x1080 pixels. \label{fig:chart_size_plot}}
+\caption{The height of optotype from 2 meters on a 15.6" screen with a resolution of 1920x1080 pixels. (Source: Christian Johansson)\label{fig:chart_size_plot}}
 \end{figure}
 
 %\newpage
@@ -366,7 +367,7 @@ The Axanivis charts are an extension to the ETDRS chart that adds two new chart 
 \label{fig:etdrs_upper_lower}
 \end{figure}
 
-The two new chart layouts used is constructed using the same principles, like height and spacing of optotypes, as the original ETDRS chart. But instead of having 14 rows of 5 optotypes each, the first new layout takes a single column of the ETDRS chart and rotates it 90 degrees (fig. \ref{fig:etdrs_one_line}) so it's all on one line. This makes it wider than it's high which suits a monitor better. This also allows the patient to read from left to right, instead of from top to bottom, which is the common way to read in Europe and America. Since the patient only have to read one letter of each size, this layout gives a quicker but more inaccurate result. This is useful to get a quick estimate on the visual acuity of the patient.
+The two new chart layouts used is constructed using the same principles, like height and spacing of optotypes, as the original ETDRS chart. But instead of having 14 rows of 5 optotypes each, the first new layout takes a single column of the ETDRS chart and rotates it 90 degrees (fig. \ref{fig:etdrs_one_line}) so it's all on one line. This makes it wider than it's high which suits a monitor better. This also allows the patient to read from left to right, which is the common way to read in Europe and America. This makes it easier and feel more natural to read for a patient used to read in English or any other European language \cite{PGSoderbergOral}. Since the patient only have to read one letter of each size, this layout gives a quicker but more inaccurate result. This is useful to get a quick estimate on the visual acuity of the patient.
 
 \begin{figure}[ht!]
 \centering
