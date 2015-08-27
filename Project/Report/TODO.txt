@@ -25,3 +25,34 @@
 8.4 Språket är klart, korrekt, koncist och på lämplig vetenskaplig nivå.
 
 
+
+- Abstract på svenska saknas. 
+
+- Många beskrivningar måste bli mer speciifika (t.ex problemställningar, implementationen, protokollbeskrivningar). 
+
+- Begrepp måste introduceras (ofta med referenser) innan de används. 
+
+- Relaterat arbete måste utvidgas ordentligt. 
+
+- Designalternativ behöver beskrivas/utredas. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
