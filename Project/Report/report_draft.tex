@@ -23,8 +23,11 @@
 \renewcommand\bibname{References}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+%\titleformat{\chapter}[display]
+%  {\normalfont\bfseries}{}{0pt}{\Large}
+
 \titleformat{\chapter}[display]
-  {\normalfont\bfseries}{}{0pt}{\Large}
+ {\normalfont\bfseries}{}{0pt}{\Large \thechapter }
 
 %%%%%%%%%%%%%%%%% Start document %%%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -37,14 +40,15 @@
 \begin{abstract}
 Digitalization of Visual Acuity Testing is a project about digitally displaying and manipulating optician's eye charts. The charts are displayed on a digital screen with a lightweight server running on a Raspberry Pi and controlled over wireless network via an Android tablet. This solves several problems related to the distance from the patient to the chart, while also providing more ways for the optician to tailor the examination to the patient. The Digitalization of Visual Acuity Testing project has improved upon a proof-of-concept system that has been used at the Uppsala University Hospital to test whether or not digital screens are a viable alternative to physical charts. The project fulfills our goals and has performed well under testing by us, but more testing is needed to make sure it meets the demands of practicing opticians. 
 \end{abstract}
-
-\tableofcontents
+\renewcommand\thechapter{ }
+\tableofcontents*
 \listoffigures
 \clearpage
 
+\renewcommand\thechapter{\arabic{chapter}}
 \pagenumbering{arabic}
 \setcounter{page}{1}
-\chapter{Introduction}
+\chapter{ Introduction}
 \section{Background}
 The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols called optotypes~(see~\ref{Optotypes}), most often normal Latin letters. The patient reads the symbols on the chart in order until he or she can no longer correctly identify them. Each row on the chart has a pre-calculated number printed beside it, which will help the optician determine which lenses the patient should try next.
 
@@ -89,7 +93,7 @@ Finally, we have the issue of networking. A lot can go wrong when trying to cont
 %\section{Ethical considerations}
 %Our ethical obligations with this project is providing a functional and stable product. If our system does not perform to specification, a lot of patients could get erroneous measurements during testing, costing a lot of time and money to correct. This is very important to think about since we are dealing with treatment of people. All of this has to be considered even if the final results will not be used clinically.
 
-\chapter{Problem Description}
+\chapter{ Problem Description}
 \section{Problem}
 %The problem with today's visual acuity testing charts are that they are very clumsy to work with. The charts are printed and contains only one static selection of symbols, also called optotypes. This could be optotypes for people with the ability to read or an 'E' shape rotated in different directions which allows children who are unable to read, or illiterate people, to identify which symbol they see. These static charts are also designed to be viewed from one specific distance. This causes problems when dealing with environments that are too small, for example erroneous measurements. 
 There are several weaknesses with visual acuity testing today that we have worked on improving. Physical charts are often large and cumbersome to switch if the patient needs a chart with another type of optotypes. Since they are also designed for standardized distances and testing conditions, an optician needs to manually compensate for any deviations from the standard. 
@@ -164,7 +168,7 @@ Several media streaming devices exists that allow digital content to be received
 %\subsubsection{Our project}
 %Most of the before mentioned systems have some form of negative side that we try to improve on, mostly problems about high cost and difficulties with extending the software. We are different with that we want to create a system that is cheap, easy to understand and easy to maintain. Creating a system that have all the previously mentioned sides is one of the goals we have. Another important goal is creating a system that really is speacialized on measurements of visual acuity. All these points are important to give the users the best experience.
 
-\chapter{Visual Acuity Testing}
+\chapter{ Visual Acuity Testing}
 \section{Visual Acuity}
 The measurement of a persons visual acuity has an important constraint that needs to be followed. This constraint is the fact that our eyes works best physiologically from greater distances. On the other hand, at shorter distances our eyes tend to make what we see look unfocused. To make up for this shift in focus a minimum testing distance has to be enforced to ensure that the shift in focus stays as small as possible. This distance has by scientific research been set to be six meters.
 
@@ -340,7 +344,7 @@ Once an estimated visual acuity have been achieved from the one line chart, the 
 \label{fig:etdrs_single}
 \end{figure}
 
-\chapter{Implementation}
+\chapter{ Implementation}
 \section{Methods}
 \subsection{System structure}
 The system is divided into three major parts, an Android application, a server and networking. The Android application and server is modeled after the MVC (Model-View-Controller) pattern, where the model is the logic and the view is the GUI (Graphical User Interface). The controller part is the part on the Android application that listens for button clicks and gestures. Usually the networking would fall under controller in the MVC pattern but was, in this system, chosen to be a separate larger structure. Figure \ref{system_structure} shows how the different parts are connected.
@@ -445,7 +449,7 @@ DISTANCE
 %\section{Evaluation (OLD!)} %%%%%%%%%%%%%%%%%%%%%%%%Utvärdering: hur ska ni utvärdera ert arbete/system, hur vet ni om/hur bra ni lyckats?
 %The easiest way to see if our product satisfies these demands is putting it into the hands of the opticians at the university hospital and letting them test it, recording bug reports or comments. Testing will also let us determine if the system is as energy efficient as we intended.
 
-\chapter{Results}
+\chapter{ Results}
 \section{System functionality} 
 The system fulfills all specified requirements and allow the user to quickly set up a chart on the monitor. No system crashes have occurred during testing, and no bugs that causes the system to not work properly have been encountered. With a stable WiFi connection, the system runs smoothly without any lag and the server detection finds a server in under a second. 
 
@@ -630,7 +634,7 @@ Attempt	&	failures	&	succeses	\\
 %\begin{figure}[ht!]
 %\end{figure}
 
-\chapter{Conclusion}
+\chapter{ Conclusion}
 
 \section{Discussion}
 Even though the system turned out as intended, there is a lot left to do until it can be used clinically. First of all, the system must be tested for more bugs and unintended behavior. This should preferably be done by users other than the developers since the developers know how the system works and can't safely predict what another user will attempt to do. Then, after all found bugs have been removed, the system must be tested by experts in the field of ophthalmology in order to make sure that the built system actually is a valid solution. This will also give credibility to the system.
@@ -657,7 +661,7 @@ Other charts to be included could be, for example, charts using the Landholt C, 
 
 \newpage
 \appendix
-\chapter{Testing} \label{App:test}
+\chapter{ Testing} \label{App:test}
 \section{Developer walkthrough}
 \begin{table}[ht!]
 \centering
