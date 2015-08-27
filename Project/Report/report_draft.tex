@@ -129,6 +129,7 @@ Finally, we have the issue of networking. A lot can go wrong when trying to cont
 
 \chapter{ Problem Description}
 \section{Problem}
+\subsection{Gammalt, bakas in i det ovan (Ta bort denna subsection)}
 %The problem with today's visual acuity testing charts are that they are very clumsy to work with. The charts are printed and contains only one static selection of symbols, also called optotypes. This could be optotypes for people with the ability to read or an 'E' shape rotated in different directions which allows children who are unable to read, or illiterate people, to identify which symbol they see. These static charts are also designed to be viewed from one specific distance. This causes problems when dealing with environments that are too small, for example erroneous measurements. 
 There are several weaknesses with visual acuity testing today that we have worked on improving. Physical charts are often large and cumbersome to switch if the patient needs a chart with another type of optotypes. Since they are also designed for standardized distances and testing conditions, an optician needs to manually compensate for any deviations from the standard. 
 
@@ -136,8 +137,13 @@ There are also other problems with using standardized charts, such as older pati
 
 Another problem we faced is designing a user interface that can give the optician easy access to these specialized charts and layouts. An intuitive design so that it is easy to learn, and a user friendly design so that users don't accidentally make unintentional or irreversible changes.
 
+\subsection{Nytt, behålls, bara dena rubrik tas bort när det gamla är fixat}
+%We want to create a system that allows opticians to quickly and with minimal effort, 
+
 \section{Delimitations}
-Due to limits in time and manpower, this project is not intended to be a complete working system to be used clinically, but rather a working prototype that can be used to evaluate digital visual acuity charts. In order to achieve this, as much as possible of Java's and Android's built-in libraries will be used. Though as SVG-files are going to be used for the rendering of optotypes and neither Java or Android supports it natively third-party libraries will be used.
+Due to limits in time and manpower, this project is not intended to result in a complete working system to be used clinically, but rather a working prototype that can be used to evaluate digital visual acuity charts. To complete the project on time, as much as possible of Java's and Android's built-in libraries will be used in order to avoid recreating code that already exists, thus saving time. Neither Java nor Android include libraries for rendering SVG-files and third party libraries will be used instead.
+
+%Though as SVG-files are going to be used for the rendering of optotypes and neither Java or Android supports it natively third-party libraries will be used.
 
 We will not evaluate a digital screen's effect on the eye compared to a physical chart nor analyze why an ETDRS or Axanivis chart should have the layouts they have. As both charts are made after a very strict specification, no new chart layouts will be made. Because any new charts we create would be considered useless without backing research they could also be misleading and misused by future users that in the end, could result in patients getting an inaccurate result.
 
