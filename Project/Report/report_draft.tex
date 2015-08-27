@@ -20,7 +20,7 @@
 
 %%%%%%%% Bibliografi %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Ändrar namnet på referens headern
-\renewcommand\bibname{References}
+\renewcommand\bibname{ References}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %\titleformat{\chapter}[display]
@@ -137,8 +137,8 @@ There are also other problems with using standardized charts, such as older pati
 
 Another problem we faced is designing a user interface that can give the optician easy access to these specialized charts and layouts. An intuitive design so that it is easy to learn, and a user friendly design so that users don't accidentally make unintentional or irreversible changes.
 
-\subsection{Nytt, behålls, bara dena rubrik tas bort när det gamla är fixat}
-%We want to create a system that allows opticians to quickly and with minimal effort, 
+\subsection{Nytt, behålls, bara denna rubrik tas bort när det gamla är fixat}
+We want to create a system that allows opticians to quickly prepare and perform an eye examination. 
 
 \section{Delimitations}
 Due to limits in time and manpower, this project is not intended to result in a complete working system to be used clinically, but rather a working prototype that can be used to evaluate digital visual acuity charts. To complete the project on time, as much as possible of Java's and Android's built-in libraries will be used in order to avoid recreating code that already exists, thus saving time. Neither Java nor Android include libraries for rendering SVG-files and third party libraries will be used instead.
@@ -686,7 +686,7 @@ The advantages of a digital system is the ability to change the layout, optotype
 \section{Disadvantages of a digital system}
 A disadvantage with this system is that digital screens become very expensive at large sizes, which limits the maximum distance a patient can sit from the screen. Another disadvantage is that the resolution, or rather pixel density, will limit how close to a screen a patient can sit without the optotypes looking pixelated. Pixel density is a measurement of how many pixels (dots) can fit in a small section of the screen, usually denoted as Pixels Per Inch (PPI) or Dots Per Inch (DPI). The higher the DPI is the better the quality of small details will be. This is very important when rendering type fonts because the edges should be as smooth as possible.
 
-\subsection{Alternative solutions}
+\section{Alternative solutions}
 A possible alternative solution to a custom server running on a Raspberry Pi or other computer use a Chromecast instead. This could simplify the system for the user as this would make the Android application work similar to the many media streaming applications that exists today. Using a Chromecast would also make sure the user only have to worry about the Android application as the Chromecast is just a plug and play unit maintained by Google. The disadvantages to this is, as mentioned earlier, that an agreement with Google have to be signed. The application would also require an internet connection, opposed the the current system which only need a local network.
 
 \section{Future Work}
@@ -696,6 +696,7 @@ Other charts to be included could be, for example, charts using the Landholt C, 
 
 
 %\bibliography{references}{}
+\renewcommand\thechapter{ }
 \bibliography{IEEEabrv,references}
 %\bibliographystyle{ieeetr}
 \bibliographystyle{IEEEtran}
