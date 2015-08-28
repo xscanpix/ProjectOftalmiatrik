@@ -1,2 +1,7 @@
 Abstract
 	Gjorde abstracten mer beskrivande av problemen och lade till abstract på svenska.
+	
+1.2 Purpose
+	Löste stavfel
+	Ändrade tempus till imperfekt
+	
