@@ -160,7 +160,61 @@ No security features, such as encrypted network traffic or protection against se
 No automatic update system will be included, instead the user will have to manually update both the Android application and the server. Automatic updating was not a core feature, and could therefore be saved for future work.
 
 \section{Requirements}
-For this project to be considered successful, the system must be able to display the chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also has to be able to choose if the current chart should use the Sloan, Tumbling E, HVOT or LEA optotypes.
+%For this project to be considered successful, the system must be able to display the chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also has to be able to choose if the current chart should use the Sloan, Tumbling E, HVOT or LEA optotypes.
+
+For this project to be considered successful, the system must be able to display the chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts (fig. \ref{fig:axanivis}), which is a project under development by P.G. Söderberg \cite{PGSoderbergOral}.
+
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  %\includegraphics[width=.5\linewidth]{images/etdrs_top.png}
+  \includegraphics[width=50mm]{images/etdrs_top.png}
+  \label{fig:etdrs_upper1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=50mm]{images/etdrs_bottom.png}
+  \label{fig:etdrs_lower1}
+\end{subfigure}
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\includegraphics[width=50mm]{images/etdrs_one_line.png}
+\end{subfigure}
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\includegraphics[width=50mm]{images/etdrs_single.png}
+\end{subfigure}
+\caption{The four Axanvis charts}
+\label{fig:axanivis}
+\end{figure}
+
+
+The user also has to be able to choose if the current chart should use the Sloan, Tumbling E, HVOT or LEA optotypes (fig. \ref{fig:optotypes_example1}). The Sloan and HVOT optoypes consists of a different sets of letters, the Tumbling E consists of the letter E rotated in different angles and LEA is a set of custom symbols.
+
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{images/landholt_c_optotype.png}
+  \caption{A Sloan C}
+  \label{fig:landholt_c1}
+\end{subfigure}%
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{images/tumbling_e_optotype.png}
+  \caption{A Tumbling E}
+  \label{fig:tumbling_e1}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{images/lea_optotype.png}
+  \caption{A LEA House}
+  \label{fig:lea1}
+\end{subfigure}
+\caption{Some example optotypes}
+\label{fig:optotypes_example1}
+\end{figure}
 
 It is very important that the chart on the monitor displays all optotypes with the correct sizes and positions. In order to do this, the user must to be able control the distance from which the patient is watching the monitor. It is also very important that the correct sizes, in LogMAR, is displayed on the Android device.
 
