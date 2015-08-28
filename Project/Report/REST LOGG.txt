@@ -1,0 +1,2 @@
+Abstract
+	Gjorde abstracten mer beskrivande av problemen och lade till abstract på svenska.

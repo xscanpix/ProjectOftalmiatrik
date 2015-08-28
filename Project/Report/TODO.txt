@@ -26,7 +26,7 @@
 
 
 
-- Abstract på svenska saknas. 
+%%%%%%FÄRDIG%%%%%%- Abstract på svenska saknas. 
 
 - Många beskrivningar måste bli mer speciifika (t.ex problemställningar, implementationen, protokollbeskrivningar). 
 
