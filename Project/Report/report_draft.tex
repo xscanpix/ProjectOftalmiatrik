@@ -462,7 +462,11 @@ The system is divided into three major parts, an Android application, a server a
 \subsection{Android application}
 The Android application is written in Java, which is the official language for Android. The static parts of the GUI, which will never change unless application updates are released, are written in XML using Googles defined syntax \cite{android_gui}. This is similar to how HTML is written and is supported by Android natively.
 
-The charts shown on the Android device are generated at runtime. If the charts would have been written in XML, there would be no guarantee that they would fit on the screen or keep the correct proportions on tablets with different dimensions. It also avoids hard to read code as the large chart, for example, would need 70 defined areas for images, all with a unique text string id. The chart layouts are all drawn at the same time and in the same place, but sets the active chart visible and the rest invisible. As Android does not natively have support for vector graphics and the chart optotype images are vector images the AndroidSVG library is used to display them \cite{AndroidSVG}.
+The visual acuity charts on the Android device have its opotypes positions and sizes calculated at runtime before before they are displayed. If the charts would have been written in an XML file, it would have required that each optotype had its own XML element with a manually inserted size and position. This would result in very large and hard to read XML files and would require manual updating of each element if the sizes or positions should ever change. The charts are all drawn at the same time and on top of each other, but makes all but the chosen chart invisible. This makes it seem like only one chart is calculated at a time and avoids recalculating when switching back and fort between charts.
+
+The optotypes provided to us by P.G. Söderberg was created in the SVG (Scalable Vector Graphics) format which is a format that Android does not natively support. One possibility would be to convert the files to scalable fonts, but instead a third party library called AndroidSVG \cite{AndroidSVG} was used. This allowed us to avoid manipulating the optotype files and was considered to be the simplest solution.
+
+% As Android does not natively have support for vector graphics and the chart optotype images are vector images the AndroidSVG library is used to display them \cite{AndroidSVG}.
 
 The size of the optotypes is calculated using equation \ref{eq:optotype_size}, where $d$ is the distance in centimeters, $v$ is the angle in radians and $h$ is the height of the optotype in centimeters.
 
@@ -473,11 +477,28 @@ The size of the optotypes is calculated using equation \ref{eq:optotype_size}, w
   	\label{eq:optotype_size}
 \end{equation}
 
-The settings associated to each chart are also generated at runtime. If this were not the case, every different version of the chart would need its own XML file, as each version contains a different number of predefined charts.
+The settings, such as the distance from the screen the patient is watching or the order which the optotypes appear, associated to each chart are also generated at runtime. If this were not the case, every different version of the chart would need its own XML file, as each version contains a different number of predefined charts.
 
-In order to control the application, \textit{controllers} were created to listen to button clicks and gestures when the user attempts to do something.
+In order to control the application, \textit{listeners} were created to listen to button clicks and gestures when the user attempts to interact with the application. The listeners are Java classes that contains methods which are connected to an interactive object on the screen, such as a button. Whenever a user interacts with an interactive object on the screen, the corresponding method in the listener is called. This method, in turn, calls other methods in order to perform the user requested action. The use of listeners separates the user input from the logic and creates a simple way of changing the functionality of an interactive object by letting the object call another listener method instead.
 
-The design of the application follows the Android design principles by using Androids built in navigation drawer and the built in views i.e. buttons, radio buttons, lists etc. \cite{android_design}.
+The design of the application follows the Android design principles by using Androids built in navigation drawer (fig. \ref{fig:example_nav_drawer}) and the built in views i.e. buttons, radio buttons, lists etc. \cite{android_design}.
+
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  %\includegraphics[width=.5\linewidth]{images/etdrs_top.png}
+  \includegraphics[width=50mm]{images/no_nav_drawer.png}
+  \caption{A closed navigation drawer which can be opened by clicking on the three lines on the top left of the screen or by swiping from the left edge of the screen to the right.}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=50mm]{images/nav_drawer.png}
+  \caption{An open navigation drawer which can be closed by pressing the back button or by swiping from the right to the left.}
+\end{subfigure}
+\caption{An example on how Google Maps navigation drawer looks like. (Source: Christian Johansson)}
+\label{fig:example_nav_drawer}
+\end{figure}
 
 \subsection{Server application}
 The server application is written in Java and uses the built-in \textit{Swing} library for drawing the GUI and the images. Swing is a very flexible and easy-to-use library with a lot of great tools for creating a good looking GUI. In our case
