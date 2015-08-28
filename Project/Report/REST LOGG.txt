@@ -5,3 +5,7 @@ Abstract
 	Löste stavfel
 	Ändrade tempus till imperfekt
 	
+1.4 Issues
+	Löste stavfel
+	Ändrade tempus till imperfekt
+	Klargjorde vissa resonemang
