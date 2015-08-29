@@ -1,2 +1,8 @@
 Abstract
 	Gjorde abstracten mer beskrivande av problemen och lade till abstract på svenska.
+
+Relaterat Arbete
+	  Beskriver mer om skillnaderna mellan ETDRS och Snellen Chart och beskriver bättre hur populära de är i branchen
+	  Beskriver att det finns många olika digitala syntavletjänster
+	  Beskriver mer hur de andra systemen fungerar och hur vårat fungerar i jämförelse
+	  Beskriver mer hur en Chromecast eller AppleTV skulle fungera i jämförelse med vårat
