@@ -102,13 +102,13 @@ In a field so dependent on visual aids and equipment, it's easy to see that ther
 \end{figure} 
 
 \section{Purpose}
-Having efficient and accurate systems is important in a medical environment, especially in a medical environment that handles tests where inaccurate our false results in some cases can cause accidents. Therefore it is important to have a well-built system that mitigates these problems. With the help of Professor Per Söderberg as our expert in the field of ophthalmology we will try to create a system that will act as a prototype for further future work. 
+Having efficient and accurate systems is important in a medical environment, especially in a medical environment that handles tests where inaccurate or false results in some cases can cause accidents. Therefore it is important to have a well-built system that mitigates these problems. With the help of Professor Per Söderberg as an expert in the field of ophthalmology we tried to create a system that will act as a prototype for further future work. 
 
 Accuracy is not the only important aspect to think of when implementing a system. It is also important to think about expanding and improving on how the system can be used. To introduce new functionality that will make the life of the system's user a lot more simple and efficient is one of those important improvements. 
 
-These are a few of the aspects that we will to build a system around. A simple system that implements digital eye charts has already been built by professor Söderberg, though that system is not as sophisticated or expendable as needed. We will base some of our system's content upon how this other system is built. Mostly this will be using the layouts of the charts already created since those charts have been shown to work. 
+These are a few of the aspects that we took in consideration when building a system. A simple system that implements digital eye charts has already been built by professor Söderberg, though that system is not as sophisticated or expandable as needed. We base some of our system's content upon how the other system is built. Mostly this will be using the layouts of the charts already created since those charts have been shown to work. 
 
-Using this other system as a basis for our own we build a system that:
+Using this other system as a basis for our own we have built a system that:
 
 \begin{itemize}
 	\item Has an application for the Android tablet with an improved user interface, both aesthetically and functionally.
@@ -118,7 +118,7 @@ Using this other system as a basis for our own we build a system that:
 \end{itemize}
 
 \section{Motivation}
-Building upon what is said in the last section we need to find a clear motivation on why this should be done. A few things can be found in the working environment of the optician. Determining visual acuity is a very labor- and equipment-intensive process. It is a lot of manual labor with much time wasted when setting up and changing the equipment used. This work-load is also increasing drastically with time. More and more people are experiencing eye problems, at all ages and in many cultures. \cite{vision_loss} With more people needing to test their visual acuity, faster and more efficient methods needs to be used. 
+A few things can be found in the working environment of the optician. Determining visual acuity is a very labor- and equipment-intensive process. It is a lot of manual labor with much time wasted when setting up and changing the equipment used. This work-load is also increasing drastically with time. More and more people are experiencing eye problems, at all ages and in many cultures. \cite{vision_loss} With more people needing to test their visual acuity, faster and more efficient methods needs to be used. 
 
 Another fact is that physical eye charts are not as accurate as they should be for accurate measurements. They are also big in size and static, static in this context because they are fixed and cannot be changed. Because the handling of printed charts is slow and not as accurate as needed there exists a need for improvement. 
 
@@ -505,14 +505,13 @@ The design of the application follows the Android design principles by using And
 \end{figure}
 
 \subsection{Server application}
-The server application is written in Java and uses the built-in \textit{Swing} library for drawing the GUI and the images. Swing is a very flexible and easy-to-use library with a lot of great tools for creating a good looking GUI. In our case
-we won't be needing a very advanced GUI since the main purpose of the server is to render a fullscreen image at all times. This greatly simplifies the implementation of the GUI. Other than the rendering of images, the GUI will consist of a small network controller where the user can specify a number of settings. These settings will be needed to configure for example what name the server will have on the network. It's also necessary to have settings for the location of the server.
+The server application is written in Java and uses the built-in \textit{Swing} library for drawing the GUI and the images. Swing is a very flexible and easy-to-use library with a lot of great tools for creating a good looking GUI. In our case we won't be needing a very advanced GUI since the main purpose of the server is to render a fullscreen image at all times. This greatly simplifies the implementation of the GUI. Other than the rendering of images, the GUI consists of a small network controller where the user can specify a number of settings. These settings have to be configured for example to what name the server will have on the network. It's also necessary to have settings for the location of the server.
 
 The rendering of images, specifically SVG vector graphic images, will be handled by an \textit{~Apache} library called \textit{Batik}. It is well supported and extensive library for rendering a multitude of different file formats. The SVG files contain information about the optotypes used on the charts. Using procedural positioning of the SVG images, we can easily create a well structured image to render to the screen.
 
 %The server will also handle the networking on its side, connecting to the Android tablet over a TCP connection. This will be done using a third-party library \textit{Kryonet}. \cite{kryonet} Kryonet is a library that wraps Java's own networking functionality and improves upon it. The library's strong-point is the way it implements serialization of Java objects. Using Kryonet we can without a lot of effort serialize objects, send the object over the network and then deserialize is, getting back the original object with all of its internal structure. 
 
-Network communication will be handled using a submit-poll system. The networking part of the server will receive information from the network and submit it to a thread-safe queue. While this happens, the GUI polls the information from the queue and handles the information. This methods is necessary because of how Swing is constructed. Swing runs on a dispatch-thread basis, meaning only the dispatch-thread itself can change things in the GUI. Trying to change things in the GUI from another thread would cause a lot of problems. Now the GUI can try to poll whenever it has time, though tries to do this periodically.  
+Network communication will be handled using a submit-poll system. The networking part of the server will receive information from the network and submit it to a thread-safe queue. While this happens, the GUI polls the information from the queue and handles the information. This method is necessary because of how Swing is constructed. Swing runs on a dispatch-thread basis, meaning only the dispatch-thread itself can change things in the GUI. Trying to change things in the GUI from another thread would cause a lot of problems. Now the GUI can try to poll whenever it has time, though tries to do this periodically.  
 
 \subsection{Network}
 The network communication between the client and the server consists of two parts. The first part is server detection and the second is server communication. All network communication are handled in threads separate from the main thread using Java's SwingWorker- and Androids AsyncTask class. Both classes allow us to perform network operations in the background, in a separate thread, and once the operations are complete the main thread of the program will automatically get the result.
@@ -581,7 +580,8 @@ DISTANCE
 
 \chapter{ Results}
 \section{System functionality} 
-The system fulfills all specified requirements and allow the user to quickly set up a chart on the monitor. No system crashes have occurred during testing, and no bugs that causes the system to not work properly have been encountered. With a stable WiFi connection, the system runs smoothly without any lag and the server detection finds a server in under a second. 
+%The system fulfills all specified requirements and allow the user to quickly set up a chart on the monitor. No system crashes have occurred during testing, and no bugs that causes the system to not work properly have been encountered. With a stable WiFi connection, the system runs smoothly without any lag and the server detection finds a server in under a second. 
+The resulting system ended up in three parts, an Android part, a server part and a network part, as shown in the system structure (fig. \ref{system_structure}). Every action on the Android device related to a chart is connected to the network part. Once an action has been chosen, the network part is called and it creates a message with the correct command and data and then sends this message to the server. Once the server receives this message, the server will perform the requested actions.
 
 \subsection{Android application}
 The Android application uses Android's standard GUI elements. To navigate between the connection settings and different type of charts, Android's built in navigation drawer is used (fig. \ref{fig:app_nav_drawer}). In order to reach the connection settings, the user must click the name of the connected server and in the case that no server is connected, it will, instead of the name of a server, say \textit{Click to connect}.
@@ -631,7 +631,7 @@ Once the application has connected to a server, the user can navigate to the cha
 
 The user can now choose which chart version, size and distance to use. The chart version decides which optotype to use at which position. The ETDRS chart has 3 pre-made versions\cite{Ferris} and the rest of the charts have 1. There is also an option to use a randomly generated version which is generated when the application starts. If the random version is selected, the generate button is enabled. The random version is generated with no restrictions and should be used with caution.
 
-The user can also choose which chart size, \textit{Large}, \textit{Medium} or \textit{Small}, to use. The large chart is the same chart as the \textit{upper} and \textit{lower ETDRS} charts (fig. \ref{fig:etdrs_large}), the medium chart is the same as the \textit{one line chart} (fig. \ref{fig:icons_medium}) and the small chart is the same as the \textit{single optotype chart} (fig. \ref{fig:tumbling_e_small}). To navigate between the upper and lower chart, the user must swipe the screen up or down and to page between the optotypes on the small chart, the user must swipe left or right.
+The user can also choose which chart size, \textit{Large}, \textit{Medium} or \textit{Small}, to use. The large chart is the same chart as the \textit{upper} and \textit{lower ETDRS} charts (fig. \ref{fig:etdrs_large}), the medium chart is the same as the \textit{one line chart} (fig. \ref{fig:icons_medium}) and the small chart is the same as the \textit{single optotype chart} (fig. \ref{fig:tumbling_e_small}). The reason the names in application differs from the names in the report is the result of an early design choice which will most likely change in the future. To navigate between the upper and lower chart, the user must swipe the screen up or down and to page between the optotypes on the small chart, the user must swipe left or right.
 
 \begin{figure}[ht!]
 \centering
@@ -655,7 +655,7 @@ The user can also choose which chart size, \textit{Large}, \textit{Medium} or \t
 The last setting the user can choose is the distance setting. Here the user can enter the distance a patient is from the screen, in centimeters, and then press \textit{Apply Distance}. This has no visible effect on the application but is used to set the optotype sizes on the monitor.
 
 \subsection{Server}
-The server application is in many cases very similar to the Android application. Both use the same methods for the calculations, such as the optotype sizes. The charts are built using the same logic as the Android application with minor changes due to the fact that Java's Swing components have to be drawn rather than Android components. The monitor connected to the server only displays the currently chosen chart (fig. \ref{fig:server_charts}) and nothing else, such as LogMAR values or settings shown on the Android device.
+The server application is in many ways very similar to the Android application. Both use the same methods for the calculations, such as the optotype sizes. The charts are built using the same code as the Android application with minor changes due to the fact that Java's Swing components have to be drawn rather than Android components. The monitor connected to the server only displays the currently chosen chart (fig. \ref{fig:server_charts}) and nothing else, such as LogMAR values or settings shown on the Android device.
 
 \begin{figure}[ht!]
 \centering
