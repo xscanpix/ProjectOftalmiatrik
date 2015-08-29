@@ -511,10 +511,11 @@ The rendering of images, specifically SVG vector graphic images, will be handled
 Network communication will be handled using a submit-poll system. The networking part of the server will receive information from the network and submit it to a thread-safe queue. While this happens, the GUI polls the information from the queue and handles the information. This methods is necessary because of how Swing is constructed. Swing runs on a dispatch-thread basis, meaning only the dispatch-thread itself can change things in the GUI. Trying to change things in the GUI from another thread would cause a lot of problems. Now the GUI can try to poll whenever it has time, though tries to do this periodically.  
 
 \subsection{Network}
-The network communication between the client and the server consists of two parts. The first part is server detection and the second is server communication. All network communications are handled in threads separate from the main thread as the network operations would halt the flow of the program otherwise. Once the operations are complete and the main threads finds it convenient, it will grab the result from the network threads.
+The network communication between the client and the server consists of two parts. The first part is server detection and the second is server communication. All network communication are handled in threads separate from the main thread using Java's SwingWorker- and Androids AsyncTask class. Both classes allow us to perform network operations in the background, in a separate thread, and once the operations are complete the main thread of the program will automatically get the result.
+
 
 \subsubsection{Server detection}
-In order to detect all servers on the network, the Android application sends out a discovery request message 5 times with a 1 second interval using UDP (User Datagram Protocol) on the networks broadcast address. The servers, which constantly listens for broadcasts containing the correct message, will then respond to that message with it's name, again using UDP. Once the Android application receives a response it adds the server to a list. The user can then choose to connect to one of the found servers or attempt the detection again if no servers where found.
+In order to detect all servers on the network, the Android application sends out a discovery request message, consisting of the string \\ \textit{AXANIVIS\_DISCOVER\_REQUEST}, 5 times with a 1 second interval using UDP (User Datagram Protocol) on the networks broadcast address using port 14141. The server, which constantly listen for broadcasts containing the correct message, will then respond to that message with the message \textit{AXANIVIS\_DISCOVER\_RESPONSE\textbackslash nServerName}, again using UDP. Once the Android application receives a response it adds the server to a list. The user can then choose to connect to one of the found servers or attempt the detection again if no servers were found.
 
 Since UDP is a connectionless protocol, there is no guarantee that the server actually receives the message, the discovery request message is sent 5 times, which means the server have 5 chances to receive the message and respond to it. This means that the server will receive a discovery request 0 to 5 times and respond to it the same number of times. To avoid duplicate server entries in the list, a server is only added if it doesn't already exist in the list.
 
@@ -675,10 +676,10 @@ The server application is in many cases very similar to the Android application.
 Even though the system fulfills the requirements, it doesn't mean it's bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause a user to repeat an action which will, in the end, result in the server acting on on both actions. In the case that the connection gets broken, all actions performed will be ignored by the server, even after reconnecting. In this case, the user can change to another chart size or version and then back again to resolve the issue.
 
 \section{Tests}
-The four tests presented in section \ref{sec:evaluation} where performed in order to find major faults with the system. All tests is considered to have met the requirements, though the usability could still use some improvements.
+The four tests presented in section \ref{sec:evaluation} were performed in order to find major faults with the system. All tests is considered to have met the requirements, though the usability could still use some improvements.
 
 \subsection{Developer walkthrough}
-During the developer walkthrough of the system, all charts versions where found and all settings where usable on every chart by using table \ref{tab:test1}. The connection settings where also reachable from everywhere in the application and both connecting and reconnecting was working properly.
+During the developer walkthrough of the system, all charts versions were found and all settings were usable on every chart by using table \ref{tab:test1}. The connection settings were also reachable from everywhere in the application and both connecting and reconnecting was working properly.
 
 \begin{table}[ht!]
 \centering
