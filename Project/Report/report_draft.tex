@@ -524,9 +524,9 @@ Since UDP is a connectionless protocol, there is no guarantee that the server ac
 %The servers themselves are constantly listening for broadcasts containing the server discovery request. Once a request is received, the server will send a response and then keep listening for more requests.
 
 \subsubsection{Server communication}
-The communication between the Android application and the connected server is handled using strings of characters divided to three lines using line separators. The first line consists of a check word, which is the same for every message. If this check word is wrong or doesn't exist, the server will ignore the message. The second line is the command to the server. This could be a command to set the currents chart type or size to something else. The third line is the data required for the command. The data can be empty (null) or a string of characters. Depending on the command, the string of characters can be read as either a sequence of ASCII characters or a sequence of numbers.
+The communication between the Android application and the connected server is handled using strings of characters divided to three lines using line separators. The first line consists of a check word, which is the same for every message. If this check word is wrong or doesn't exist, the server will ignore the message. The second line is the command to the server. This could be a command to set the current chart type or size to something else. The third line is the data required for the command. The data can be empty (null) or a string of characters. Depending on the command, the string of characters can be read as either a sequence of ASCII characters or a sequence of numbers. The messages defined for the server communications are commands to connect to the server, set the distance from the screen and set which chart to be displayed with which optotype. If a message with an incorrect command is sent to the server, the server will ignore that message. If the wrong data is sent together with a correct command, the server will keep functioning but its output is undefined.
 
-The messages are sent using a TCP (Transmission Control Protocol) connection to the server, which guarantees that the entire message will be correct and that it will be retrieved by the server as long as the server exists on the network. If there are no servers available on the network, the user will be informed and have to reconnect to a server.
+The messages are sent using a TCP (Transmission Control Protocol) connection to the server on port 14142. This guarantees that the entire message will be correct and that it will be retrieved by the server as long as the server is connected to the network. If a connection is timed out, the sent command is ignored and the user have to reconnect to a server and resend the command.
 
 %The communication between the client and server is handled using simple TCP (Transimission Control Protocol) messages. The TCP messages are used for sending and receiving commands and are structured as three lines of text (Example \ref{tcp_message}). The first line is a \textit{check} word and is the same for every \textit{command}. The second line is a \textit{command} word which tells the receiver what to do and the third line is the \textit{data} required for the \textit{command}. In many cases the simple \textit{command} is enough and the \textit{data} is left empty.
 
@@ -554,7 +554,7 @@ AXANIVIS
 DISTANCE
 500
 \end{lstlisting}
-\caption{An example of how a network message would look like.
+\caption{An example of how a network message that sets the distance from the screen to 500cm.
 %A message with the check word \textit{AXANIVIS}, the command \mbox{\textit{DISTANCE}} and the data \textit{500}. This message would make the server to resize the currently active chart to be suitable for a user watching from 500 centimeters. 
 \label{fig:example_message}}
 \end{figure}

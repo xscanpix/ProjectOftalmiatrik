@@ -18,7 +18,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Overview of the system structure\relax }}{20}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces An example on how Google Maps navigation drawer looks like. (Source: Christian Johansson)\relax }}{21}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces An example of how a network message would look like. \relax }}{24}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces An example of how a network message that sets the distance from the screen to 500cm. \relax }}{24}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces The Android application navigation drawer used for navigating the application. a) Name of the application b) The currently connected server c) Available optotypes d) Grating, not yet implemented e) Test, used for testing new functions\relax }}{26}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Server connection steps\relax }}{27}
