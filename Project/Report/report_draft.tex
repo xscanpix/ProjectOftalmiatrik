@@ -160,13 +160,67 @@ No security features, such as encrypted network traffic or protection against se
 No automatic update system will be included, instead the user will have to manually update both the Android application and the server. Automatic updating was not a core feature, and could therefore be saved for future work.
 
 \section{Requirements}
-For this project to be considered successful, the system must be able to display the chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also has to be able to choose if the current chart should use the Sloan, Tumbling E, HVOT or LEA optotypes.
+%For this project to be considered successful, the system must be able to display the chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also has to be able to choose if the current chart should use the Sloan, Tumbling E, HVOT or LEA optotypes.
 
-It is very important that the chart on the monitor displays all optotypes with the correct sizes and positions. In order to do this, the user must to be able control the distance from which the patient is watching the monitor. It is also very important that the correct sizes, in LogMAR, is displayed on the Android device.
+For this project to be considered successful, the system must be able to display the chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts (fig. \ref{fig:axanivis}), which is a project under development by P.G. Söderberg \cite{PGSoderbergOral}.
 
-The intended user for this system should not need any specific background knowledge about technology more than the basic use of Android device, for example being able to start the device, start an application and how to perform simple Android gestures. This does not mean that it has to be easy to install and set up, though it is a goal for future expansion. 
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  %\includegraphics[width=.5\linewidth]{images/etdrs_top.png}
+  \includegraphics[width=50mm]{images/etdrs_top.png}
+  \label{fig:etdrs_upper1}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=50mm]{images/etdrs_bottom.png}
+  \label{fig:etdrs_lower1}
+\end{subfigure}
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\includegraphics[width=50mm]{images/etdrs_one_line.png}
+\end{subfigure}
+\begin{subfigure}{.4\textwidth}
+	\centering
+	\includegraphics[width=50mm]{images/etdrs_single.png}
+\end{subfigure}
+\caption{The four Axanvis charts}
+\label{fig:axanivis}
+\end{figure}
 
-The Android application should be very user friendly and follow the Android design principles set up by Google \cite{android_design}. This makes the application behave similar to other Android applications which will result in users already familiar with Android, to get the expected result from their actions. 
+
+The user also have to be able to choose if the current chart should use the Sloan, Tumbling E, HVOT or LEA optotypes (fig. \ref{fig:optotypes_example1}). The Sloan and HVOT optoypes consists of a different sets of letters, the Tumbling E consists of the letter E rotated in different angles and LEA is a set of custom symbols. \cite{Colenbrander}
+
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{images/landholt_c_optotype.png}
+  \caption{A Sloan C}
+  \label{fig:landholt_c1}
+\end{subfigure}%
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{images/tumbling_e_optotype.png}
+  \caption{A Tumbling E}
+  \label{fig:tumbling_e1}
+\end{subfigure}
+\begin{subfigure}{.3\textwidth}
+  \centering
+  \includegraphics[width=.4\linewidth]{images/lea_optotype.png}
+  \caption{A LEA House}
+  \label{fig:lea1}
+\end{subfigure}
+\caption{Some example optotypes}
+\label{fig:optotypes_example1}
+\end{figure}
+
+It is very important that the chart on the monitor displays all optotypes with the correct sizes and positions. In order to do this, the user must to be able control the distance from which the patient is watching the monitor. It is also very important that the correct sizes, in LogMAR (Logarithmic of the Minimum Angle of Resolution), which is a logarithmic unit of measurement dependant on the view angle of a patient \cite{Bailey}, is displayed on the Android device.
+
+The intended user for this system should have all the necessary knowledge and education on how to perform an eye examination. The user should not need any more than basic knowledge about an Android device, such as being able to start the device, connect to a wireless network, start an application and how to perform simple Android gestures. This does not mean that it has to be easy to install and set up, though it is a goal for future expansion. 
+
+The Android application should follow the Android design principles set up by Google \cite{android_design}. This makes the application behave similar to other Android applications which will result in users already familiar with Android feel familiar to this application as well.
 
 The system should also allow for automatic server detection so that users don't have to manually connect by entering IP addresses. This allows a quick and easy way to connect to a server. In order for the server detection to be considered working properly, it should detect a server on a stable network atleast 90\% of the time.
 
@@ -305,7 +359,7 @@ An optotype is a symbol that is used on a visual acuity chart. The optotypes are
 
 \pagebreak
 \subsection{ETDRS Chart}
-The ETDRS chart consists of fourteen rows with five optotypes on each row. The size of each optotype is measured in LogMAR (Logarithmic of the Minimum Angle of Resolution) which is the base 10 logarithm of the angle of one fifth of an optotype (eq. \ref{eq:logmar} and fig. \ref{fig:logmar_calculation}) \cite{Bailey}. The angle unit is measured in arcminutes, where one arcminute is $\dfrac{1}{60}$ degrees or $\dfrac{\pi}{10800}$ radians. If the angle v in figure \ref{fig:logmar_calculation} is equal to 8 arcminutes, then the size of the letter would be $log_{10}(8) \approx 0.903\ LogMAR$.
+The ETDRS chart consists of fourteen rows with five optotypes on each row. The size of each optotype is measured in LogMAR which is the base 10 logarithm of the angle of one fifth of an optotype (eq. \ref{eq:logmar} and fig. \ref{fig:logmar_calculation}) \cite{Bailey}. The angle unit is measured in arcminutes, where one arcminute is $\dfrac{1}{60}$ degrees or $\dfrac{\pi}{10800}$ radians. If the angle v in figure \ref{fig:logmar_calculation} is equal to 8 arcminutes, then the size of the letter would be $log_{10}(8) \approx 0.903\ LogMAR$.
 
 %\begin{figure}[h]
 %\centering
