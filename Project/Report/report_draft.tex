@@ -84,7 +84,7 @@ These numbers have been calculated from a set of standardized conditions~\cite{B
 
 These conditions cannot always be met. Examination rooms are not always large enough to take measurements from six meters away for example. In those cases, the reference numbers on the sheet are no longer accurate and the optician has to compensate manually~\cite{PGSoderberg}. If the standardized conditions cannot be met it can lead to irregularities or faulty measurements in some tests.
 
-There are also several different variations on these eye charts. Different sets of optotypes, ranging from different subsets of Latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen chart~(fig.~\ref{fig:snellen_chart1}) that was developed in the 19th century, to the more modern ETDRS chart~(fig.~\ref{fig:etdrs_chart1}).
+There are also several different variations on these eye charts. Different sets of optotypes, ranging from different subsets of Latin letters to more abstract symbols, have been developed for different types of patients, such as those who are analphabetic, or for small children. The layout of these charts also have variations, from the classic Snellen chart~(fig.~\ref{fig:snellen_chart1}) that was developed in the 19th century, to the more modern ETDRS (Early Treatment Diabetic Retinopathy Study) chart~(fig.~\ref{fig:etdrs_chart1}).
 
 
 In a field so dependent on visual aids and equipment, it's easy to see that there are several possibilities for improvement and expansion. Modern technology can be used to improve these tests, and digitalization can simplify the way opticians work with diagrams.
@@ -118,7 +118,7 @@ Using the original system as a basis for our own we built a system that
 \end{itemize}
 
 \section{Motivation}
-Building upon what is said in the last section we need to find a clear motivation on why this should be done. A few things can be found in the working environment of the optician. Determining visual acuity is a very labor- and equipment-intensive process. It is a lot of manual labor with much time wasted when setting up and changing the equipment used. This work-load is also increasing drastically with time. More and more people are experiencing eye problems, at all ages and in many cultures. \cite{vision_loss} With more people needing to test their visual acuity, faster and more efficient methods need to be used. 
+A few things can be found in the working environment of the optician. Determining visual acuity is a very labor- and equipment-intensive process. It is a lot of manual labor with much time wasted when setting up and changing the equipment used. This work-load is also increasing drastically with time. More and more people are experiencing eye problems, at all ages and in many cultures. \cite{vision_loss} With more people needing to test their visual acuity, faster and more efficient methods needs to be used. 
 
 Another fact is that physical eye charts are not as accurate as they should be for accurate measurements. They are also big in size and static, static in this context because they are fixed and cannot be changed. Because the handling of printed charts is slow and not as accurate as needed there exists a need for improvement. 
 
@@ -222,23 +222,25 @@ The intended user for this system should have all the necessary knowledge and ed
 
 The Android application should follow the Android design principles set up by Google \cite{android_design}. This makes the application behave similar to other Android applications which will result in users already familiar with Android feel familiar to this application as well.
 
-The system should also allow for automatic server detection so that users don't have to manually connect by entering IP addresses. This allows a quick and easy way to connect to a server. In order for the server detection to be considered working properly, it should detect a server on a stable network atleast 90\% of the time.
+The system should also allow for automatic server detection so that users don't have to manually connect by entering IP addresses. This allows a quick and easy way to connect to a server. In order for the server detection to be considered working properly, it should detect a server on a stable network at least 90\% of the time. With a success rate of 90\%, it would be very uncommon to fail the detection twice in a row, while keeping the scanning time relatively low.
 
 As this project only aims for a working prototype of the system, it is very important that it is easy to continue the development and add more features without rewriting large parts of the code.
 
 \section{Evaluation \label{sec:evaluation}}
-In order to evaluate if all requirements have been met, the system will undergo a few tests. The goal of the first test is to make sure that the user actually can choose a specific chart with specific optotypes to be viewed from a specific distance. This is done by the developers going through all charts, with all types of optotypes and setting the distance for each one of them. To achieve this, table \ref{tab:test1_empty} is used to systematically walk through every setting.
+In order to evaluate if all requirements have been met, the system will undergo four tests. The goal of the first test is to make sure that the user actually can choose a specific chart with specific optotypes to be viewed from a specific distance. This is done by the developers going through all charts, with all types of optotypes and setting the distance for each one of them. To achieve this, table \ref{tab:test1_empty} is used to systematically walk through every setting.
 
-The second test is to make sure that the optotypes have the correct sizes on the monitor. This test will done by, outside of the system, calculating the expected sizes of the optotypes in centimeters. The calculated sizes will then be compared to the sizes output by the system and see if they match. If this is a match, the optotypes will be measured by a physical measurement tool in order to double check the result.
+The second test is to make sure that the optotypes have the correct sizes on the monitor. This test will be done by calculating the expected sizes of the optotypes in centimeters for different screen sizes with the help of Matlab. The calculated sizes will then be compared to the sizes output by the system and see if they match. If this is a match, the optotypes will be measured by a physical measurement tool in order to make sure that they have the calculated size when they are displayed on the monitor. The physical measuring is required to make sure that the system works as intended in practice and not only in theory.
 
-The third test will determine how user friendly the system is. This will be done by letting a user with no previous knowledge of the system, attempt to connect to a server and perform some basic tasks like setting a specific chart with a specific optotype or setting a specific distance (App. \ref{app:usability}). If the user testing has no previous knowledge of visual acuity charts, a brief explanation will be given so that the test doesn't fail because the user, for example, doesn't know what "HVOT" is.
+The third test will determine how user friendly the system is. This will be done by letting a user with no previous knowledge of the system, attempt to connect to a server and perform some basic tasks like setting a specific chart with a specific optotype or setting a specific distance (App. \ref{app:usability}). If the user testing has no previous knowledge of visual acuity charts, a brief explanation will be given so that the test doesn't fail because the user, for example, doesn't know what "HVOT" is. Once the test is done, the user will provide feedback pointing out possible faults in our design. This feedback will then be used to improve the design. If the user can perform the entire test without help, the test is considered successful.
 
-The last test is a quantitative test to see how well the server detection performs. The test involves the Android application trying to detect a server on a stable WiFi a 100 times and see how many times the server was detected. This test can be done several times and the average number of detection's in a 100 tries will determine its success rate.
+The last test is a quantitative test to see how well the server detection performs. The test involves the Android application trying to detect a server on a stable WiFi a 100 times and see how many times the server was detected. This test can be done several times and the average number of detection's in a 100 tries will determine its success rate. Testing the system on anything other than a stable WiFi is unnecessary as it is only intended to work on a stable local network.
 
 \section{Related work}
 
 \subsection{Visual acuity charts}
-Several different versions of visual acuity chart exist today. The ETDRS (Early Treatment Diabetic Retinopathy Study) chart is the most commonly used today and is an improvement to the older \textit{Snellen chart}(fig. \ref{fig:snellen_chart1}, page \pageref{fig:snellen_chart1}). The ETDRS chart was designed and developed by Ferris et al \cite{Ferris}, based on the work of Bailey and Lovie \cite{Bailey}. 
+%Several different versions of visual acuity chart exist today. The ETDRS (Early Treatment Diabetic Retinopathy Study) chart~(fig.~\ref{fig:etdrs_chart1}) is the most commonly used today and is an improvement to the older \textit{Snellen chart}(fig. \ref{fig:snellen_chart1}, page \pageref{fig:snellen_chart1}). The ETDRS chart was designed and developed by Ferris et al \cite{Ferris}, based on the work of Bailey and Lovie \cite{Bailey}. 
+
+Several different versions of visual acuity chart exist today. The ETDRS (Early Treatment Diabetic Retinopathy Study) chart~(fig.~\ref{fig:etdrs_chart1}, page \pageref{fig:etdrs_chart1}) is used at Uppsala Univeristy Hospital today and many other places around the world, and is an improvement to the older \textit{Snellen chart}(fig. \ref{fig:snellen_chart1}, page \pageref{fig:snellen_chart1}). The ETDRS chart was designed and developed by Ferris et al \cite{Ferris}, based on the work of Bailey and Lovie \cite{Bailey}. The Snellen chart design is the most used design globally, but the ETDRS design has been rising in popularity since it has an increased testing accuracy because of its more legible font and because it has the same number of letters on each row.
 
 %\begin{figure}[ht!]
 %\centering
@@ -248,10 +250,12 @@ Several different versions of visual acuity chart exist today. The ETDRS (Early 
 
 
 \subsection{Digital visual acuity charts}
-Digital Eye Chart \cite{digitaleyechart} and iChartPlus \cite{ichartplus} are two applications supposed to display a visual acuity chart on a digital screen. Both applications are computer applications, which requires the computer to be connected to the screen. The companies behind the products provide very little information and the exact specifications of the charts are not available.
+%Digital Eye Chart \cite{digitaleyechart} and iChartPlus \cite{ichartplus} are two applications supposed to display a visual acuity chart on a digital screen. Both applications are computer applications, which requires the computer to be connected to the screen. The companies behind the products provide very little information and the exact specifications of the charts are not available.
+
+There are several other commercial applications that display visual acuity charts on digital screens, for example Digital Eye Chart \cite{digitaleyechart} and iChartPlus \cite{ichartplus}. Most of these alternatives are computer applications which require the computer it runs on to be connected to the screen the chart will be displayed on. Both Digital Eye Chart and iCharPlus, like many other of the commercial applications, provide a remote control that can switch charts and other features. The difference between these systems and this project is in using a tablet computer as a remote, allowing a visual interface with touch controls that connects with the screen and server wirelessly instead of with a video cable. A visual interface allows more types of interactions than a remote control and also allows us to show values and information on the tablet held by the optimetrist instead of on the screen, removing clutter that might distract the patient.
 
 \subsection{Media streaming devices}
-Several media streaming devices exists that allow digital content to be received and displayed on a connected screen. Examples of such devices are Chromecast \cite{chromecast} and Apple TV \cite{appletv} which you can plug into a TV and allows you to view images or watch movies that are stored on your phone or computer. Both applications also allows developers to develop their own applications to display custom content but requires the developer to enter an agreement with respective company.
+Several media streaming devices exists that allow digital content to be received and displayed on a connected screen. Examples of such devices are Chromecast \cite{chromecast} and Apple TV \cite{appletv} which you can plug into a TV and allows you to view images or watch movies that are stored on your phone or computer. Both applications also allows developers to develop their own applications to display custom content but requires the developer to enter an agreement with respective company. Both these services allow you to mirror the screen of your tablet or phone to the TV screen, and could be used to display an eye chart. However, unless the screen on your tablet and the screen on your TV have the same resolution the image will be stretched or resized, reducing the quality of the image. If the screen is mirrored there is also a lot of network traffic needed to stream the screen over to the Chromecast or Apple TV, putting a strain on the tablet's battery life. The server in our project's solution displays the charts which are stored  on the server, minimizing the need for network traffic while working at the screens resolution without stretching or resizing.
 
 
 %There exists today several companies that have taken on the task of digitalizing the usage of eye charts.
@@ -273,15 +277,15 @@ Several media streaming devices exists that allow digital content to be received
 
 \chapter{ Visual Acuity Testing}
 \section{Visual Acuity}
-The measurement of a persons visual acuity has an important constraint that needs to be followed. This constraint is the fact that our eyes works best physiologically from greater distances. On the other hand, at shorter distances our eyes tend to make what we see look unfocused. To make up for this shift in focus a minimum testing distance has to be enforced to ensure that the shift in focus stays as small as possible. This distance has by scientific research been set to be six meters.
+The measurement of a persons visual acuity has an important constraint that needs to be followed. This constraint is the fact that our eyes works best physiologically from greater distances. On the other hand, at shorter distances our eyes tend to make what we see look unfocused. To make up for this shift in focus a minimum testing distance has to be enforced to ensure that the shift in focus stays as small as possible. This distance has by scientific research been set to be six meters \cite{Acuity_Book}.
 
 \subsection{Measurement distance}
-The specific distance of six meters is derived from how our eyes bend light. From that distance or greater the rays of light entering our eyes are nearly parallel to each other, parallel enough to make it unnoticeable. It is important that the rays of light that hit the eyes are parallel because then the light hits a more focused area in the back of the eyes. This happens because of the convex shape of the eye's lens. A convex shaped lens focuses parallel light onto the focal point. Since a convex lens focuses parallel light to a focal point a concave lens instead spreads light coming from a focal point to parallel rays. Combining these two type of lenses we can create a more focused light. 
+The specific distance of six meters is derived from how our eyes bend light. From that distance or greater the rays of light entering our eyes are nearly parallel to each other, parallel enough to make it unnoticeable. It is important that the rays of light that hit the eyes are parallel because then the light hits a more focused area in the back of the eyes. This happens because of the convex shape of the eye's lens. A convex shaped lens focuses parallel light onto the focal point. Since a convex lens focuses parallel light to a focal point a concave lens instead spreads light coming from a focal point to parallel rays. Combining these two type of lenses we can create a more focused light \cite{Optics_Book}. 
 
 \subsection{Defocus correction}
-To make up for the shift in focus a suitable lens is put in front of the eye at about the distance that you would wear glasses. The type of lens mostly depends on the shape of your eye, any eye disease you might have or the distance from the lens to the eye. An important property of the lenses is at what distance the focal point lays at. So, to create a more focused light, which is exactly what glasses do, we have to put a lens in front of the eye to create more parallel light. These lenses can either be plus or minus lenses, either spreading or contracting the light.
+To make up for the shift in focus a suitable lens is put in front of the eye at about the distance that you would wear glasses. The type of lens mostly depends on the shape of your eye, any eye disease you might have or the distance from the lens to the eye. An important property of the lenses is at what distance the focal point lays at. So, to create a more focused light, which is exactly what glasses do, we have to put a lens in front of the eye to create more parallel light. These lenses can either be plus or minus lenses, either spreading or contracting the light \cite{Optics_Book}.
 
-In optician's terms a minus glass is a lens that focuses light coming further away (subtraction) and a plus glass is a lens that focuses light from nearer (addition). A real world example of this is glasses correcting ~near- and farsightedness.
+In optician's terms a minus glass is a lens that focuses light coming further away (subtraction) and a plus glass is a lens that focuses light from nearer (addition). A real world example of this is glasses correcting ~near- and farsightedness \cite{Acuity_Book}.
 
 \subsection{Angular magnification}
 % TODO: Explain using formulas how the angular magnification works
@@ -312,7 +316,7 @@ The magnification is a problem is visual acuity testing because if the optotypes
 There is need to have a standard to follow on how much addition or subtraction needed for a specific distance. Figure \ref{magtable} shows what values to use when testing visual acuity at shorter distances than six meters. \cite{PGSoderberg}
 
 \section{Chart Design}
-The visual acuity charts used in this project are based on ETDRS (Early Treatment Diabetic Retinopathy Study) charts (fig. \ref{fig:etdrs_chart1}, page \pageref{fig:etdrs_chart1}) \cite{Ferris} and a project developed by P.G. Söderberg \cite{PGSoderbergOral} at Uppsala University Hospital. 
+The visual acuity charts used in this project are based on the ETDRS (fig. \ref{fig:etdrs_chart1}, page \pageref{fig:etdrs_chart1}) \cite{Ferris} and the Axanivis (fig. \ref{fig:axanivis}) \cite{PGSoderbergOral} charts developed by P.G. Söderberg at Uppsala University Hospital. 
 
 %\begin{figure}[ht!]
 %\centering
@@ -325,7 +329,7 @@ An optotype is a symbol that is used on a visual acuity chart. The optotypes are
 
 \textit{Sloan letters} are defined to be the ten optotypes \textit{C, D, H, K, N, O, R, S, V and Z}. They have been chosen because they are easily differentiated from each other \cite{Ferris} and are used by most visual acuity charts\cite{Colenbrander}.
 
-\textit{Landholt C} is a sloan \textit{C} that is rotated by 0, 90, 180 or 270 degrees and is usually used in a more scientific environment. The Landholt C is used as reference when deciding the how difficult it is to read a specific optotype\cite{Colenbrander}.
+\textit{Landholt C} is a sloan \textit{C} that is rotated by 0, 90, 180 or 270 degrees and is usually used in a scientific environment. The Landholt C is used as reference when deciding the how difficult it is to read a specific optotype\cite{Colenbrander}.
 
 \textit{Tumbling E} is like the Landholt C, but with the optotype \textit{E} instead of \textit{C}. This optotype can be used instead of the Sloan collection of optotypes if the patient doesn't know how to read. The patient can instead show or tell the optician in what direction the \textit{E} is rotated\cite{Colenbrander}.
 
@@ -407,24 +411,25 @@ The optotypes on the top row of the chart is of the size 1.0 LogMAR and then eac
 
 %\newpage
 \subsection{Axanivis Charts}
-The Axanivis charts are an extension to the ETDRS chart that adds two new chart layouts and digitalizes them so they can be displayed on a screen. Since the original ETDRS chart is made for a physical chart, it doesn't have an aspect ratio \cite{Ferris} that is close to a common monitor. To solve this, the original chart is split into an upper (fig. \ref{fig:etdrs_upper}) and a lower chart (fig. \ref{fig:etdrs_lower}). The upper chart display the five first rows and the lower chart display the remaining nine.
+The Axanivis charts are an extension to the ETDRS chart that modifies the original chart and adds two new chart layouts and digitalizes them so they can be displayed on a screen. Since the original ETDRS chart is made for a physical chart, it doesn't have an aspect ratio \cite{Ferris} that is close to a common monitor. To solve this, the original chart is split into an upper (fig. \ref{fig:etdrs_upper}) and a lower chart (fig. \ref{fig:etdrs_lower}). The upper chart consists of the five first rows and the lower chart consists of the the remaining nine.
 
 \begin{figure}[ht!]
 \centering
-\begin{subfigure}{.5\textwidth}
+\begin{subfigure}{.8\textwidth}
   \centering
   %\includegraphics[width=.5\linewidth]{images/etdrs_top.png}
-  \includegraphics[width=50mm]{images/etdrs_top.png}
+  \includegraphics[width=100mm]{images/etdrs_top.png}
   \caption{Upper Chart}
   \label{fig:etdrs_upper}
 \end{subfigure}%
-\begin{subfigure}{.5\textwidth}
+
+\begin{subfigure}{.8\textwidth}
   \centering
-  \includegraphics[width=50mm]{images/etdrs_bottom.png}
+  \includegraphics[width=100mm]{images/etdrs_bottom.png}
   \caption{Lower Chart}
   \label{fig:etdrs_lower}
 \end{subfigure}
-\caption{The upper and lower ETDRS charts}
+\caption{The upper and lower ETDRS charts (Source: P.G. Söderberg)}
 \label{fig:etdrs_upper_lower}
 \end{figure}
 
@@ -433,24 +438,24 @@ The two new chart layouts used is constructed using the same principles, like he
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=100mm]{images/etdrs_one_line.png}
-\caption{The one line chart}
+\caption{The one line chart (Source: P.G. Söderberg)}
 \label{fig:etdrs_one_line}
 \end{figure}
 
 \pagebreak
-Once an estimated visual acuity have been achieved from the one line chart, the user can select an optotype and display the second new layout, which only display one optotype at a time (fig. \ref{fig:etdrs_single}). This layout removes all clutter and allow the patient to easily focus on only a single optotype at a time. The user can then page between the different optotype sizes in order to determine the visual acuity.
+Once an estimated visual acuity has been achieved from the one line chart, the user can select an optotype and show the second new layout, which will only display one optotype at a time (fig. \ref{fig:etdrs_single}). This layout allows the patient to easily focus on a single optotype at a time. The user can then page between the different optotype sizes in order to determine the visual acuity.
 
 \begin{figure}[ht!  ]
 \centering
 \includegraphics[width=90mm]{images/etdrs_single.png}
-\caption{The single optotype chart}
+\caption{The single optotype chart where the red circle indicates the area the patient should focus on.}
 \label{fig:etdrs_single}
 \end{figure}
 
 \chapter{ Implementation}
 \section{Methods}
 \subsection{System structure}
-The system is divided into three major parts, an Android application, a server and networking. The Android application and server is modeled after the MVC (Model-View-Controller) pattern, where the model is the logic and the view is the GUI (Graphical User Interface). The controller part is the part on the Android application that listens for button clicks and gestures. Usually the networking would fall under controller in the MVC pattern but was, in this system, chosen to be a separate larger structure. Figure \ref{system_structure} shows how the different parts are connected.
+The system is divided into three major parts, an Android application, a server and networking. The Android application and server is modeled after the MVC (Model-View-Controller) pattern, where the model is the logic, such as calculating the sizes of the optotypes and randomizing the order which they appear, and the view is the GUI (Graphical User Interface). The controller part is the part on the Android application that listens for button clicks and gestures. Usually the networking would fall under controller in the MVC pattern but was, in this system, chosen to be a separate larger structure. The reason the network part is separated from the controller is because it is large part of the system and it separates the project into three parts. This allows each project member to focus on a single part. Figure \ref{system_structure} shows how the different parts are connected.
 
 \begin{figure}[ht!]
 \centering
@@ -459,9 +464,13 @@ The system is divided into three major parts, an Android application, a server a
 \end{figure}
 
 \subsection{Android application}
-The Android application is written in Java, which is the official language for Android. The static parts of the GUI, which will never change unless application updates are released, are written in XML. This is similar to how HTML is written and is supported by Android natively.
+The Android application is written in Java, which is the official language for Android. The static parts of the GUI, which will never change unless application updates are released, are written in XML using Googles defined syntax \cite{android_gui}. This is similar to how HTML is written and is supported by Android natively.
 
-The charts shown on the Android device are generated at runtime. If the charts would have been written in XML, there would be no guarantee that they would fit on the screen or keep the correct proportions on tablets with different dimensions. It also avoids hard to read code as the large chart, for example, would need 70 defined areas for images, all with a unique text string id. The chart layouts are all drawn at the same time and in the same place, but sets the active chart visible and the rest invisible. As Android does not natively have support for vector graphics and the chart optotype images are vector images the AndroidSVG library is used to display them \cite{AndroidSVG}.
+The visual acuity charts on the Android device have its opotypes positions and sizes calculated at runtime before before they are displayed. If the charts would have been written in an XML file, it would have required that each optotype had its own XML element with a manually inserted size and position. This would result in very large and hard to read XML files and would require manual updating of each element if the sizes or positions should ever change. The charts are all drawn at the same time and on top of each other, but makes all but the chosen chart invisible. This makes it seem like only one chart is calculated at a time and avoids recalculating when switching back and fort between charts.
+
+The optotypes provided to us by P.G. Söderberg was created in the SVG (Scalable Vector Graphics) format which is a format that Android does not natively support. One possibility would be to convert the files to scalable fonts, but instead a third party library called AndroidSVG \cite{AndroidSVG} was used. This allowed us to avoid manipulating the optotype files and was considered to be the simplest solution.
+
+% As Android does not natively have support for vector graphics and the chart optotype images are vector images the AndroidSVG library is used to display them \cite{AndroidSVG}.
 
 The size of the optotypes is calculated using equation \ref{eq:optotype_size}, where $d$ is the distance in centimeters, $v$ is the angle in radians and $h$ is the height of the optotype in centimeters.
 
@@ -472,27 +481,44 @@ The size of the optotypes is calculated using equation \ref{eq:optotype_size}, w
   	\label{eq:optotype_size}
 \end{equation}
 
-The settings associated to each chart are also generated at runtime. If this were not the case, every different version of the chart would need its own XML file, as each version contains a different number of predefined charts.
+The settings, such as the distance from the screen the patient is watching or the order which the optotypes appear, associated to each chart are also generated at runtime. If this were not the case, every different version of the chart would need its own XML file, as each version contains a different number of predefined charts.
 
-In order to control the application, \textit{controllers} were created to listen to button clicks and gestures when the user attempts to do something.
+In order to control the application, \textit{listeners} were created to listen to button clicks and gestures when the user attempts to interact with the application. The listeners are Java classes that contains methods which are connected to an interactive object on the screen, such as a button. Whenever a user interacts with an interactive object on the screen, the corresponding method in the listener is called. This method, in turn, calls other methods in order to perform the user requested action. The use of listeners separates the user input from the logic and creates a simple way of changing the functionality of an interactive object by letting the object call another listener method instead.
 
-The design of the application follows the Android design principles by using Androids built in navigation drawer and the built in views i.e. buttons, radio buttons, lists etc. \cite{android_design}.
+The design of the application follows the Android design principles by using Androids built in navigation drawer (fig. \ref{fig:example_nav_drawer}) and the built in views i.e. buttons, radio buttons, lists etc. \cite{android_design}.
+
+\begin{figure}[ht!]
+\centering
+\begin{subfigure}{.5\textwidth}
+  \centering
+  %\includegraphics[width=.5\linewidth]{images/etdrs_top.png}
+  \includegraphics[width=50mm]{images/no_nav_drawer.png}
+  \caption{A closed navigation drawer which can be opened by clicking on the three lines on the top left of the screen or by swiping from the left edge of the screen to the right.}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=50mm]{images/nav_drawer.png}
+  \caption{An open navigation drawer which can be closed by pressing the back button or by swiping from the right to the left.}
+\end{subfigure}
+\caption{An example on how Google Maps navigation drawer looks like. (Source: Christian Johansson)}
+\label{fig:example_nav_drawer}
+\end{figure}
 
 \subsection{Server application}
-The server application is written in Java and uses the built-in \textit{Swing} library for drawing the GUI and the images. Swing is a very flexible and easy-to-use library with a lot of great tools for creating a good looking GUI. In our case
-we won't be needing a very advanced GUI since the main purpose of the server is to render a fullscreen image at all times. This greatly simplifies the implementation of the GUI. Other than the rendering of images, the GUI will consist of a small network controller where the user can specify a number of settings. These settings will be needed to configure for example what name the server will have on the network. It's also necessary to have settings for the location of the server.
+The server application is written in Java and uses the built-in \textit{Swing} library for drawing the GUI and the images. Swing is a very flexible and easy-to-use library with a lot of great tools for creating a good looking GUI. In our case we won't be needing a very advanced GUI since the main purpose of the server is to render a fullscreen image at all times. This greatly simplifies the implementation of the GUI. Other than the rendering of images, the GUI consists of a small network controller where the user can specify a number of settings. These settings have to be configured for example to what name the server will have on the network. It's also necessary to have settings for the location of the server.
 
 The rendering of images, specifically SVG vector graphic images, will be handled by an \textit{~Apache} library called \textit{Batik}. It is well supported and extensive library for rendering a multitude of different file formats. The SVG files contain information about the optotypes used on the charts. Using procedural positioning of the SVG images, we can easily create a well structured image to render to the screen.
 
 %The server will also handle the networking on its side, connecting to the Android tablet over a TCP connection. This will be done using a third-party library \textit{Kryonet}. \cite{kryonet} Kryonet is a library that wraps Java's own networking functionality and improves upon it. The library's strong-point is the way it implements serialization of Java objects. Using Kryonet we can without a lot of effort serialize objects, send the object over the network and then deserialize is, getting back the original object with all of its internal structure. 
 
-Network communication will be handled using a submit-poll system. The networking part of the server will receive information from the network and submit it to a thread-safe queue. While this happens, the GUI polls the information from the queue and handles the information. This methods is necessary because of how Swing is constructed. Swing runs on a dispatch-thread basis, meaning only the dispatch-thread itself can change things in the GUI. Trying to change things in the GUI from another thread would cause a lot of problems. Now the GUI can try to poll whenever it has time, though tries to do this periodically.  
+Network communication will be handled using a submit-poll system. The networking part of the server will receive information from the network and submit it to a thread-safe queue. While this happens, the GUI polls the information from the queue and handles the information. This method is necessary because of how Swing is constructed. Swing runs on a dispatch-thread basis, meaning only the dispatch-thread itself can change things in the GUI. Trying to change things in the GUI from another thread would cause a lot of problems. Now the GUI can try to poll whenever it has time, though tries to do this periodically.  
 
 \subsection{Network}
-The network communication between the client and the server consists of two parts. The first part is server detection and the second is server communication. All network communications are handled in threads separate from the main thread as the network operations would halt the flow of the program otherwise. Once the operations are complete and the main threads finds it convenient, it will grab the result from the network threads.
+The network communication between the client and the server consists of two parts. The first part is server detection and the second is server communication. All network communication are handled in threads separate from the main thread using Java's SwingWorker- and Androids AsyncTask class. Both classes allow us to perform network operations in the background, in a separate thread, and once the operations are complete the main thread of the program will automatically get the result.
+
 
 \subsubsection{Server detection}
-In order to detect all servers on the network, the Android application sends out a discovery request message 5 times with a 1 second interval using UDP (User Datagram Protocol) on the networks broadcast address. The servers, which constantly listens for broadcasts containing the correct message, will then respond to that message with it's name, again using UDP. Once the Android application receives a response it adds the server to a list. The user can then choose to connect to one of the found servers or attempt the detection again if no servers where found.
+In order to detect all servers on the network, the Android application sends out a discovery request message, consisting of the string \\ \textit{AXANIVIS\_DISCOVER\_REQUEST}, 5 times with a 1 second interval using UDP (User Datagram Protocol) on the networks broadcast address using port 14141. The server, which constantly listen for broadcasts containing the correct message, will then respond to that message with the message \textit{AXANIVIS\_DISCOVER\_RESPONSE\textbackslash nServerName}, again using UDP. Once the Android application receives a response it adds the server to a list. The user can then choose to connect to one of the found servers or attempt the detection again if no servers were found.
 
 Since UDP is a connectionless protocol, there is no guarantee that the server actually receives the message, the discovery request message is sent 5 times, which means the server have 5 chances to receive the message and respond to it. This means that the server will receive a discovery request 0 to 5 times and respond to it the same number of times. To avoid duplicate server entries in the list, a server is only added if it doesn't already exist in the list.
 
@@ -501,9 +527,9 @@ Since UDP is a connectionless protocol, there is no guarantee that the server ac
 %The servers themselves are constantly listening for broadcasts containing the server discovery request. Once a request is received, the server will send a response and then keep listening for more requests.
 
 \subsubsection{Server communication}
-The communication between the Android application and the connected server is handled using strings of characters divided to three lines using line separators. The first line consists of a check word, which is the same for every message. If this check word is wrong or doesn't exist, the server will ignore the message. The second line is the command to the server. This could be a command to set the currents chart type or size to something else. The third line is the data required for the command. The data can be empty (null) or a string of characters. Depending on the command, the string of characters can be read as either a sequence of ASCII characters or a sequence of numbers.
+The communication between the Android application and the connected server is handled using strings of characters divided to three lines using line separators. The first line consists of a check word, which is the same for every message. If this check word is wrong or doesn't exist, the server will ignore the message. The second line is the command to the server. This could be a command to set the current chart type or size to something else. The third line is the data required for the command. The data can be empty (null) or a string of characters. Depending on the command, the string of characters can be read as either a sequence of ASCII characters or a sequence of numbers. The messages defined for the server communications are commands to connect to the server, set the distance from the screen and set which chart to be displayed with which optotype. If a message with an incorrect command is sent to the server, the server will ignore that message. If the wrong data is sent together with a correct command, the server will keep functioning but its output is undefined.
 
-The messages are sent using a TCP (Transmission Control Protocol) connection to the server, which guarantees that the entire message will be correct and that it will be retrieved by the server as long as the server exists on the network. If there are no servers available on the network, the user will be informed and have to reconnect to a server.
+The messages are sent using a TCP (Transmission Control Protocol) connection to the server on port 14142. This guarantees that the entire message will be correct and that it will be retrieved by the server as long as the server is connected to the network. If a connection is timed out, the sent command is ignored and the user have to reconnect to a server and resend the command.
 
 %The communication between the client and server is handled using simple TCP (Transimission Control Protocol) messages. The TCP messages are used for sending and receiving commands and are structured as three lines of text (Example \ref{tcp_message}). The first line is a \textit{check} word and is the same for every \textit{command}. The second line is a \textit{command} word which tells the receiver what to do and the third line is the \textit{data} required for the \textit{command}. In many cases the simple \textit{command} is enough and the \textit{data} is left empty.
 
@@ -531,7 +557,7 @@ AXANIVIS
 DISTANCE
 500
 \end{lstlisting}
-\caption{An example of how a network message would look like.
+\caption{An example of how a network message that sets the distance from the screen to 500cm.
 %A message with the check word \textit{AXANIVIS}, the command \mbox{\textit{DISTANCE}} and the data \textit{500}. This message would make the server to resize the currently active chart to be suitable for a user watching from 500 centimeters. 
 \label{fig:example_message}}
 \end{figure}
@@ -554,10 +580,11 @@ DISTANCE
 
 \chapter{ Results}
 \section{System functionality} 
-The system fulfills all specified requirements and allow the user to quickly set up a chart on the monitor. No system crashes have occurred during testing, and no bugs that causes the system to not work properly have been encountered. With a stable WiFi connection, the system runs smoothly without any lag and the server detection finds a server in under a second. 
+%The system fulfills all specified requirements and allow the user to quickly set up a chart on the monitor. No system crashes have occurred during testing, and no bugs that causes the system to not work properly have been encountered. With a stable WiFi connection, the system runs smoothly without any lag and the server detection finds a server in under a second. 
+The resulting system ended up in three parts, an Android part, a server part and a network part, as shown in the system structure (fig. \ref{system_structure}). Every action on the Android device related to a chart is connected to the network part. Once an action has been chosen, the network part is called and it creates a message with the correct command and data and then sends this message to the server. Once the server receives this message, the server will perform the requested actions.
 
 \subsection{Android application}
-The Android application uses Android's standard GUI elements. To navigate between the connection settings and different type of charts, Android's built in navigation drawer is used (fig. \ref{fig:app_nav_drawer}). In order to reach the connection settings, the user must click the name of the connected server, in the case that no server is connected, it will, instead of the name of a server, say \textit{Click to connect}.
+The Android application uses Android's standard GUI elements. To navigate between the connection settings and different type of charts, Android's built in navigation drawer is used (fig. \ref{fig:app_nav_drawer}). In order to reach the connection settings, the user must click the name of the connected server and in the case that no server is connected, it will, instead of the name of a server, say \textit{Click to connect}.
 
 \begin{figure}[ht!]
 \centering
@@ -566,7 +593,7 @@ The Android application uses Android's standard GUI elements. To navigate betwee
 \label{fig:app_nav_drawer}
 \end{figure}
 
-Once the connection settings page have been reached, the user will be shown the connection status and a \textit{scan network} button (fig. \ref{fig:scan1}) which can be used to scan the network for servers. Once the button is pressed, the button will be disabled and found servers will appear in a list below (fig. \ref{fig:scan2}). When the desired server have been found, the user can click on it to connect to it and once the entire scan is complete, the \textit{scan network} button will be enabled again.
+Once the connection settings page have been reached, the user will be shown the connection status and a \textit{scan network} button (fig. \ref{fig:scan1}) which can be used to scan the network for servers. Once the button is pressed, the button will be disabled and found servers will appear in a list below (fig. \ref{fig:scan2}). When the desired server has been found, the user can click on it to connect to it and once the entire scan is complete, the \textit{scan network} button will be enabled again.
 
 \begin{figure}[ht!]
 \centering
@@ -602,9 +629,9 @@ Once the application has connected to a server, the user can navigate to the cha
 \label{fig:etdrs_large}
 \end{figure}
 
-The user can now choose which chart version, size and distance to use. The chart version decides which optotype to use at which position. The ETDRS chart have 3 pre-made versions\cite{Ferris} and the rest of the charts have 1. There is also an option to use a randomly generated version which is generated when the application start. If this option is selected, the generate button below enables, so that the user can generate a new version if necessary. The random version is generated with no restrictions and should be used with caution.
+The user can now choose which chart version, size and distance to use. The chart version decides which optotype to use at which position. The ETDRS chart has 3 pre-made versions\cite{Ferris} and the rest of the charts have 1. There is also an option to use a randomly generated version which is generated when the application starts. If the random version is selected, the generate button is enabled. The random version is generated with no restrictions and should be used with caution.
 
-The user can also choose which chart size, \textit{Large}, \textit{Medium} or \textit{Small}, to use. The large chart is the same chart as the \textit{upper} and \textit{lower ETDRS} charts (fig. \ref{fig:etdrs_large}), the medium chart is the same as the \textit{one line chart} (fig. \ref{fig:icons_medium}) and the small chart is the same as the \textit{single optotype chart} (fig. \ref{fig:tumbling_e_small}). To navigate between the upper and lower chart, the user must swipe the screen up or down and to page between the optotypes on the small chart, the user must swipe left or right.
+The user can also choose which chart size, \textit{Large}, \textit{Medium} or \textit{Small}, to use. The large chart is the same chart as the \textit{upper} and \textit{lower ETDRS} charts (fig. \ref{fig:etdrs_large}), the medium chart is the same as the \textit{one line chart} (fig. \ref{fig:icons_medium}) and the small chart is the same as the \textit{single optotype chart} (fig. \ref{fig:tumbling_e_small}). The reason the names in application differs from the names in the report is the result of an early design choice which will most likely change in the future. To navigate between the upper and lower chart, the user must swipe the screen up or down and to page between the optotypes on the small chart, the user must swipe left or right.
 
 \begin{figure}[ht!]
 \centering
@@ -628,7 +655,7 @@ The user can also choose which chart size, \textit{Large}, \textit{Medium} or \t
 The last setting the user can choose is the distance setting. Here the user can enter the distance a patient is from the screen, in centimeters, and then press \textit{Apply Distance}. This has no visible effect on the application but is used to set the optotype sizes on the monitor.
 
 \subsection{Server}
-The server application is in many cases very similar to the Android application. Both use the same methods for the calculations, such as the optotype sizes. The charts are built using the same logic as the Android application with minor changes due to the fact that Java's Swing components have to be drawn rather than Android components. The monitor connected to the server only displays the currently chosen chart (fig. \ref{fig:server_charts}) and nothing else, such as LogMAR values or settings shown on the Android device.
+The server application is in many ways very similar to the Android application. Both use the same methods for the calculations, such as the optotype sizes. The charts are built using the same code as the Android application with minor changes due to the fact that Java's Swing components have to be drawn rather than Android components. The monitor connected to the server only displays the currently chosen chart (fig. \ref{fig:server_charts}) and nothing else, such as LogMAR values or settings shown on the Android device.
 
 \begin{figure}[ht!]
 \centering
@@ -649,14 +676,11 @@ The server application is in many cases very similar to the Android application.
 \label{fig:server_charts}
 \end{figure}
 
-\subsection{Known bugs and issues}
-Even though the system fulfills the requirements, it doesn't mean it's bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause a user to repeat an action which will, in the end, result in the server acting on on both actions. In the case that the connection gets broken, all actions performed will be ignored by the server, even after reconnecting. In this case, the user can change to another chart size or version and then back again to resolve the issue.
-
 \section{Tests}
-The four tests presented in section \ref{sec:evaluation} where performed in order to find major faults with the system. All tests is considered to have met the requirements, though the usability could still use some improvements.
+The four tests presented in section \ref{sec:evaluation} were performed in order to find major faults with the system. All tests are considered to have met the requirements, though the usability could still be improved by making it more clear on how and where swipes can be performed.
 
 \subsection{Developer walkthrough}
-During the developer walkthrough of the system, all charts versions where found and all settings where usable on every chart by using table \ref{tab:test1}. The connection settings where also reachable from everywhere in the application and both connecting and reconnecting was working properly.
+During the developer walkthrough (see section \ref{sec:evaluation}) of the system, all charts versions were found and all settings were usable on every chart by using table \ref{tab:test1_empty}. The connection settings were also reachable from everywhere in the application and both connecting and reconnecting was working properly.
 
 \begin{table}[ht!]
 \centering
@@ -681,12 +705,12 @@ Icons Random		&	\checkmark	&	\checkmark	&	\checkmark	&	\checkmark	\\
 Connection			&	\checkmark	&	\checkmark	&	\checkmark	&	\\
 \hline\hline
 \end{tabular}
-\caption{Result of the developer walkthrough. \label{tab:test1}}
+\caption{Result of the developer walkthrough. A checkmark is placed in every area were a specific chart or connection setting has been reached.\label{tab:test1}}
 \end{table}
 
 \newpage
 \subsection{Optotype Sizes}
-The optotype sizes were calculated for and measured on a 15.6 inch computer screen and a 37 inch TV, both with 1920x1080 resolution. As the TV is larger than the computer screen, and have the same resolution, each pixel is bigger and thus, the calculated size in pixels is smaller (table. \ref{tab:optotype_test}). The height in centimeters, rounded to two decimals, are both equal to the expected height and the test is considered successful.
+The optotype sizes were calculated for and measured on a 15.6 inch computer screen and a 37 inch TV, both with 1920x1080 resolution. The size and resolution of the screens were hardcoded into the server before the tests were performed. As the TV is larger than the computer screen, and have the same resolution, each pixel is bigger and thus, the calculated size in pixels is smaller (table. \ref{tab:optotype_test}). The height in centimeters, rounded to two decimals, are both equal to the expected height and the test is considered successful.
 
 
 \begin{table}[ht!]
@@ -712,12 +736,16 @@ The optotype sizes were calculated for and measured on a 15.6 inch computer scre
 								14	&	8 	& 	0.15	& 	3	&	0.15	&	0.15\\
 										\hline
 \end{tabular}
-\caption{Height of optotypes for a 15.6 and 37 inch screen, both with a 1920x1080 resolution. The rightmost column displays the expected height of the optotypes in cm} \label{tab:optotype_test}
+\caption{Height of optotypes for a 15.6 and 37 inch screen, both with a 1920x1080 resolution with a distance setting of 200cm. The rightmost column displays the expected height of the optotypes in cm} \label{tab:optotype_test}
 \end{table}
 
 
 \subsection{Usability}
-The systems usability was tested with the help of two persons with no previous background related to visual acuity charts or eye examinations. After a brief explanation to the different types of charts they where asked to follow the procedures in \ref{app:usability}. Both persons had no problem performing any of the tasks with the exception of one of them didn't realize that you had to swipe the screen in order to switch between the upper and lower charts in the application.
+The system usability was tested with the help of two persons with no previous background related to visual acuity charts or eye examinations. Since the system is only a prototype and the test is focused  usability, two test persons with no previous knowledge about visual acuity was enough to get an overview of the systems usability.
+
+After a brief explanation to the different types of charts the test persons where asked to follow the procedures in \ref{app:usability}. None of the persons had no problem performing any of the tasks with the exception of one of them didn't realize that you had to swipe the screen in order to switch between the upper and lower charts in the application. This is not a major problem since it can easily be solved by an explanation or tutorial before using the application.
+
+
 
 \subsection{Server Detection}
 The server detection test was done 3 times on a stable WiFi network. According to the results (Table. \ref{tab:server_detection_test}), every single one of the tests performed was successful in finding a server over 90\% of the time. The average success rate of the 3 tests was about 96.3\% which means that the server detection requirements are met.
@@ -737,24 +765,27 @@ Attempt	&	failures	&	succeses	\\
 %\begin{figure}[ht!]
 %\end{figure}
 
+\section{Known bugs and issues}
+Even though the system fulfills the requirements, it doesn't mean it's bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause a user to repeat an action which will, in the end, result in the server acting on on both actions. In the case that the connection gets broken, all actions performed on the currently selected chart will be ignored by the server, even after reconnecting. In this case, the user can change to another chart size or version and then back again to resolve the issue.
+
 \chapter{ Conclusion}
 
 \section{Discussion}
-Even though the system turned out as intended, there is a lot left to do until it can be used clinically. First of all, the system must be tested for more bugs and unintended behavior. This should preferably be done by users other than the developers since the developers know how the system works and can't safely predict what another user will attempt to do. Then, after all found bugs have been removed, the system must be tested by experts in the field of ophthalmology in order to make sure that the built system actually is a valid solution. This will also give credibility to the system.
+Even though the system turned out as intended, there are things left to do before it can be used clinically. First of all, the system must be tested for more bugs and unintended behavior. This should preferably be done by users other than the developers since the developers know how the system works and can't safely predict what another user will attempt to do. The system must be tested by experts in the field of ophthalmology in order to make sure that the built system actually is a valid solution. This will give the system credibility and make it possible to use it clinically.
 
 \section{Advantages of a digital system}
-The advantages of a digital system is the ability to change the layout, optotypes and size of the chart without having to manually exchange charts. This will save both time and space as only one screen and a small Android device is necessary, while also providing easier access to specialized charts that will help patients with different needs. This system will also allow the visual acuity tests to take place in rooms that previously where too small, as the system will display optotypes at a size suitable for the distance the patient is from the monitor.
+The advantages of a digital system is the ability to change the layout, optotypes and size of the chart without having to manually exchange charts. This will save both time and space as only one screen, a small server and a small Android device is necessary, while also providing easier access to specialized charts that will help patients with different needs. This system will also allow the visual acuity tests to take place in rooms that previously where too small, as the system will display optotypes at a size suitable for the distance the patient is from the monitor.
 
 \section{Disadvantages of a digital system}
-A disadvantage with this system is that digital screens become very expensive at large sizes, which limits the maximum distance a patient can sit from the screen. Another disadvantage is that the resolution, or rather pixel density, will limit how close to a screen a patient can sit without the optotypes looking pixelated. Pixel density is a measurement of how many pixels (dots) can fit in a small section of the screen, usually denoted as Pixels Per Inch (PPI) or Dots Per Inch (DPI). The higher the DPI is the better the quality of small details will be. This is very important when rendering type fonts because the edges should be as smooth as possible.
+A disadvantage with this system is that digital screens become very expensive at large sizes, a 40 inch LED TV, for example, can cost above 3500 SEK as of 30/8-2015 according to Elgiganten. The screen size limits the maximum distance a patient can watch the screen and the patient should preferably sit at least 4 meters away from screen \cite{PGSoderbergOral}. Another disadvantage is that the resolution, or rather pixel density, will limit how close to a screen a patient can sit without the optotypes looking pixelated which will make it harder to read the optotype and result in an incorrect result from the test \cite{PGSoderbergOral}. Pixel density is a measurement of how many pixels (dots) can fit in a small section of the screen, usually denoted as Pixels Per Inch (PPI) or Dots Per Inch (DPI). The higher the DPI is the better the quality of small details will be and the optotype will appear less pixelated.
 
 \section{Alternative solutions}
-A possible alternative solution to a custom server running on a Raspberry Pi or other computer use a Chromecast instead. This could simplify the system for the user as this would make the Android application work similar to the many media streaming applications that exists today. Using a Chromecast would also make sure the user only have to worry about the Android application as the Chromecast is just a plug and play unit maintained by Google. The disadvantages to this is, as mentioned earlier, that an agreement with Google have to be signed. The application would also require an internet connection, opposed the the current system which only need a local network.
+A possible alternative solution to a custom server running on a Raspberry Pi or other computer would be to use a Chromecast instead. This could simplify the system for the user as this would make the Android application work similar to the many media streaming applications that exists today. Using a Chromecast would also make sure the user only have to worry about the Android application as the Chromecast is just a plug and play unit maintained by Google. A disadvantage to this is that the developer is required to have a Google developers account which costs a small sum of money (5\$ as of August 2015). This might not be a large sum of money but it was decided to be left for future exploration. Another disadvantage of using the Chromecast is that the application would need an internet connection instead of just a local network. Although screen mirroring is possible, the logical solution to create this system would be to use the Chromecasts \textit{Custom Media Receiver} which requires a webbapp located on the internet \cite{android_receiver_app}.
 
 \section{Future Work}
-Future work will include more charts and features for the system. One such feature is the grating acuity test, which allows testing of visual acuity on very young children or people with difficulties communicating \cite{PGSoderbergOral}. Another feature is to include the option to, instead of changing the size of the optotypes, change the LogMAR, so the top row doesn't necessarily start at 1.0 LogMAR. This will allow the chart to use the entire monitors screen no matter the distance from the patient to the screen.
+Future work will include more charts and features for the system. One such feature is the grating acuity test, which allows testing of visual acuity on very young children or people with difficulties communicating. The test consists of several vertical lines with different widths and distances from each other. These lines are moving horizontally on a screen and if the patient can distinguish the lines, the patients eyes will follow it. The eyesight can then be determined by looking on the thinnest line the patient can distinguish \cite{PGSoderbergOral}. Another feature is to include the option to, instead of changing the size of the optotypes, change the LogMAR values, so the top row doesn't necessarily start at 1.0 LogMAR. This way the server can calculate the largest size the top row optotypes can have and allow the chart to use the entire monitors screen no matter the distance from the patient to the screen.
 
-Other charts to be included could be, for example, charts using the Landholt C, charts for testing color blindness or charts used for testing astigmatism. The random function for the charts should be improved, as it currently have no constraints whatsoever. These constraints would make sure that the same optotype, or to similar optotypes like \textit{C} and \textit{O}, won't be repeated to many times in a row.
+Other charts to be included could be, for example, charts using the Landholt C, charts for testing color blindness or charts used for testing astigmatism. The random function for the charts should be improved with constraints, as it currently has none. These constraints would make sure that the same optotype, or to similar optotypes like \textit{C} and \textit{O}, will not be repeated to many times in a row.
 
 
 %\bibliography{references}{}
