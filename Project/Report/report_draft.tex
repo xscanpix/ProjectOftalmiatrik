@@ -676,11 +676,8 @@ The server application is in many ways very similar to the Android application. 
 \label{fig:server_charts}
 \end{figure}
 
-\subsection{Known bugs and issues}
-Even though the system fulfills the requirements, it doesn't mean it's bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause a user to repeat an action which will, in the end, result in the server acting on on both actions. In the case that the connection gets broken, all actions performed will be ignored by the server, even after reconnecting. In this case, the user can change to another chart size or version and then back again to resolve the issue.
-
 \section{Tests}
-The four tests presented in section \ref{sec:evaluation} were performed in order to find major faults with the system. All tests is considered to have met the requirements, though the usability could still use some improvements.
+The four tests presented in section \ref{sec:evaluation} were performed in order to find major faults with the system. All tests are considered to have met the requirements, though the usability could still be improved by making it more clear on how and where swipes can be performed.
 
 \subsection{Developer walkthrough}
 During the developer walkthrough of the system, all charts versions were found and all settings were usable on every chart by using table \ref{tab:test1}. The connection settings were also reachable from everywhere in the application and both connecting and reconnecting was working properly.
@@ -763,6 +760,9 @@ Attempt	&	failures	&	succeses	\\
 
 %\begin{figure}[ht!]
 %\end{figure}
+
+\section{Known bugs and issues}
+Even though the system fulfills the requirements, it doesn't mean it's bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause a user to repeat an action which will, in the end, result in the server acting on on both actions. In the case that the connection gets broken, all actions performed on the currently selected chart will be ignored by the server, even after reconnecting. In this case, the user can change to another chart size or version and then back again to resolve the issue.
 
 \chapter{ Conclusion}
 
