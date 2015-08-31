@@ -1,7 +1,7 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Some example optotypes\relax }}{1}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces The Snellen chart (Source: http://en.wikipedia.org/wiki/Snellen chart\cite {img_snellen}).\relax }}{2}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces The ETDRS chart, used with permission from Precision Vision (Source: http://precision-vision.com/)\relax }}{3}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces The Snellen chart}}{2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces The ETDRS chart}}{3}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces The four Axanvis charts\relax }}{8}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Some example optotypes\relax }}{8}
@@ -9,15 +9,15 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Angular magnification at short distances\relax }}{13}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Magnification due to addition for closer distance\relax }}{14}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Some example optotypes\relax }}{15}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces The angle v is used to calculate the size in LogMAR of the optotype.(Source: Christian Johansson)\relax }}{15}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces LogMAR calculation}}{15}
 \contentsline {figure}{\numberline {3.5}{\ignorespaces The sizes and positions of the first three optotypes of row $n$ and $n+1$ where $x_n \approx 1.2589 x_{n+1}$. \relax }}{16}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces The height of optotype from 2 meters on a 15.6" screen with a resolution of 1920x1080 pixels. (Source: Christian Johansson)\relax }}{16}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces The upper and lower ETDRS charts (Source: P.G. S\IeC {\"o}derberg)\relax }}{17}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces The one line chart (Source: P.G. S\IeC {\"o}derberg)\relax }}{18}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Optotype Size Graph}}{16}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Upper and lower ETDRS charts}}{17}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces One-line eye chart}}{18}
 \contentsline {figure}{\numberline {3.9}{\ignorespaces The single optotype chart where the red circle indicates the area the patient should focus on.\relax }}{19}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Overview of the system structure\relax }}{21}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces An example on how Google Maps navigation drawer looks like. (Source: Christian Johansson)\relax }}{22}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Navigation drawer example}}{22}
 \contentsline {figure}{\numberline {4.3}{\ignorespaces An example of how a network message that sets the distance from the screen to 500cm. \relax }}{25}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {5.1}{\ignorespaces The Android application navigation drawer used for navigating the application. a) Name of the application b) The currently connected server c) Available optotypes d) Grating, not yet implemented e) Test, used for testing new functions\relax }}{27}

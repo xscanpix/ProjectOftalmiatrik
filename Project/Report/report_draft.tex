@@ -57,7 +57,7 @@ Digitalization of Visual Acuity Testing är ett projekt om att visa och manipule
 \setcounter{page}{1}
 \chapter{ Introduction}
 \section{Background}
-The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols called optotypes~(fig.~\ref{fig:optotypes_example1}), most often normal Latin letters. The patient reads the symbols on the chart in order until he or she can no longer correctly identify them. Each row on the chart has a pre-calculated number printed beside it, which will help the optician determine which lenses the patient should try next.
+The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols called optotypes~(fig.~\ref{fig:optotypes_example1}), most often normal Latin letters. The patient reads the symbols on the chart in order until he or she can no longer correctly identify them. Each row on the chart has a pre-calculated number printed beside it, which will let the optician determine which lenses the patient should use.
 
 \begin{figure}[ht!]
 \centering
@@ -92,13 +92,13 @@ In a field so dependent on visual aids and equipment, it's easy to see that ther
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=110mm]{images/Snellen_chart.png}
-\caption{The Snellen chart (Source: http://en.wikipedia.org/wiki/Snellen chart\cite{img_snellen}).} \label{fig:snellen_chart1}
+\caption[The Snellen chart]{The Snellen chart (Source: http://en.wikipedia.org/wiki/Snellen chart\cite{img_snellen}).} \label{fig:snellen_chart1}
 \end{figure} 
 
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=120mm]{images/etdrs_chart.jpg}
-\caption{The ETDRS chart, used with permission from Precision Vision \\ (Source: http://precision-vision.com/)\label{fig:etdrs_chart1}}
+\caption[The ETDRS chart]{The ETDRS chart, used with permission from Precision Vision \\ (Source: http://precision-vision.com/)\label{fig:etdrs_chart1}}
 \end{figure} 
 
 \section{Purpose}
@@ -125,7 +125,7 @@ Another fact is that physical eye charts are not as accurate as they should be f
 A digital eye chart has increased functionality, accuracy and efficiency which are all important aspects to approve upon. A digitalization also gives the user a greater possibility for extending the usage of the system.
 
 \section{Issues}
-There are several technical problems that we need to solve. We need to find a suitable computer system that will act as the server, its job being storing and presenting the desired images to the screen. Our choice was to use a Raspberry Pi, since it is a cheap and compact alternative to a full-size computer that is more than powerful enough for our purposes. Although since the Raspberry Pi's CPU is running on an ARM-architecture there are a few compatibility problems. For example, the newly redesigned Java graphics library JavaFX, which is eventually going to replace the older Swing library, is only partially supported on ARM. Not being able to use the latest features can create problems with future Java updates when some things get deprecated. If Java Swing would become deprecated in the future it should not be too difficult to transfer the code to a compatible Java FX version.
+There were several technical problems that we needed to solve. We needed to find a suitable computer system that will act as the server, its job being storing and presenting the desired images to the screen. Our choice was to use a Raspberry Pi, since it is a cheap and compact alternative to a full-size computer that is more than powerful enough for our purposes. Although since the Raspberry Pi's CPU is running on an ARM-architecture there are a few compatibility problems. For example, the newly redesigned Java graphics library JavaFX, which is eventually going to replace the older Swing library, is only partially supported on ARM. Not being able to use the latest features can create problems with future Java updates when some things get deprecated. If Java Swing would become deprecated in the future it should not be too difficult to transfer the code to a compatible Java FX version.
 
 Designing the Android app for the tablet also brought technical problems, both from the limitations of portable computers, and in making our software adaptable enough to work on as many brands of tablets as possible. For example, the symbols we display are stored in the .SVG (Scalable Vector Graphics) format, which is not natively supported on Android. Because of this we use a licensed third-party software library to render them. 
 
@@ -229,11 +229,11 @@ As this project only aims for a working prototype of the system, it is very impo
 \section{Evaluation \label{sec:evaluation}}
 In order to evaluate if all requirements have been met, the system will undergo four tests. The goal of the first test is to make sure that the user actually can choose a specific chart with specific optotypes to be viewed from a specific distance. This is done by the developers going through all charts, with all types of optotypes and setting the distance for each one of them. To achieve this, table \ref{tab:test1_empty} is used to systematically walk through every setting.
 
-The second test is to make sure that the optotypes have the correct sizes on the monitor. This test will be done by calculating the expected sizes of the optotypes in centimeters for different screen sizes with the help of Matlab. The calculated sizes will then be compared to the sizes output by the system and see if they match. If this is a match, the optotypes will be measured by a physical measurement tool in order to make sure that they have the calculated size when they are displayed on the monitor. The physical measuring is required to make sure that the system works as intended in practice and not only in theory.
+The second test is to make sure that the optotypes have the correct sizes on the monitor. This test will be done by calculating the expected sizes of the optotypes in centimeters for different screen sizes with the help of Matlab. The calculated sizes will then be compared to the sizes output by the system and see if they match. If this is a match, the optotypes will be measured by a physical measurement tool such as a ruler or Vernier scale in order to make sure that they have the calculated size when they are displayed on the monitor. The physical measuring is required to make sure that the system works as intended in practice and not only in theory.
 
 The third test will determine how user friendly the system is. This will be done by letting a user with no previous knowledge of the system, attempt to connect to a server and perform some basic tasks like setting a specific chart with a specific optotype or setting a specific distance (App. \ref{app:usability}). If the user testing has no previous knowledge of visual acuity charts, a brief explanation will be given so that the test doesn't fail because the user, for example, doesn't know what "HVOT" is. Once the test is done, the user will provide feedback pointing out possible faults in our design. This feedback will then be used to improve the design. If the user can perform the entire test without help, the test is considered successful.
 
-The last test is a quantitative test to see how well the server detection performs. The test involves the Android application trying to detect a server on a stable WiFi a 100 times and see how many times the server was detected. This test can be done several times and the average number of detection's in a 100 tries will determine its success rate. Testing the system on anything other than a stable WiFi is unnecessary as it is only intended to work on a stable local network.
+The last test is a quantitative test to see how well the server detection performs. The test involves the Android application trying to detect a server on a stable WiFi a 100 times and see how many times the server was detected. This test can be done several times and the average number of detection's in a 100 tries will determine its success rate. Testing the system on anything other than a stable WiFi is unnecessary as it is only intended to work on a stable local network. If the end user's tablet cannot connect to their local WiFi reliably they might have problems, but it is not something we can affect.
 
 \section{Related work}
 
@@ -381,7 +381,7 @@ The ETDRS chart consists of fourteen rows with five optotypes on each row. The s
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=110mm]{images/logmar_calculation.png}
-\caption{The angle v is used to calculate the size in LogMAR of the optotype.(Source: Christian Johansson)\label{fig:logmar_calculation}}
+\caption[LogMAR calculation]{The angle v is used to calculate the size in LogMAR of the optotype.(Source: Christian Johansson)\label{fig:logmar_calculation}}
 \end{figure} 
 
 The optotypes on the top row of the chart is of the size 1.0 LogMAR and then each row below is decremented by 0.1 LogMAR to the last row which is -0.3 LogMAR. This means that each optotype is approximately 1.2589 the height of the optotypes on the row below (fig. \ref{fig:chart_size_plot}) \cite{Ferris}. The spacing between each optotype is equal to the width of an optotype from the same row and the spacing between each row is equal to the height of an optotype on the lower row (fig. \ref{fig:etdrs_chart_sizes}).
@@ -406,7 +406,7 @@ The optotypes on the top row of the chart is of the size 1.0 LogMAR and then eac
       \addplot[color=blue, mark=*, only marks] plot coordinates{(1,162)(2,128)(3,102)(4,81)(5,64)(6,51)(7,41)(8,32)(9,26)(10,20)(11,16)(12,13)(13,10)(14,8)};
     \end{axis}
 \end{tikzpicture}
-\caption{The height of optotype from 2 meters on a 15.6" screen with a resolution of 1920x1080 pixels. (Source: Christian Johansson)\label{fig:chart_size_plot}}
+\caption[Optotype Size Graph]{The height of optotype from 2 meters on a 15.6" screen with a resolution of 1920x1080 pixels. (Source: Christian Johansson)\label{fig:chart_size_plot}}
 \end{figure}
 
 %\newpage
@@ -429,7 +429,7 @@ The Axanivis charts are an extension to the ETDRS chart that modifies the origin
   \caption{Lower Chart}
   \label{fig:etdrs_lower}
 \end{subfigure}
-\caption{The upper and lower ETDRS charts (Source: P.G. Söderberg)}
+\caption[Upper and lower ETDRS charts]{The upper and lower ETDRS charts (Source: P.G. Söderberg)}
 \label{fig:etdrs_upper_lower}
 \end{figure}
 
@@ -438,7 +438,7 @@ The two new chart layouts used is constructed using the same principles, like he
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=100mm]{images/etdrs_one_line.png}
-\caption{The one line chart (Source: P.G. Söderberg)}
+\caption[One-line eye chart]{The one line chart (Source: P.G. Söderberg)}
 \label{fig:etdrs_one_line}
 \end{figure}
 
@@ -500,7 +500,7 @@ The design of the application follows the Android design principles by using And
   \includegraphics[width=50mm]{images/nav_drawer.png}
   \caption{An open navigation drawer which can be closed by pressing the back button or by swiping from the right to the left.}
 \end{subfigure}
-\caption{An example on how Google Maps navigation drawer looks like. (Source: Christian Johansson)}
+\caption[Navigation drawer example]{An example on how Google Maps navigation drawer looks like. (Source: Christian Johansson)}
 \label{fig:example_nav_drawer}
 \end{figure}
 
@@ -589,7 +589,7 @@ The Android application uses Android's standard GUI elements. To navigate betwee
 \begin{figure}[ht!]
 \centering
 \includegraphics[width=56mm]{images/appgui/nav_drawer.png}
-\caption{The Android application navigation drawer used for navigating the application. a) Name of the application b) The currently connected server c) Available optotypes d) Grating, not yet implemented e) Test, used for testing new functions}
+\caption[Android Navigation Drawer]{The Android application navigation drawer used for navigating the application. a) Name of the application b) The currently connected server c) Available optotypes d) Grating, not yet implemented e) Test, used for testing new functions}
 \label{fig:app_nav_drawer}
 \end{figure}
 
