@@ -6,20 +6,24 @@ Abstract
 	
 2.1 Problem (Tidigate Purpose)
 	Purpose är nu "Problem", problemdefinitionen. Hela sektionen tar upp de problem vi vill lösa och listar dem. Känns precis som det som ska vara i en problemdefinition. 1.2-1.4 är nu del av kapitlet "Problem Description" av denna anldedning.
-	Löste stavfel
 	Ändrade tempus till imperfekt
 	Sammanfogade 1.3 Motivation in i Purpose eftersom de delade de flesta punkterna.
 	
 2.2 Issues
-	Löste stavfel
 	Ändrade tempus till imperfekt
 	Klargjorde vissa resonemang
+	Sammanfogade den tidigare Problem in i Issues och nya Problem, eftersom den täckte samma punkter.
 	
 2.3 Delimitations
+	Använder inte längre termer som inte introducerats än, och det passar bättre att introducera senare.
 
 2.4 Requirements
+	Lade in och refererar till många bilder
+	Refererar och beskriver allt material
+	Förklarar användarvänlighet mer ingående
 
 2.5 Evaluation
+	Mer ingående beskriving av de utvärderingspunkter vi valt.
 
 2.6 Related Work
 	Beskriver mer om skillnaderna mellan ETDRS och Snellen Chart och beskriver bättre hur populära de är i branchen
@@ -28,31 +32,42 @@ Abstract
 	Beskriver mer hur en Chromecast eller AppleTV skulle fungera i jämförelse med vårat
 
 3.1 Visual Acuity Testing
-	Citerade källor korrekt
+	Citerade källor korrekt. Vi refererar för det mesta till två källor, vilka är läroböcker i optik och ophtalmologi. Eftersom det här kapitlet är mer av en sammanställning och snabb genomgång av de här ämnena, snarare än något arbete eller forskning vi gjort själva, refererar vi hela stycken till böckerna. 
 
 3.2 Chart Design
+	Ungefär samma resonemang som ovan, men här har vi fler källor och delvis eget arbete.
 
 4.1.1 System Structure
+	Expanderat om våra designval, specifikt om hur uppdelningen av våran systemstruktur är och hur den motiveras. 
 
 4.1.2 Android Application
+	Expanderat om våra designval, specifikt om hur vi valt filformat, hur syntavlorna genereras för att visas, hur interaktionen mellan UI och logik fungerar, och bättre beskrivningar av designval vi redan nämnt
 
 4.1.3 Server Application
+	Expanderat om våra desginval, specifikt angående de krav Swing har på trådhantering. 
 
 4.1.4 Network
-
+	Expanderat om våra designval, specifikt om vilka meddelanden som skickas, vilka portar som används, och hur systemet hanterar felaktigt formatterade meddelanden.
+	
 5.1 System Functionalty
+	Nu faktiska resultat istället för diskussion.
+	Bättre förklaringar av våra designval
 
 5.2 Tests
+	Förbättrade motiveringar av testmetoder och resultat
 
 5.3 Known bugs and issues
+	Flyttad senare för att passa bättre i flödet.
 
 6.1 Discussion
-
-6.2 Advantages of a digital system
+	Utökade motiveringar
 
 6.3 Disadvantages of a digital system
+	Mer referenser och information.
 
 6.4 Alternative Solutions
+	Bättre förklaring av motivation bakom att vi inte valde alternativet.
 
 6.5 Future Work
+	Utökade beskrivningar
 
