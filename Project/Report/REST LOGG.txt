@@ -9,6 +9,7 @@ Abstract
 	Löste stavfel
 	Ändrade tempus till imperfekt
 	Klargjorde vissa resonemang
+	Bakade in motivation i Issues. 
 
 Relaterat Arbete
 	  Beskriver mer om skillnaderna mellan ETDRS och Snellen Chart och beskriver bättre hur populära de är i branchen
