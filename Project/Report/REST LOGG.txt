@@ -2,14 +2,16 @@ Abstract
 	Gjorde abstracten mer beskrivande av problemen och lade till abstract på svenska.
 
 1.2 Purpose
+	Purpose är nu "Problem", problemdefinitionen. Hela sektionen tar upp de problem vi vill lösa och listar dem. Känns precis som det som ska vara i en problemdefinition. 1.2-1.4 är nu del av kapitlet "Problem Description" av denna anldedning.
 	Löste stavfel
 	Ändrade tempus till imperfekt
+	Bakade in 1.3 Motivation in i Purpouse
 	
 1.4 Issues
 	Löste stavfel
 	Ändrade tempus till imperfekt
 	Klargjorde vissa resonemang
-	Bakade in motivation i Issues. 
+	
 
 Relaterat Arbete
 	  Beskriver mer om skillnaderna mellan ETDRS och Snellen Chart och beskriver bättre hur populära de är i branchen

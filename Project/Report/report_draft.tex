@@ -56,7 +56,7 @@ Digitalization of Visual Acuity Testing är ett projekt om att visa och manipule
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \chapter{ Introduction}
-\section{Background}
+%\section{Background}
 The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols called optotypes~(fig.~\ref{fig:optotypes_example1}), most often normal Latin letters. The patient reads the symbols on the chart in order until he or she can no longer correctly identify them. Each row on the chart has a pre-calculated number printed beside it, which will let the optician determine which lenses the patient should use.
 
 \begin{figure}[ht!]
@@ -101,12 +101,13 @@ In a field so dependent on visual aids and equipment, it's easy to see that ther
 \caption[The ETDRS chart]{The ETDRS chart, used with permission from Precision Vision \\ (Source: http://precision-vision.com/)\label{fig:etdrs_chart1}}
 \end{figure} 
 
-\section{Purpose}
+\chapter{ Problem Description}
+\section{Problem}
 Having efficient and accurate systems is important in a medical environment, especially in a medical environment that handles tests where inaccurate or false results in some cases can cause accidents. Therefore it is important to have a well-built system that mitigates these problems. With the help of professor P.G. Söderberg who is an expert in the field of ophthalmology we have created a system that will act as a prototype for further future work. 
 
-Determining visual acuity is a very labour- and equipment-intensive process, and this workload is also increasing drastically with time. More and more people are experiencing eye problems, at all ages and in many cultures. \cite{vision_loss} With more people needing to test their visual acuity, faster and more efficient methods needs to be used.
+Determining visual acuity is a very labour- and equipment-intensive process, and this workload is also increasing drastically with time. Physical charts are often large and cumbersome, and must be switched if the patient needs a chart with another selection of optotypes or a different layout. Since they are also designed for standardized distances and testing conditions, an optician needs to manually compensate for any deviations from the standard. More and more people are experiencing eye problems, at all ages and in many cultures~\cite{vision_loss}. With more people needing to test their visual acuity, faster and more efficient methods needs to be used.
 
-Accuracy is not the only important aspect to think of when implementing a system. It is also important to think about expanding and improving on how the system can be used. To introduce new functionality that will make the life of the system's user a lot more simple and efficient is one of those important improvements. 
+Accuracy is not the only important aspect to think of when implementing a system. It is also important to think about expanding and improving on how the system can be used. To introduce new functionality that will make the life of the system's user a lot more simple and efficient is one of those important improvements. For example there are problems with using the standardized charts, such as older patients getting lost among the columns and rows, and other patients memorizing the rows of letters to cheat. Giving the optician the option of using randomly generated charts and easily switching between specialized chart layouts can greatly increase the speed and accuracy of testing.
 
 These are a few of the aspects that we took into consideration as we built our system. A simple system that implements digital eye charts had already been built by professor P.G. Söderberg, though that system is not as sophisticated or expandable as needed. We based some of our system's content upon how the original system was built. Mostly this system used the layouts of the charts already created since those charts have been shown to work. 
 
@@ -136,19 +137,19 @@ Finally, we have the issue of networking. Our concern was being able to reliably
 %\section{Ethical considerations}
 %Our ethical obligations with this project is providing a functional and stable product. If our system does not perform to specification, a lot of patients could get erroneous measurements during testing, costing a lot of time and money to correct. This is very important to think about since we are dealing with treatment of people. All of this has to be considered even if the final results will not be used clinically.
 
-\chapter{ Problem Description}
-\section{Problem}
-\subsection{Gammalt, bakas in i det ovan (Ta bort denna subsection)}
+%\chapter{ Problem Description}
+%\section{Problem}
+%\subsection{Gammalt, bakas in i det ovan (Ta bort denna subsection)}
 %The problem with today's visual acuity testing charts are that they are very clumsy to work with. The charts are printed and contains only one static selection of symbols, also called optotypes. This could be optotypes for people with the ability to read or an 'E' shape rotated in different directions which allows children who are unable to read, or illiterate people, to identify which symbol they see. These static charts are also designed to be viewed from one specific distance. This causes problems when dealing with environments that are too small, for example erroneous measurements. 
-There are several weaknesses with visual acuity testing today that we have worked on improving. Physical charts are often large and cumbersome to switch if the patient needs a chart with another type of optotypes. Since they are also designed for standardized distances and testing conditions, an optician needs to manually compensate for any deviations from the standard. 
+%There are several weaknesses with visual acuity testing today that we have worked on improving. Physical charts are often large and cumbersome to switch if the patient needs a chart with another type of optotypes. Since they are also designed for standardized distances and testing conditions, an optician needs to manually compensate for any deviations from the standard. 
 
-There are also other problems with using standardized charts, such as older patients getting lost among the columns and rows, and other patients memorizing the rows of letters to cheat. Giving the optician the option of using randomly generated charts and easily switching between specialized chart layouts can greatly increase the speed and accuracy of testing.
+%There are also other problems with using standardized charts, such as older patients getting lost among the columns and rows, and other patients memorizing the rows of letters to cheat. Giving the optician the option of using randomly generated charts and easily switching between specialized chart layouts can greatly increase the speed and accuracy of testing.
 
-Another problem we faced is designing a user interface that can give the optician easy access to these specialized charts and layouts. An intuitive design so that it is easy to learn, and a user friendly design so that users don't accidentally make unintentional or irreversible changes.
+%Another problem we faced is designing a user interface that can give the optician easy access to these specialized charts and layouts. An intuitive design so that it is easy to learn, and a user friendly design so that users don't accidentally make unintentional or irreversible changes.
 
-\subsection{Nytt, behålls, bara denna rubrik tas bort när det gamla är fixat \\ se över den här texten så det inte blir nya problem}
-We want to create a system that allows opticians to quickly prepare and perform an eye examination using a chart displayed on a monitor controlled by an Android device. 
-----------------SKRIV MER HÄR!!!!!!!!!----------- (ELLER SKRIV OM!!!!)
+%\subsection{Nytt, behålls, bara denna rubrik tas bort när det gamla är fixat \\ se över den här texten så det inte blir nya problem}
+%We created a system that allows opticians to quickly prepare and perform an eye examination using a chart displayed on a monitor controlled by an Android device. The system must
+%----------------SKRIV MER HÄR!!!!!!!!!----------- (ELLER SKRIV OM!!!!)
 
 \section{Delimitations}
 Due to limits in time and manpower, this project is not intended to result in a complete working system to be used clinically, but rather a working prototype that can be used to evaluate digital visual acuity charts. To complete the project on time, as much as possible of Java's and Android's built-in libraries will be used in order to avoid recreating code that already exists, thus saving time. Neither Java nor Android include libraries for rendering SVG-files and third party libraries will be used instead.
