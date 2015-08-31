@@ -1,24 +1,58 @@
 Abstract
 	Gjorde abstracten mer beskrivande av problemen och lade till abstract på svenska.
 
-1.2 Purpose
+1 Introduction
+	Flyttade bilder till introduktionen
+	
+2.1 Problem (Tidigate Purpose)
 	Purpose är nu "Problem", problemdefinitionen. Hela sektionen tar upp de problem vi vill lösa och listar dem. Känns precis som det som ska vara i en problemdefinition. 1.2-1.4 är nu del av kapitlet "Problem Description" av denna anldedning.
 	Löste stavfel
 	Ändrade tempus till imperfekt
-	Bakade in 1.3 Motivation in i Purpouse
+	Sammanfogade 1.3 Motivation in i Purpose eftersom de delade de flesta punkterna.
 	
-1.4 Issues
+2.2 Issues
 	Löste stavfel
 	Ändrade tempus till imperfekt
 	Klargjorde vissa resonemang
 	
+2.3 Delimitations
 
-Relaterat Arbete
-	  Beskriver mer om skillnaderna mellan ETDRS och Snellen Chart och beskriver bättre hur populära de är i branchen
-	  Beskriver att det finns många olika digitala syntavletjänster
-	  Beskriver mer hur de andra systemen fungerar och hur vårat fungerar i jämförelse
-	  Beskriver mer hur en Chromecast eller AppleTV skulle fungera i jämförelse med vårat
+2.4 Requirements
 
-Visual Acuity Testing
-       Citerade källor korrekt
+2.5 Evaluation
+
+2.6 Related Work
+	Beskriver mer om skillnaderna mellan ETDRS och Snellen Chart och beskriver bättre hur populära de är i branchen
+	Beskriver att det finns många olika digitala syntavletjänster
+	Beskriver mer hur de andra systemen fungerar och hur vårat fungerar i jämförelse
+	Beskriver mer hur en Chromecast eller AppleTV skulle fungera i jämförelse med vårat
+
+3.1 Visual Acuity Testing
+	Citerade källor korrekt
+
+3.2 Chart Design
+
+4.1.1 System Structure
+
+4.1.2 Android Application
+
+4.1.3 Server Application
+
+4.1.4 Network
+
+5.1 System Functionalty
+
+5.2 Tests
+
+5.3 Known bugs and issues
+
+6.1 Discussion
+
+6.2 Advantages of a digital system
+
+6.3 Disadvantages of a digital system
+
+6.4 Alternative Solutions
+
+6.5 Future Work
 
