@@ -45,7 +45,7 @@ The Digitalization of Visual Acuity Testing project has improved upon a proof-of
 \end{abstract}
 \renewcommand{\abstractname}{Sammanfattning}
 \begin{abstract}
-Digitalization of Visual Acuity Testing är ett projekt om att visa och manipulera syntavlor digitalt. Syntavlorna visas på en bildskärm kopplad till en enkel server som är installerad på en Raspberry Pi och kan styras över ett trådlöst nätverk med hjälp av en Androidsurfplatta. Eftersom tavlorna är digitala kan de anpassas till avståndet mellan patienten och tavlan, samtidigt som de låter en optiker anpassa synundersökningen till patienten genom att tillåta snabbt byte av syntavlans layout och symboler. Projektet bygger på ett testsystem som har använts vid Akademiska Sjukhuset för att undersöka ifall digitala skärmar är ett passande alternativ till trykta syntavlor. Digitalization of Visual Acuity Testing har uppfyllt sina mål och har presterat väl i tester, men mer tester måste genomföras för att se till att det upfyller alla krav en optiker skulle kunna ha på projektet.
+Digitalization of Visual Acuity Testing är ett projekt om att visa och manipulera syntavlor digitalt. Syntavlorna visas på en bildskärm kopplad till en enkel server som är installerad på en Raspberry Pi och kan styras över ett trådlöst nätverk med hjälp av en Androidsurfplatta. Eftersom tavlorna är digitala kan de anpassas till avståndet mellan patienten och tavlan, samtidigt som de låter en optiker anpassa synundersökningen till patienten genom att tillåta snabbt byte av syntavlans layout och symboler. Projektet bygger på ett testsystem som har använts vid Akademiska Sjukhuset för att undersöka ifall digitala skärmar är ett passande alternativ till tryckta syntavlor. Digitalization of Visual Acuity Testing har uppfyllt sina mål och har presterat väl i tester, men mer tester måste genomföras för att se till att det uppfyller alla krav en optiker skulle kunna ha på projektet.
 \end{abstract}
 \renewcommand\thechapter{ }
 \tableofcontents*
@@ -57,7 +57,7 @@ Digitalization of Visual Acuity Testing är ett projekt om att visa och manipule
 \setcounter{page}{1}
 \chapter{ Introduction}
 %\section{Background}
-The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols called optotypes~(fig.~\ref{fig:optotypes_example1}), most often normal Latin letters. The patient reads the symbols on the chart in order until he or she can no longer correctly identify them. Each row on the chart has a pre-calculated number printed beside it, which will let the optician determine which lenses the patient should use.
+The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols called optotypes~(fig.~\ref{fig:optotypes_example1}), most often normal Latin letters. The patient reads the symbols on the chart in the order specified by the optician until he or she can no longer correctly identify them. Each row on the chart has a pre-calculated number printed beside it, which will let the optician determine which lenses the patient should use.
 
 \begin{figure}[ht!]
 \centering
@@ -80,7 +80,7 @@ The standard way for an optician to measure a patients visual acuity is to use c
 \label{fig:optotypes_example1}
 \end{figure}
 
-These numbers have been calculated from a set of standardized conditions~\cite{Bailey}. For example there must be adequate lighting in the room so the patient can read the letters, but more importantly the charts are meant to be placed a fixed distance from the patient. For most charts, this distance is six meters. 
+These numbers have been calculated from a set of standardized conditions~\cite{Bailey}. For example there must be adequate lighting in the room so the patient can distinguish the colors and read the letters, but more importantly the charts are meant to be placed a fixed distance from the patient. For most charts, this distance is six meters. 
 
 These conditions cannot always be met. Examination rooms are not always large enough to take measurements from six meters away for example. In those cases, the reference numbers on the sheet are no longer accurate and the optician has to compensate manually~\cite{PGSoderbergOral}. If the standardized conditions cannot be met it can lead to irregularities or faulty measurements in some tests.
 
