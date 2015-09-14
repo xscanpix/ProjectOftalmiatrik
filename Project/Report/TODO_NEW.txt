@@ -1,0 +1,23 @@
+- fortfarande flera förekomster av 'will be used' etc. och referenser till projektets tidsbegränsning. Tänk på att när man läser rapporten, är projektet redan avslutat. 
+
+- Första halvan av 'Problem' är bättre, men andra halvan beskriver vad ni tänker implementera. 
+
+- Tänk på rubrikstrukturen; ni har en hel del rubrik på rubrik. Se även checklistorna. 
+
+- Ni skriver om kap 3.1: "Eftersom det här kapitlet är mer av en sammanställning och snabb genomgång av de här ämnena, snarare än något arbete eller forskning vi gjort själva, refererar vi hela stycken till böckerna." Vad menar ni med det? Jag förstår inte riktigt. Kan ni förklara vad ni menar? 
+
+I övrigt är det två saker ni behöver göra: 
+1. Ni måste läsa igenom hela rapporten ordentligt och korrigera vanliga språkfel: 
+- sammandragningen "it's" använder ni ofta, t.ex. 
+- ni använder fel verbform här och var ("the optotypes [...] was created", t.ex.) 
+
+2. Ni måste se till att ni förklarar alla begrepp som inte kan antagas vara bekanta för er målgrupp (era medstudenter, vi lärare, etc.). Det gäller även figurer, formler, och tabeller. Några exempel (men det finns fler!) på saker ni behöver förklara bättre: 
+
+- sid 7: LogMAR: är en logaritmisk mätenhet som beror av patientens synvinkel (om jag förstår det rätt), men förklara hur/varför den används, referera inte bara. 
+- sid 7: ni säger att Axanivis-charts måste vara med, men ni förklarar varken vad de är eller varför de måste vara med (annat än med en bild). Bilder måste också förklaras i texten :-) 
+- sid 9: vad är ett 'stabilt' wifi? 
+- sid 12: "magnification is a problem in visual acuity testing because if the optotypes on the eye chart are enlarged then an error will show up". Jag förstår inte varför en förstoring leder till ett fel här? Förklara tydligare. Använd figuren. 
+- sid 13: Vad säger tabellen? Vad är det för enheter ni använder? Förklara. 
+- ni använder termen 'user' -- menar ni då optikern/läkaren? Eller patienten? Särskilt förvirrande t.ex. på sid 18 där ni först talar om user/patient, och sedan patient/optician när ni beskriver figur 3.9. 
+- sid 26 + 33: vad är grating? Förklara. 
+- sid 31: ni beskriver ett server detection test som ni gör tre gånger, men jag förstår inte hur ni ser att alla test lyckas mer än 90%. Gjorde ni 100 försök per test?
