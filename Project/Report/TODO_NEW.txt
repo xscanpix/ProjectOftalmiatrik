@@ -13,7 +13,7 @@ I övrigt är det två saker ni behöver göra:
 
 2. Ni måste se till att ni förklarar alla begrepp som inte kan antagas vara bekanta för er målgrupp (era medstudenter, vi lärare, etc.). Det gäller även figurer, formler, och tabeller. Några exempel (men det finns fler!) på saker ni behöver förklara bättre: 
 
-- sid 7: LogMAR: är en logaritmisk mätenhet som beror av patientens synvinkel (om jag förstår det rätt), men förklara hur/varför den används, referera inte bara. 
+DONE!!! - sid 7: LogMAR: är en logaritmisk mätenhet som beror av patientens synvinkel (om jag förstår det rätt), men förklara hur/varför den används, referera inte bara. 
 - sid 7: ni säger att Axanivis-charts måste vara med, men ni förklarar varken vad de är eller varför de måste vara med (annat än med en bild). Bilder måste också förklaras i texten :-) 
 - sid 9: vad är ett 'stabilt' wifi? 
 - sid 12: "magnification is a problem in visual acuity testing because if the optotypes on the eye chart are enlarged then an error will show up". Jag förstår inte varför en förstoring leder till ett fel här? Förklara tydligare. Använd figuren. 
