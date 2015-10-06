@@ -8,8 +8,8 @@
 
 I övrigt är det två saker ni behöver göra: 
 1. Ni måste läsa igenom hela rapporten ordentligt och korrigera vanliga språkfel: 
-- sammandragningen "it's" använder ni ofta, t.ex. 
-- ni använder fel verbform här och var ("the optotypes [...] was created", t.ex.) 
+*DONE* - sammandragningen "it's" använder ni ofta, t.ex. 
+*HALV-DONE: Har letat igenom och löst ett antal vanliga fel, men måste lusläsa hela dokumentet noggrannare innan det här är färdigt*- ni använder fel verbform här och var ("the optotypes [...] was created", t.ex.) 
 
 2. Ni måste se till att ni förklarar alla begrepp som inte kan antagas vara bekanta för er målgrupp (era medstudenter, vi lärare, etc.). Det gäller även figurer, formler, och tabeller. Några exempel (men det finns fler!) på saker ni behöver förklara bättre: 
 
@@ -18,6 +18,6 @@ DONE!!! - sid 7: LogMAR: är en logaritmisk mätenhet som beror av patientens synv
 - sid 9: vad är ett 'stabilt' wifi? 
 - sid 12: "magnification is a problem in visual acuity testing because if the optotypes on the eye chart are enlarged then an error will show up". Jag förstår inte varför en förstoring leder till ett fel här? Förklara tydligare. Använd figuren. 
 - sid 13: Vad säger tabellen? Vad är det för enheter ni använder? Förklara. 
-- ni använder termen 'user' -- menar ni då optikern/läkaren? Eller patienten? Särskilt förvirrande t.ex. på sid 18 där ni först talar om user/patient, och sedan patient/optician när ni beskriver figur 3.9. 
+*DONE* - ni använder termen 'user' -- menar ni då optikern/läkaren? Eller patienten? Särskilt förvirrande t.ex. på sid 18 där ni först talar om user/patient, och sedan patient/optician när ni beskriver figur 3.9. 
 - sid 26 + 33: vad är grating? Förklara. 
 - sid 31: ni beskriver ett server detection test som ni gör tre gånger, men jag förstår inte hur ni ser att alla test lyckas mer än 90%. Gjorde ni 100 försök per test?
