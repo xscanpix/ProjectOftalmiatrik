@@ -152,11 +152,11 @@ Finally, we had the issue of networking. Our concern was being able to reliably 
 %----------------SKRIV MER HÄR!!!!!!!!!----------- (ELLER SKRIV OM!!!!)
 
 \section{Delimitations}
-Due to limits in time and manpower, this project was not intended to result in a complete working system to be used clinically, but rather a working prototype that can be used to evaluate digital visual acuity charts. To complete the project on time, as much as possible of Java's and Android's built-in libraries was used in order to avoid recreating code that already existed, thus saving time. Neither Java nor Android include libraries for rendering SVG-files so third party libraries was used instead.
+Due to limits in time and manpower, this project was not intended to result in a complete working system to be used clinically, but rather a working prototype that can be used to evaluate digital visual acuity charts. To complete the project on time, as much as possible of Java's and Android's built-in libraries were used in order to avoid recreating code that already existed, thus saving time. Neither Java nor Android include libraries for rendering SVG-files so third party libraries were used instead.
 
 We did not evaluate a digital screen's effect on the eye compared to a physical chart nor did we analyze why a chart should have the layouts it has. As the visual acuity charts are made after a very strict specification, no new chart layouts were made. Any new chart we would have created would be considered useless without backing research and they could be misleading and misused by future opticians that in the end, could result in patients getting an inaccurate result.
 
-No security features, such as encrypted network traffic or protection against several tablets connecting to the same server at the same time, was implemented. Instead, it is left to the optician or whoever owns the hardware to make sure that a secure network is used. Since there is no patient data or other private information being transmitted or stored we did not see the need for secure connections.
+No security features, such as encrypted network traffic or protection against several tablets connecting to the same server at the same time, were implemented. Instead, it is left to the optician or whoever owns the hardware to make sure that a secure network is used. Since there is no patient data or other private information being transmitted or stored we did not see the need for secure connections.
 
 No automatic update system was included, instead the hardware owner has to manually update both the Android application and the server. Automatic updating was not a core feature, and could therefore be saved for future work.
 
@@ -235,7 +235,7 @@ As this project only aimed to complete a working prototype of the system, it was
 \section{Evaluation \label{sec:evaluation}}
 In order to evaluate if all requirements had been met, the system underwent four tests. The goal of the first test was to make sure that the optician actually could choose a specific chart with specific optotypes to be viewed from a specific distance. This was done by the developers going through all charts, with all types of optotypes and setting the distance for each one of them. Table \ref{tab:test1_empty} was used to achieve this by systematically walk through every setting.
 
-The second test made sure that the optotypes had the correct sizes on the monitor. This test was done by calculating the expected sizes of the optotypes in centimeters for different screen sizes with the help of Matlab. The calculated sizes was then compared to the sizes output by the system. If there was a match, the optotypes was measured by a physical measurement tool such as a ruler or Vernier scale in order to make sure that they had the calculated size when they were displayed on the monitor. The physical measuring was required to make sure that the system worked as intended in practice and not only in theory.
+The second test made sure that the optotypes had the correct sizes on the monitor. This test was done by calculating the expected sizes of the optotypes in centimeters for different screen sizes with the help of Matlab. The calculated sizes were then compared to the sizes output by the system. If there was a match, the optotypes were measured by a physical measurement tool such as a ruler or Vernier scale in order to make sure that they had the calculated size when they were displayed on the monitor. The physical measuring was required to make sure that the system worked as intended in practice and not only in theory.
 
 The third test determined how user friendly the system was. This was done by letting a test user with no previous knowledge of the system, attempt to connect to a server and perform some basic tasks like setting a specific chart with a specific optotype or setting a specific distance (App. \ref{app:usability}). If the test user testing had no previous knowledge of visual acuity charts, a brief explanation was given so that the test did not fail because the test user, for example, did not know what "HVOT" was. Once the test was completed, the test user provided feedback pointing out possible faults in our design. This feedback was then used to improve the design. If the test user performd the entire test without help, the test was considered successful.
 
@@ -677,7 +677,7 @@ The server application is in many ways very similar to the Android application. 
 The four tests presented in section \ref{sec:evaluation} were performed in order to find major faults with the system. All tests are considered to have met the requirements, though the usability could still be improved by making it more clear on how and where swipes can be performed.
 
 \subsection{Developer walkthrough}
-During the developer walkthrough (see section \ref{sec:evaluation}) of the system, all charts versions were found and all settings were usable on every chart by using table \ref{tab:test1_empty}. The connection settings were also reachable from everywhere in the application and both connecting and reconnecting was working properly.
+During the developer walkthrough (see section \ref{sec:evaluation}) of the system, all charts versions were found and all settings were usable on every chart by using table \ref{tab:test1_empty}. The connection settings were also reachable from everywhere in the application and both connecting and reconnecting were working properly.
 
 \begin{table}[ht!]
 \centering
@@ -738,14 +738,14 @@ The optotype sizes were calculated for and measured on a 15.6 inch computer scre
 
 
 \subsection{Usability}
-The system usability was tested with the help of two persons with no previous background related to visual acuity charts or eye examinations. Since the system is only a prototype and the test is focused  usability, two test persons with no previous knowledge about visual acuity was enough to get an overview of the systems usability.
+The system usability was tested with the help of two persons with no previous background related to visual acuity charts or eye examinations. Since the system is only a prototype and the tests are focused on usability, two test persons with no previous knowledge about visual acuity were enough to get an overview of the systems usability.
 
 After a brief explanation to the different types of charts the test persons where asked to follow the procedures in \ref{app:usability}. None of the persons had no problem performing any of the tasks with the exception of one of them didn't realize that you had to swipe the screen in order to switch between the upper and lower charts in the application. This is not a major problem since it can easily be solved by an explanation or tutorial before using the application.
 
 
 
 \subsection{Server Detection}
-The server detection test was performed 3 times on a stable WiFi network. According to the results (Table. \ref{tab:server_detection_test}), every single one of the tests performed was successful in finding a server over 90\% of the time. The average success rate of the 3 tests was about 96.3\% which means that the server detection requirements are met.
+The server detection test was performed 3 times on a stable WiFi network. According to the results (Table. \ref{tab:server_detection_test}), every single one of the tests performed were successful in finding a server over 90\% of the time. The average success rate of the 3 tests were about 96.3\% which means that the server detection requirements are met.
 
 \begin{table}[ht!]
 \centering
