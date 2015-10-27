@@ -102,7 +102,7 @@ In a field so dependent on visual aids and equipment, it is easy to see that the
 \end{figure} 
 
 \chapter{ Problem Description}
-\section{Problem}
+%\section{Problem}
 Having efficient and accurate systems is important in a medical environment, especially in a medical environment that handles tests where inaccurate or false results in some cases can cause accidents. Therefore it was important to have a well-built system that mitigates these problems. With the help of professor P.G. Söderberg who is an expert in the field of ophthalmology we have created a system that acts as a prototype for further future work. 
 
 Determining visual acuity is a very labour- and equipment-intensive process, and this workload is also increasing drastically with time. Physical charts are often large and cumbersome, and must be switched if the patient needs a chart with another selection of optotypes or a different layout. Since they are also designed for standardized distances and testing conditions, an optician needs to manually compensate for any deviations from the standard. More and more people are experiencing eye problems, at all ages and in many cultures~\cite{vision_loss}. With more people needing to test their visual acuity, faster and more efficient methods needs to be used.
@@ -239,7 +239,7 @@ The second test made sure that the optotypes had the correct sizes on the monito
 
 The third test determined how user friendly the system was. This was done by letting a test user with no previous knowledge of the system, attempt to connect to a server and perform some basic tasks like setting a specific chart with a specific optotype or setting a specific distance (App. \ref{app:usability}). If the test user testing had no previous knowledge of visual acuity charts, a brief explanation was given so that the test did not fail because the test user, for example, did not know what "HVOT" was. Once the test was completed, the test user provided feedback pointing out possible faults in our design. This feedback was then used to improve the design. If the test user performd the entire test without help, the test was considered successful.
 
-The last test was a quantitative test to see how well the server detection performed. The test involved the Android application trying to detect a server on a stable WiFi a hundred times and see how many times the server was detected. This test was done several times and the average number of detections in a hundred tries determined its success rate. Testing the system on anything other than a stable WiFi was unnecessary as it was only intended to work on a stable local network. If the optician's tablet could not connect to their local WiFi reliably there might have been problems, but the source of those problems were outside of our project, and we could not affect it.
+The last test was a quantitative test to see how well the server detection performed. The test involved the Android application trying to detect a server on a stable WiFi a hundred times and see how many times the server was detected. In this case, a stable WiFi is a WiFi provided by a common home router at close range with no noticeable latency. This test was done several times and the average number of detections in a hundred tries determined its success rate. Testing the system on anything other than a stable WiFi was unnecessary as it was only intended to work on a stable local network. If the optician's tablet could not connect to their local WiFi reliably there might have been problems, but the source of those problems were outside of our project, and we could not affect it.
 
 \section{Related work}
 
@@ -282,7 +282,7 @@ Several media streaming devices exists that allow digital content to be received
 %Most of the before mentioned systems have some form of negative side that we try to improve on, mostly problems about high cost and difficulties with extending the software. We are different with that we want to create a system that is cheap, easy to understand and easy to maintain. Creating a system that have all the previously mentioned sides is one of the goals we have. Another important goal is creating a system that really is speacialized on measurements of visual acuity. All these points are important to give the users the best experience.
 
 \chapter{ Visual Acuity Testing}
-\section{Visual Acuity}
+%\section{Visual Acuity}
 The measurement of a persons visual acuity has an important constraint that needs to be followed. This constraint is the fact that our eyes works best physiologically from greater distances. On the other hand, at shorter distances our eyes tend to make what we see look unfocused. To make up for this shift in focus a minimum testing distance has to be enforced to ensure that the shift in focus stays as small as possible. This distance has by scientific research been set to be six meters. \cite{Acuity_Book}
 
 \subsection{Measurement distance}
@@ -756,7 +756,7 @@ Attempt	&	failures	&	succeses	\\
 2	&	1	&	99	\\
 3	&	3	&	97	\\
 \end{tabular}
-\caption{The number of failures and successes during the server detection tests. \label{tab:server_detection_test}}
+\caption{The number of failures and successes during the server detection tests. Each test consisted of 100 attempts to connect to the server. \label{tab:server_detection_test}}
 \end{table}
 
 %\begin{figure}[ht!]
@@ -780,7 +780,7 @@ A disadvantage with this system is that digital screens become very expensive at
 A possible alternative solution to a custom server running on a Raspberry Pi or other computer would be to use a Chromecast instead. This could simplify the system for the optician as this would make the Android application work similar to the many media streaming applications that exists today. Using a Chromecast would also make sure the optician only have to worry about the Android application as the Chromecast is just a plug and play unit maintained by Google. A disadvantage to this is that the developer is required to have a Google developers account which costs a small sum of money (5\$ as of August 2015). This might not be a large sum of money but it was decided to be left for future exploration. Another disadvantage of using the Chromecast is that the application would need an internet connection instead of just a local network. Although screen mirroring is possible, the logical solution to create this system would be to use the Chromecasts \textit{Custom Media Receiver} which requires a webbapp located on the internet \cite{android_receiver_app}.
 
 \section{Future Work}
-Future work includes more charts and features for the system. One such feature is the grating acuity test, which allows testing of visual acuity on very young children or people with difficulties communicating. The test consists of several vertical lines with different widths and distances from each other. These lines are moving horizontally on a screen and if the patient can distinguish the lines, the patients eyes follows them. The eyesight can then be determined by looking on the thinnest line the patient can distinguish \cite{PGSoderbergOral}. Another feature is to include the option to, instead of changing the size of the optotypes, change the LogMAR values, so the top row doesn't necessarily start at 1.0 LogMAR. This way the server can calculate the largest size the top row optotypes can have and allow the chart to use the entire monitors screen no matter the distance from the patient to the screen.
+Future work includes more charts and features for the system. One such feature is the grating acuity test, which allows testing of visual acuity on very young children or people with difficulties communicating. The grating test consists of several vertical lines with different widths and distances from each other. These lines are moving horizontally on a screen and if the patient can distinguish the lines, the patients eyes follows them. The eyesight can then be determined by looking on the thinnest line the patient can distinguish \cite{PGSoderbergOral}. Another feature is to include the option to, instead of changing the size of the optotypes, change the LogMAR values, so the top row doesn't necessarily start at 1.0 LogMAR. This way the server can calculate the largest size the top row optotypes can have and allow the chart to use the entire monitors screen no matter the distance from the patient to the screen.
 
 Other charts to be included could be, for example, charts using the Landholt C, charts for testing color blindness or charts used for testing astigmatism. The random function for the charts should be improved with constraints, as it currently has none. These constraints would make sure that the same optotype, or to similar optotypes like \textit{C} and \textit{O}, are not repeated too many times in a row.
 
