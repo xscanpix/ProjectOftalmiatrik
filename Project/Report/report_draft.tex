@@ -282,7 +282,7 @@ Several media streaming devices exists that allow digital content to be received
 %Most of the before mentioned systems have some form of negative side that we try to improve on, mostly problems about high cost and difficulties with extending the software. We are different with that we want to create a system that is cheap, easy to understand and easy to maintain. Creating a system that have all the previously mentioned sides is one of the goals we have. Another important goal is creating a system that really is speacialized on measurements of visual acuity. All these points are important to give the users the best experience.
 
 \chapter{ Visual Acuity Testing}
-%\section{Visual Acuity}
+\section{Visual Acuity}
 The measurement of a persons visual acuity has an important constraint that needs to be followed. This constraint is the fact that our eyes works best physiologically from greater distances. On the other hand, at shorter distances our eyes tend to make what we see look unfocused. To make up for this shift in focus a minimum testing distance has to be enforced to ensure that the shift in focus stays as small as possible. This distance has by scientific research been set to be six meters. \cite{Acuity_Book}
 
 \subsection{Measurement distance}
@@ -457,8 +457,8 @@ Once an estimated visual acuity has been determined from the one line chart, the
 \end{figure}
 
 \chapter{ Implementation}
-\section{Methods}
-\subsection{System structure}
+%\section{Methods}
+%\subsection{System structure}
 The system is divided into three major parts, an Android application, a server and networking. The Android application and server is modelled after the MVC (Model-View-Controller) pattern, where the model is the logic, such as calculating the sizes of the optotypes and randomizing the order which they appear, and the view is the GUI (Graphical User Interface). The controller part is the part on the Android application that listens for button clicks and gestures. Usually the networking would fall under controller in the MVC pattern but was, in this system, chosen to be a separate larger structure. The reason the network part is separated from the controller is because it is large part of the system and it separates the project into three parts. The network part is also almost identical on both the serverside and the tabletside, so the code could easily be adapted for both. Figure \ref{system_structure} shows how the different parts are connected.
 
 \begin{figure}[ht!]
@@ -467,7 +467,7 @@ The system is divided into three major parts, an Android application, a server a
 \caption{Overview of the system structure\label{system_structure}}
 \end{figure}
 
-\subsection{Android application}
+\section{Android application}
 The Android application is written in Java, which is the official language for Android. The static parts of the GUI, which never changes unless application updates are released, are written in XML using Googles defined syntax \cite{android_gui}. This is similar to how HTML is written and is supported by Android natively.
 
 The visual acuity charts on the Android device have its opotypes positions and sizes calculated at runtime before before they are displayed. If the charts would have been written in an XML file, it would have required that each optotype had its own XML element with a manually inserted size and position. This would result in very large and hard to read XML files and would require manual updating of each element if the sizes or positions should ever change. The charts are all drawn at the same time and on top of each other, but makes all but the chosen chart invisible. This makes it seem like only one chart is calculated at a time and avoids recalculating when switching back and fort between charts.
@@ -508,22 +508,22 @@ The design of the application follows the Android design principles by using And
 \label{fig:example_nav_drawer}
 \end{figure}
 
-\subsection{Server application}
+\section{Server application}
 The server application is written in Java and uses the built-in \textit{Swing} library for drawing the GUI and the images. Swing is a very flexible and easy-to-use library with a lot of great tools for creating a good looking GUI. In our case the server didn't need a very advanced GUI since the main purpose of the server is to render a fullscreen image at all times. This greatly simplifies the implementation of the GUI. Other than the rendering of images, the GUI consists of a small networking control class where the optician can specify a number of settings. These settings have to be configured to set what name the server has on the network. There are no other major settings at this time, but it was designed so that it can be easily expanded if future updates require more settings.
 
 The rendering of images, specifically SVG vector graphic images, is handled by an \textit{~Apache} library called \textit{Batik}. It is a well supported and extensive library for rendering a multitude of different file formats. The SVG files contain information about the optotypes used on the charts. Using the same procedure as the tablet application to calculate the positions of the SVG images, we can easily create a well structured image to render to the screen.
 
 When the networking part of the server receives information from the network it is submitted to a thread-safe queue. Separately from this, the GUI pulls the information from the queue and handles the information. This method is necessary because of how Swing is constructed. Swing runs on a dispatch-thread basis, meaning that there is a single event dispatching thread that handles all the incoming events and alters the GUI accordingly. Since the dispatch-thread decides when to update the screen attempting to alter the GUI from another thread simultaneously would result in unknown behaviour and possibly fatal errors, and is therefore prohibited. 
 
-\subsection{Network}
+\section{Network}
 The network communication between the client and the server consists of two parts. The first part is server detection and the second is server communication. All network communication are handled in threads separate from the main thread using Java's SwingWorker- and Androids AsyncTask class. Both classes allow us to perform network operations in the background, in a separate thread, and once the operations are complete the main thread of the program automatically gets the result.
 
-\subsubsection{Server detection}
+\subsection{Server detection}
 In order to detect all servers on the network, the Android application sends out a discovery request message, consisting of the string \\ \textit{AXANIVIS\_DISCOVER\_REQUEST}, 5 times with a 1 second interval using UDP (User Datagram Protocol) on the networks broadcast address using port 14141. The server, which constantly listen for broadcasts containing the correct message, then responds to that message with the message \textit{AXANIVIS\_DISCOVER\_RESPONSE\textbackslash nServerName}, again using UDP. Once the Android application receives a response it adds the server to a list. The optician can then choose to connect to one of the found servers or attempt the detection again if no servers were found.
 
 Since UDP is a connectionless protocol, there is no guarantee that the server actually receives the message, the discovery request message is sent 5 times, which means the server have 5 chances to receive the message and respond to it. This means that the server receives a discovery request 0 to 5 times and respond to it the same number of times. To avoid duplicate server entries in the list, a server is only added if it doesn't already exist in the list.
 
-\subsubsection{Server communication}
+\subsection{Server communication}
 The communication between the Android application and the connected server is handled using strings of characters divided to three lines using line separators. The first line consists of a check word, which is the same for every message. If this check word is wrong or doesn't exist, the server ignores the message. The second line is the command to the server. This could be a command to set the current chart type or size to something else. The third line is the data required for the command. The data can be empty (null) or a string of characters. Depending on the command, the string of characters can be read as either a sequence of ASCII characters or a sequence of numbers. The messages defined for the server communications are commands to connect to the server, set the distance from the screen and set which chart to be displayed with which optotype. If a message with an incorrect command is sent to the server, the server ignores that message. If the wrong data is sent together with a correct command, the server keeps functioning but its output is undefined.
 
 The messages are sent using a TCP (Transmission Control Protocol) connection to the server on port 14142. This guarantees that the entire message is correct and that it is retrieved by the server as long as the server is connected to the network. If a connection is timed out, the sent command is ignored and the optician has to reconnect to a server and resend the command.
@@ -576,11 +576,11 @@ DISTANCE
 %The easiest way to see if our product satisfies these demands is putting it into the hands of the opticians at the university hospital and letting them test it, recording bug reports or comments. Testing will also let us determine if the system is as energy efficient as we intended.
 
 \chapter{ Results}
-\section{System functionality} 
+%\section{System functionality} 
 %The system fulfills all specified requirements and allow the user to quickly set up a chart on the monitor. No system crashes have occurred during testing, and no bugs that causes the system to not work properly have been encountered. With a stable WiFi connection, the system runs smoothly without any lag and the server detection finds a server in under a second. 
 The resulting system ended up in three parts, an Android part, a server part and a network part, as shown in the system structure (fig. \ref{system_structure}). Every action on the Android device related to a chart is connected to the network part. Once an action has been chosen, the network part is called and it creates a message with the correct command and data and then sends this message to the server. Once the server receives this message, the server performs the requested actions.
 
-\subsection{Android application}
+\section{Android application}
 The Android application uses Android's standard GUI elements. To navigate between the connection settings and different type of charts, Android's built in navigation drawer is used (fig. \ref{fig:app_nav_drawer}). In order to reach the connection settings, the optician must click the name of the connected server and in the case that no server is connected, it says, instead of the name of a server, \textit{Click to connect}.
 
 \begin{figure}[ht!]
@@ -651,7 +651,7 @@ The optician can also choose which chart size, \textit{Large}, \textit{Medium} o
 
 The last setting the optician can choose is the distance setting. Here the optician can enter the distance a patient is from the screen, in centimeters, and then press \textit{Apply Distance}. This has no visible effect on the application but is used to set the optotype sizes on the monitor.
 
-\subsection{Server}
+\section{Server}
 The server application is in many ways very similar to the Android application. Both use the same methods for the calculations, such as the optotype sizes. The charts are built using the same code as the Android application with minor changes due to the fact that Java's Swing components have to be drawn rather than Android components. The monitor connected to the server only displays the currently chosen chart (fig. \ref{fig:server_charts}) and nothing else, such as LogMAR values or settings shown on the Android device.
 
 \begin{figure}[ht!]
@@ -767,7 +767,7 @@ Even though the system fulfils the requirements, it doesn't mean it is bug free.
 
 \chapter{ Conclusion}
 
-\section{Discussion}
+%\section{Discussion}
 Even though the system turned out as intended, there are things left to do before it can be used clinically. First of all, the system must be tested for more bugs and unintended behaviour. This should preferably be done by users other than the developers since the developers know how the system works and can't safely predict what another user attempts to do. The system must be tested by experts in the field of ophthalmology in order to make sure that the built system actually is a valid solution. This gives the system credibility and make it possible to use it clinically.
 
 \section{Advantages of a digital system}

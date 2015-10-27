@@ -2,7 +2,8 @@ DONE!!! - fortfarande flera förekomster av 'will be used' etc. och referenser ti
 
 - Första halvan av 'Problem' är bättre, men andra halvan beskriver vad ni tänker implementera. 
 
-- Tänk på rubrikstrukturen; ni har en hel del rubrik på rubrik. Se även checklistorna. 
+HALV-DONE!!! - Tänk på rubrikstrukturen; ni har en hel del rubrik på rubrik. Se även checklistorna. 
+	behöver text under "2.5 Related Work" och "3 Visual Acuity Testing"
 
 - Ni skriver om kap 3.1: "Eftersom det här kapitlet är mer av en sammanställning och snabb genomgång av de här ämnena, snarare än något arbete eller forskning vi gjort själva, refererar vi hela stycken till böckerna." Vad menar ni med det? Jag förstår inte riktigt. Kan ni förklara vad ni menar? 
 
