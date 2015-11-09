@@ -1,6 +1,6 @@
 DONE!!! - fortfarande flera förekomster av 'will be used' etc. och referenser till projektets tidsbegränsning. Tänk på att när man läser rapporten, är projektet redan avslutat. 
 
-- Första halvan av 'Problem' är bättre, men andra halvan beskriver vad ni tänker implementera. 
+DONE - Första halvan av 'Problem' är bättre, men andra halvan beskriver vad ni tänker implementera. 
 
 HALV-DONE!!! - Tänk på rubrikstrukturen; ni har en hel del rubrik på rubrik. Se även checklistorna. 
 	behöver text under "2.5 Related Work" och "3 Visual Acuity Testing"
@@ -17,8 +17,8 @@ I övrigt är det två saker ni behöver göra:
 DONE!!! - sid 7: LogMAR: är en logaritmisk mätenhet som beror av patientens synvinkel (om jag förstår det rätt), men förklara hur/varför den används, referera inte bara. 
 ?DONE?? - sid 7: ni säger att Axanivis-charts måste vara med, men ni förklarar varken vad de är eller varför de måste vara med (annat än med en bild). Bilder måste också förklaras i texten :-) 
 DONE!!! - sid 9: vad är ett 'stabilt' wifi? 
-- sid 12: "magnification is a problem in visual acuity testing because if the optotypes on the eye chart are enlarged then an error will show up". Jag förstår inte varför en förstoring leder till ett fel här? Förklara tydligare. Använd figuren. 
-- sid 13: Vad säger tabellen? Vad är det för enheter ni använder? Förklara. 
+DONE- sid 12: "magnification is a problem in visual acuity testing because if the optotypes on the eye chart are enlarged then an error will show up". Jag förstår inte varför en förstoring leder till ett fel här? Förklara tydligare. Använd figuren. 
+DONE- sid 13: Vad säger tabellen? Vad är det för enheter ni använder? Förklara. 
 *DONE* - ni använder termen 'user' -- menar ni då optikern/läkaren? Eller patienten? Särskilt förvirrande t.ex. på sid 18 där ni först talar om user/patient, och sedan patient/optician när ni beskriver figur 3.9. 
 DONE!!! - sid 26 + 33: vad är grating? Förklara. 
 DONE!!! - sid 31: ni beskriver ett server detection test som ni gör tre gånger, men jag förstår inte hur ni ser att alla test lyckas mer än 90%. Gjorde ni 100 försök per test?

@@ -298,11 +298,12 @@ In optician's terms a minus glass is a lens that focuses light coming further aw
 % TODO: Explain using formulas how the angular magnification works
 \begin{figure}[h]
 \centering
-\includegraphics[width=120mm]{images/Angular_magnification.png}
+\includegraphics[width=120mm]{images/Angular_magnification2.png}
 \caption{Angular magnification at short distances\label{angular}}
 \end{figure}
 
-Though using lenses is a way of corrected for testing at short distances, a few problems arise from this. Figure \ref{angular} shows the problem of angular magnification. The magnification is a problem in visual acuity testing because if the optotypes on the eye chart are enlarged then an error shows up in the results.
+Though using lenses is a way of correcting for testing at short distances, a few problems arise from this. Figure \ref{angular} shows the problem of angular magnification. As an optype, here represented as an arrow, is moved closer to the viewer the optype will take up a larger angle in the viewers field of vision. Visual acuity is measured in the smallest visual angle a patient can distinguish, and the reference values written on the charts are based on the visual angle the optotype will occupy when viewed from a specific distance. Therefore, if the chart is moved closer to the patient, the optotype will occupy a larger visual angle than before, and the values on the charts will be wrong.
+%The magnification is a problem in visual acuity testing because if the optotypes on the eye chart are enlarged then an error shows up in the results.
 
 \newpage
 \begin{figure}[h]
@@ -310,15 +311,16 @@ Though using lenses is a way of corrected for testing at short distances, a few 
 \begin{tabular}{| l | l | l | l |}
     \hline
     Distance to chart (m) & Addition (D) & Magnification (Rel.) & Error (logMar) \\ \hline
+	6                     & 0.0          & 1.0                  & 0.0            \\ \hline
     4                     & 0.25         & 1.5                  & 0.17           \\ \hline
     2                     & 0.5          & 3.5                  & 0.48           \\ \hline
-    1                     & 1            & 6.0                  & 0.78           \\ 
+    1                     & 1.0          & 6.0                  & 0.78           \\ 
     \hline
     \end{tabular}
     \caption{Magnification due to addition for closer distance\label{magtable}}
 \end{figure}
 
-There is need to have a standard to follow on how much addition or subtraction needed for a specific distance. Figure \ref{magtable} shows what values to use when testing visual acuity at shorter distances than six meters. \cite{PGSoderbergOral}
+There needs to be a standard to follow on how much addition or subtraction needed for a specific distance to compensate for the angular magnification. Figure \ref{magtable} shows what values to use when testing visual acuity at shorter distances than six meters \cite{PGSoderbergOral}. The values were calculated using a standard chart, designed for use at six meters. When the chart is used at a distance lower than six meters, the optician needs to put two sets of lenses in front of the patient's eye. One set is the lenses that that will be used in the patients glasses, and the other set is a set of lenses needed to compensate for the angular magnification so that the measurement will be correct. The 'Addition' in the table above is the strength of these compensating lenses. The 'Magnification' refers to the relative size of the optotypes at the specified distance, and the 'Error' is the error in the logMar value on the chart, caused by the angular magnification.
 
 \section{Chart Design}
 The visual acuity charts used in this project are based on the ETDRS (fig. \ref{fig:etdrs_chart1}, page \pageref{fig:etdrs_chart1}) \cite{Ferris} and the Axanivis (fig. \ref{fig:axanivis}) \cite{PGSoderbergOral} charts developed by P.G. Söderberg at Uppsala University Hospital. 
