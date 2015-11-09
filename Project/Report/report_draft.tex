@@ -55,8 +55,7 @@ Digitalization of Visual Acuity Testing är ett projekt om att visa och manipule
 \renewcommand\thechapter{\arabic{chapter}}
 \pagenumbering{arabic}
 \setcounter{page}{1}
-\chapter{ Introduction}
-%\section{Background}
+\chapter{ Introduction}%\section{Background}
 The standard way for an optician to measure a patients visual acuity is to use charts printed with rows of continuously smaller symbols called optotypes~(fig.~\ref{fig:optotypes_example1}), most often normal Latin letters. The patient reads the symbols on the chart in the order specified by the optician until he or she can no longer correctly identify them. Each row on the chart has a pre-calculated number printed beside it, which lets the optician determine which lenses the patient should use.
 
 \begin{figure}[ht!]
@@ -161,9 +160,7 @@ No security features, such as encrypted network traffic or protection against se
 
 No automatic update system was included, instead the hardware owner has to manually update both the Android application and the server. Automatic updating was not a core feature, and could therefore be saved for future work.
 
-\section{Requirements}
-%For this project to be considered successful, the system must be able to display the chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also has to be able to choose if the current chart should use the Sloan, Tumbling E, HVOT or LEA optotypes.
-
+\section{ Requirements}%For this project to be considered successful, the system must be able to display the chart chosen by the user. This means that the user have to be able to control which chart type to display on the monitor from an Android device. The types of charts that should be included are the four Axanivis charts, the upper, the lower, the one line and the single optotype chart. The user also has to be able to choose if the current chart should use the Sloan, Tumbling E, HVOT or LEA optotypes.
 For this project to be considered successful, the system had to be able to display the chart chosen by the optician. This means that the optician had to be able to control which chart type to display on the monitor from an Android device. The types of charts that were included are the four Axanivis charts (fig. \ref{fig:axanivis}), which comes from a project with the same name under development by P.G. Söderberg \cite{PGSoderbergOral}. The Axanivis charts are based on the ETDRS chart but are designed to be displayed on a digital screen instead of being printed on a physical chart. 
 
 \begin{figure}[ht!]
@@ -238,15 +235,15 @@ In order to evaluate if all requirements had been met, the system underwent four
 
 The second test made sure that the optotypes had the correct sizes on the monitor. This test was done by calculating the expected sizes of the optotypes in centimeters for different screen sizes with the help of Matlab. The calculated sizes were then compared to the sizes output by the system. If there was a match, the optotypes were measured by a physical measurement tool such as a ruler or Vernier scale in order to make sure that they had the calculated size when they were displayed on the monitor. The physical measuring was required to make sure that the system worked as intended in practice and not only in theory.
 
-The third test determined how user friendly the system was. This was done by letting a test user with no previous knowledge of the system, attempt to connect to a server and perform some basic tasks like setting a specific chart with a specific optotype or setting a specific distance (App. \ref{app:usability}). If the test user testing had no previous knowledge of visual acuity charts, a brief explanation was given so that the test did not fail because the test user, for example, did not know what "HVOT" was. Once the test was completed, the test user provided feedback pointing out possible faults in our design. This feedback was then used to improve the design. If the test user performd the entire test without help, the test was considered successful.
+The third test determined how user friendly the system was. This was done by letting a test user with no previous knowledge of the system, attempt to connect to a server and perform some basic tasks like setting a specific chart with a specific optotype or setting a specific distance (App. \ref{app:usability}). If the test user testing had no previous knowledge of visual acuity charts, a brief explanation was given so that the test did not fail because the test user, for example, did not know what "HVOT" was. Once the test was completed, the test user provided feedback pointing out possible faults in our design. This feedback was then used to improve the design. If the test user performs the entire test without help, the test was considered successful.
 
 The last test was a quantitative test to see how well the server detection performed. The test involved the Android application trying to detect a server on a stable WiFi a hundred times and see how many times the server was detected. In this case, a stable WiFi is a WiFi provided by a common home router at close range with no noticeable latency. This test was done several times and the average number of detections in a hundred tries determined its success rate. Testing the system on anything other than a stable WiFi was unnecessary as it was only intended to work on a stable local network. If the optician's tablet could not connect to their local WiFi reliably there might have been problems, but the source of those problems were outside of our project, and we could not affect it.
 
+\clearpage
 \section{Related work}
+There is a lot of related work that can be considered for our project. There are other solutions to our problems, other ways of handling each part of our system, and there are other products on the market that are similar to ours.
 
-\subsection{Visual acuity charts}
-%Several different versions of visual acuity chart exist today. The ETDRS (Early Treatment Diabetic Retinopathy Study) chart~(fig.~\ref{fig:etdrs_chart1}) is the most commonly used today and is an improvement to the older \textit{Snellen chart}(fig. \ref{fig:snellen_chart1}, page \pageref{fig:snellen_chart1}). The ETDRS chart was designed and developed by Ferris et al \cite{Ferris}, based on the work of Bailey and Lovie \cite{Bailey}. 
-
+\subsection{Visual acuity charts}%Several different versions of visual acuity chart exist today. The ETDRS (Early Treatment Diabetic Retinopathy Study) chart~(fig.~\ref{fig:etdrs_chart1}) is the most commonly used today and is an improvement to the older \textit{Snellen chart}(fig. \ref{fig:snellen_chart1}, page \pageref{fig:snellen_chart1}). The ETDRS chart was designed and developed by Ferris et al \cite{Ferris}, based on the work of Bailey and Lovie \cite{Bailey}. 
 Several different versions of visual acuity chart exist today. The ETDRS (Early Treatment Diabetic Retinopathy Study) chart~(fig.~\ref{fig:etdrs_chart1}, page \pageref{fig:etdrs_chart1}) is used at Uppsala Univeristy Hospital today and many other places around the world, and is an improvement to the older \textit{Snellen chart}(fig. \ref{fig:snellen_chart1}, page \pageref{fig:snellen_chart1}). The ETDRS chart was designed and developed by Ferris et al \cite{Ferris}, based on the work of Bailey and Lovie \cite{Bailey}. The Snellen chart design is the most used design globally, but the ETDRS design has been rising in popularity since it has an increased testing accuracy because of its more legible font and because it has the same number of letters on each row.
 
 %\begin{figure}[ht!]
@@ -256,9 +253,7 @@ Several different versions of visual acuity chart exist today. The ETDRS (Early 
 %\end{figure} 
 
 
-\subsection{Digital visual acuity charts}
-%Digital Eye Chart \cite{digitaleyechart} and iChartPlus \cite{ichartplus} are two applications supposed to display a visual acuity chart on a digital screen. Both applications are computer applications, which requires the computer to be connected to the screen. The companies behind the products provide very little information and the exact specifications of the charts are not available.
-
+\subsection{Digital visual acuity charts}%Digital Eye Chart \cite{digitaleyechart} and iChartPlus \cite{ichartplus} are two applications supposed to display a visual acuity chart on a digital screen. Both applications are computer applications, which requires the computer to be connected to the screen. The companies behind the products provide very little information and the exact specifications of the charts are not available.
 There are several other commercial applications that display visual acuity charts on digital screens, for example Digital Eye Chart \cite{digitaleyechart} and iChartPlus \cite{ichartplus}. Most of these alternatives are computer applications which require the computer it runs on to be connected to the screen the chart is displayed on. Both Digital Eye Chart and iCharPlus, like many other of the commercial applications, provide a remote control that can switch charts and other features. The differences between these systems and this project are in using a tablet computer as a remote, allowing a visual interface with touch controls that connects with the screen and server wirelessly instead of with a video cable. A visual interface allows more types of interactions than a remote control and also allows us to show values and information on the tablet held by the optician instead of on the screen, removing clutter that might distract the patient.
 
 \subsection{Media streaming devices}
@@ -283,6 +278,8 @@ Several media streaming devices exists that allow digital content to be received
 %Most of the before mentioned systems have some form of negative side that we try to improve on, mostly problems about high cost and difficulties with extending the software. We are different with that we want to create a system that is cheap, easy to understand and easy to maintain. Creating a system that have all the previously mentioned sides is one of the goals we have. Another important goal is creating a system that really is speacialized on measurements of visual acuity. All these points are important to give the users the best experience.
 
 \chapter{ Visual Acuity Testing}
+The field of visual acuity testing has been around for hundreds of years, and our project does not focus on discovering new methods of testing, but rather focusing on developing a new type of tool for testing. This chapter is a summary of modern visual acuity testing theory and techniques, and is not based on any research by us. 
+
 \section{Visual Acuity}
 The measurement of a persons visual acuity has an important constraint that needs to be followed. This constraint is the fact that our eyes works best physiologically from greater distances. On the other hand, at shorter distances our eyes tend to make what we see look unfocused. To make up for this shift in focus a minimum testing distance has to be enforced to ensure that the shift in focus stays as small as possible. This distance has by scientific research been set to be six meters. \cite{Acuity_Book}
 
@@ -459,9 +456,7 @@ Once an estimated visual acuity has been determined from the one line chart, the
 \label{fig:etdrs_single}
 \end{figure}
 
-\chapter{ Implementation}
-%\section{Methods}
-%\subsection{System structure}
+\chapter{ Implementation}%\section{Methods}%\subsection{System structure}
 The system is divided into three major parts, an Android application, a server and networking. The Android application and server is modelled after the MVC (Model-View-Controller) pattern, where the model is the logic, such as calculating the sizes of the optotypes and randomizing the order which they appear, and the view is the GUI (Graphical User Interface). The controller part is the part on the Android application that listens for button clicks and gestures. Usually the networking would fall under controller in the MVC pattern but was, in this system, chosen to be a separate larger structure. The reason the network part is separated from the controller is because it is large part of the system and it separates the project into three parts. The network part is also almost identical on both the serverside and the tabletside, so the code could easily be adapted for both. Figure \ref{system_structure} shows how the different parts are connected.
 
 \begin{figure}[ht!]
@@ -578,9 +573,7 @@ DISTANCE
 %\section{Evaluation (OLD!)} %%%%%%%%%%%%%%%%%%%%%%%%Utvärdering: hur ska ni utvärdera ert arbete/system, hur vet ni om/hur bra ni lyckats?
 %The easiest way to see if our product satisfies these demands is putting it into the hands of the opticians at the university hospital and letting them test it, recording bug reports or comments. Testing will also let us determine if the system is as energy efficient as we intended.
 
-\chapter{ Results}
-%\section{System functionality} 
-%The system fulfills all specified requirements and allow the user to quickly set up a chart on the monitor. No system crashes have occurred during testing, and no bugs that causes the system to not work properly have been encountered. With a stable WiFi connection, the system runs smoothly without any lag and the server detection finds a server in under a second. 
+\chapter{ Results}%\section{System functionality} %The system fulfills all specified requirements and allow the user to quickly set up a chart on the monitor. No system crashes have occurred during testing, and no bugs that causes the system to not work properly have been encountered. With a stable WiFi connection, the system runs smoothly without any lag and the server detection finds a server in under a second. 
 The resulting system ended up in three parts, an Android part, a server part and a network part, as shown in the system structure (fig. \ref{system_structure}). Every action on the Android device related to a chart is connected to the network part. Once an action has been chosen, the network part is called and it creates a message with the correct command and data and then sends this message to the server. Once the server receives this message, the server performs the requested actions.
 
 \section{Android application}
@@ -768,9 +761,7 @@ Attempt	&	failures	&	succeses	\\
 \section{Known bugs and issues}
 Even though the system fulfils the requirements, it doesn't mean it is bug free. If the network is unstable or slow, the server can react several seconds later than the Android application. This can cause an optician to repeat an action which, in the end, results in the server acting on on both actions. In the case that the connection gets broken, all actions performed on the currently selected chart is ignored by the server, even after reconnecting. In this case, the optician can change to another chart size or version and then back again to resolve the issue.
 
-\chapter{ Conclusion}
-
-%\section{Discussion}
+\chapter{ Conclusion}%\section{Discussion}
 Even though the system turned out as intended, there are things left to do before it can be used clinically. First of all, the system must be tested for more bugs and unintended behaviour. This should preferably be done by users other than the developers since the developers know how the system works and can't safely predict what another user attempts to do. The system must be tested by experts in the field of ophthalmology in order to make sure that the built system actually is a valid solution. This gives the system credibility and make it possible to use it clinically.
 
 \section{Advantages of a digital system}
