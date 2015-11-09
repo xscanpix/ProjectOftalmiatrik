@@ -101,15 +101,15 @@ In a field so dependent on visual aids and equipment, it is easy to see that the
 \caption[The ETDRS chart]{The ETDRS chart, used with permission from Precision Vision \\ (Source: http://precision-vision.com/)\label{fig:etdrs_chart1}}
 \end{figure} 
 
-\chapter{ Problem Description}
-%\section{Problem}
-Having efficient and accurate systems is important in a medical environment, especially in a medical environment that handles tests where inaccurate or false results in some cases can cause accidents. Therefore it was important to have a well-built system that mitigates these problems. With the help of professor P.G. Söderberg who is an expert in the field of ophthalmology we have created a system that acts as a prototype for further future work. 
+\chapter{ Problem Description}%\section{Problem}
+Having efficient and accurate systems is important in a medical environment, especially in a medical environment that handles tests where inaccurate or false results can cause accidents. Therefore it was important to have a well-built system that mitigates these problems. With the help of professor P.G. Söderberg who is an expert in the field of ophthalmology we have created a system that acts as a prototype for further future work. 
 
 Determining visual acuity is a very labour- and equipment-intensive process, and this workload is also increasing drastically with time. Physical charts are often large and cumbersome, and must be switched if the patient needs a chart with another selection of optotypes or a different layout. Since they are also designed for standardized distances and testing conditions, an optician needs to manually compensate for any deviations from the standard. More and more people are experiencing eye problems, at all ages and in many cultures~\cite{vision_loss}. With more people needing to test their visual acuity, faster and more efficient methods needs to be used.
 
-Accuracy is not the only important aspect to think of when implementing a system. It is also important to think about expanding and improving on how the system can be used. To introduce new functionality that makes the life of the system's user a lot more simple and efficient is one of those important improvements. For example there are problems with using the standardized charts, such as older patients getting lost among the columns and rows, and other patients memorizing the rows of letters in an attempt to cheat. Giving the optician the option of using randomly generated charts and easily switching between specialized chart layouts can greatly increase the speed and accuracy of testing.
+Accuracy is not the only important aspect to think of when implementing a system. It is also important to think about expanding and improving on how the system can be used. To introduce new functionality that makes the life of the system's user a lot more simple and efficient is one of those important improvements. For example there are problems with using the standardized charts, such as older patients getting lost among the columns and rows, and other patients memorizing the rows of letters in an attempt to cheat. %Giving the optician the option of using randomly generated charts and easily switching between specialized chart layouts can greatly increase the speed and accuracy of testing.
 
-These are a few of the aspects that we took into consideration as we built our system. A simple system that implements digital eye charts had already been built by professor P.G. Söderberg, though that system is not as sophisticated or expandable as needed. We based some of our system's content upon how the original system was built. Mostly this system used the layouts of the charts already created since those charts have been shown to work. 
+\section{ Goals}
+The problems mentioned above are a few of the aspects that we took into consideration as we built our system. A simple prototype system that implements digital eye charts had already been built by professor P.G. Söderberg, though that system is not as sophisticated or expandable as needed. We based some of our system's content upon how the original prototype system was built. Mostly our system used the layouts of the charts already created since those charts have been shown to work. 
 
 Using the original system as a basis for our own we built a system that
 
@@ -117,7 +117,8 @@ Using the original system as a basis for our own we built a system that
 	\item Has an application for the Android tablet with an improved user interface, both aesthetically and functionally.
 	\item Controls a server that renders the eye charts on a screen over WiFi using the Android tablet.
 	\item Can alter the scale of the rendered symbols so that the patient can be closer or further away from the screen.
-	\item Has functionality to tailor the testing process by, among other things, changing the sets of symbols displayed or removing clutter from the charts.
+	\item Has functionality to tailor the testing process by, among other things, changing the sets of symbols displayed and removing clutter from the charts.
+	\item Gives the option of using randomly generated charts to prevent patients from learning the charts.
 \end{itemize}
 
 %\section{Motivation}
